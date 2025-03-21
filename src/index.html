@@ -5,19 +5,142 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="./dist/style.css">
+	<link rel="stylesheet" href="/dist/style.css">
 	<title>Ewa Majowska</title>
 </head>
 
 <body>
-	<header>
-		<nav>
-			<div class="logo"></div>
-			<ul class="nav__menu"></ul>
-		</nav>
-		<h1><span>Hello, I'm Ewa and</span>
-			I will help you build your <span class="accent">website</span></h1>
-	</header>
+
+	<!-- HEADER -->
+	<a href="#" class="stt" title="Scroll to top"><svg>
+			<use href="./assets/svg/icons.svg#arrow-up"></use>
+		</svg></a>
+	<div class="wrapper">
+		<header>
+			<div class="navbar">
+				<button type="button" class="logo" aria-label="Homepage"><img src="./assets/svg/logo.svg"></button>
+
+				<button type="button" class="menu-btn" aria-label="Open menu"><span class="menu-btn__burger"></span></button>
+
+				<nav class="nav">
+					<button type="button" class="menu-btn--exit">
+						<span class="menu-btn__burger"></span>
+					</button>
+					<ul class="nav-menu">
+						<li class="nav__item"><a href="" class="nav__link">about</a></li>
+						<li class="nav__item"><a href="" class="nav__link">code</a></li>
+						<li class="nav__item"><a href="" class="nav__link">portfolio</a></li>
+						<li class="nav__item"><a href="" class="nav__link">contact</a></li>
+					</ul>
+				</nav>
+			</div>
+			<section class="hero">
+				<div class="hero__text">
+					<p>Hello, I'm Ewa and </p>
+					<h1>I will help you build your <span class="accent">website</span></h1>
+				</div>
+				<div class="hero__img">
+					<img src="./assets/img/blob-mobile-img.png" alt="">
+					<div class="outline"><img src="./assets/svg/blob-mobile.svg" alt=""></div>
+				</div>
+				<img src="./assets/svg/lines.svg" alt="" class="lines">
+			</section>
+		</header>
+		<main>
+			<section class="section about-me">
+				<h2>About Me</h2>
+				<div class="widget">
+					<img src="./assets/img/my-photo.png" alt="This is me" class="widget_img">
+					<img src="./assets/svg/star.svg" alt="" class="widget__shape">
+					<object data="./assets/svg/text.svg" type=""></object>
+				</div>
+				<div class=" about-me__text">
+					<p>I am a Front-End Developer based in Saint Leu, Réunion Island.</p>
+					<p>Passioned by the languages, I graduated English Philology with Japanese at Silesian University.
+						Relocating to France motivated me to learn the local language and explore a new form of communication —
+						the
+						language of the web.</p>
+				</div>
+				<button type="button" class="button btn-cta">Contact Me</button>
+				<div class="about-me__decoration"><code>console.log('Hello World');</code></div>
+			</section>
+			<section class="section code">
+				<h2>Code</h2>
+				<ul class="code__list">
+					<li class="code__list__item">HTML5</li>
+					<li class="code__list__item">CSS3 & Sass</li>
+					<li class="code__list__item">Responsive Design</li>
+					<li class="code__list__item">JavaScript</li>
+					<li class="code__list__item">Git</li>
+					<li class="code__list__item">Node.js</li>
+					<li class="code__list__item">Figma</li>
+				</ul>
+				<span class="spark-1"></span>
+				<span class="spark-2"></span>
+				<div class="window window--browser">
+					<img src="./assets/svg/window.svg">
+				</div>
+			</section>
+			<section class="section portfolio">
+				<h2>Portfolio</h2>
+				<div class="portfolio__gallery">
+					<div class="cards">
+						<div class="card"></div>
+						<div class="card"></div>
+						<div class="card"></div>
+						<div class="card"></div>
+						<div class="card"></div>
+					</div>
+					<button class="button btn-prev">
+						<svg class="arrow-prev">
+							<use href="./assets/svg/icons.svg#arrow-prev"></use>
+						</svg>
+					</button>
+					<button class="button btn-next">
+						<svg class="arrow-prev">
+							<use href="./assets/svg/icons.svg#arrow-next"></use>
+						</svg></button>
+
+				</div>
+				<button class="button btn-portfolio">See more</button>
+			</section>
+
+			<!-- CONTACT -->
+			<section class="section contact">
+				<svg>
+					<use href="./assets/svg/elements-animated.svg#sun"></use>
+				</svg>
+				<h2>Let's create something <span>together!</span></h2>
+				<div class="window contact__window">
+					<h3>Contact</h3>
+					<div class="contact__metadata">
+						<div>
+							<svg>
+								<use href="./assets/svg/icons.svg#mail"></use>
+							</svg>
+							<p>em.majowska@gmail.com</p>
+						</div>
+						<div>
+							<svg>
+								<use href="./assets/svg/icons.svg#phone"></use>
+							</svg>
+							<p>+262 692 63 98 37</p>
+						</div>
+						<div>
+							<svg>
+								<use href="./assets/svg/icons.svg#github"></use>
+							</svg>
+							<p class="contact__text">/em-majowska</p>
+						</div>
+					</div>
+				</div>
+				<object type="image/svg+xml" data="./assets/svg/cat-animated.svg"></object>
+			</section>
+		</main>
+		<footer class="footer">
+			<p>Copyright &copy; 2025 Ewa Majowska</p>
+		</footer>
+	</div>
 </body>
 
 </html>

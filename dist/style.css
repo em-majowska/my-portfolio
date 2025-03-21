@@ -1,4 +1,6 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -23,11 +25,15 @@ img {
   max-width: 100%;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
