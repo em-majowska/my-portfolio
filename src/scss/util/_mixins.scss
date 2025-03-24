@@ -1,0 +1,15 @@
+@mixin grid($col) {
+  @for $i from 2 through $col {
+    &__item:nth-child(#{$i}) {
+      grid-column: $i;
+      grid-row: $i;
+    }
+  }
+}
+
+@mixin center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

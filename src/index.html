@@ -5,14 +5,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="/dist/style.css">
+	<link rel="stylesheet" href="/dist/css/style.css">
 	<title>Ewa Majowska</title>
 </head>
 
 <body>
 
 	<!-- HEADER -->
-	<a href="#" class="stt" title="Scroll to top"><svg>
+	<a href="#" class="stt" title="Scroll to top" aria-label="Scroll to top">
+		<svg>
 			<use href="./assets/svg/icons.svg#arrow-up"></use>
 		</svg></a>
 	<div class="wrapper">
@@ -23,49 +24,60 @@
 				<button type="button" class="menu-btn" aria-label="Open menu"><span class="menu-btn__burger"></span></button>
 
 				<nav class="nav">
-					<button type="button" class="menu-btn--exit">
-						<span class="menu-btn__burger"></span>
-					</button>
 					<ul class="nav-menu">
-						<li class="nav__item"><a href="" class="nav__link">about</a></li>
-						<li class="nav__item"><a href="" class="nav__link">code</a></li>
-						<li class="nav__item"><a href="" class="nav__link">portfolio</a></li>
-						<li class="nav__item"><a href="" class="nav__link">contact</a></li>
+						<li class="nav__item"><a href="#about-me" class="nav__link">about</a></li>
+						<li class="nav__item"><a href="#code" class="nav__link">code</a></li>
+						<li class="nav__item"><a href="#portfolio" class="nav__link">portfolio</a></li>
+						<li class="nav__item"><a href="#contact" class="nav__link">contact</a></li>
 					</ul>
 				</nav>
 			</div>
 			<section class="hero">
 				<div class="hero__text">
 					<p>Hello, I'm Ewa and </p>
-					<h1>I will help you build your <span class="accent">website</span></h1>
+					<h1>I'll help you build your <span class="accent">website</span></h1>
 				</div>
 				<div class="hero__img">
 					<img src="./assets/img/blob-mobile-img.png" alt="">
-					<div class="outline"><img src="./assets/svg/blob-mobile.svg" alt=""></div>
+					<object class="outline" type="image/svg+xml" data="./assets/svg/blob-mobile.svg"></object>
 				</div>
-				<img src="./assets/svg/lines.svg" alt="" class="lines">
+				<object class="lines" type="image/svg+xml" data="./assets/svg/lines.svg"></object>
 			</section>
 		</header>
-		<main>
-			<section class="section about-me">
-				<h2>About Me</h2>
-				<div class="widget">
-					<img src="./assets/img/my-photo.png" alt="This is me" class="widget_img">
+	</div>
+	<main>
+		<section class="section about-me" id="about-me">
+			<h2>About Me</h2>
+			<div class="widget">
+				<div class="widget__avatar">
+					<img src="./assets/img/my-photo.png" alt="This is me" class="widget__img">
 					<img src="./assets/svg/star.svg" alt="" class="widget__shape">
-					<object data="./assets/svg/text.svg" type=""></object>
+					<svg class="widget__mask" width="0" height="0">
+						<defs>
+							<clipPath id="star">
+								<path
+									d="M123.562 1.486a2 2 0 0 1 2.876 0l14.528 15.021a2 2 0 0 0 2.375.377l18.46-9.797a2 2 0 0 1 2.734.889l9.176 18.775a2 2 0 0 0 2.142 1.092l20.583-3.613a2 2 0 0 1 2.327 1.69l2.924 20.692a2 2 0 0 0 1.701 1.7l20.692 2.925a2 2 0 0 1 1.69 2.326l-3.613 20.584a2 2 0 0 0 1.092 2.142l18.775 9.176a2 2 0 0 1 .889 2.734l-9.797 18.46a2 2 0 0 0 .377 2.375l15.021 14.528a2 2 0 0 1 0 2.876l-15.021 14.528a2 2 0 0 0-.377 2.375l9.797 18.46a2 2 0 0 1-.889 2.734l-18.775 9.176a2 2 0 0 0-1.092 2.142l3.613 20.583a2 2 0 0 1-1.69 2.327l-20.692 2.924a2 2 0 0 0-1.701 1.701l-2.924 20.692a2 2 0 0 1-2.327 1.69l-20.583-3.613a2 2 0 0 0-2.142 1.092l-9.176 18.775a2 2 0 0 1-2.734.889l-18.46-9.797a2 2 0 0 0-2.375.377l-14.528 15.021a2 2 0 0 1-2.876 0l-14.528-15.021a2 2 0 0 0-2.375-.377l-18.46 9.797a2 2 0 0 1-2.734-.889l-9.176-18.775a2 2 0 0 0-2.142-1.092l-20.584 3.613a2 2 0 0 1-2.326-1.69l-2.924-20.692a2 2 0 0 0-1.7-1.701l-20.693-2.924a2 2 0 0 1-1.69-2.327l3.613-20.583a2 2 0 0 0-1.092-2.142l-18.775-9.176a2 2 0 0 1-.889-2.734l9.797-18.46a2 2 0 0 0-.377-2.375l-15.02-14.528a2 2 0 0 1 0-2.876l15.02-14.528a2 2 0 0 0 .377-2.375l-9.797-18.46a2 2 0 0 1 .889-2.734l18.775-9.176a2 2 0 0 0 1.092-2.142L24.23 53.563a2 2 0 0 1 1.69-2.326l20.692-2.924a2 2 0 0 0 1.7-1.7l2.925-20.693a2 2 0 0 1 2.326-1.69l20.584 3.613a2 2 0 0 0 2.142-1.092l9.176-18.775a2 2 0 0 1 2.734-.889l18.46 9.797a2 2 0 0 0 2.375-.377z" />
+							</clipPath>
+						</defs>
+					</svg>
 				</div>
-				<div class=" about-me__text">
-					<p>I am a Front-End Developer based in Saint Leu, Réunion Island.</p>
-					<p>Passioned by the languages, I graduated English Philology with Japanese at Silesian University.
-						Relocating to France motivated me to learn the local language and explore a new form of communication —
-						the
-						language of the web.</p>
-				</div>
-				<button type="button" class="button btn-cta">Contact Me</button>
-				<div class="about-me__decoration"><code>console.log('Hello World');</code></div>
-			</section>
-			<section class="section code">
+				<object class="widget__text" data="./assets/svg/text.svg" type="image/svg+xml"></object>
+			</div>
+			<div class="about-me__text">
+				<p>I am a Front-End Developer based in Saint Leu, Réunion Island.</p>
+				<p>Passioned by the languages, I graduated English Philology with Japanese at Silesian University.
+					Relocating to France motivated me to learn the local language and explore a new form of communication —
+					the
+					language of the web.
+				</p>
+			</div>
+			<button type="button" class="button btn-cta">Contact Me</button>
+			<div class="about-me__element"><code>console.log('Hello World');</code></div>
+		</section>
+		<section class="section code" id="code">
+			<div class="wrappper">
 				<h2>Code</h2>
+				<div class="circle"></div>
 				<ul class="code__list">
 					<li class="code__list__item">HTML5</li>
 					<li class="code__list__item">CSS3 & Sass</li>
@@ -75,13 +87,15 @@
 					<li class="code__list__item">Node.js</li>
 					<li class="code__list__item">Figma</li>
 				</ul>
-				<span class="spark-1"></span>
-				<span class="spark-2"></span>
-				<div class="window window--browser">
+				<img class="spark spark-1" src="./assets/svg/spark.svg" alt="">
+				<img class="spark spark-2" src="./assets/svg/spark.svg" alt="">
+				<div class="window--browser">
 					<img src="./assets/svg/window.svg">
+					<code>&lt;h1&gt;Hello World&lt;/h1&gt;</code>
 				</div>
-			</section>
-			<section class="section portfolio">
+		</section>
+		<div class="wrapper">
+			<section class="section portfolio" id="portfolio">
 				<h2>Portfolio</h2>
 				<div class="portfolio__gallery">
 					<div class="cards">
@@ -91,22 +105,24 @@
 						<div class="card"></div>
 						<div class="card"></div>
 					</div>
-					<button class="button btn-prev">
-						<svg class="arrow-prev">
-							<use href="./assets/svg/icons.svg#arrow-prev"></use>
-						</svg>
-					</button>
-					<button class="button btn-next">
-						<svg class="arrow-prev">
-							<use href="./assets/svg/icons.svg#arrow-next"></use>
-						</svg></button>
+					<div class="buttons-gallery">
+						<button class="button">
+							<svg>
+								<use href="./assets/svg/icons.svg#arrow-prev"></use>
+							</svg>
+						</button>
+						<button class="button">
+							<svg>
+								<use href="./assets/svg/icons.svg#arrow-next"></use>
+							</svg></button>
+					</div>
 
 				</div>
-				<button class="button btn-portfolio">See more</button>
+				<button class="button btn-more">See more</button>
 			</section>
 
 			<!-- CONTACT -->
-			<section class="section contact">
+			<section class="section contact" id="contact">
 				<svg>
 					<use href="./assets/svg/elements-animated.svg#sun"></use>
 				</svg>
@@ -115,19 +131,19 @@
 					<h3>Contact</h3>
 					<div class="contact__metadata">
 						<div>
-							<svg>
+							<svg class="icon">
 								<use href="./assets/svg/icons.svg#mail"></use>
 							</svg>
 							<p>em.majowska@gmail.com</p>
 						</div>
 						<div>
-							<svg>
+							<svg class="icon">
 								<use href="./assets/svg/icons.svg#phone"></use>
 							</svg>
 							<p>+262 692 63 98 37</p>
 						</div>
 						<div>
-							<svg>
+							<svg class="icon">
 								<use href="./assets/svg/icons.svg#github"></use>
 							</svg>
 							<p class="contact__text">/em-majowska</p>
@@ -136,11 +152,11 @@
 				</div>
 				<object type="image/svg+xml" data="./assets/svg/cat-animated.svg"></object>
 			</section>
-		</main>
-		<footer class="footer">
-			<p>Copyright &copy; 2025 Ewa Majowska</p>
-		</footer>
-	</div>
+	</main>
+	<footer class="footer">
+		<p>Copyright &copy; 2025 Ewa Majowska</p>
+	</footer>
+	</d>
 </body>
 
 </html>

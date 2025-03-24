@@ -1,19 +1,19 @@
-	<svg width="350" height="350" viewBox="0 0 170 170" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-		<path id="curve" d="M20,80 a65,65 0 1,1 130,0 a65,65 0 1,1 -130,0" />
+	<svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<path id="curve" d="M16,80 a65,65 0 1,1 130,0 a65,65 0 1,1 -130,0" />
 
-		<text fill="black" font-size="22px" font-weight="500">
-			<textPath xlink:href="#curve" startOffset="0%">Hello</textPath>
+		<text fill="hsl(44, 58%, 6%)" font-size="18px" font-weight="700" lang="en">
+			<textPath xlink:href="#curve" startOffset="3%">Hello</textPath>
 		</text>
 
-		<text fill="black" font-size="22px" font-weight="500">
-			<textPath xlink:href="#curve" startOffset="17%">Cześć</textPath>
+		<text fill="hsl(44, 0%, 50%)" font-size="18px" font-weight="700" lang="pl">
+			<textPath xlink:href="#curve" startOffset="18%">Cześć</textPath>
 		</text>
 
-		<text fill="black" font-size="22px" font-weight="500">
-			<textPath xlink:href="#curve" startOffset="34%">Bonjour</textPath>
+		<text fill="hsl(44, 58%, 6%)" font-size="18px" font-weight="700" lang="fr-FR">
+			<textPath xlink:href="#curve" startOffset="33%">Bonjour</textPath>
 		</text>
 
-		<text fill="black" font-size="16px" font-weight="500">
-			<textPath xlink:href="#curve" startOffset="57%">おはようございます</textPath>
+		<text fill="hsl(44, 58%, 6%)" font-size="12px" letter-spacing="4px" lang="ja-Hira">
+			<textPath xlink:href="#curve" startOffset="57%"  font-family="Inter">おはようございます</textPath>
 		</text>
 	</svg>
