@@ -1,1 +1,10 @@
-<svg width="256" height="257" fill="none"><circle cx="128" cy="128.5" r="95.801" fill="#FFB531"/><path stroke="#FFB531" stroke-dasharray="0.1 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M128 26.436c-53.42 0-102.064 40.826-102.064 102.064 0 55.158 46.906 102.064 102.064 102.064S230.064 185.395 230.064 128.5 181.421 26.436 128 26.436"/><path stroke="#FFB531" stroke-dasharray="0.1 10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M128 17.845c-58.098 0-111 44.4-111 111 0 59.987 51.013 111 111 111s111-49.124 111-111c0-61.877-52.902-111-111-111"/><path stroke="#FFB531" stroke-dasharray="0.1 10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M120.455 8.417C57.603 12.367 3.39 63.996 7.918 136.045c4.077 64.896 62.732 116.615 127.627 112.537 64.896-4.078 116.744-60.688 112.537-127.628S183.306 4.468 120.455 8.417"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="257" viewBox="0 0 256 257" fill="none" >
+<circle cx="130" cy="130" r="95" fill="#FFB531"/>
+<circle cx="130" cy="130" r="105" stroke="#FFB531" stroke-dasharray="0.1 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" fill="none">
+<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="360 130 130" to="0 130 130" dur="20s" additive="sum" repeatCount="indefinite" />
+</circle>
+<circle cx="130" cy="130" r="115" stroke="#FFB531" stroke-dasharray="0.1 10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/>
+<circle cx="130" cy="130" r="125" stroke="#FFB531" stroke-dasharray="0.1 10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none"/>
+
+
+					</svg>

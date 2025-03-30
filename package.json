@@ -12,5 +12,8 @@
   "description": "",
   "devDependencies": {
     "sass": "^1.85.1"
+  },
+  "dependencies": {
+    "@lottiefiles/dotlottie-web": "^0.41.0"
   }
 }
