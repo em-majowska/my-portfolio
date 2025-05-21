@@ -1,0 +1,68 @@
+.card-29 {
+  .card__top {
+    background: var(--saturated);
+  }
+  .frame {
+    position: absolute;
+    top: 15%;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .search-bar {
+    width: 250px;
+    padding: var(--padding-outline);
+    border-block-end: 1px solid var(--saturated);
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  input {
+    border: none;
+    margin-inline: 10px 15px;
+    font-weight: 600;
+    flex: 1;
+
+    &::placeholder {
+      color: hsl(from var(--saturated) h s 35%);
+    }
+
+    &:focus-visible {
+      border: none;
+    }
+  }
+
+  i {
+    position: relative;
+    height: 20px;
+    font-size: 1.25rem;
+  }
+
+  .accordeon {
+    display: none;
+    padding-inline: 15px;
+    font-size: 0.825rem;
+    background-color: white;
+  }
+
+  .accordeon * {
+    padding-block: 10px;
+    cursor: pointer;
+
+    &:hover,
+    &.animate {
+      color: hsl(from var(--saturated) h s 35%);
+    }
+  }
+
+  input,
+  i,
+  .accordeon *:hover {
+    color: hsl(from var(--saturated) h s 35%);
+  }
+
+  .active-search {
+    font-weight: 600;
+  }
+}

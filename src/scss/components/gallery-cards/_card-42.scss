@@ -1,0 +1,51 @@
+.card-42 {
+  .card__top {
+    padding-block: 1rem;
+  }
+
+  .sky {
+    position: relative;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background: linear-gradient(
+      to bottom,
+      hsl(199, 49%, 22%) 0%,
+      hsl(190, 43%, 60%) 100%
+    );
+    overflow: hidden;
+  }
+
+  .star42 {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    border-radius: 1px;
+    background-color: #fff;
+    animation: spark42 4s ease-in-out infinite;
+  }
+
+  .shooting-star {
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    top: 30%;
+    left: -220px;
+    transform: rotate(20deg);
+    background: url(https://100dayscss.com/codepen/shooting-star.png) center;
+    animation: shoot42 20s infinite;
+  }
+
+  @keyframes spark42 {
+    50% {
+      opacity: 0.2;
+    }
+  }
+
+  @keyframes shoot42 {
+    10%,
+    100% {
+      transform: rotate(20deg) translateX(550px);
+    }
+  }
+}

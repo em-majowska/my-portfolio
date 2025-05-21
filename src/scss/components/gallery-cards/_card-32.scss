@@ -1,0 +1,115 @@
+.card-32 {
+  background: linear-gradient(to top right, var(--secondary), var(--accent));
+
+  .center {
+    width: 150px;
+    height: 50px;
+    border-radius: 40px;
+    background-color: #fff;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .counter {
+    height: 40px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+    font-size: 1.5rem;
+    flex: 1;
+  }
+
+  button.btn {
+    position: relative;
+    border: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1;
+  }
+
+  .btn::after,
+  .btn::before {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: calc(50% - 10px);
+    display: block;
+    content: '';
+    width: 20px;
+    height: 2px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .plus::after,
+  .plus::before,
+  .btn.plus:is(:hover, :focus-visible) {
+    background-color: rgb(126, 201, 14);
+  }
+
+  .minus::after {
+    height: 2px;
+    background-color: tomato;
+  }
+
+  .plus::after {
+    transform: rotate(-90deg);
+  }
+
+  .btn.plus:is(:hover, :focus-visible)::before,
+  .btn.plus:is(:hover, :focus-visible)::after,
+  .minus:is(:hover, :focus-visible)::after {
+    background-color: #fff;
+  }
+
+  .btn.minus:is(:hover, :focus-visible) {
+    background-color: tomato;
+  }
+
+  .counter span {
+    display: block;
+    width: 60px;
+    position: absolute;
+    line-height: 40px;
+    transform-origin: center;
+    text-align: center;
+  }
+
+  .disappearGrow {
+    animation: disappear32 0.4s ease-in forwards;
+  }
+  .appearGrow {
+    animation: appear32 0.4s ease-out forwards;
+  }
+  .disappearShrink {
+    animation: appear32 0.4s ease-in reverse forwards;
+  }
+  .appearShrink {
+    animation: disappear32 0.4s ease-out reverse forwards;
+  }
+
+  @keyframes appear32 {
+    from {
+      transform: scale(0.25);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes disappear32 {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: scale(1.75);
+      opacity: 0;
+    }
+  }
+}

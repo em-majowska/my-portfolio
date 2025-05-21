@@ -1,0 +1,103 @@
+@use '../../util' as u;
+
+.card-34 {
+  &:is(:hover, .animate, :focus-visible) {
+    .a1,
+    .a2,
+    .a3,
+    .line {
+      animation-play-state: running;
+    }
+  }
+
+  &.reset {
+    .a1,
+    .a2,
+    .a3,
+    .line {
+      animation: none;
+    }
+  }
+
+  .card__top {
+    background: var(--accent);
+  }
+
+  .frame {
+    @include u.center;
+    position: relative;
+    width: clamp(260px, 70%, 320px);
+    height: 100px;
+    box-shadow: none;
+  }
+  .word {
+    display: grid;
+    width: 224px;
+    height: 53px;
+    stroke: var(--accent);
+    stroke-dasharray: 270;
+    stroke-dashoffset: 0;
+
+    & > * {
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+      width: 224px;
+      height: 53px;
+    }
+  }
+
+  .a1 {
+    fill: #fff;
+    stroke-width: 18;
+    animation: fill34 1.2s ease-in-out 0.5s both;
+    animation-play-state: paused;
+  }
+
+  .a2 {
+    fill: none;
+    stroke-width: 12;
+    animation: fill34 1.7s ease-in-out 0.5s both;
+    animation-play-state: paused;
+  }
+
+  .a3 {
+    fill: none;
+    stroke-width: 18;
+    animation: fill34 2.2s ease-in-out 0.5s both;
+    animation-play-state: paused;
+  }
+
+  @keyframes fill34 {
+    from {
+      stroke-dashoffset: 0;
+    }
+    to {
+      stroke-dashoffset: 270;
+    }
+  }
+
+  .line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    top: 0;
+    animation: line34 1.5s ease-out 0.5s forwards;
+    animation-play-state: paused;
+  }
+  .line:last-child {
+    top: unset;
+    bottom: 0;
+  }
+
+  @keyframes line34 {
+    from {
+      transform: translateX(-50%) scaleX(0);
+    }
+    to {
+      transform: translateX(-50%) scaleX(1);
+    }
+  }
+}

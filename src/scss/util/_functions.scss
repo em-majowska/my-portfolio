@@ -1,0 +1,7 @@
+@function outline-clr($color) {
+  @if (lightness($color) > 50) {
+    @return var(--text);
+  } @else {
+    @return var(--background);
+  }
+}

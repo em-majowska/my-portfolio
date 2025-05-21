@@ -1,4 +1,9 @@
-@mixin table($col) {
+@use 'sass:list';
+@use 'functions' as f;
+
+// GRID LAYOUTS
+
+@mixin list-tab($col) {
   display: grid;
   width: 100%;
   row-gap: 1.25rem;
@@ -11,44 +16,75 @@
     }
   }
 }
+
+@mixin center {
+  display: grid;
+  place-items: center;
+}
+
+@mixin grid-center-vertical {
+  display: grid;
+  width: 100%;
+  gap: 2rem;
+  // justify-content: space-around;
+  align-items: center;
+}
+
+// FLEX LAYOUTS
+
+@mixin flex-center-vertical {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+// COLOR-THEME OUTLINE
+
+@mixin outline-theme($bg) {
+  background-color: $bg;
+
+  &:focus-within,
+  *:focus-visible {
+    outline-color: f.outline-clr($bg);
+  }
+}
+
+// NEO BRUTALIST SHADOW
+
 @mixin box-shadow {
-  position: absolute;
+  @include pseudo;
   top: 3px;
   left: 3px;
-  content: '';
   width: calc(100% + 5px);
   height: calc(100% + 5px);
   background-color: var(--text);
   z-index: -1;
 }
 
-@mixin center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
+// NEO BRUTALIST WINDOW
+
 @mixin window($color) {
   position: relative;
-  width: 305px;
-  border: 3px solid var(--text);
-  border-radius: 25px;
+  width: clamp(305px, 60vw, 570px);
+  border: var(--border);
+  border-radius: var(--border-radius);
   background-color: $color;
   z-index: 1;
 
   &::after {
     @include box-shadow;
     left: 5px;
-    border-radius: 25px;
+    border-radius: var(--border-radius);
   }
 }
 
-@mixin grid-evenly {
-  display: grid;
-  gap: 2rem;
-  justify-content: space-around;
-  align-items: center;
+@mixin pseudo {
+  position: absolute;
+  content: '';
 }
+
+// H2 HIGHLIGHT
 
 @mixin highlight {
   display: block;
@@ -57,6 +93,57 @@
   bottom: 22px;
   height: 12px;
   width: calc(100% + 0.5em);
-  background-color: var(--accent);
+  // background-color: var(--saturated);
+  background-image: linear-gradient(
+    to left,
+    var(--secondary) 10%,
+    var(--accent) 100%
+  );
   z-index: -1;
+}
+
+// RANDOM DELAY
+
+@mixin random-duration($item, $count, $animation) {
+  $a-duration: 5s;
+
+  @for $i from 1 through $count {
+    #{$item}:nth-of-type(#{$i}) {
+      animation: $animation
+        ($a-duration + ($i - 1) * 1.25)
+        ease-in-out
+        infinite
+        alternate;
+    }
+  }
+}
+
+@mixin random-delay($item, $a-delay, $from, $to) {
+  @for $i from $from through $to {
+    #{$item}:nth-child(#{$i}) {
+      animation-delay: calc($a-delay * ($i - 1));
+    }
+  }
+}
+
+// PROJECT-10
+
+@mixin populate-dots($num) {
+  $rotate: 15deg;
+  @for $i from 2 through $num {
+    .dots .dots-#{$i} {
+      transform: rotate($rotate);
+    }
+    $rotate: $rotate + 15deg;
+  }
+}
+
+$color-palette: --text, --accent, --secondary, --primary, --saturated;
+
+@mixin set-color-palette {
+  @for $i from 1 through list.length($color-palette) {
+    span:nth-child(#{$i}) {
+      background-color: var(#{list.nth($color-palette, $i)});
+    }
+  }
 }

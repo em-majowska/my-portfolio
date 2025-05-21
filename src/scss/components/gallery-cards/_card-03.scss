@@ -1,0 +1,173 @@
+@use '../../util' as u;
+
+article.card-03 {
+
+  &:is(:hover, .animate, :focus-visible) {
+    .sky,
+    .sun,
+    .shadow,
+    .pyr,
+    .pyr-right {
+      animation-play-state: running;
+    }
+  }
+
+  .card__top {
+    background-color: hsl(0, 0%, 15%);
+  }
+  .frame {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+  }
+
+  .sky {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #7ddffc;
+    animation: disappear3 4s ease-in-out infinite;
+    animation-play-state: paused;
+  }
+
+  .sun,
+  .sand,
+  .shadow,
+  .pyr,
+  .pyr-right {
+    position: absolute;
+  }
+
+  .sun,
+  .shadow,
+  .pyr {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .sun {
+    top: 5%;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: #ffef00;
+    animation: sun 4s ease-in-out infinite;
+    animation-play-state: paused;
+  }
+
+  .sand {
+    bottom: 0;
+    height: 56px;
+    width: 100%;
+    background-color: #f0de75;
+  }
+
+  .shadow {
+    top: 124px;
+    width: 348px;
+    height: 35px;
+    background-color: #9d9252ab;
+    clip-path: polygon(33.33% 0, 66.66% 0, 100% 10%);
+    animation: shadow3 4s ease-in-out infinite;
+    animation-play-state: paused;
+  }
+
+  .pyr {
+    width: 116px;
+    background: #f2f2f2;
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    animation: pyr 4s ease-in-out infinite;
+    animation-play-state: paused;
+  }
+
+  .pyr,
+  .pyr-right {
+    height: 57px;
+    bottom: 55.5px;
+  }
+
+  .pyr-right {
+    left: 50%;
+    width: 58px;
+    background-color: #b6b5b6;
+    clip-path: polygon(25% 100%, 0 0, 100% 100%);
+    animation: pyr-right 4s ease-in-out infinite;
+    animation-play-state: paused;
+  }
+
+  @keyframes pyr-right {
+    0% {
+      background-color: #b6b5b6;
+    }
+    25% {
+      background-color: #dedbdb;
+    }
+    50%,
+    75%,
+    100% {
+      background-color: #f2f2f2;
+    }
+  }
+
+  @keyframes pyr {
+    0%,
+    25% {
+      background-color: #f2f2f2;
+    }
+
+    75% {
+      background-color: #dedbdb;
+    }
+    100% {
+      background-color: #b6b5b6;
+    }
+  }
+
+  @keyframes disappear3 {
+    30%,
+    65% {
+      opacity: 1;
+    }
+
+    0%,
+    90%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes sun {
+    0% {
+      transform-origin: 0 125px;
+      transform: rotate(-90deg);
+    }
+    30% {
+      transform-origin: 0 125px;
+      transform: rotate(-30deg);
+    }
+    100% {
+      transform-origin: 0 125px;
+      transform: rotate(90deg);
+    }
+  }
+
+  @keyframes shadow3 {
+    0% {
+      clip-path: polygon(33.33% 0, 66.66% 0, 100% 0%);
+    }
+    30% {
+      height: 35px;
+      clip-path: polygon(33.33% 0, 66.66% 0, 90% 100%);
+    }
+    50% {
+      height: 12px;
+    }
+    65% {
+      height: 20px;
+      clip-path: polygon(33.33% 0, 66.66% 0, 25% 100%);
+    }
+    90% {
+      clip-path: polygon(33.33% 0, 66.66% 0, 0% 0%);
+    }
+  }
+}

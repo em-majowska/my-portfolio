@@ -1,5 +1,5 @@
 	<svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-		<path id="curve" d="M16,80 a65,65 0 1,1 130,0 a65,65 0 1,1 -130,0" />
+		<path id="curve" d="M16 80 a65 65 0 1 1 130 0 a65 65 0 1 1 -130 0" />
 
 		<text fill="hsl(44, 58%, 6%)" font-size="18px" font-weight="700" lang="en">
 			<textPath xlink:href="#curve" startOffset="3%">Hello</textPath>

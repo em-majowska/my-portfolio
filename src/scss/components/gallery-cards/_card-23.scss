@@ -1,0 +1,231 @@
+.card-23 {
+  &:is(:hover, .animate, :focus-visible) {
+    .bracket::before,
+    .bracket::after,
+    .ball,
+    .line-left,
+    .line-right,
+    .bracket,
+    .center,
+    .top.small,
+    .bottom.small {
+      animation-play-state: running;
+    }
+  }
+  &.reset {
+    .bracket::before,
+    .bracket::after,
+    .ball,
+    .line-left,
+    .line-right,
+    .bracket,
+    .center,
+    .top.small,
+    .bottom.small {
+      animation: none;
+    }
+  }
+
+  .card__top {
+    background-color: var(--saturated);
+    text-align: center;
+    color: white;
+
+    span {
+      display: block;
+      text-transform: uppercase;
+    }
+  }
+  .wrapper {
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(250px, 275px, 70%);
+    height: auto;
+  }
+
+  .center {
+    margin-block: -5px;
+    font-weight: 800;
+    font-size: 2.225rem;
+  }
+
+  .bracket::before,
+  .bracket::after {
+    display: block;
+    position: absolute;
+    content: '';
+    background-color: white;
+    height: 4px;
+    width: 0;
+    animation: bracket 0.5s linear forwards 1.8s;
+    animation-play-state: paused;
+  }
+
+  .bracket::after {
+    bottom: 0;
+  }
+
+  .bracket-right {
+    right: 0;
+  }
+
+  .bracket-left::before,
+  .bracket-left::after {
+    transform-origin: left;
+  }
+
+  .bracket-right::before,
+  .bracket-right::after {
+    right: 0;
+    transform-origin: right;
+  }
+
+  .ball,
+  .line,
+  .bracket {
+    position: absolute;
+    background-color: white;
+    top: 52%;
+  }
+
+  .ball {
+    left: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: ball 0.7s ease-in-out forwards;
+    animation-play-state: paused;
+  }
+  .line {
+    height: 4px;
+    transform: translate(0%, -50%);
+  }
+  .line-left {
+    animation: line-left 1.2s ease-in-out forwards 0.4s;
+    animation-play-state: paused;
+  }
+  .line-right {
+    animation: line-right 1.2s ease-in-out forwards 0.4s;
+    animation-play-state: paused;
+  }
+  .bracket {
+    width: 4px;
+    height: 4px;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    animation: unfold 0.4s ease-in-out forwards 1.5s;
+    animation-play-state: paused;
+  }
+  .center {
+    transform: scaleY(0);
+    animation: big-text 0.4s ease-in-out forwards 1.5s;
+    animation-play-state: paused;
+  }
+
+  .top.small,
+  .bottom.small {
+    font-size: 1.275rem;
+    font-weight: 200;
+  }
+  .top.small {
+    opacity: 0;
+    animation: top-small 0.8s ease-in-out forwards 2.2s;
+    animation-play-state: paused;
+  }
+
+  .bottom.small {
+    opacity: 0;
+    animation: bottom-small 0.8s ease-in-out forwards 2.2s;
+    animation-play-state: paused;
+  }
+
+  @keyframes ball {
+    30% {
+      width: 60px;
+      height: 60px;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      width: 4px;
+      height: 4px;
+    }
+  }
+  @keyframes line-left {
+    0% {
+      left: 50%;
+      right: 50%;
+    }
+    50% {
+      left: 0;
+      right: 50%;
+    }
+    100% {
+      left: 0;
+      right: 100%;
+    }
+  }
+  @keyframes line-right {
+    0% {
+      left: 50%;
+      right: 50%;
+    }
+    50% {
+      left: 50%;
+      right: 0;
+    }
+    100% {
+      left: 100%;
+      right: 0;
+    }
+  }
+  @keyframes unfold {
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      height: 70px;
+    }
+  }
+  @keyframes big-text {
+    0% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+  @keyframes bracket {
+    100% {
+      width: 25px;
+    }
+  }
+  @keyframes top-small {
+    0% {
+      transform: translateX(-30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes bottom-small {
+    0% {
+      transform: translateX(30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+}

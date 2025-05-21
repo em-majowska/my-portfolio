@@ -1,0 +1,329 @@
+article.card-09 {
+  &:is(:hover, .animate, :focus-visible) {
+    .moon,
+    .drop.big,
+    .drop.mid,
+    .drop.small {
+      animation-play-state: running;
+    }
+  }
+
+  .card__top {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 64px;
+    color: hsl(0, 0%, 100%);
+    background: hsl(224, 37%, 16%);
+    color: #333;
+    font-weight: 300;
+  }
+
+  .widget {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .moon {
+    position: absolute;
+    top: 200px;
+    left: 15%;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: hsl(51, 76%, 80%);
+    box-shadow: 0 0 10px hsl(51, 76%, 80%);
+    overflow: hidden;
+    animation: moon-up 1s linear forwards;
+    animation-play-state: paused;
+  }
+
+  .hole {
+    position: absolute;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    background-color: hsl(50, 64%, 72%);
+  }
+
+  .hole-1 {
+    top: 12px;
+    height: 12px;
+    width: 12px;
+  }
+  .hole-2 {
+    top: 10px;
+    left: 45%;
+    height: 12px;
+    width: 12px;
+  }
+  .hole-3 {
+    right: 12px;
+    top: 20px;
+  }
+  .hole-4 {
+    right: -2px;
+    top: 28px;
+  }
+  .hole-5 {
+    right: 10px;
+    bottom: 24px;
+  }
+  .hole-6 {
+    left: 15px;
+    bottom: 20px;
+  }
+  .hole-7 {
+    right: 28px;
+    bottom: 8px;
+  }
+  .hole-8 {
+    width: 12px;
+    height: 12px;
+    bottom: 0;
+    left: 10px;
+  }
+  .hole-9 {
+    width: 5px;
+    height: 5px;
+    top: 35px;
+    right: 25px;
+  }
+  .hole-10 {
+    width: 4px;
+    height: 4px;
+    top: 25px;
+    left: 18px;
+  }
+  .hole-11 {
+    width: 6px;
+    height: 6px;
+    left: 28px;
+    top: 28px;
+  }
+
+  .clouds-bg {
+    position: absolute;
+    bottom: -1rem;
+    width: 100%;
+    height: 55%;
+    background-color: hsl(224, 35%, 23%);
+    clip-path: path(
+      'M 0 220 A 55,45 0,0,1 220,50 M 200 75 a 50,30 0,0,1 290,35'
+    );
+  }
+
+  .clouds {
+    position: absolute;
+    bottom: -2rem;
+    width: 100%;
+    height: 50%;
+    background-color: hsl(224, 32%, 28%);
+    clip-path: path(
+      'M 0 220 A 85,55 0,0,1 120,50 M 80 100 a 40,30 0,0,1 290,35 M 300 130 a 40,30 0,0,1 300, 35'
+    );
+  }
+
+  .rain {
+    position: absolute;
+    left: -100px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .drop {
+    position: absolute;
+    border-radius: 50%;
+    top: -20px;
+    background-color: hsl(207.54deg 91.04% 73.73%);
+    transform-origin: bottom;
+  }
+
+  .drop::before {
+    position: absolute;
+    clip-path: polygon(0 120%, 50% 0, 100% 120%);
+    display: block;
+    content: '';
+    background-color: hsl(207.54deg 91.04% 73.73%);
+  }
+
+  .drop.big {
+    width: 10px;
+    height: 10px;
+    animation: drop9 1s linear infinite;
+    animation-play-state: paused;
+  }
+
+  .drop.big::before {
+    top: -8px;
+    height: 10px;
+    width: 10px;
+  }
+
+  .drop.big:nth-child(2),
+  .drop.small:nth-of-type(12) {
+    animation-delay: 0.25s;
+  }
+  .drop.big:nth-child(3),
+  .drop.small:nth-of-type(13) {
+    animation-delay: 1.15s;
+  }
+  .drop.big:nth-child(4),
+  .drop.small:nth-of-type(14) {
+    animation-delay: 0.55s;
+  }
+  .drop.big:nth-child(5),
+  .drop.small:nth-of-type(15) {
+    animation-delay: 1s;
+  }
+  .drop.big:nth-child(6),
+  .drop.small:nth-of-type(11) {
+    animation-delay: 0.75s;
+  }
+  .drop.big:nth-child(7),
+  .drop.mid:nth-of-type(10) {
+    animation-delay: 0.5s;
+  }
+  .drop.big:nth-child(8),
+  .drop.mid:nth-of-type(9) {
+    animation-delay: 1.25s;
+  }
+  .drop.big:nth-child(9),
+  .drop.mid:nth-of-type(8) {
+    animation-delay: 0.9s;
+  }
+  .drop.big:nth-child(10),
+  .drop.mid:nth-of-type(7) {
+    animation-delay: 0.6s;
+  }
+  .drop.big:nth-child(11),
+  .drop.mid:nth-of-type(6) {
+    animation-delay: 2s;
+  }
+  .drop.big:nth-child(12),
+  .drop.mid:nth-of-type(5) {
+    animation-delay: 3.25s;
+  }
+  .drop.big:nth-child(13),
+  .drop.mid:nth-of-type(4) {
+    animation-delay: 2s;
+  }
+  .drop.big:nth-child(14),
+  .drop.mid:nth-of-type(3) {
+    animation-delay: 0.75s;
+  }
+  .drop.big:nth-child(15),
+  .drop.mid:nth-of-type(2) {
+    animation-delay: 1.65s;
+  }
+
+  .drop.mid {
+    width: 8px;
+    height: 8px;
+    opacity: 0.3;
+    animation: drop9 1.7s linear infinite;
+    animation-play-state: paused;
+  }
+
+  .drop.mid::before {
+    top: -6px;
+    height: 8px;
+    width: 8px;
+  }
+
+  .drop.small {
+    width: 5px;
+    height: 5px;
+    opacity: 0.3;
+    animation: drop9 2.5s linear infinite;
+    animation-play-state: paused;
+  }
+
+  .drop.small::before {
+    top: -4px;
+    height: 5px;
+    width: 5px;
+  }
+
+  /* INFO */
+
+  .card {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    color: hsl(224, 32%, 28%);
+    line-height: 1.2;
+
+    &__wrapper {
+      width: 100%;
+      max-width: 350px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 10px;
+    }
+  }
+
+  .today {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 7px;
+    align-items: center;
+    text-wrap: nowrap;
+  }
+
+  .today .temp {
+    font-size: 2.25rem;
+  }
+
+  .more-info span {
+    display: block;
+  }
+
+  .future {
+    font-size: 15px;
+  }
+  .day {
+    display: grid;
+    grid-template-columns: 35px auto;
+    grid-gap: 5px;
+    min-width: 98px;
+  }
+
+  .day > *,
+  .name {
+    text-align: right;
+  }
+
+  .day .deg {
+    font-weight: 400;
+  }
+}
+
+// ANIMATIONS
+
+@keyframes moon-up {
+  100% {
+    top: 40px;
+    left: 20%;
+  }
+}
+
+@keyframes drop9 {
+  0% {
+    transform: rotate(15deg) translateX(0);
+  }
+  80% {
+    top: 106%;
+    transform: rotate(15deg) translateX(-70px) scale(1);
+  }
+  100% {
+    top: 106%;
+    transform: rotate(15deg) translateX(-70px) scale(3, 0);
+  }
+}

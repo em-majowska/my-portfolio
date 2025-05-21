@@ -1,0 +1,286 @@
+@use 'mixins' as u;
+
+header,
+main,
+section,
+footer {
+  container-type: inline-size;
+}
+
+header {
+  container-name: header;
+}
+
+main {
+  container-name: main;
+}
+
+footer {
+  container-name: footer;
+}
+
+@container header (min-width: calc(680px - 2rem)) {
+  body {
+    .menu-btn {
+      display: none;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-start;
+
+      .navbar {
+        margin-inline: 0 2rem;
+      }
+    }
+
+    nav ul.menu {
+      position: initial;
+      display: flex;
+      padding: 0;
+      padding-inline: var(--padding-outline);
+      padding-block-end: var(--padding-outline);
+      flex: 1;
+      max-width: 500px;
+      width: auto;
+      transform: none;
+      border-radius: 0;
+      box-shadow: none;
+      animation: none;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      & .menu__item {
+        display: flex;
+      }
+
+      & .menu__link {
+        position: relative;
+        padding: 0.5rem;
+
+        &::after {
+          @include u.pseudo;
+          left: 0;
+          bottom: 0;
+          height: 0;
+          width: 100%;
+          background-color: var(--accent);
+          transition: height 0.3s ease-in-out;
+        }
+
+        &:active,
+        &:hover {
+          background-color: transparent;
+
+          &::after {
+            height: 5px;
+          }
+        }
+      }
+    }
+
+    .color-palette {
+      margin-left: auto;
+    }
+
+    header .hero .wrapper {
+      margin-block: 0rem 5rem;
+      gap: 2rem;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      justify-content: space-between;
+      max-width: 1200px;
+    }
+
+    .hero__text {
+      margin-block-start: 3em;
+      flex: 1;
+
+      h1 {
+        line-height: 1.2;
+      }
+
+      .btn {
+        display: grid;
+        margin-block-start: 9rem;
+        margin-inline-start: auto;
+      }
+    }
+
+    .hero__img {
+      top: 0rem;
+
+      .outline {
+        top: unset;
+        bottom: 0;
+        right: -2rem;
+        height: 105%;
+        width: 110%;
+
+        path {
+          stroke-width: 2;
+          transform-origin: 45% 100%;
+        }
+      }
+    }
+  }
+}
+
+@container header (min-width: calc(1000px - 2rem)) {
+  body {
+    nav {
+      padding-inline: 1rem;
+
+      .color-palette {
+        margin-block-end: -1rem;
+      }
+
+      .logo {
+        width: 70px;
+        height: 70px;
+        padding-inline-start: 0;
+      }
+
+      .navbar {
+        padding-inline-start: 0;
+      }
+    }
+    .hero__img {
+      right: -5rem;
+    }
+
+    .color-palette {
+      display: flex;
+    }
+  }
+}
+
+@container footer (min-width: 1000px) {
+  body {
+    .footer__wrapper {
+      justify-content: center;
+    }
+  }
+}
+
+// MAIN
+
+@container main (min-width: 1000px) {
+  body {
+    .about-me {
+      h3 {
+        position: relative;
+        display: flex;
+        padding-inline-end: 6rem;
+
+        justify-content: space-between;
+        font-size: 3rem;
+        font-weight: 500;
+
+        @include u.random-delay(span, 0.5s, 1, 3);
+
+        & > *:not(:last-child) {
+          transform: translateY(30px);
+          opacity: 0;
+
+          animation: pop-up 0.4s ease-out forwards;
+        }
+
+        span[lang='pl'] {
+          rotate: -10deg;
+
+          color: hsl(from var(--text) h s l / 0.6);
+        }
+
+        span[lang='fr-FR'] {
+          rotate: 10deg;
+        }
+
+        span[lang='ja-Hira'] {
+          position: absolute;
+          right: 0;
+          top: 7rem;
+          width: 3.5rem;
+          font-family: 'MS Gothic', Helvetica, sans-serif;
+          font-size: 2.5rem;
+          height: 0;
+          animation: unroll 2s ease-out 2s forwards;
+          overflow: cover;
+        }
+
+        @keyframes unroll {
+          to {
+            height: 650px;
+          }
+        }
+      }
+    }
+    .wrapper {
+      .about-me__container {
+        position: relative;
+        margin-block-start: 0;
+        width: 87%;
+      }
+      .about-me__frame {
+        width: 100%;
+      }
+    }
+    .container {
+      position: absolute;
+      top: 5em;
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 54%;
+      width: 100%;
+    }
+    .widget {
+      max-width: unset;
+      padding-inline: 2em 3em;
+
+      // position: absolute;
+
+      &__frame {
+        position: relative;
+
+        width: 87%;
+        height: auto;
+
+        // background: top center / contain no-repeat
+        //   url('../../src/assets/svg/frame-about.svg');
+
+        & > * {
+          display: inline-block;
+          margin-inline: 0;
+        }
+      }
+
+      &__text {
+        display: none;
+      }
+
+      &__img {
+        width: 380px;
+      }
+    }
+
+    .about-me__text {
+      // position: absolute;
+      right: 0;
+      margin-inline: auto;
+      padding-inline: 2em;
+      max-width: unset;
+      p {
+        min-width: 30ch;
+      }
+    }
+  }
+}
+
+// CSS CHALLENGE GALLERY
+
+@container main (min-width: 1000px) {
+  body .gallery {
+    padding-inline: 3rem;
+  }
+}

@@ -1,0 +1,135 @@
+.card-12 {
+  min-height: 350px;
+
+  div.card__top {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(from var(--saturated) h 30% 60%);
+  }
+
+  .center {
+    padding-inline: 20px;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  blockquote {
+    position: relative;
+    width: 270px;
+    letter-spacing: 2%;
+  }
+
+  .quote {
+    position: absolute;
+    top: 0.5rem;
+    left: -1.225rem;
+    opacity: 0.3;
+    font-size: 16rem;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 0.7;
+    pointer-events: none;
+  }
+
+  blockquote p {
+    position: relative;
+    margin: 1rem;
+    hyphens: none;
+  }
+
+  .def {
+    position: relative;
+    padding: var(--padding-outline);
+  }
+
+  p .word:hover {
+    cursor: pointer;
+  }
+
+  p .word {
+    position: relative;
+    display: inline-block;
+    padding: 0 8px 5px 8px;
+    background-color: hsl(from var(--saturated) h 30% 35%);
+  }
+
+  span.tooltip {
+    --tooltip-width: 270px;
+    position: absolute;
+    left: calc(50% - (var(--tooltip-width) / 2));
+    top: 55px;
+    width: var(--tooltip-width);
+    padding: 0;
+    transition: all 0.5s ease-in-out 0.3s;
+    opacity: 0;
+    font-size: 1rem;
+    z-index: -1;
+    background-color: hsl(from var(--saturated) h 30% 35%);
+
+    &__text {
+      display: block;
+      padding: 0.725rem;
+    }
+  }
+
+  p .def:is(:hover, :focus-visible) .tooltip {
+    position: absolute;
+    left: calc(50% - (var(--tooltip-width) / 2));
+    top: 45px;
+    z-index: 3;
+    transition: all 0.5s ease-in-out 0s;
+    opacity: 1;
+  }
+
+  .tooltip::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: calc(50% - 7.5px);
+    width: 15px;
+    height: 8px;
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    background-color: hsl(0, 0%, 100%);
+    transition: all 0.5s ease-in-out 0.3s;
+  }
+
+  .def:is(:hover, :focus-visible) .tooltip::before {
+    bottom: -8px;
+    opacity: 1;
+    transition: all 0.5s ease-in-out 0s;
+  }
+
+  .tooltip .text,
+  .tooltip .pronunciation {
+    cursor: text;
+  }
+
+  .pronunciation {
+    display: block;
+    width: 100%;
+    padding: 0.225rem 1rem;
+    background-color: #fff;
+    color: hsl(from var(--saturated) h 30% 35%);
+  }
+
+  .pronunciation i {
+    margin-inline-start: 5px;
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .pronunciation i:is(:hover, :focus-visible) {
+    transform: scale(1.1);
+  }
+
+  blockquote footer {
+    margin-inline-start: 1rem;
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-style: italic;
+  }
+}

@@ -1,9 +1,23 @@
 :root {
+  // COLOR PALETTE
+
   --text: hsl(44, 58%, 6%);
   --background: hsl(45, 100%, 96%);
   --primary: hsl(79, 36%, 84%);
   --secondary: hsl(38, 100%, 60%);
   --accent: hsl(20, 73%, 58%);
+  --saturated: hsl(150, 58%, 60%);
 
-  --shadow: 0 -13px 22px hsl(from var(--text) h s l / 0.11);
+  // FONTS
+
+  --accent-font: 'Playfair Display', 'Times New Roman', serif;
+  --main-font: 'Source Sans 3', 'Helvetica', sans-serif;
+  --mono-font: 'Cutive Mono', monospace;
+  --font-size: clamp(2.1875rem, 1.25rem + 4vw, 4.25rem);
+
+  // BORDERS, SHADOWS, PADDINGS
+  --border: 3px solid var(--text);
+  --border-radius: 25px;
+  --shadow: 0 -10px 10px hsl(from var(--text) h s l / 0.11);
+  --padding-outline: 6px;
 }

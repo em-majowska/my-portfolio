@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Ewa Majowska</title>
 
-	<link rel="stylesheet" href="../dist/css/style.css">
+	<link rel="stylesheet" href="../dist/css/home.css">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"
 		integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg=="
@@ -16,91 +16,168 @@
 <body>
 
 	<!-- HEADER -->
-	<a href="#" class="stt" title="Scroll to top" aria-label="Scroll to top">
-		<div class="button button--round">
-			<svg>
-				<use href="./assets/svg/icons.svg#arrow-up"></use>
-			</svg>
-		</div>
-	</a>
-	<header class="wrapper">
-		<div class="navbar">
-			<button type="button" class="logo" aria-label="Homepage"><img src="./assets/svg/logo.svg"></button>
+	<header id="header">
+		<a href="#header" role="button" class="stt btn btn--round" title="Scroll to top" aria-label="Scroll to top">
+			<div class="btn__shadow"></div>
+			<div class="btn__fill">
+				<svg>
+					<use href="./assets/svg/icons.svg#arrow-up"></use>
+				</svg>
+			</div>
+		</a>
 
-			<button type="button" class="menu-btn" aria-label="Open menu"><span class="menu-btn__burger"></span></button>
+		<!-- NAVIGATION -->
 
-			<nav class="nav">
-				<ul class="nav-menu">
-					<li class="nav__item"><a href="#about-me" class="nav__link">about</a></li>
-					<li class="nav__item"><a href="#code" class="nav__link">code</a></li>
-					<li class="nav__item"><a href="#portfolio" class="nav__link">portfolio</a></li>
-					<li class="nav__item"><a href="#contact" class="nav__link">contact</a></li>
-				</ul>
-			</nav>
-		</div>
+		<nav id="nav">
+			<div class="navbar">
+				<a role="button" href="./index.html" class="logo" aria-label="Homepage"><img src="./assets/svg/logo.svg"
+						aria-hidden="true">
+				</a>
+				<button type="button" class="menu-btn" id="menu-btn" aria-label="Open menu">
+					<span class="menu-btn__burger"></span>
+				</button>
+			</div>
+			<ul class="menu" aria-expanded="false">
+				<li class="menu__item"><a href="./index.html#about-me" class="menu__link">about</a></li>
+				<li class="menu__item"><a href="./index.html#code" class="menu__link">code</a></li>
+				<li class="menu__item"><a href="./index.html#portfolio" class="menu__link">portfolio</a></li>
+				<li class="menu__item"><a href="./index.html#contact" class="menu__link">contact</a></li>
+			</ul>
+			<div class="color-palette">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</nav>
+		<div class="nav-overlay"></div>
+
+		<!-- HERO  -->
+
 		<section class="hero">
-			<div class="hero__text">
-				<p>Hello, I'm Ewa and </p>
-				<h1>I'll help you build your <span class="accent">website</span></h1>
+			<div class="wrapper">
+				<div class="hero__text">
+					<p>Hello, I'm Ewa and </p>
+					<h1>I'll help you build your <span class="accent">website</span></h1>
+					<a role="button" href="#contact" class="btn btn--border">
+						<div class="btn__shadow">
+						</div>
+						<div class="btn__fill">Contact Me</div>
+					</a>
+				</div>
+				<div class="hero__img">
+					<img srcset="./assets/img/blob-mobile.png 384w, ./assets/img/blob-desktop.png 680w"
+						sizes="(max-width: 679px) 384px, 680px" src="./assets/img/blob-mobile.png" alt="">
+					<svg class="outline" id="outline" viewBox="0 0 368 390" preserveAspectRatio="none" fill="none"
+						xmlns="http://www.w3.org/2000/svg" stroke="#181306">
+						<path
+							d="M36.7469 296.791C41.7457 207.302 255.386 191.208 205.716 95.071C156.047 -1.06573 309.004 24.7279 327.646 67.5485C346.289 110.369 307.825 106.902 317.879 150.422C329.126 199.108 318.523 286.903 259.423 311.141C200.323 335.379 31.7481 386.279 36.7469 296.791Z" />
+						<path
+							d="M31.6008 288.495C41.1247 199.388 255.296 194.537 210.561 95.9192C165.826 -2.69851 317.273 31.0952 333.722 74.8381C350.171 118.581 311.934 113.098 319.771 157.089C328.538 206.3 313.503 293.422 253.254 314.523C193.005 335.625 22.0768 377.602 31.6008 288.495Z" />
+						<path
+							d="M28.6697 283.304C40.9429 194.547 255.158 196.564 213.493 96.5613C171.828 -3.44168 322.155 35.1903 337.244 79.4388C352.333 123.687 314.285 116.981 320.758 161.201C328 210.67 310.28 297.266 249.409 316.425C188.537 335.585 16.3966 372.062 28.6697 283.304Z" />
+						<path
+							d="M34.05 292.561C41.3765 203.239 255.361 192.919 208.211 95.4746C161.062 -1.96935 313.293 27.9452 330.814 71.2541C348.336 114.563 309.976 110.058 318.893 153.835C328.869 202.807 315.985 290.285 256.274 312.919C196.564 335.553 26.7234 381.883 34.05 292.561Z" />
+					</svg>
+				</div>
+				<div class="lines">
+					<svg class="lines-svg">
+						<use xlink:href="./assets/svg/elements.svg#lines"></use>
+					</svg>
+				</div>
 			</div>
-			<div class="hero__img">
-				<img src="./assets/img/blob-mobile-img.png" alt="">
-				<object class="outline" type="image/svg+xml" data="./assets/svg/blob-mobile.svg"></object>
-			</div>
-			<object class="lines" type="image/svg+xml" data="./assets/svg/lines.svg"></object>
 		</section>
 	</header>
 
 	<main>
 
-		<section class="section about-me wrapper" id="about-me">
-			<h2>About Me</h2>
-			<div class="widget">
-				<object class="widget__text" data="./assets/svg/text.svg" type="image/svg+xml"></object>
+		<!-- ABOUT ME -->
+		<section class="section about-me" id="about-me">
+			<div class="wrapper">
+				<h2>About Me</h2>
+				<h3>
+					<span lang="en">Hello</span>
+					<span lang="pl">Cześć</span>
+					<span lang="fr-FR">Bonjour</span>
+					<span id="japanese-word" lang="ja-Hira">おはようございます</span>
+				</h3>
+				<div class="about-me__container">
+					<img class="about-me__frame" src="./assets/svg/frame-about.svg"></img>
+					<div class="container">
+						<div class="widget">
+							<svg class="widget__text" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink">
+								<path id="curve" d="M16 80 a65 65 0 1 1 130 0 a65 65 0 1 1 -130 0" />
+								<text fill="hsl(44, 58%, 6%)" font-size="1rem" font-weight="700" lang="en">
+									<textPath xlink:href="#curve" startOffset="3%">Hello</textPath>
+								</text>
+								<text fill="hsl(44, 0%, 50%)" font-size="1rem" font-weight="700" lang="pl">
+									<textPath xlink:href="#curve" startOffset="18%">Cześć</textPath>
+								</text>
+								<text fill="hsl(44, 58%, 6%)" font-size="1rem" font-weight="700" lang="fr-FR">
+									<textPath xlink:href="#curve" startOffset="33%">Bonjour</textPath>
+								</text>
+								<text fill="hsl(44, 58%, 6%)" font-size="0.75rem" letter-spacing="4px" lang="ja-Hira">
+									<textPath xlink:href="#curve" startOffset="57%" font-family="Inter">おはようございます</textPath>
+								</text>
+							</svg>
+							<div class="widget__avatar">
+								<img class="widget__img"
+									srcset="./assets/img/my-photo-370w.png 370w, ./assets/img/my-photo-740w.png 680w"
+									sizes="(max-width: 679px) 370px, 680px" src="./assets/img/my-photo-370w.png" alt="This is me">
+							</div>
+						</div>
+						<div class="about-me__text wrapper">
+							<p>I am a Front-End Developer based in Saint Leu, Réunion Island.</p>
+							<p>Passioned by the languages, I graduated English Philology with Japanese at Silesian University.
+								Relocating to France motivated me to learn the local language and explore a new form of communication —
+								the
+								language of the web.
+							</p>
+						</div>
+					</div>
+				</div>
+				<a role="button" href="#contact" class="btn btn--border">
+					<div class="btn__shadow">
+					</div>
+					<div class="btn__fill">Contact Me</div>
+				</a>
+			</div>
+		</section>
 
-				<div class="widget__avatar">
-					<img srcset="./assets/img/my-photo-370w.png, ./assets/img/my-photo.png" x2"
-						src="./assets/img/my-photo-370w.png" alt="This is me" class="widget__img">
+		<!-- CODE -->
+
+		<section class="section code" id="code">
+			<div class="wrapper">
+				<div class="circle"></div>
+				<div class="section__header">
+					<h2>Code</h2>
+				</div>
+				<ul class="code__list">
+					<li class="code__list__item">HTML5</li>
+					<li class="code__list__item">CSS3 & Sass</li>
+					<li class="code__list__item">Responsive Design</li>
+					<li class="code__list__item">JavaScript</li>
+					<li class="code__list__item">Git</li>
+					<li class="code__list__item">Node.js</li>
+					<li class="code__list__item">Figma</li>
+				</ul>
+				<img class="spark spark-1" src="./assets/svg/spark.svg" alt="">
+				<img class="spark spark-2" src="./assets/svg/spark.svg" alt="">
+				<div class="window">
+					<div class="window__header">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<code>&lt;h1&gt;Hello World&lt;/h1&gt;</code>
 				</div>
 			</div>
+		</section>
 
-			<div class="about-me__text wrapper">
-				<p>I am a Front-End Developer based in Saint Leu, Réunion Island.</p>
-				<p>Passioned by the languages, I graduated English Philology with Japanese at Silesian University.
-					Relocating to France motivated me to learn the local language and explore a new form of communication —
-					the
-					language of the web.
-				</p>
-			</div>
-			<button type="button" class="button button--border">Contact Me</button>
-			<!-- <div class="about-me__element"><code>console.log('Hello World');</code></div> -->
-		</section>
-		<section class="section code wrapper" id="code">
-			<div class="section__header">
-				<h2>Code</h2>
-			</div>
-			<div class="circle"></div>
-			<ul class="code__list">
-				<li class="code__list__item">HTML5</li>
-				<li class="code__list__item">CSS3 & Sass</li>
-				<li class="code__list__item">Responsive Design</li>
-				<li class="code__list__item">JavaScript</li>
-				<li class="code__list__item">Git</li>
-				<li class="code__list__item">Node.js</li>
-				<li class="code__list__item">Figma</li>
-			</ul>
-			<img class="spark spark-1" src="./assets/svg/spark.svg" alt="">
-			<img class="spark spark-2" src="./assets/svg/spark.svg" alt="">
-			<div class="window">
-				<div class="window__header">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-				<code>&lt;h1&gt;Hello World&lt;/h1&gt;</code>
-				<!-- <img src="./assets/svg/window.svg"> -->
-			</div>
-		</section>
+		<!-- PORTFOLIO -->
+
 		<section class="section portfolio" id="portfolio">
 			<div class="wrapper">
 				<div class="section__header">
@@ -115,18 +192,29 @@
 						<div class="card"></div>
 					</div>
 					<div class="buttons-gallery">
-						<button class="button button--round">
-							<svg>
-								<use href="./assets/svg/icons.svg#arrow-prev"></use>
-							</svg>
+						<button class="btn btn--round">
+							<div class="btn__shadow"></div>
+							<div class="btn__fill">
+								<svg>
+									<use href="./assets/svg/icons.svg#arrow-prev"></use>
+								</svg>
+							</div>
 						</button>
-						<button class="button button--round">
-							<svg>
-								<use href="./assets/svg/icons.svg#arrow-next"></use>
-							</svg></button>
+						<button class="btn btn--round">
+							<div class="btn__shadow"></div>
+							<div class="btn__fill">
+								<svg>
+									<use href="./assets/svg/icons.svg#arrow-next"></use>
+								</svg>
+							</div>
+						</button>
 					</div>
 				</div>
-				<button class="button button--border">See more</button>
+				<a role="button" href="./gallery.html" class="btn btn--border">
+					<div class="btn__shadow"></div>
+					<div class="btn__fill">See more</div>
+				</a>
+
 			</div>
 		</section>
 
@@ -171,23 +259,28 @@
 
 			</div>
 		</section>
-
 	</main>
+
 	<footer class="footer">
-		<div class="cat" id="cat-animation">
-			<script>
-				var animation = bodymovin.loadAnimation({
-					container: document.getElementById('cat-animation'),
-					path: './assets/cat-animation.json',
-					renderer: 'svg',
-					loop: true,
-					autoplay: true,
-					name: 'cat animation'
-				});
-			</script>
+		<div class="footer__wrapper">
+			<div class="cat" id="cat-animation">
+				<script>
+					var animation = bodymovin.loadAnimation({
+						container: document.getElementById('cat-animation'),
+						path: './assets/cat-animation.json',
+						renderer: 'svg',
+						loop: true,
+						autoplay: true,
+						name: 'cat animation'
+					});
+				</script>
+			</div>
+			<p>Copyright &copy; 2025 Ewa Majowska</p>
 		</div>
-		<p>Copyright &copy; 2025 Ewa Majowska</p>
 	</footer>
+
+	<script src="./js/script.js" type="module"></script>
+
 </body>
 
 </html>
