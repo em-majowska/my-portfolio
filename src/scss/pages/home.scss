@@ -103,15 +103,14 @@
   );
 
   h2,
-  h3 {
+  h3,
+  &__frame {
     display: none;
   }
 
   &__text {
     max-width: 65ch;
-    p {
-      font-size: clamp(1rem, 3vw, 1.5rem);
-    }
+
     p:first-child {
       margin-block-end: 1rem;
     }
@@ -124,9 +123,9 @@
   display: grid;
   align-items: center;
   width: 100%;
-  max-width: 370px;
+  max-width: 450px;
   min-width: 343px;
-  aspect-ratio: 1 / 1;
+  // aspect-ratio: 1 / 1;
   margin-inline: auto;
 
   & > * {
@@ -137,6 +136,7 @@
   &__text {
     overflow: hidden;
     font-family: 'Playfair Display';
+
     & > text {
       position: relative;
       opacity: 0;
@@ -169,6 +169,8 @@
   &__avatar {
     @include u.center;
     min-width: 250px;
+    max-width: 70%;
+
     aspect-ratio: 1 / 1;
     margin-inline: auto;
     background-color: var(--accent);
@@ -182,7 +184,7 @@
 
   &__img {
     align-self: end;
-    width: 250px;
+    width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     margin-inline: auto;
@@ -388,11 +390,11 @@
 
   .window {
     margin-block-end: 10rem;
+    width: fit-content;
 
     @include u.window(var(--text));
 
     h3 {
-      font-size: 1.5rem;
       padding-left: 1.5rem;
       line-height: 3rem;
       color: var(--background);
@@ -401,23 +403,24 @@
 
   &__metadata {
     height: 100%;
-    font-style: normal;
-    padding: 2rem 2rem 2rem 1.5rem;
+    padding: 2em 2em 2em 1.5em;
     border-radius: 0 0 25px 25px;
+    color: var(--text);
     background-color: var(--background);
+    font-style: normal;
 
-    & > *:not(a:last-child) {
+    & > a:not(a:last-child) {
       margin-block-end: 2rem;
     }
 
     a {
-      text-decoration: underline;
-    }
-
-    & > * {
       display: flex;
       align-items: center;
+      width: fit-content;
       gap: 20px;
+
+      text-wrap: nowrap;
+      text-decoration: underline;
     }
 
     .icon {

@@ -7,7 +7,7 @@
   display: grid;
   width: 100%;
   row-gap: 1.25rem;
-  grid-template-columns: repeat($col, 2.5rem);
+  grid-template-columns: repeat($col, 10vw);
 
   @for $i from 2 through $col {
     &__item:nth-child(#{$i}) {
@@ -57,7 +57,7 @@
   top: 3px;
   left: 3px;
   width: calc(100% + 5px);
-  height: calc(100% + 5px);
+  height: calc(100% + 8px);
   background-color: var(--text);
   z-index: -1;
 }

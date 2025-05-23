@@ -103,39 +103,37 @@
 					<span id="japanese-word" lang="ja-Hira">おはようございます</span>
 				</h3>
 				<div class="about-me__container">
-					<img class="about-me__frame" src="./assets/svg/frame-about.svg"></img>
-					<div class="container">
-						<div class="widget">
-							<svg class="widget__text" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg"
-								xmlns:xlink="http://www.w3.org/1999/xlink">
-								<path id="curve" d="M16 80 a65 65 0 1 1 130 0 a65 65 0 1 1 -130 0" />
-								<text fill="hsl(44, 58%, 6%)" font-size="1rem" font-weight="700" lang="en">
-									<textPath xlink:href="#curve" startOffset="3%">Hello</textPath>
-								</text>
-								<text fill="hsl(44, 0%, 50%)" font-size="1rem" font-weight="700" lang="pl">
-									<textPath xlink:href="#curve" startOffset="18%">Cześć</textPath>
-								</text>
-								<text fill="hsl(44, 58%, 6%)" font-size="1rem" font-weight="700" lang="fr-FR">
-									<textPath xlink:href="#curve" startOffset="33%">Bonjour</textPath>
-								</text>
-								<text fill="hsl(44, 58%, 6%)" font-size="0.75rem" letter-spacing="4px" lang="ja-Hira">
-									<textPath xlink:href="#curve" startOffset="57%" font-family="Inter">おはようございます</textPath>
-								</text>
-							</svg>
-							<div class="widget__avatar">
-								<img class="widget__img"
-									srcset="./assets/img/my-photo-370w.png 370w, ./assets/img/my-photo-740w.png 680w"
-									sizes="(max-width: 679px) 370px, 680px" src="./assets/img/my-photo-370w.png" alt="This is me">
-							</div>
+					<svg class="about-me__frame">
+						<use xlink:href="./assets/svg/elements.svg#about-me__frame"></use>
+					</svg>
+					<div class="widget">
+						<svg class="widget__text" viewBox="0 0 160 160" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<path id="curve" d="M16 80 a65 65 0 1 1 130 0 a65 65 0 1 1 -130 0" />
+							<text fill="hsl(44, 58%, 6%)" font-size="1rem" font-weight="700" lang="en">
+								<textPath xlink:href="#curve" startOffset="3%">Hello</textPath>
+							</text>
+							<text fill="hsl(44, 0%, 50%)" font-size="1rem" font-weight="700" lang="pl">
+								<textPath xlink:href="#curve" startOffset="18%">Cześć</textPath>
+							</text>
+							<text fill="hsl(44, 58%, 6%)" font-size="1rem" font-weight="700" lang="fr-FR">
+								<textPath xlink:href="#curve" startOffset="33%">Bonjour</textPath>
+							</text>
+							<text fill="hsl(44, 58%, 6%)" font-size="0.75rem" letter-spacing="4px" lang="ja-Hira">
+								<textPath xlink:href="#curve" startOffset="57%" font-family="Inter">おはようございます</textPath>
+							</text>
+						</svg>
+						<div class="widget__avatar">
+							<img class="widget__img" srcset="./assets/img/my-photo-370w.png 370w, ./assets/img/my-photo-740w.png 680w"
+								sizes="(max-width: 679px) 370px, 680px" src="./assets/img/my-photo-370w.png" alt="This is me">
 						</div>
-						<div class="about-me__text wrapper">
-							<p>I am a Front-End Developer based in Saint Leu, Réunion Island.</p>
-							<p>Passioned by the languages, I graduated English Philology with Japanese at Silesian University.
-								Relocating to France motivated me to learn the local language and explore a new form of communication —
-								the
-								language of the web.
-							</p>
-						</div>
+					</div>
+					<div class="about-me__text wrapper">
+						<p>I am a Front-End Developer based in Saint Leu, Réunion Island.</p>
+						<p>Passioned by the languages, I graduated English Philology with Japanese at Silesian University.
+							Relocating to France motivated me to learn the local language and explore a new form of communication —
+							the
+							language of the web.
+						</p>
 					</div>
 				</div>
 				<a role="button" href="#contact" class="btn btn--border">
@@ -240,18 +238,18 @@
 							</svg>
 							em.majowska@gmail.com</a>
 
-						<div>
+						<a href="tel:+262692639837">
 							<svg class="icon">
 								<use href="./assets/svg/icons.svg#phone"></use>
 							</svg>
-							<p>+262 692 63 98 37</p>
-						</div>
+							+262 692 63 98 37
+						</a>
 
 						<a href="https://github.com/em-majowska" target="_blank">
 							<svg class="icon">
 								<use href="./assets/svg/icons.svg#github"></use>
-								<p class="contact__text">/em-majowska</p>
 							</svg>
+							/em-majowska
 						</a>
 
 					</address>

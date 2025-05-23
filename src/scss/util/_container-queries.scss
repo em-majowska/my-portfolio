@@ -30,7 +30,7 @@ footer {
       justify-content: flex-start;
 
       .navbar {
-        margin-inline: 0 2rem;
+        margin-inline: 0 2em;
       }
     }
 
@@ -41,7 +41,7 @@ footer {
       padding-inline: var(--padding-outline);
       padding-block-end: var(--padding-outline);
       flex: 1;
-      max-width: 500px;
+      max-width: auto;
       width: auto;
       transform: none;
       border-radius: 0;
@@ -55,8 +55,10 @@ footer {
       }
 
       & .menu__link {
+        text-wrap: nowrap;
         position: relative;
-        padding: 0.5rem;
+        padding: 0.5em;
+        padding-block-end: 0.25em;
 
         &::after {
           @include u.pseudo;
@@ -80,12 +82,12 @@ footer {
     }
 
     .color-palette {
-      margin-left: auto;
+      margin-inline: 2em auto;
     }
 
     header .hero .wrapper {
-      margin-block: 0rem 5rem;
-      gap: 2rem;
+      margin-block: 0em 5em;
+      gap: 2em;
       flex-direction: row;
       align-items: center;
       justify-content: space-evenly;
@@ -100,21 +102,15 @@ footer {
       h1 {
         line-height: 1.2;
       }
-
-      .btn {
-        display: grid;
-        margin-block-start: 9rem;
-        margin-inline-start: auto;
-      }
     }
 
     .hero__img {
-      top: 0rem;
+      top: 0;
 
       .outline {
         top: unset;
         bottom: 0;
-        right: -2rem;
+        right: -2em;
         height: 105%;
         width: 110%;
 
@@ -130,10 +126,10 @@ footer {
 @container header (min-width: calc(1000px - 2rem)) {
   body {
     nav {
-      padding-inline: 1rem;
+      padding-inline: 1em;
 
       .color-palette {
-        margin-block-end: -1rem;
+        margin-block-end: -1em;
       }
 
       .logo {
@@ -146,8 +142,17 @@ footer {
         padding-inline-start: 0;
       }
     }
-    .hero__img {
-      right: -5rem;
+
+    .hero {
+      &__img {
+        right: -5rem;
+      }
+
+      .btn {
+        display: grid;
+        margin-block-start: 9rem;
+        margin-inline-start: auto;
+      }
     }
 
     .color-palette {
@@ -168,11 +173,13 @@ footer {
 
 @container main (min-width: 1000px) {
   body {
+    /* MULTILINGUAL HEADERS */
+
     .about-me {
       h3 {
         position: relative;
         display: flex;
-        padding-inline-end: 6rem;
+        padding-inline-end: 3em;
 
         justify-content: space-between;
         font-size: 3rem;
@@ -200,10 +207,11 @@ footer {
         span[lang='ja-Hira'] {
           position: absolute;
           right: 0;
-          top: 7rem;
+          top: 4em;
           width: 3.5rem;
           font-family: 'MS Gothic', Helvetica, sans-serif;
-          font-size: 2.5rem;
+          font-size: 2.25rem;
+          line-height: 1.3;
           height: 0;
           animation: unroll 2s ease-out 2s forwards;
           overflow: cover;
@@ -216,65 +224,82 @@ footer {
         }
       }
     }
-    .wrapper {
-      .about-me__container {
+
+    /* ABOUT-ME LAYOUT */
+
+    .about-me {
+      & > .wrapper {
+        padding-block-end: 9rem;
+      }
+
+      div.about-me__container {
         position: relative;
         margin-block-start: 0;
         width: 87%;
-      }
-      .about-me__frame {
-        width: 100%;
-      }
-    }
-    .container {
-      position: absolute;
-      top: 5em;
-      display: grid;
-      align-items: center;
-      grid-template-columns: 1fr 54%;
-      width: 100%;
-    }
-    .widget {
-      max-width: unset;
-      padding-inline: 2em 3em;
+        aspect-ratio: 2 / 1;
+        padding-block-start: 3rem;
 
-      // position: absolute;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 54%;
+      }
 
       &__frame {
-        position: relative;
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        stroke-dasharray: 0 1;
+        animation: path-length 4s ease-in-out forwards;
 
-        width: 87%;
-        height: auto;
-
-        // background: top center / contain no-repeat
-        //   url('../../src/assets/svg/frame-about.svg');
-
-        & > * {
-          display: inline-block;
-          margin-inline: 0;
+        @keyframes path-length {
+          to {
+            stroke-dasharray: 1;
+          }
         }
+      }
+
+      &__text {
+        right: 0;
+        max-width: 100%;
+        margin-inline: auto;
+        padding: 1.5em;
+        font-size: clamp(1rem, 4vw, 1.5rem);
+
+        p {
+          min-width: 100%;
+        }
+      }
+
+      .btn {
+        display: none;
+      }
+    }
+
+    .about-me .widget {
+      height: max-content;
+      margin-inline-start: -3em;
+      max-width: 20vw;
+
+      &__avatar {
+        max-width: unset;
       }
 
       &__text {
         display: none;
       }
-
-      &__img {
-        width: 380px;
-      }
-    }
-
-    .about-me__text {
-      // position: absolute;
-      right: 0;
-      margin-inline: auto;
-      padding-inline: 2em;
-      max-width: unset;
-      p {
-        min-width: 30ch;
-      }
     }
   }
+
+  // .about-me__text {
+  //   right: 0;
+  //   margin-inline: auto;
+  //   padding-inline: 2em;
+  //   max-width: unset;
+  //   p {
+  //     min-width: 30ch;
+  //   }
+  // }
 }
 
 // CSS CHALLENGE GALLERY
