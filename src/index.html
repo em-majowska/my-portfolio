@@ -109,16 +109,16 @@
 					<div class="widget">
 						<svg class="widget__text" viewBox="0 0 160 160" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink">
 							<path id="curve" d="M16 80 a65 65 0 1 1 130 0 a65 65 0 1 1 -130 0" />
-							<text fill="hsl(44, 58%, 6%)" font-size="1rem" font-weight="700" lang="en">
+							<text fill="hsl(44, 58%, 6%)" font-weight="700" lang="en">
 								<textPath xlink:href="#curve" startOffset="3%">Hello</textPath>
 							</text>
-							<text fill="hsl(44, 0%, 50%)" font-size="1rem" font-weight="700" lang="pl">
+							<text fill="hsl(44, 0%, 50%)" font-weight="700" lang="pl">
 								<textPath xlink:href="#curve" startOffset="18%">Cześć</textPath>
 							</text>
-							<text fill="hsl(44, 58%, 6%)" font-size="1rem" font-weight="700" lang="fr-FR">
+							<text fill="hsl(44, 58%, 6%)" font-weight="700" lang="fr-FR">
 								<textPath xlink:href="#curve" startOffset="33%">Bonjour</textPath>
 							</text>
-							<text fill="hsl(44, 58%, 6%)" font-size="0.75rem" letter-spacing="4px" lang="ja-Hira">
+							<text fill="hsl(44, 58%, 6%)" letter-spacing="4px" lang="ja-Hira">
 								<textPath xlink:href="#curve" startOffset="57%" font-family="Inter">おはようございます</textPath>
 							</text>
 						</svg>
@@ -152,25 +152,31 @@
 				<div class="section__header">
 					<h2>Code</h2>
 				</div>
-				<ul class="code__list">
-					<li class="code__list__item">HTML5</li>
-					<li class="code__list__item">CSS3 & Sass</li>
-					<li class="code__list__item">Responsive Design</li>
-					<li class="code__list__item">JavaScript</li>
-					<li class="code__list__item">Git</li>
-					<li class="code__list__item">Node.js</li>
-					<li class="code__list__item">Figma</li>
-				</ul>
-				<img class="spark spark-1" src="./assets/svg/spark.svg" alt="">
-				<img class="spark spark-2" src="./assets/svg/spark.svg" alt="">
-				<div class="window">
-					<div class="window__header">
-						<span></span>
-						<span></span>
-						<span></span>
+				<div class="code__container">
+
+					<ul class="code__list">
+						<li class="code__list__item">HTML5</li>
+						<li class="code__list__item">CSS3 & Sass</li>
+						<li class="code__list__item">Responsive Design</li>
+						<li class="code__list__item">JavaScript</li>
+						<li class="code__list__item">Git</li>
+						<li class="code__list__item">Node.js</li>
+						<li class="code__list__item">Figma</li>
+
+						<img class="spark spark-1" src="./assets/svg/spark.svg" alt="">
+						<img class="spark spark-2" src="./assets/svg/spark.svg" alt="">
+					</ul>
+
+					<div class="window">
+						<div class="window__header">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<code>&lt;h1&gt;Hello World&lt;/h1&gt;</code>
 					</div>
-					<code>&lt;h1&gt;Hello World&lt;/h1&gt;</code>
 				</div>
+
 			</div>
 		</section>
 
@@ -219,9 +225,11 @@
 		<!-- CONTACT -->
 		<section class="section contact" id="contact">
 
-			<svg class="sun">
-				<use href="./assets/svg/elements-animated.svg#sun"></use>
-			</svg>
+			<object class="sun" type="image/svg+xml" data="./assets/svg/sun.svg"></object>
+
+			<!-- <svg class="sun">
+				<use href="./assets/svg/elements.svg#sun"></use>
+			</svg> -->
 			<div class="wrapper">
 
 				<div class="section__header">

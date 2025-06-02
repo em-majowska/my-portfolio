@@ -36,6 +36,11 @@ body {
   height: 100%;
 }
 
+nav,
+header,
+main {
+  min-width: 375px;
+}
 header,
 section:not(.hero) {
   width: 100vw;
@@ -43,6 +48,11 @@ section:not(.hero) {
   // margin-inline: auto;
 }
 
+header,
+main,
+footer {
+  min-width: 375px;
+}
 header,
 main,
 .wrapper,
@@ -56,12 +66,13 @@ section > .wrapper {
 
 :is(.about-me, .code, .portfolio) > .wrapper {
   padding-block-end: 3rem;
+  // margin-block-start: 3rem;
 }
 
 .about-me__container,
 :is(.about-me, .code, .portfolio, .contact) > .wrapper {
   & > * + * {
-    margin-block-start: 2rem;
+    margin-block-start: 3rem;
     margin-inline: auto;
   }
 }
@@ -106,6 +117,7 @@ h4,
 }
 
 h1 {
+  font-size: clamp(2.5rem, 8vw, 96px);
   font-weight: 400;
   line-height: 1.35;
   letter-spacing: 2%;
@@ -113,14 +125,14 @@ h1 {
 
 .section__header {
   position: relative;
-  margin-block-start: 2rem;
+  margin-block-start: 3em;
   text-align: left;
 
   h2 {
     position: relative;
     display: inline-block;
-    font-size: 2.325rem;
     font-size: clamp(2.325rem, 8vw, 3rem);
+    line-height: 1;
 
     &::after {
       @include m.highlight;
@@ -134,7 +146,7 @@ h3 {
 
 .contact h3 {
   padding-block: 0.25em;
-  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-size: clamp(1.5rem, 8vw, 2rem);
 }
 
 p,
@@ -160,8 +172,7 @@ button {
 .btn {
   display: grid;
   width: fit-content;
-  font-size: 1.5rem;
-  border-radius: 20px;
+  font-size: clamp(1.5rem, 5vw, 2rem);
 
   & > * {
     grid-row: 1 / 2;
@@ -176,23 +187,24 @@ button {
 
   &__fill {
     background: var(--primary);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
   }
 
   &--border {
     & > * {
       border: var(--border);
-      border-radius: 20px;
+      border-radius: 0.75em;
     }
 
     .btn__fill {
-      padding: 0.25em 1em;
+      padding: 0.25em 0.75em;
     }
   }
 
   &--round {
-    width: 55px;
-    height: 55px;
+    --btn-round-size: clamp(55px, 8vw, 70px);
+    width: var(--btn-round-size);
+    height: var(--btn-round-size);
     border: 0;
 
     & > * {
@@ -202,11 +214,11 @@ button {
 
     .btn__fill {
       @include m.flex-center-vertical;
+      padding: 8px;
     }
 
     svg {
-      width: 35px;
-      height: 35px;
+      aspect-ratio: 1 / 1;
       fill: var(--text);
     }
   }
@@ -215,7 +227,12 @@ button {
   &.animate,
   &:focus-visible {
     .btn__fill {
+      background-color: var(--background);
       transform: translate(-5px, -5px);
+    }
+
+    &.btn--border .btn__fill {
+      transform: translate(-0.25em, -0.25em);
     }
   }
 }
@@ -225,7 +242,7 @@ button {
 .screen-reader-text {
   position: absolute;
   left: -9999px;
-  z-index: 999;
+  z-index: 98;
   padding: 1em;
   color: var(--background);
   background-color: var(--accent);
@@ -250,8 +267,8 @@ button {
 
 .stt {
   position: fixed;
-  bottom: 3.5rem;
-  right: 2.1875rem;
+  bottom: 2.5em;
+  right: 0.75em;
   z-index: 10;
 }
 

@@ -1,17 +1,22 @@
 .footer {
+  --cat-size: clamp(200px, 40vw, 400px);
+
   width: 100vw;
-  background-color: var(--accent);
-  border-block-start: 2px solid var(--text);
+  padding-block-start: calc(var(--cat-size) - 50px);
+  overflow: clip;
+  background-color: var(--primary);
 
   .cat {
     position: absolute;
-    width: 200px;
-    height: 200px;
-    transform: translate(-2.5rem, -4.4rem);
+    top: calc((var(--cat-size) / 1.5) * (-1));
+    left: -2.5rem;
+    width: var(--cat-size);
+    height: var(--cat-size);
   }
-  &__wrapper {
-    // width: clamp(375px, 70%, 900px);
 
+  &__wrapper {
+    background-color: var(--accent);
+    border-block-start: 2px solid var(--text);
     position: relative;
     display: grid;
     align-items: center;

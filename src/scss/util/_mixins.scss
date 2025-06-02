@@ -4,15 +4,30 @@
 // GRID LAYOUTS
 
 @mixin list-tab($col) {
-  display: grid;
+  // display: grid;
+  // row-gap: 1.25em;
+  // // FIX
+  // row-gap: 3vw;
+  // // grid-template-columns: repeat($col, min(7%, 4em));
+  // grid-template-columns: repeat($col, 5%);
+  // // padding-inline-end: 2rem;
+
+  // @for $i from 2 through $col {
+  //   &__item:nth-child(#{$i}) {
+  //     grid-column: $i;
+  //     grid-row: $i;
+  //   }
+  // }
+
   width: 100%;
-  row-gap: 1.25rem;
-  grid-template-columns: repeat($col, 10vw);
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+  align-items: flex-start;
 
   @for $i from 2 through $col {
     &__item:nth-child(#{$i}) {
-      grid-column: $i;
-      grid-row: $i;
+      margin-inline-start: calc(($i - 1) * 12%);
     }
   }
 }
@@ -25,7 +40,7 @@
 @mixin grid-center-vertical {
   display: grid;
   width: 100%;
-  gap: 2rem;
+  gap: 2em;
   // justify-content: space-around;
   align-items: center;
 }
@@ -66,7 +81,7 @@
 
 @mixin window($color) {
   position: relative;
-  width: clamp(305px, 60vw, 570px);
+  width: clamp(305px, 80%, 570px);
   border: var(--border);
   border-radius: var(--border-radius);
   background-color: $color;
@@ -89,9 +104,9 @@
 @mixin highlight {
   display: block;
   content: '';
-  position: relative;
-  bottom: 22px;
-  height: 12px;
+  position: absolute;
+  top: 0.7em;
+  height: 35%;
   width: calc(100% + 0.5em);
   // background-color: var(--saturated);
   background-image: linear-gradient(

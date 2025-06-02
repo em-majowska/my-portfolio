@@ -6,21 +6,20 @@ nav {
   left: -1rem;
   max-width: 1200px;
   margin-inline: auto;
-  margin-block-end: 2rem;
+  margin-block-end: 1.5em;
 
   .navbar {
     position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    padding: 1rem 1rem 0.5rem 1rem;
+    padding: 1em 1em 0.5em 1em;
     background-color: var(--background);
     z-index: 100;
   }
 
   .logo {
     width: 55px;
-    height: 55px;
+    height: auto;
   }
 
   // BURGER OPEN
@@ -124,23 +123,22 @@ nav {
   .menu {
     display: none;
     position: absolute;
-    // top: -480px;
     left: 0;
     transform: translateY(-120%);
-
     width: 100vw;
-    padding-block: 6em var(--padding-outline);
+    padding-block: 3em var(--padding-outline);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     background: var(--background);
     box-shadow: 7px 10px var(--text);
     text-align: center;
+    font-size: 1.5rem;
+
     overflow: hidden;
     z-index: 99;
 
     &__link {
       display: block;
-      padding: 1.5rem;
-      font-size: 1.5rem;
+      padding: 1em;
       letter-spacing: 5%;
 
       &:active,
@@ -184,7 +182,7 @@ nav {
 
 .color-palette {
   display: none;
-  gap: 8px;
+  gap: 0.25em;
   justify-content: space-around;
   align-items: center;
   @include u.set-color-palette;

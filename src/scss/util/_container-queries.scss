@@ -30,28 +30,33 @@ footer {
       justify-content: flex-start;
 
       .navbar {
-        margin-inline: 0 2em;
+        margin-inline: 0;
       }
     }
 
     nav ul.menu {
       position: initial;
       display: flex;
+      flex-wrap: wrap;
+      // display: grid;
+      // grid-template-columns: repeat(4, auto);
+      gap: 20px;
       padding: 0;
       padding-inline: var(--padding-outline);
       padding-block-end: var(--padding-outline);
-      flex: 1;
-      max-width: auto;
-      width: auto;
+      margin-inline-end: 1em;
+      width: fit-content;
+      height: auto;
       transform: none;
       border-radius: 0;
       box-shadow: none;
       animation: none;
       align-items: flex-end;
-      justify-content: space-between;
+      justify-content: start;
 
       & .menu__item {
         display: flex;
+        margin-block-start: 0.25em;
       }
 
       & .menu__link {
@@ -82,12 +87,13 @@ footer {
     }
 
     .color-palette {
-      margin-inline: 2em auto;
+      margin-inline-start: auto;
+      gap: 0.5em;
     }
 
     header .hero .wrapper {
       margin-block: 0em 5em;
-      gap: 2em;
+      gap: 3em;
       flex-direction: row;
       align-items: center;
       justify-content: space-evenly;
@@ -97,9 +103,10 @@ footer {
 
     .hero__text {
       margin-block-start: 3em;
-      flex: 1;
+      max-width: 540px;
 
       h1 {
+        max-width: unset;
         line-height: 1.2;
       }
     }
@@ -110,7 +117,7 @@ footer {
       .outline {
         top: unset;
         bottom: 0;
-        right: -2em;
+        right: -5%;
         height: 105%;
         width: 110%;
 
@@ -127,6 +134,7 @@ footer {
   body {
     nav {
       padding-inline: 1em;
+      min-width: fit-content;
 
       .color-palette {
         margin-block-end: -1em;
@@ -134,7 +142,6 @@ footer {
 
       .logo {
         width: 70px;
-        height: 70px;
         padding-inline-start: 0;
       }
 
@@ -145,12 +152,12 @@ footer {
 
     .hero {
       &__img {
-        right: -5rem;
+        right: 0;
       }
 
       .btn {
         display: grid;
-        margin-block-start: 9rem;
+        margin-block-start: 100px;
         margin-inline-start: auto;
       }
     }
@@ -161,7 +168,31 @@ footer {
   }
 }
 
-@container footer (min-width: 1000px) {
+@container main (min-width: 680px) {
+  body {
+    .code {
+      .circle {
+        top: -5%;
+        right: -35%;
+      }
+
+      &__container {
+        grid-template-columns: 50% 50%;
+        align-items: center;
+
+        .window {
+          margin-block-start: 0;
+        }
+      }
+
+      .spark-1 {
+        right: -15%;
+      }
+    }
+  }
+}
+
+@container footer (min-width: 680px) {
   body {
     .footer__wrapper {
       justify-content: center;
@@ -179,7 +210,7 @@ footer {
       h3 {
         position: relative;
         display: flex;
-        padding-inline-end: 3em;
+        padding-inline-end: 100px;
 
         justify-content: space-between;
         font-size: 3rem;
@@ -208,18 +239,19 @@ footer {
           position: absolute;
           right: 0;
           top: 4em;
-          width: 3.5rem;
           font-family: 'MS Gothic', Helvetica, sans-serif;
           font-size: 2.25rem;
-          line-height: 1.3;
+          letter-spacing: 20%;
+          word-break: keep-all;
           height: 0;
+          writing-mode: vertical-rl;
           animation: unroll 2s ease-out 2s forwards;
-          overflow: cover;
+          overflow: hidden;
         }
 
         @keyframes unroll {
           to {
-            height: 650px;
+            height: 800px;
           }
         }
       }
@@ -260,10 +292,9 @@ footer {
       }
 
       &__text {
-        right: 0;
         max-width: 100%;
         margin-inline: auto;
-        padding: 1.5em;
+        padding: 1em;
         font-size: clamp(1rem, 4vw, 1.5rem);
 
         p {
@@ -279,7 +310,6 @@ footer {
     .about-me .widget {
       height: max-content;
       margin-inline-start: -3em;
-      max-width: 20vw;
 
       &__avatar {
         max-width: unset;
@@ -289,17 +319,20 @@ footer {
         display: none;
       }
     }
-  }
 
-  // .about-me__text {
-  //   right: 0;
-  //   margin-inline: auto;
-  //   padding-inline: 2em;
-  //   max-width: unset;
-  //   p {
-  //     min-width: 30ch;
-  //   }
-  // }
+    // CODE
+
+    // .code {
+    //   .code__container {
+    //     display: flex;
+
+    //     & > * {
+    //       width: 50%;
+    //     }
+    //   }
+    // }
+    // CONTACT
+  }
 }
 
 // CSS CHALLENGE GALLERY
