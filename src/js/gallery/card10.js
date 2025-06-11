@@ -35,10 +35,10 @@ export function initCard10(card) {
     const minutes = now.getMinutes().toString().padStart(2, '0');
     const time = `${hours}:${minutes}`;
 
-    const dateEl = document.querySelector('.top');
+    const dateEl = card.querySelector('.top');
     dateEl.innerHTML = today;
 
-    const timeEl = document.querySelector('.time');
+    const timeEl = card.querySelector('.time');
     timeEl.innerHTML = time;
   }
 }

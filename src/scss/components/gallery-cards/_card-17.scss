@@ -1,28 +1,67 @@
-.card-17 {
-  background-image: repeating-linear-gradient(
-    45deg,
-    rgb(255, 248, 248) 0 20px,
-    hsl(120, 0%, 14%) 20px 22px
-  );
+@use '../../util' as u;
+.card-17:is(:focus-visible, .animate) .center,
+.card-17 .center:is(:hover, .animate) {
+  transform: rotate(90deg);
+  border-radius: 50%;
 
-  &:focus-visible .center,
-  .center:is(:hover, .animate) {
-    transform: rotate(90deg);
-    border-radius: 50%;
-
-    & svg {
-      transform: rotate(-90deg);
-    }
+  svg {
+    transform: rotate(-90deg);
   }
+  .light {
+    fill: hsl(from var(--saturated) h s 25%);
+  }
+  .middle {
+    fill: hsl(from var(--saturated) h s 75%);
+  }
+  .dark {
+    fill: var(--saturated);
+  }
+}
 
+.gallery__card:is(:hover, :focus-visible) .card-17 .center {
+  transform: rotate(90deg);
+  border-radius: 50%;
+
+  svg {
+    transform: rotate(-90deg);
+  }
+  .light {
+    fill: hsl(from var(--saturated) h s 25%);
+  }
+  .middle {
+    fill: hsl(from var(--saturated) h s 75%);
+  }
+  .dark {
+    fill: var(--saturated);
+  }
+}
+
+.card-17 {
+  // &:focus-visible .center,
+  // .center:is(:hover, .animate) {
+  //   transform: rotate(90deg);
+  //   border-radius: 50%;
+
+  //   svg {
+  //     transform: rotate(-90deg);
+  //   }
+  // }
+
+  .card__top {
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgb(255, 248, 248) 0 10%,
+      hsl(120, 0%, 14%) 10% 11%
+    );
+  }
   .center {
+    @include u.center;
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 50%;
+    aspect-ratio: 1 / 1;
     background-color: hsl(0, 0%, 22%);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 2.5% 2.5% 7.5% rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease-in;
-    display: grid;
   }
 
   .penrose * {
@@ -40,18 +79,5 @@
   }
   .dark {
     fill: hsl(from var(--accent) h s 25%);
-  }
-
-  &:focus-visible .center .light,
-  .center:is(:hover, .animate) .light {
-    fill: hsl(from var(--saturated) h s 25%);
-  }
-  &:focus-visible .center .middle,
-  .center:is(:hover, .animate) .middle {
-    fill: hsl(from var(--saturated) h s 75%);
-  }
-  &:focus-visible .center .dark,
-  .center:is(:hover, .animate) .dark {
-    fill: var(--saturated);
   }
 }

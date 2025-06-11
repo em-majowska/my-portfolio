@@ -1,14 +1,14 @@
 @use '../../util' as u;
 
-.card-04 {
-  &:is(:hover, .animate, :focus-visible) {
-    .circle1,
-    .circle2,
-    .circle3 {
-      animation-play-state: running;
-    }
+.gallery__card:is(:hover, :focus-visible) .card-04,
+.card-04:is(:hover, .animate, :focus-visible) {
+  .circle1,
+  .circle2,
+  .circle3 {
+    animation-play-state: running;
   }
-
+}
+.card-04 {
   .card__top {
     background: var(--saturated);
   }

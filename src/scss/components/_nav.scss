@@ -126,12 +126,11 @@ nav {
     left: 0;
     transform: translateY(-120%);
     width: 100vw;
-    padding-block: 3em var(--padding-outline);
+    padding-block: 6.5em var(--padding-outline);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     background: var(--background);
     box-shadow: 7px 10px var(--text);
     text-align: center;
-    font-size: 1.5rem;
 
     overflow: hidden;
     z-index: 99;
@@ -140,6 +139,7 @@ nav {
       display: block;
       padding: 1em;
       letter-spacing: 5%;
+      font-size: 1.5rem;
 
       &:active,
       &:hover {
@@ -181,11 +181,14 @@ nav {
 // COLOR PALETTE
 
 .color-palette {
+  $color-palette-nav: var(--text), var(--accent), var(--secondary),
+    var(--primary), var(--saturated);
+  @include u.set-color-palette(span, $color-palette-nav);
+
   display: none;
   gap: 0.25em;
   justify-content: space-around;
   align-items: center;
-  @include u.set-color-palette;
 
   span {
     display: inline-block;

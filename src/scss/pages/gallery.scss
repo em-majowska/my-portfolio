@@ -8,10 +8,11 @@ body {
   min-width: 375px;
 }
 
-nav {
-  position: fixed;
-  z-index: 100;
-}
+// nav {
+//   position: fixed;
+//   background-color: var(--background);
+//   z-index: 100;
+// }
 
 /* H1 */
 
@@ -771,12 +772,12 @@ main > .circle {
   bottom: -5rem;
   width: 200px;
   height: 80px;
-  opacity: 0;
+  // opacity: 0;
   transition: opacity 0.4s ease-in-out;
 
-  &.show {
-    opacity: 1;
-  }
+  // &.show {
+  //   opacity: 1;
+  // }
 
   span {
     grid-row: 1 / 2;
@@ -812,7 +813,7 @@ main > .circle {
   }
 }
 
-// Animations
+/* Animations */
 
 @keyframes bounce {
   0%,

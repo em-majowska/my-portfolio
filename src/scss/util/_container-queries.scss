@@ -92,39 +92,44 @@ footer {
     }
 
     header .hero .wrapper {
-      margin-block: 0em 5em;
+      // margin-block: 0em 5em;
       gap: 3em;
       flex-direction: row;
       align-items: center;
-      justify-content: space-evenly;
+      // justify-content: space-evenly;
       justify-content: space-between;
       max-width: 1200px;
     }
+    .hero {
+      &__text {
+        margin-block-start: 3em;
+        max-width: 540px;
 
-    .hero__text {
-      margin-block-start: 3em;
-      max-width: 540px;
-
-      h1 {
-        max-width: unset;
-        line-height: 1.2;
-      }
-    }
-
-    .hero__img {
-      top: 0;
-
-      .outline {
-        top: unset;
-        bottom: 0;
-        right: -5%;
-        height: 105%;
-        width: 110%;
-
-        path {
-          stroke-width: 2;
-          transform-origin: 45% 100%;
+        h1 {
+          max-width: unset;
+          line-height: 1.2;
         }
+      }
+
+      &__img {
+        top: 0;
+
+        .outline {
+          top: unset;
+          bottom: 0;
+          right: -5%;
+          height: 105%;
+          width: 110%;
+
+          path {
+            stroke-width: 2;
+            transform-origin: 45% 100%;
+          }
+        }
+      }
+
+      .lines {
+        display: none;
       }
     }
   }
@@ -148,6 +153,9 @@ footer {
       .navbar {
         padding-inline-start: 0;
       }
+      .color-palette {
+        display: flex;
+      }
     }
 
     .hero {
@@ -160,10 +168,6 @@ footer {
         margin-block-start: 100px;
         margin-inline-start: auto;
       }
-    }
-
-    .color-palette {
-      display: flex;
     }
   }
 }
@@ -221,13 +225,10 @@ footer {
         & > *:not(:last-child) {
           transform: translateY(30px);
           opacity: 0;
-
-          animation: pop-up 0.4s ease-out forwards;
         }
 
         span[lang='pl'] {
           rotate: -10deg;
-
           color: hsl(from var(--text) h s l / 0.6);
         }
 
@@ -245,14 +246,7 @@ footer {
           word-break: keep-all;
           height: 0;
           writing-mode: vertical-rl;
-          animation: unroll 2s ease-out 2s forwards;
           overflow: hidden;
-        }
-
-        @keyframes unroll {
-          to {
-            height: 800px;
-          }
         }
       }
     }
@@ -282,13 +276,6 @@ footer {
         height: 100%;
         width: 100%;
         stroke-dasharray: 0 1;
-        animation: path-length 4s ease-in-out forwards;
-
-        @keyframes path-length {
-          to {
-            stroke-dasharray: 1;
-          }
-        }
       }
 
       &__text {
@@ -308,7 +295,7 @@ footer {
     }
 
     .about-me .widget {
-      height: max-content;
+      // height: max-content;
       margin-inline-start: -3em;
 
       &__avatar {

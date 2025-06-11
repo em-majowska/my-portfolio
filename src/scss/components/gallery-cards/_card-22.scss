@@ -1,26 +1,36 @@
-article.card-22 {
-  &:is(:hover, .animate, :focus-visible) {
-    .progress-bar {
-      animation-play-state: running;
-    }
+.card-22:is(:hover, .animate, :focus-visible),
+.gallery__card:is(:hover, :focus-visible) {
+  .progress-bar {
+    animation-play-state: running;
   }
+}
+
+.card-22 {
   .card__top {
     background-color: hsl(201, 32%, 19%);
+  }
+
+  .frame {
     color: hsla(0, 0%, 100%, 0.7);
 
     padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    height: fit-content;
+    grid-template-rows: auto 2fr 1fr;
     text-align: center;
+    width: 100%;
+
+    * {
+      margin-inline: auto;
+    }
   }
 
   .top {
     text-transform: uppercase;
     font-size: 1rem;
-    margin-block-end: 20px;
+    margin-block-end: 0.5em;
   }
+
   .top span {
     margin-block-start: -5px;
     display: block;
@@ -35,12 +45,15 @@ article.card-22 {
   .data__text span {
     font-size: 0.875rem;
   }
+
   .data__text {
     font-size: 1.125rem;
   }
+
   .bottom .small {
     font-size: 0.75rem;
   }
+
   .data__text span,
   .small {
     display: block;
@@ -48,45 +61,40 @@ article.card-22 {
     color: hsla(0, 0%, 100%, 0.5);
   }
 
-  .bottom,
   .center {
-    display: grid;
-    place-items: center;
-    height: 90px;
+    width: 50%;
+
+    svg {
+      stroke-width: 9;
+    }
   }
 
   .bottom {
-    width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
-    gap: 40px;
-  }
-
-  .bottom .data__text {
-    width: 90px;
+    gap: 8%;
+    width: 65%;
   }
 
   .center,
   .kilometers,
   .steps {
     position: relative;
+    display: grid;
+    align-items: center;
+
+    * {
+      grid-row: 1/1;
+      grid-column: 1/1;
+    }
   }
 
   svg {
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
     fill: none;
     stroke: hsl(202, 31%, 15%);
     stroke-width: 7;
-  }
-  .center svg {
-    width: 100px;
-    height: 100px;
-    stroke-width: 9;
   }
 
   .progress-bar {

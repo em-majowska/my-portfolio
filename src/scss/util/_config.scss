@@ -65,14 +65,14 @@ section > .wrapper {
 }
 
 :is(.about-me, .code, .portfolio) > .wrapper {
-  padding-block-end: 3rem;
+  padding-block-end: 7vmax;
   // margin-block-start: 3rem;
 }
 
 .about-me__container,
 :is(.about-me, .code, .portfolio, .contact) > .wrapper {
   & > * + * {
-    margin-block-start: 3rem;
+    margin-block-start: 7vmax;
     margin-inline: auto;
   }
 }
@@ -150,7 +150,6 @@ h3 {
 }
 
 p,
-li,
 .contact__metadata {
   max-width: 65ch;
   overflow-wrap: break-word;
@@ -158,6 +157,10 @@ li,
   hyphens: auto;
 
   font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+li {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
 }
 
 /* BUTTONS */

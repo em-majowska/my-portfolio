@@ -3,17 +3,22 @@
 .card-10 {
   .card__top {
     padding-block: 20px;
-    color: #fff;
-    background-color: hsl(from var(--secondary) h 70% l);
     background-color: var(--primary);
   }
+
   .center {
-    height: 220px;
-    width: 220px;
+    --width: 70%;
+
+    position: relative;
+    display: grid;
+    width: var(--width);
+    aspect-ratio: 1 / 1;
     background-color: hsl(0, 0%, 14%);
-    border: 10px solid hsl(0, 0%, 23%);
+    border: 0.5em solid hsl(0, 0%, 23%);
     border-radius: 50%;
-    font-size: 0.75rem;
+    color: #fff;
+    align-items: center;
+    margin-inline: auto;
   }
 
   .center > *,
@@ -23,6 +28,7 @@
   }
 
   .data {
+    width: 100%;
     height: 100%;
     display: grid;
     grid-template-rows: auto auto auto;
@@ -30,6 +36,8 @@
     align-content: center;
     border-radius: 50%;
     text-transform: uppercase;
+    text-wrap: nowrap;
+    text-align: center;
   }
 
   .top {
@@ -44,7 +52,10 @@
 
   .bottom {
     display: flex;
-    justify-content: space-between;
+    // display: grid;
+    // grid-template-columns: repeat(3, auto);
+    gap: 0.25em;
+    justify-content: center;
     align-items: center;
   }
 
@@ -54,7 +65,8 @@
     content: '';
     top: -2px;
     width: 7px;
-    height: 7px;
+    height: 8px;
+    margin-inline-end: 7px;
     background-color: tomato;
     border-radius: 50%;
     animation: beat 1s ease-out infinite;
@@ -68,7 +80,7 @@
     left: 0;
     height: 17px;
     width: 14px;
-    clip-path: polygon(50% 100%, 100% 60%, 50% 40%, 0 60%);
+    clip-path: polygon(50% 100%, 90% 72%, 50% 50%, 10% 72%);
     background-color: tomato;
   }
 
@@ -79,7 +91,7 @@
     top: 0;
     right: -7px;
     width: 7px;
-    height: 7px;
+    height: 8px;
     background-color: tomato;
     border-radius: 50%;
   }
@@ -88,9 +100,7 @@
     0% {
       transform: scale(0.8);
     }
-    50% {
-      transform: scale(0.95);
-    }
+    50%,
     55% {
       transform: scale(0.95);
     }
@@ -99,13 +109,25 @@
     }
   }
 
+  .beat {
+    display: flex;
+    align-items: center;
+
+    & > * {
+      display: inline-block;
+    }
+  }
+
   .dots {
     position: relative;
     @include u.center;
+    width: 85%;
+    margin-inline: auto;
+    aspect-ratio: 1 / 1;
   }
 
   .dots > * {
-    height: 170px;
+    height: 100%;
     width: 5px;
   }
 
@@ -129,7 +151,7 @@
   }
 
   .dots *::after {
-    bottom: 0px;
+    bottom: 0;
   }
 
   .dots .dots-1::before,
@@ -137,14 +159,15 @@
     height: 5px;
     width: 5px;
     background: none;
-    border: 1px solid #fff;
+    border: 0.5px solid #fff;
   }
 
   @include u.populate-dots(12);
 
   .second {
     position: absolute;
-    @include u.center;
+    width: 100%;
+    height: 100%;
   }
 
   .second circle {

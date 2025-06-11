@@ -22,7 +22,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 2em;
+  row-gap: 3vmin;
   align-items: flex-start;
 
   @for $i from 2 through $col {
@@ -141,6 +141,8 @@
   }
 }
 
+// PORTFOLIO GALLERY COLORS
+
 // PROJECT-10
 
 @mixin populate-dots($num) {
@@ -153,12 +155,15 @@
   }
 }
 
-$color-palette: --text, --accent, --secondary, --primary, --saturated;
-
-@mixin set-color-palette {
+@mixin set-color-palette($item, $color-palette, $pseudo-element: false) {
   @for $i from 1 through list.length($color-palette) {
-    span:nth-child(#{$i}) {
-      background-color: var(#{list.nth($color-palette, $i)});
+    @if $pseudo-element {
+      #{$item}:nth-child(#{$i})::after {
+        background-color: #{list.nth($color-palette, $i)};
+      }
+    }
+    #{$item}:nth-child(#{$i}) {
+      background-color: #{list.nth($color-palette, $i)};
     }
   }
 }

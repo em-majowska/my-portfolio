@@ -1,24 +1,27 @@
 @use '../../util' as u;
 
-article.card-03 {
-
-  &:is(:hover, .animate, :focus-visible) {
-    .sky,
-    .sun,
-    .shadow,
-    .pyr,
-    .pyr-right {
-      animation-play-state: running;
-    }
+.card-03:is(:hover, .animate, :focus-visible),
+.gallery__card:is(:hover, .animate, :focus-visible) {
+  .sky,
+  .sun,
+  .shadow,
+  .pyr,
+  .pyr-right {
+    animation-play-state: running;
   }
+}
 
+.card-03 {
   .card__top {
     background-color: hsl(0, 0%, 15%);
   }
+
   .frame {
-    height: 180px;
-    width: 180px;
+    position: absolute;
+    width: 50%;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
+    overflow: hidden;
   }
 
   .sky {
@@ -46,26 +49,27 @@ article.card-03 {
   }
 
   .sun {
-    top: 5%;
-    height: 35px;
-    width: 35px;
+    top: 2.78%;
+    height: 19.44%;
+    width: 19.44%;
     border-radius: 50%;
     background-color: #ffef00;
     animation: sun 4s ease-in-out infinite;
     animation-play-state: paused;
+    transform-origin: 0 370%;
   }
 
   .sand {
     bottom: 0;
-    height: 56px;
+    height: 31.11%;
     width: 100%;
     background-color: #f0de75;
   }
 
   .shadow {
-    top: 124px;
-    width: 348px;
-    height: 35px;
+    top: 68.89%;
+    width: 193.33%;
+    height: 19.44%;
     background-color: #9d9252ab;
     clip-path: polygon(33.33% 0, 66.66% 0, 100% 10%);
     animation: shadow3 4s ease-in-out infinite;
@@ -73,7 +77,7 @@ article.card-03 {
   }
 
   .pyr {
-    width: 116px;
+    width: 64.44%;
     background: #f2f2f2;
     clip-path: polygon(0 100%, 50% 0, 100% 100%);
     animation: pyr 4s ease-in-out infinite;
@@ -82,13 +86,13 @@ article.card-03 {
 
   .pyr,
   .pyr-right {
-    height: 57px;
-    bottom: 55.5px;
+    height: 31.67%;
+    bottom: 30.83%;
   }
 
   .pyr-right {
     left: 50%;
-    width: 58px;
+    width: 32.22%;
     background-color: #b6b5b6;
     clip-path: polygon(25% 100%, 0 0, 100% 100%);
     animation: pyr-right 4s ease-in-out infinite;
@@ -138,15 +142,12 @@ article.card-03 {
 
   @keyframes sun {
     0% {
-      transform-origin: 0 125px;
       transform: rotate(-90deg);
     }
     30% {
-      transform-origin: 0 125px;
       transform: rotate(-30deg);
     }
     100% {
-      transform-origin: 0 125px;
       transform: rotate(90deg);
     }
   }
@@ -156,14 +157,14 @@ article.card-03 {
       clip-path: polygon(33.33% 0, 66.66% 0, 100% 0%);
     }
     30% {
-      height: 35px;
+      height: 19.44%;
       clip-path: polygon(33.33% 0, 66.66% 0, 90% 100%);
     }
     50% {
-      height: 12px;
+      height: 6.67%;
     }
     65% {
-      height: 20px;
+      height: 11.11%;
       clip-path: polygon(33.33% 0, 66.66% 0, 25% 100%);
     }
     90% {
