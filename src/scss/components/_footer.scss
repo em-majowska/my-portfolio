@@ -1,16 +1,15 @@
 .footer {
   width: 100vw;
-  background-color: var(--primary);
-
-  // &__wrapper {
-  background-color: var(--accent);
   border-block-start: 2px solid var(--text);
-  position: relative;
-  display: grid;
-  align-items: center;
-  padding-inline-end: 1rem;
-  justify-content: end;
-  min-height: 4.8rem;
-  text-align: right;
-  // }
+  background-color: var(--accent);
+
+  &__wrapper {
+    position: relative;
+    display: grid;
+    min-height: 4.8em;
+    padding-inline-end: 1em;
+    align-items: center;
+    justify-content: end;
+    text-align: right;
+  }
 }
