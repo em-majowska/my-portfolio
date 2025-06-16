@@ -320,7 +320,50 @@ footer {
     //   }
     // }
 
+    /* PORTFOLIO */
+
+    .portfolio {
+      &::after {
+        background: none;
+        mask-image: none;
+      }
+
+      .wrapper::after {
+        position: absolute;
+        content: '';
+        inset: 0;
+        height: 100%;
+        width: 90%;
+        max-width: 1070px;
+        margin-inline: auto;
+        background: url('../../src/assets/svg/dots-path.svg') no-repeat 50% 20%;
+        z-index: -1;
+      }
+    }
+    .gallery {
+      // @include u.distribute-cards(5);
+      &__card {
+        &:first-child {
+          transform: translateY(32px);
+          rotate: -15deg;
+        }
+        &:nth-child(2) {
+          transform: translateY(4px);
+          rotate: -7.5deg;
+        }
+        &:nth-child(4) {
+          transform: translateY(13px);
+          rotate: 7.5deg;
+        }
+        &:nth-child(5) {
+          transform: translateY(43px);
+          rotate: 15deg;
+        }
+      }
+    }
+
     // CONTACT
+
     .contact {
       .wrapper {
         height: 85vh;
@@ -358,6 +401,7 @@ footer {
     }
   }
 }
+
 // CSS CHALLENGE GALLERY
 
 @container main (min-width: 1000px) {

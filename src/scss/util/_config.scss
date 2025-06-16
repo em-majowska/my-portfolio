@@ -62,7 +62,6 @@ main,
 section > .wrapper,
 footer > .wrapper {
   max-width: 1200px;
-  border: 1px solid teal;
 }
 
 :is(.about-me, .code, .portfolio) > .wrapper {
@@ -73,7 +72,7 @@ footer > .wrapper {
 .about-me__container,
 :is(.about-me, .code, .portfolio, .contact) > .wrapper {
   & > * + * {
-    margin-block-start: 5vmax;
+    margin-block-start: clamp(52px, 5.5vmax, 86px);
     margin-inline: auto;
   }
 }
