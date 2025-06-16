@@ -462,6 +462,8 @@
 // CONTACT
 
 .contact {
+  position: relative;
+
   & > .wrapper {
     margin-block-end: 1em;
   }
@@ -498,47 +500,10 @@
 
   // SUN
 
-  .sun {
-    --sun-size: clamp(250px, 40vw, 400px);
-    --linear-function: linear(
-      0,
-      0.008 1.1%,
-      0.031 2.2%,
-      0.129 4.8%,
-      0.257 7.2%,
-      0.671 14.2%,
-      0.789 16.5%,
-      0.881 18.6%,
-      0.957 20.7%,
-      1.019 22.9%,
-      1.063 25.1%,
-      1.094 27.4%,
-      1.114 30.7%,
-      1.112 34.5%,
-      1.018 49.9%,
-      0.99 59.1%,
-      1
-    );
-
-    position: absolute;
-    width: var(--sun-size);
-    height: var(--sun-size);
-    fill: var(--secondary);
-    bottom: 32%;
-    left: 60%;
-    rotate: 75deg;
-    transform-origin: -100% 200%;
-  }
-
-  &.animate .sun {
-    animation: sun-up 1.8s var(--linear-function) 1.5s forwards;
-  }
-
-  @keyframes sun-up {
-    to {
-      rotate: -3deg;
-    }
-  }
+  // @keyframes sun-up {
+  //   to {
+  //   }
+  // }
 
   .window {
     max-width: fit-content;
@@ -588,4 +553,88 @@
       font-size: clamp(1rem, 1vw, 4rem);
     }
   }
+}
+
+.animated-elements {
+  --cat-size: clamp(200px, 40vw, 400px);
+
+  position: relative;
+  height: var(--cat-size);
+  margin-inline: auto;
+
+  border: 1px solid teal;
+
+  .sun-wrapper,
+  .cat-wrapper {
+    position: absolute;
+    overflow-y: hidden;
+  }
+
+  .sun-wrapper {
+    position: absolute;
+    border: 1px solid red;
+    // bottom: -60%;
+    width: 100%;
+    height: 900px;
+    bottom: 0;
+    // height: calc(100% + 4.6rem);
+  }
+  .sun {
+    --sun-size: clamp(250px, 40vw, 400px);
+    --linear-function: linear(
+      0,
+      0.008 1.1%,
+      0.031 2.2%,
+      0.129 4.8%,
+      0.257 7.2%,
+      0.671 14.2%,
+      0.789 16.5%,
+      0.881 18.6%,
+      0.957 20.7%,
+      1.019 22.9%,
+      1.063 25.1%,
+      1.094 27.4%,
+      1.114 30.7%,
+      1.112 34.5%,
+      1.018 49.9%,
+      0.99 59.1%,
+      1
+    );
+
+    position: absolute;
+    width: var(--sun-size);
+    height: var(--sun-size);
+    fill: var(--secondary);
+    bottom: 45%;
+    left: 55%;
+    rotate: 75deg;
+    transform-origin: -100% 200%;
+    transition: rotate 1.8s var(--linear-function) 1.5s;
+    // rotate: -3deg;
+  }
+
+  .cat-wrapper {
+    width: var(--cat-size);
+    bottom: -4.85rem;
+    left: -2.5rem;
+    height: calc(var(--cat-size) + 50px);
+    padding-block-start: 1rem;
+    z-index: 2;
+  }
+
+  .cat {
+    --pivot: 0% 63%;
+
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 200px;
+    transform-origin: var(--pivot);
+    transform: scale(1) translateY(-3%);
+  }
+}
+
+.contact.animate .sun {
+  rotate: -3deg;
+  // animation: sun-up 1.8s var(--linear-function) 1.5s forwards;
 }

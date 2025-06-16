@@ -3,6 +3,7 @@
 header,
 main,
 section,
+.animated-elements,
 footer {
   container-type: inline-size;
 }
@@ -14,7 +15,6 @@ header {
 main {
   container-name: main;
 }
-
 footer {
   container-name: footer;
 }
@@ -193,6 +193,12 @@ footer {
         right: -15%;
       }
     }
+
+    .animated-elements {
+      .cat {
+        transform: scale(1.5) translateY(-3%);
+      }
+    }
   }
 }
 
@@ -319,6 +325,14 @@ footer {
     //   }
     // }
     // CONTACT
+
+    .animated-elements {
+      height: calc(var(--cat-size) - 150px);
+
+      .cat {
+        transform: scale(2) translateY(-3%);
+      }
+    }
   }
 }
 

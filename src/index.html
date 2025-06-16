@@ -307,13 +307,8 @@
 		<!-- CONTACT -->
 		<section class="section contact" id="contact">
 
-			<object class="sun" type="image/svg+xml" data="./assets/svg/sun.svg"></object>
 
-			<!-- <svg class="sun">
-				<use href="./assets/svg/elements.svg#sun"></use>
-			</svg> -->
 			<div class="wrapper">
-
 				<div class="section__header">
 					<h2>Let's create something <span>together!</span></h2>
 				</div>
@@ -344,27 +339,36 @@
 
 					</address>
 				</div>
+			</div>
 
+
+			<div class="animated-elements">
+				<div class="sun-wrapper">
+					<object class="sun" type="image/svg+xml" data="./assets/svg/sun.svg"></object>
+				</div>
+
+				<div class="cat-wrapper">
+					<div class="cat" id="cat-animation">
+						<script>
+							var animation = bodymovin.loadAnimation({
+								container: document.getElementById('cat-animation'),
+								path: './assets/cat-animation.json',
+								renderer: 'svg',
+								loop: true,
+								autoplay: true,
+								name: 'cat animation'
+							});
+						</script>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>
 
 	<footer class="footer">
-		<div class="footer__wrapper">
-			<div class="cat" id="cat-animation">
-				<script>
-					var animation = bodymovin.loadAnimation({
-						container: document.getElementById('cat-animation'),
-						path: './assets/cat-animation.json',
-						renderer: 'svg',
-						loop: true,
-						autoplay: true,
-						name: 'cat animation'
-					});
-				</script>
-			</div>
-			<p>Copyright &copy; 2025 Ewa Majowska</p>
-		</div>
+		<!-- <div class="footer__wrapper"> -->
+		<p>Copyright &copy; 2025 Ewa Majowska</p>
+		<!-- </div> -->
 	</footer>
 
 	<script src="./js/script.js" type="module"></script>
