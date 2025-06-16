@@ -122,7 +122,6 @@ footer {
           width: 110%;
 
           path {
-            stroke-width: 2;
             transform-origin: 45% 100%;
           }
         }
@@ -195,17 +194,12 @@ footer {
     }
 
     .animated-elements {
+      .sun {
+        bottom: 65%;
+      }
       .cat {
         transform: scale(1.5) translateY(-3%);
       }
-    }
-  }
-}
-
-@container footer (min-width: 680px) {
-  body {
-    .footer__wrapper {
-      justify-content: center;
     }
   }
 }
@@ -281,6 +275,7 @@ footer {
         position: absolute;
         height: 100%;
         width: 100%;
+        stroke-width: 1;
         stroke-dasharray: 0 1;
       }
 
@@ -324,11 +319,31 @@ footer {
     //     }
     //   }
     // }
+
     // CONTACT
+    .contact {
+      .wrapper {
+        height: 85vh;
+        display: flex;
+        align-items: flex-start;
 
+        .window {
+          margin: 0;
+          transform: translateY(70%);
+        }
+
+        .sun {
+          top: 5%;
+        }
+      }
+    }
     .animated-elements {
-      height: calc(var(--cat-size) - 150px);
+      max-width: 1200px;
+      height: auto;
 
+      .cat-wrapper {
+        left: 0;
+      }
       .cat {
         transform: scale(2) translateY(-3%);
       }
@@ -336,10 +351,17 @@ footer {
   }
 }
 
+@container main (min-width: 1700px) {
+  body {
+    .contact .sun {
+      left: calc(55vw - 10%);
+    }
+  }
+}
 // CSS CHALLENGE GALLERY
 
 @container main (min-width: 1000px) {
   body .gallery {
-    padding-inline: 3rem;
+    padding-inline: 3em;
   }
 }

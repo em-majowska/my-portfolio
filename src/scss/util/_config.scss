@@ -55,13 +55,14 @@ footer {
 }
 header,
 main,
-.wrapper,
-.footer__wrapper {
+.wrapper {
   margin-inline: auto;
 }
 
-section > .wrapper {
+section > .wrapper,
+footer > .wrapper {
   max-width: 1200px;
+  border: 1px solid teal;
 }
 
 :is(.about-me, .code, .portfolio) > .wrapper {
@@ -72,7 +73,7 @@ section > .wrapper {
 .about-me__container,
 :is(.about-me, .code, .portfolio, .contact) > .wrapper {
   & > * + * {
-    margin-block-start: 7vmax;
+    margin-block-start: 5vmax;
     margin-inline: auto;
   }
 }
@@ -141,12 +142,7 @@ h1 {
 }
 
 h3 {
-  font-size: 2.369rem; /* 37.92px */
-}
-
-.contact h3 {
-  padding-block: 0.25em;
-  font-size: clamp(1.5rem, 8vw, 2rem);
+  font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
 p,

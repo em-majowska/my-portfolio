@@ -16,7 +16,7 @@
   --font-size: clamp(2.1875rem, 1.25rem + 4vw, 4.25rem);
 
   // BORDERS, SHADOWS, PADDINGS
-  --border: 3px solid var(--text);
+  --border: 2px solid var(--text);
   --border-radius: 25px;
   --shadow: 0 -10px 10px hsl(from var(--text) h s l / 0.11);
   --padding-outline: 6px;
