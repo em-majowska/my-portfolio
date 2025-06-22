@@ -109,20 +109,6 @@
       animation: pop-up 0.4s ease-out 1s forwards;
     }
 
-    h3:not(:last-child) {
-      animation: pop-up 0.4s ease-out forwards;
-    }
-
-    span[lang='ja-Hira'] {
-      animation: unroll 2s ease-out 2s forwards;
-
-      @keyframes unroll {
-        to {
-          height: 800px;
-        }
-      }
-    }
-
     .about-me__frame {
       animation: path-length 4s ease-in-out forwards;
 
