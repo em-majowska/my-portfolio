@@ -532,7 +532,10 @@
 
       hyphens: none;
       word-break: break-all;
-      text-decoration: underline;
+
+      &:not([href^='tel']) {
+        text-decoration: underline;
+      }
     }
 
     .icon {
@@ -557,6 +560,7 @@
     height: 100%;
     overflow: hidden;
   }
+
   .sun {
     --sun-size: clamp(250px, 40vw, 400px);
     --linear-function: linear(
@@ -608,9 +612,9 @@
   .cat-wrapper {
     position: absolute;
     overflow-y: hidden;
-    width: 100%;
+    width: clamp(var(--cat-size), 50vw, 400px);
     height: calc(var(--cat-size) + 100px);
-    bottom: -4.85rem;
+    bottom: -4.925rem;
     left: calc((10% * -1.5));
     z-index: 2;
   }
