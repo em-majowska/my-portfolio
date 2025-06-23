@@ -548,7 +548,7 @@
   }
 
   .sun {
-    --sun-size: clamp(250px, 40vw, 400px);
+    --sun-size: clamp(230px, 40vw, 400px);
     --linear-function: linear(
       0,
       0.008 1.1%,
@@ -614,6 +614,6 @@
     width: 200px;
     height: 200px;
     transform-origin: var(--pivot);
-    transform: scale(1) translateY(-3%);
+    transform: scale(1) translateY(5%);
   }
 }
