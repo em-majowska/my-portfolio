@@ -185,6 +185,10 @@ footer {
 
         .window {
           margin-block-start: 0;
+
+          code {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+          }
         }
       }
 
