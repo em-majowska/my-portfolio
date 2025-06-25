@@ -49,3 +49,18 @@ function updateHero() {
     line.setAttribute('d', selectedPaths[i]);
   });
 }
+
+/* Typewriter code */
+
+const code = document.querySelector('code');
+console.log(code);
+
+const codeText = window.getComputedStyle(code, ':before');
+
+code.addEventListener('resize', () => {
+  console.log('yes');
+
+  const codeContent = window.getComputedStyle(codeText, ':before').content;
+
+  console.log(codeContent);
+});
