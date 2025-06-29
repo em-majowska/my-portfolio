@@ -108,12 +108,12 @@
   top: 0.7em;
   height: 35%;
   width: calc(100% + 0.5em);
-  // background-color: var(--saturated);
   background-image: linear-gradient(
     to left,
     var(--secondary) 10%,
     var(--accent) 100%
   );
+  // background-color: var(--saturated);
   z-index: -1;
 }
 
