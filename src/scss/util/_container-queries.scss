@@ -202,7 +202,7 @@ footer {
         bottom: 65%;
       }
       .cat {
-        transform: scale(1.5) translateY(3%);
+        transform: scale(1.5) translateY(-3%);
       }
     }
   }
@@ -374,7 +374,8 @@ footer {
         width: 90%;
         max-width: 1070px;
         margin-inline: auto;
-        background: url('../../src/assets/svg/dots-path.svg') no-repeat 50% 20%;
+        background: url('../../src/assets/svg/dots-path-background.svg')
+          no-repeat 50% 20%;
         z-index: -1;
       }
     }

@@ -93,6 +93,7 @@
 
   .lines-svg {
     width: calc(100% + 4rem);
+    stroke: var(--text);
   }
 }
 
@@ -196,8 +197,7 @@
     background-color: var(--accent);
     transform-origin: center;
     animation: spin 90s linear infinite;
-    mask-image: url('../../src/assets/svg/star.svg');
-    // mask-position: center;
+    mask-image: url('../../src/assets/svg/widget-star.svg');
     mask-repeat: no-repeat;
     mask-size: cover;
   }
@@ -277,7 +277,7 @@
       gap: 0.25em;
       height: 15%;
       padding-inline-start: 1em;
-      border-block-end: 3px solid var(--text);
+      border-block-end: var(--border);
       border-radius: 22px 22px 0 0;
       background-color: var(--primary);
 
@@ -346,7 +346,8 @@
     @include u.pseudo;
     inset: 0;
     height: 100%;
-    background: url('../../src/assets/svg/dots.svg') no-repeat 70% 70%;
+    background: url('../../src/assets/svg/dots-background.svg') no-repeat 70%
+      70%;
     mask-image: linear-gradient(to bottom, transparent 15%, black 140%);
     z-index: -2;
   }
@@ -543,9 +544,14 @@
 
       hyphens: none;
       word-break: break-all;
+      transition: color ease-in-out 0.2s;
 
       &:not([href^='tel']) {
         text-decoration: underline;
+      }
+
+      &:is(:hover, :focus-visible) {
+        color: var(--accent);
       }
     }
 
@@ -565,7 +571,8 @@
 
   .sun-wrapper {
     position: absolute;
-    bottom: -1em;
+    margin-block-start: 0;
+    bottom: 0;
     left: -1em;
     width: 100vw;
     height: 100%;
@@ -655,6 +662,6 @@
     width: 200px;
     height: 200px;
     transform-origin: var(--pivot);
-    transform: scale(1) translateY(5%);
+    transform: scale(1) translateY(-5%);
   }
 }
