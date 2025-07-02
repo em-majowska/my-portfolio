@@ -19,7 +19,11 @@ nav {
 
   .logo {
     width: 55px;
-    height: auto;
+    // height: auto;
+    aspect-ratio: 1/1;
+    img {
+      width: 100%;
+    }
   }
 
   // BURGER OPEN

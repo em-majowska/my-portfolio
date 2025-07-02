@@ -6,7 +6,32 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Ewa Majowska</title>
 
-	<link rel="stylesheet" href="../dist/css/home.css">
+	<!-- Open Graph -->
+	<meta property="og:title" content="Ewa Majowska | Front-End Developer">
+	<meta name="description"
+		content="Ewa Majowska | Front-End Developer based in Saint Leu. Passionate about web development, design and digital art.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://em-majowska.github.io">
+	<meta property="og:image" content="https://i.postimg.cc/PJh45DkT/facebook-image.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<meta property="og:image" content="https://i.postimg.cc/631x1hS4/twitter-image.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="675">
+
+	<meta property="og:image" content="https://i.postimg.cc/C5qMGt1x/image-square.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="1200">
+
+	<meta name="twitter:card" content="summary">
+
+	<meta name="twitter:image" content="https://i.postimg.cc/631x1hS4/twitter-image.png">
+	<title>Ewa Majowska | Front-End Developer</title>
+
+	<link rel=" stylesheet" href="./css/home.css">
+	<link rel="icon" href="./assets/img/favicon.ico" sizes="any">
+	<link rel="icon" href="./assets/svg/favicon.svg" type="image/svg+xml">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"
 		integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg=="
@@ -14,10 +39,11 @@
 </head>
 
 <body>
+	<a href="#main-content" class="screen-reader-text">Skip to main content</a>
 
 	<!-- HEADER -->
 	<header id="header">
-		<a href="#header" role="button" class="stt btn btn--round" title="Scroll to top" aria-label="Scroll to top">
+		<a href="#header" role="button" class="stt btn btn--round " title="Scroll to top" aria-label="Scroll to top">
 			<div class="btn__shadow"></div>
 			<div class="btn__fill">
 				<svg>
@@ -30,8 +56,8 @@
 
 		<nav id="nav">
 			<div class="navbar">
-				<a role="button" href="./index.html" class="logo" aria-label="Homepage"><img src="./assets/svg/logo.svg"
-						aria-hidden="true">
+				<a role="button" href="./index.html" class="logo" aria-label="Homepage">
+					<img src="./assets/svg/logo.svg" aria-hidden="true">
 				</a>
 				<button type="button" class="menu-btn" id="menu-btn" aria-label="Open menu">
 					<span class="menu-btn__burger"></span>
@@ -155,7 +181,8 @@
 				<div class="code__container">
 					<ul class="code__list">
 						<li class="code__list__item">HTML5</li>
-						<li class="code__list__item">CSS3 & Sass</li>
+						<li class="code__list__item">A11Y</li>
+						<li class="code__list__item">CSS3 & SCSS</li>
 						<li class="code__list__item">Responsive Design</li>
 						<li class="code__list__item">JavaScript</li>
 						<li class="code__list__item">Git</li>
@@ -248,32 +275,8 @@
 							</div>
 						</div>
 					</li>
-					<li tabIndex="0" class="gallery__card">
-						<div class="card-22">
-							<div class="frame">
-								<div class="top">your daily<span>progress</span></div>
-								<div class="center"><svg viewBox="0 0 100 100">
-										<circle cx="50" cy="50" r="45"></circle>
-										<circle class="progress-bar" pathLength="100" cx="50" cy="50" r="45"></circle>
-									</svg>
-									<p class="data__text">2758<span class="small">kcal</span></p>
-								</div>
-								<div class="bottom">
-									<div class="steps"><svg viewBox="0 0 100 100">
-											<circle cx="50" cy="50" r="45"></circle>
-											<circle class="progress-bar" pathLength="100" cx="50" cy="50" r="45"></circle>
-										</svg>
-										<p class="data__text">8563<span class="small">steps</span></p>
-									</div>
-									<div class="kilometers"><svg viewBox="0 0 100 100">
-											<circle cx="50" cy="50" r="45"></circle>
-											<circle class="progress-bar" pathLength="100" cx="50" cy="50" r="45"></circle>
-										</svg>
-										<p class="data__text">6,2<span class="small">km</span></p>
-									</div>
-								</div>
-							</div>
-						</div>
+					<li aria-label="Project #4: fitness tracker" class="portfolio-gallery__card gallery__card">
+						<div class="card-22 card__top"></div>
 					</li>
 					<li tabIndex="0" class="gallery__card">
 						<div class="card-04">
