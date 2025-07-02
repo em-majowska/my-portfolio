@@ -165,23 +165,31 @@
 				</span>
 			</div>
 		</div>
-		<div class="circle"></div>
+
+		<div class="animated-elements">
+			<div class="circle-wrapper">
+				<div class="circle"></div>
+			</div>
+
+			<div class="cat-wrapper">
+				<div class="cat" id="cat-animation">
+					<script>
+						var animation = bodymovin.loadAnimation({
+							container: document.getElementById('cat-animation'),
+							path: './assets/cat-animation.json',
+							renderer: 'svg',
+							loop: true,
+							autoplay: true,
+							name: 'cat animation'
+						});
+					</script>
+				</div>
+			</div>
+		</div>
 	</main>
 
 	<footer class="footer">
-		<div class="footer__wrapper">
-			<div class="cat" id="cat-animation">
-				<script>
-					var animation = bodymovin.loadAnimation({
-						container: document.getElementById('cat-animation'),
-						path: './assets/cat-animation.json',
-						renderer: 'svg',
-						loop: true,
-						autoplay: true,
-						name: 'cat animation'
-					});
-				</script>
-			</div>
+		<div class="footer__wrapper wrapper">
 			<p>Copyright &copy; 2025 Ewa Majowska</p>
 		</div>
 	</footer>

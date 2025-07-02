@@ -348,16 +348,6 @@ footer {
 
     // CODE
 
-    // .code {
-    //   .code__container {
-    //     display: flex;
-
-    //     & > * {
-    //       width: 50%;
-    //     }
-    //   }
-    // }
-
     /* PORTFOLIO */
 
     .portfolio {
@@ -378,9 +368,8 @@ footer {
           no-repeat 50% 20%;
         z-index: -1;
       }
-    }
-    .gallery {
-      &__card {
+
+      .gallery__card {
         &:first-child {
           transform: translateY(32px);
           rotate: -15deg;
@@ -420,7 +409,7 @@ footer {
     }
     .animated-elements {
       max-width: 1200px;
-      height: auto;
+      // height: auto;
 
       .cat-wrapper {
         left: 0;
