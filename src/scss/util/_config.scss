@@ -3,6 +3,8 @@
 
 $bg: hsl(45, 100%, 96%);
 
+// Reset
+
 *,
 *:before,
 *:after {
@@ -18,74 +20,13 @@ html {
   font-size: 100%;
   overflow-y: scroll;
   scroll-behavior: smooth;
-}
 
-body {
-  overflow-x: clip;
-  font-family: var(--main-font);
-  line-height: 1.5;
-  color: var(--text);
-
-  @include m.outline-theme($bg);
-  -webkit-font-smoothing: antialiased;
-}
-
-html,
-body {
-  overflow-x: clip;
-  height: 100%;
-}
-
-nav,
-header,
-main {
-  min-width: 375px;
-}
-header,
-section:not(.hero) {
-  width: 100vw;
-  padding-inline: 1rem;
-  // margin-inline: auto;
-}
-
-header,
-main,
-footer {
-  min-width: 375px;
-}
-
-header,
-main,
-.wrapper {
-  margin-inline: auto;
-}
-
-section > .wrapper,
-footer > .wrapper {
-  max-width: 1200px;
-}
-
-:is(.about-me, .code, .portfolio) > .wrapper {
-  padding-block-end: 7vmax;
-  // margin-block-start: 3rem;
-}
-
-.about-me__container,
-:is(.about-me, .code, .portfolio, .contact) > .wrapper {
-  & > * + * {
-    margin-block-start: clamp(52px, 5.5vmax, 86px);
-    margin-inline: auto;
-  }
+  min-height: 100%;
 }
 
 img {
   display: block;
   max-width: 100%;
-}
-
-svg.icon {
-  width: 34px;
-  height: 34px;
 }
 
 ol,
@@ -98,7 +39,64 @@ a {
   text-decoration: none;
 }
 
-/* TYPOGRAPHY */
+body {
+  overflow-x: clip;
+  font-family: var(--main-font);
+  line-height: 1.5;
+  color: var(--text);
+
+  @include m.outline-theme($bg);
+}
+
+html,
+body {
+  overflow-x: clip;
+  height: 100%;
+}
+
+nav,
+header,
+main,
+footer {
+  min-width: 375px;
+}
+
+section > .wrapper,
+footer > .wrapper {
+  max-width: 1200px;
+}
+
+header,
+section:not(.hero) {
+  width: 100vw;
+  padding-inline: 1em;
+  // margin-inline: auto;
+}
+
+header,
+main,
+.wrapper {
+  margin-inline: auto;
+}
+
+:is(.about-me, .code, .portfolio) > .wrapper {
+  padding-block-end: 7vmax;
+}
+
+.about-me__container,
+:is(.about-me, .code, .portfolio, .contact) > .wrapper {
+  & > * + * {
+    margin-block-start: clamp(52px, 5.5vmax, 86px);
+    margin-inline: auto;
+  }
+}
+
+svg.icon {
+  width: 34px;
+  height: 34px;
+}
+
+// Typography
 
 input,
 button,
@@ -118,10 +116,11 @@ h4,
 }
 
 h1 {
-  font-size: clamp(2.5rem, 8vw, 96px);
   font-weight: 400;
   line-height: 1.35;
   letter-spacing: 2%;
+
+  font-size: clamp(2.5rem, 8vw, 96px);
 }
 
 .section__header {
@@ -132,8 +131,9 @@ h1 {
   h2 {
     position: relative;
     display: inline-block;
-    font-size: clamp(2.325rem, 8vw, 3rem);
     line-height: 1;
+
+    font-size: clamp(2.325rem, 8vw, 3rem);
 
     &::after {
       @include m.highlight;
@@ -149,7 +149,7 @@ p,
 .contact__metadata {
   max-width: 65ch;
   overflow-wrap: break-word;
-  text-wrap: pretty;
+  // text-wrap: pretty;
   hyphens: auto;
 
   font-size: clamp(1rem, 4vw, 1.5rem);
@@ -157,6 +157,11 @@ p,
 
 li {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+i,
+.btn > i {
+  height: auto;
 }
 
 ::selection {
@@ -168,14 +173,14 @@ footer ::selection {
   background-color: var(--secondary);
 }
 
-/* OUTLINE A11Y */
+// Outline A11Y
 
 *:focus-visible {
   outline: 3px dashed;
   outline-offset: 3px;
 }
 
-/* BUTTONS */
+// Buttons
 
 button {
   display: block;
@@ -252,17 +257,17 @@ button {
   }
 }
 
-/* SKIP TO MAIN CONTENT BUTTON */
+// Skip to main content button
 
 .screen-reader-text {
   position: absolute;
   left: -9999px;
-  z-index: 98;
   padding: 1em;
   color: var(--background);
   background-color: var(--accent);
   opacity: 0;
   font-size: 1.5rem;
+  z-index: 100;
 
   &:focus-visible {
     left: 6px;
@@ -271,7 +276,7 @@ button {
   }
 }
 
-/* SCROLLING */
+// Scrolling
 
 .stt {
   // display: none;
@@ -286,7 +291,7 @@ button {
   overflow: hidden;
 }
 
-/* CAT */
+// Cat element
 
 .animated-elements {
   --cat-size: clamp(200px, 30vw, 400px);
@@ -300,7 +305,7 @@ button {
     overflow-y: hidden;
     width: clamp(var(--cat-size), 50vw, 400px);
     height: calc(var(--cat-size) + 100px);
-    bottom: -4.925rem;
+    bottom: -4.925rem; // height of the footer
     left: calc((10% * -1.5));
     z-index: 2;
   }

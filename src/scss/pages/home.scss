@@ -354,9 +354,13 @@
 
   $color-palette-gallery: hsl(312, 100%, 96%), hsl(251, 100%, 89%),
     hsl(45, 100%, 84%), hsl(30, 100%, 88%), hsl(152, 100%, 80%);
-  @include u.set-color-palette('.gallery__card', $color-palette-gallery, true);
+  @include u.set-color-palette(
+    '.portfolio-gallery__card',
+    $color-palette-gallery,
+    true
+  );
 
-  .gallery {
+  .portfolio-gallery {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -390,7 +394,7 @@
           opacity: 0;
         }
 
-        & ~ .gallery__card {
+        & ~ .portfolio-gallery__card {
           transform: translateX(calc(-3em * -1));
         }
       }

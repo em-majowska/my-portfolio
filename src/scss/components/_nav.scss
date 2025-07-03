@@ -14,13 +14,13 @@ nav {
     justify-content: space-between;
     padding: 1em 1em 0.5em 1em;
     background-color: var(--background);
-    z-index: 100;
+    z-index: 99;
   }
 
   .logo {
     width: 55px;
-    // height: auto;
     aspect-ratio: 1/1;
+
     img {
       width: 100%;
     }
@@ -137,7 +137,7 @@ nav {
     text-align: center;
 
     overflow: hidden;
-    z-index: 99;
+    z-index: 98;
 
     &__link {
       display: block;
@@ -157,6 +157,7 @@ nav {
     }
 
     &[aria-expanded='true'] {
+      display: block;
       animation: open-nav 0.65s forwards;
       animation-timing-function: var(--animation-timing-function);
     }
@@ -187,18 +188,20 @@ nav {
 .color-palette {
   $color-palette-nav: var(--text), var(--accent), var(--secondary),
     var(--primary), var(--saturated);
-  @include u.set-color-palette(span, $color-palette-nav);
 
   display: none;
-  gap: 0.25em;
-  justify-content: space-around;
   align-items: center;
+  min-width: calc(45px * 5);
+  margin-inline: auto 1em;
 
-  span {
-    display: inline-block;
+  &::after {
+    content: '';
     width: 40px;
     height: 40px;
     border-radius: 12px;
+    background-color: var(--text);
+    box-shadow: 45px 0 var(--accent), 90px 0 var(--secondary),
+      135px 0 var(--primary), 180px 0 var(--saturated);
   }
 }
 

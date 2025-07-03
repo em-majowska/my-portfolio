@@ -38,8 +38,6 @@ footer {
       position: initial;
       display: flex;
       flex-wrap: wrap;
-      // display: grid;
-      // grid-template-columns: repeat(4, auto);
       gap: 20px;
       padding: 0;
       padding-inline: var(--padding-outline);
@@ -88,18 +86,17 @@ footer {
 
     .color-palette {
       margin-inline-start: auto;
-      gap: 0.5em;
+      // gap: 0.5em;
     }
 
     header .hero .wrapper {
-      // margin-block: 0em 5em;
       gap: 3em;
       flex-direction: row;
       align-items: center;
-      // justify-content: space-evenly;
       justify-content: space-between;
       max-width: 1200px;
     }
+
     .hero {
       &__text {
         margin-block-start: 3em;
@@ -284,7 +281,7 @@ footer {
 
     .about-me {
       & > .wrapper {
-        padding-block-end: 9rem;
+        padding-block-end: 9em;
       }
 
       div.about-me__container {
@@ -369,7 +366,7 @@ footer {
         z-index: -1;
       }
 
-      .gallery__card {
+      .portfolio-gallery__card {
         &:first-child {
           transform: translateY(32px);
           rotate: -15deg;
@@ -409,7 +406,7 @@ footer {
     }
     .animated-elements {
       max-width: 1200px;
-      // height: auto;
+      height: auto;
 
       .cat-wrapper {
         left: 0;
@@ -434,5 +431,6 @@ footer {
 @container main (min-width: 1000px) {
   body .gallery {
     padding-inline: 3em;
+    margin-block-end: 18em;
   }
 }

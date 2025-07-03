@@ -1,6 +1,7 @@
 import {
   isDesktop,
-  menu,
+  // menu,
+  showMenu,
   initNavToggle,
   initAnimationObserver,
 } from './utils.js';
@@ -8,6 +9,7 @@ import { initCard10 } from './gallery/card10.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavToggle(isDesktop);
+  updateHero();
 
   // Animate sections
   const animationObserver = initAnimationObserver();
@@ -37,8 +39,10 @@ const paths = {
   ],
 };
 
-window.addEventListener('resize', updateHero);
-updateHero();
+window.addEventListener('resize', () => {
+  updateHero();
+  showMenu(isDesktop);
+});
 
 function updateHero() {
   const isWide = isDesktop();
@@ -52,15 +56,13 @@ function updateHero() {
 
 /* Typewriter code */
 
-const code = document.querySelector('code');
-console.log(code);
+// const code = document.querySelector('code');
+// const codeText = window.getComputedStyle(code, ':before');
 
-const codeText = window.getComputedStyle(code, ':before');
+// code.addEventListener('resize', () => {
+//   console.log('yes');
 
-code.addEventListener('resize', () => {
-  console.log('yes');
+//   const codeContent = window.getComputedStyle(codeText, ':before').content;
 
-  const codeContent = window.getComputedStyle(codeText, ':before').content;
-
-  console.log(codeContent);
-});
+//   console.log(codeContent);
+// });
