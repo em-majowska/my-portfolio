@@ -2,6 +2,11 @@
 
 export const isDesktop = () => window.innerWidth >= 680;
 export const menu = document.querySelector('.menu');
+export const showMenu = (isDesktop) => {
+  const isWide = isDesktop();
+  menu.ariaExpanded = isWide ? 'undefined' : 'false';
+  menu.style.display = isWide ? 'flex' : 'none';
+};
 
 // NAVIGATION TOGGLE
 
@@ -9,10 +14,6 @@ export function initNavToggle(isDesktop) {
   const menuBtn = document.getElementById('menu-btn');
   const menuLinks = Array.from(document.querySelectorAll('.menu__link'));
   const overlay = document.querySelector('.nav-overlay');
-  const showMenu = (isDesktop) => {
-    const isWide = isDesktop();
-    menu.ariaExpanded = isWide ? 'undefined' : 'false';
-  };
 
   let isOpen = false;
 

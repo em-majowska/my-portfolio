@@ -3,7 +3,7 @@ import 'https://cdn.jsdelivr.net/npm/regenerator-runtime/runtime.min.js';
 
 import {
   isDesktop,
-  menu,
+  showMenu,
   initNavToggle,
   initAnimationObserver,
 } from './utils.js';
@@ -15,15 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const animationObserver = initAnimationObserver();
   initNavToggle(isDesktop);
   initCardModuleObserver();
-  setupLoaderObserver();
+  // setupLoaderObserver();
 
   // Animate intersecting cards
   observeGalleryCards();
 });
 
+window.addEventListener('resize', () => {
+  showMenu(isDesktop);
+});
+
 /* OBSERVERS */
 
-// JAVASCRIPT MODULES LOADER
+// Javascript modules loader
 
 function initCardModuleObserver() {
   jsModuleObserver = new IntersectionObserver(
@@ -58,7 +62,8 @@ function initCardModuleObserver() {
   );
 }
 
-// GALLERY CARD OBVSERVER
+// Gallery card observer
+// To show tags if a card is interactive
 
 function observeGalleryCards(animationObserver) {
   const touch = window.matchMedia('(pointer: coarse)').matches;
@@ -70,9 +75,11 @@ function observeGalleryCards(animationObserver) {
   });
 }
 
-// INFINITE SCROLL
+// Infinite scroll
+/* Loads 6 cards each time
+the user reaches the bottom of the page */
 
-const gallery = document.getElementById('100-days-gallery');
+const gallery = document.getElementById('css-challenge-gallery');
 const loader = document.getElementById('loader');
 let dataCache = null;
 let lastCardIndex = 0;
