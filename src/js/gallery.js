@@ -92,11 +92,10 @@ function setupLoaderObserver() {
       const entry = entries[0];
       if (!entry.isIntersecting) return;
 
-      entry.target.classList.add('show');
+      entry.target.classList.toggle('show');
       setTimeout(loadCards, 800);
     },
     {
-      rootMargin: '100px',
       threshold: 1,
     }
   );
@@ -119,6 +118,7 @@ async function loadCards() {
   window.scrollBy(0, -300);
 
   if (!hasMore) loader.style.display = 'none';
+  loader.classList.toggle('show');
 }
 
 async function fetchGalleryData() {
