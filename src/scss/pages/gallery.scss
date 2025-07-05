@@ -8,136 +8,105 @@ body {
   min-width: 375px;
 }
 
-// h1
-
-.text {
-  position: relative;
-  display: grid;
-  font-weight: normal;
-  background-color: var(--primary);
-  overflow: hidden;
-  font-size: var(--font-size);
-
-  .days,
-  .accent {
-    display: block;
-    padding-inline: 0.5em;
-    font-size: var(--font-size);
-  }
-
-  .days {
-    align-self: end;
-
-    .num {
-      position: relative;
-
-      &::after {
-        --number-width: calc(100% + 0.5em);
-
-        position: absolute;
-        content: '42';
-        width: var(--number-width);
-        right: var(--number-width);
-        bottom: 0;
-        padding: 0 0.75rem 0.75rem 0.25rem;
-        border-top-right-radius: 25% 50%;
-        border-bottom-right-radius: 25% 50%;
-        text-align: right;
-        font-family: var(--accent-font);
-        line-height: 1;
-        color: var(--text);
-        background-color: var(--background);
-      }
-    }
-
-    .scribble {
-      position: absolute;
-      left: -0.3em;
-      width: 100%;
-      height: 120%;
-      stroke: var(--text);
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      stroke-width: 8;
-    }
-  }
-
-  .accent {
-    color: var(--background);
-    background-color: var(--text);
-  }
-}
-
-// Hero elements grid placement
+// ======================
+/* Hero Layout & Grid */
+// ======================
 
 .hero {
+  position: relative;
+  min-width: 250px;
+  max-width: 900px;
+  aspect-ratio: 7 / 6;
+  margin: 3em auto 5em auto;
+
+  /* Grid Layout */
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, 1fr);
   grid-template-areas:
-    'mid1 mid2 quarter . . . cross'
+    'mid1 mid2 quarter . lines . cross'
     'mid1 mid2 text text text text text'
     'wave wave text text text text text'
     'wave wave text text text text text'
     'spark spark green green orange orange .'
     'spark spark . . . . flower';
 
+  // ======================
+  /* Hero Elements */
+  // ======================
+
+  /* h1 */
   .text {
     grid-area: text;
-  }
-  .mid1 {
-    grid-area: mid1;
-  }
-  .mid2 {
-    grid-area: mid2;
-  }
-  .quarter {
-    grid-area: quarter;
-  }
-  .cross {
-    grid-area: cross;
-  }
-  .wave {
-    grid-area: wave;
-  }
-  .green {
-    grid-area: green;
-  }
-  .orange {
-    grid-area: orange;
-  }
-  .spark {
-    grid-area: spark;
-  }
-  .flower {
-    grid-area: flower;
-  }
-}
 
-// hero elements sizing
+    position: relative;
+    display: grid;
+    font-weight: normal;
+    background-color: var(--primary);
+    overflow: hidden;
+    font-size: var(--font-size);
 
-.hero-container {
-  position: relative;
-  max-width: 900px;
-  margin-block: 3em 5em;
-}
+    .days,
+    .accent {
+      display: block;
+      padding-inline: 0.5em;
+      font-size: var(--font-size);
+    }
 
-.hero {
-  position: relative;
-  min-width: 250px;
-  aspect-ratio: 7 / 6;
-  // aspect-ratio: 1 /1;
-  margin-inline: auto;
-  overflow: hidden;
+    .days {
+      align-self: end;
+
+      .num {
+        position: relative;
+
+        &::after {
+          --number-width: calc(100% + 0.5em);
+
+          position: absolute;
+          content: '42';
+          width: var(--number-width);
+          right: var(--number-width);
+          bottom: 0;
+          padding: 0 0.75rem 0.75rem 0.25rem;
+          border-top-right-radius: 25% 50%;
+          border-bottom-right-radius: 25% 50%;
+          text-align: right;
+          font-family: var(--accent-font);
+          line-height: 1;
+          color: var(--text);
+          background-color: var(--background);
+        }
+      }
+
+      .scribble {
+        position: absolute;
+        left: -0.3em;
+        width: 100%;
+        height: 120%;
+        stroke: var(--text);
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        stroke-width: 8;
+      }
+    }
+
+    .accent {
+      color: var(--background);
+      background-color: var(--text);
+    }
+  }
 
   .mid2,
-  .wave,
+  .wave-container,
   .spark,
   .flower {
     padding: 0.5em;
   }
 
+  /* Flickering Rings */
   .mid1 {
+    grid-area: mid1;
+
     position: relative;
     background-color: var(--accent);
 
@@ -161,36 +130,74 @@ body {
     }
   }
 
+  /* Semi Circles */
   .mid2 {
+    grid-area: mid2;
+
     background-color: var(--text);
 
     .semi-circle {
       width: 100%;
       height: 100%;
-
       transform-origin: center;
     }
   }
 
+  /* Quarter */
   .quarter {
+    grid-area: quarter;
+
     margin: 5px;
     border-top-right-radius: 100%;
     background-color: var(--secondary);
   }
 
-  .cross {
-    display: grid;
-    position: relative;
-    top: -250%;
-    height: 250%;
-    padding: 10%;
-    border-bottom-left-radius: 62.5% 25%;
-    border-bottom-right-radius: 62.5% 25%;
-    border: 1px solid var(--text);
-    border-top: 0;
-    background-color: var(--background);
+  .gallery-lines {
+    grid-area: lines;
+    grid-row: 1 / span 3;
+    grid-column: span 3;
 
-    .cross-element {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    overflow-y: clip;
+    overflow-x: visible;
+
+    .lines-svg {
+      position: absolute;
+      width: 150%;
+      aspect-ratio: 15 / 3;
+
+      transform-origin: bottom left;
+      transform: translate(-20%, -120%) rotate(50deg);
+
+      stroke-dasharray: 100%;
+      stroke-dashoffset: -20;
+    }
+  }
+
+  /* Cross */
+  .cross-container {
+    grid-area: cross;
+    grid-row: 1 / span 3;
+
+    overflow: hidden;
+
+    .tag {
+      position: relative;
+      display: grid;
+      top: -125%;
+      height: calc(125% - 33.333333%);
+      padding: 10%;
+      border-bottom-left-radius: 62.5% 25%;
+      border-bottom-right-radius: 62.5% 25%;
+      border: 1px solid var(--text);
+      border-top: 0;
+      background-color: var(--background);
+    }
+
+    .cross {
       grid-row-end: 3;
       align-self: flex-end;
       width: 100%;
@@ -198,30 +205,35 @@ body {
     }
   }
 
+  /* Wave */
   .wave-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+    grid-area: wave;
 
-    & > * {
-      position: absolute;
-      left: 100%;
-      width: 65%;
-      border: 10px solid var(--secondary);
-      border-radius: 50%;
-      aspect-ratio: 1 / 1;
-      transform-origin: center;
-      transform: translate(-50%, -50%);
+    .wave {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
 
-      &:nth-child(2) {
-        width: 110%;
-      }
-      &:nth-child(3) {
-        width: 155%;
-      }
-      &:nth-child(4) {
-        width: 200%;
+      & > * {
+        position: absolute;
+        left: 100%;
+        width: 65%;
+        border: 10px solid var(--secondary);
+        border-radius: 50%;
+        aspect-ratio: 1 / 1;
+        transform-origin: center;
+        transform: translate(-50%, -50%);
+
+        &:nth-child(2) {
+          width: 110%;
+        }
+        &:nth-child(3) {
+          width: 155%;
+        }
+        &:nth-child(4) {
+          width: 200%;
+        }
       }
     }
   }
@@ -242,7 +254,10 @@ body {
     }
   }
 
+  /* Green */
   .green {
+    grid-area: green;
+
     background-color: var(--primary);
 
     &::after {
@@ -251,7 +266,10 @@ body {
     }
   }
 
+  /* Orange */
   .orange {
+    grid-area: orange;
+
     background-color: var(--accent);
 
     &::after {
@@ -260,27 +278,31 @@ body {
     }
   }
 
+  /* Spark */
   .spark {
+    grid-area: spark;
+
     width: 100%;
     height: 100%;
     scale: 0;
   }
 
+  /* Flower */
   .flower {
+    grid-area: flower;
+
     width: 100%;
     height: 100%;
     transform-origin: center;
   }
 }
 
-.navbar {
-  position: relative;
-}
-
-// Hero animations
+// ======================
+/* Hero Animations */
+// ======================
 
 .hero {
-  --smooth-overshoot-animation: linear(
+  --smooth-overshoot-animation-fn: linear(
     0,
     0.49 7.4%,
     0.864 15.3%,
@@ -311,7 +333,7 @@ body {
 }
 
 .mid1 {
-  --flicker-animation: linear(
+  --flicker-animation-fn: linear(
     0,
     0.006 5.5%,
     0.028 8.9%,
@@ -359,7 +381,7 @@ body {
 
   .oval {
     opacity: 0;
-    animation: flicker 5s var(--flicker-animation) 5 alternate forwards;
+    animation: flicker 5s var(--flicker-animation-fn) 5 alternate forwards;
   }
 
   .oval-2 {
@@ -372,7 +394,7 @@ body {
 }
 
 .mid2 .semi-circle {
-  --semi-cirle-animation: linear(
+  --semi-cirle-animation-fn: linear(
     0,
     0.453 7.8%,
     0.803 16.1%,
@@ -390,7 +412,7 @@ body {
   );
 
   transform: rotateY(90deg);
-  animation: circle-scale 2.45s var(--semi-cirle-animation) 0.8s forwards;
+  animation: circle-rotations 2.45s var(--semi-cirle-animation-fn) 0.8s forwards;
 }
 
 .quarter {
@@ -400,8 +422,12 @@ body {
   animation: quarter-grow 2s ease-in-out forwards;
 }
 
-.wave .container {
-  @include u.random-delay(div, 0.5s, 1, 4);
+.lines-svg {
+  animation: lines-animation 5s cubic-bezier(0.61, 1, 0.87, 1) forwards;
+}
+
+.wave-container .wave {
+  @include u.random-delay(span, 0.5s, 1, 4);
 
   & > * {
     opacity: 0;
@@ -410,17 +436,16 @@ body {
 }
 
 .spark {
-  animation: spark 0.45s var(--smooth-overshoot-animation) 0.5s forwards;
+  animation: spark 0.45s var(--smooth-overshoot-animation-fn) 0.5s forwards;
 }
 
 .flower {
   transform: scale(0) rotate(60deg);
-  overflow: visible;
-  animation: scale 0.45s var(--smooth-overshoot-animation) 1s forwards;
+  animation: scale 0.45s var(--smooth-overshoot-animation-fn) 1s forwards;
 }
 
-.cross {
-  --roll-down-animation: linear(
+.cross-container .tag {
+  --roll-down-animation-fn: linear(
     0,
     0.402 7.4%,
     0.711 15.3%,
@@ -437,7 +462,7 @@ body {
     1
   );
 
-  animation: slide-down 2s var(--roll-down-animation) 1.5s forwards;
+  animation: slide-down 2s var(--roll-down-animation-fn) 1.5s forwards;
 
   svg {
     transform: scale(1) rotate(-200deg);
@@ -445,41 +470,25 @@ body {
   }
 }
 
-.gallery-lines {
-  position: absolute;
-  top: 45%;
-  right: 0.5em;
-  width: 60%;
-  aspect-ratio: 15 / 3;
-  transform-origin: top right;
-  transform: rotate(55deg);
+// ======================
+/* Hero Keyframes */
+// ======================
 
-  .lines-svg {
-    width: 100%;
-    height: 100%;
-    stroke-dasharray: 100%;
-    stroke-dashoffset: -20;
-    animation: lines-animation 5s cubic-bezier(0.61, 1, 0.87, 1) forwards;
-  }
-}
-
-// Hero animation keyframes
-
-//days
-@keyframes roll-in {
-  to {
-    right: 0;
-  }
-}
-
-// scrible
+/* Scribbles the num of days */
 @keyframes scribble {
   to {
     stroke-dashoffset: 0;
   }
 }
 
-// mid-1
+/* Days el Animation rolls in after scribble */
+@keyframes roll-in {
+  to {
+    right: 0;
+  }
+}
+
+/* Ovals flickering */
 @keyframes flicker {
   70%,
   100% {
@@ -487,8 +496,8 @@ body {
   }
 }
 
-// circle
-@keyframes circle-scale {
+/* Semi circles rotation */
+@keyframes circle-rotations {
   to {
     transform: rotateY(360deg);
   }
@@ -525,7 +534,7 @@ body {
 // cross
 @keyframes slide-down {
   to {
-    top: -50%;
+    top: -25%;
   }
 }
 
@@ -557,21 +566,21 @@ body {
   position: relative;
   padding-block: var(--padding-outline);
 
-  --grid-max-col-count: 3;
+  // --grid-max-col-count: 3;
   --grid-min-col-size: 300px;
   --grid-gap: 40px;
 
   display: grid;
+  justify-items: center;
+  justify-content: center;
+
   gap: var(--grid-gap);
-  row-gap: 40px;
 
   grid-template-columns: repeat(
     auto-fit,
     minmax(var(--grid-min-col-size), 330px)
   );
   grid-auto-rows: minmax(300px, max-content);
-  justify-items: center;
-  justify-content: center;
 
   button.btn {
     font-family: var(--main-font);
