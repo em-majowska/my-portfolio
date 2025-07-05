@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const animationObserver = initAnimationObserver();
   initNavToggle(isDesktop);
   initCardModuleObserver();
-  // setupLoaderObserver();
+  setupLoaderObserver();
 
   // Animate intersecting cards
   observeGalleryCards();

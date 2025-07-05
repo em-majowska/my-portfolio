@@ -8,18 +8,11 @@ body {
   min-width: 375px;
 }
 
-// nav {
-//   position: fixed;
-//   background-color: var(--background);
-//   z-index: 100;
-// }
-
-/* H1 */
+// h1
 
 .text {
   position: relative;
   display: grid;
-  grid-area: text;
   font-weight: normal;
   background-color: var(--primary);
   overflow: hidden;
@@ -75,18 +68,9 @@ body {
   }
 }
 
-/* HERO MOZAIC */
-
-.hero-container {
-  margin-block: 3em 5em;
-}
+// Hero elements grid placement
 
 .hero {
-  position: relative;
-  min-width: 250px;
-  aspect-ratio: 7 / 6;
-  margin-inline: auto;
-
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, 1fr);
@@ -98,6 +82,52 @@ body {
     'spark spark green green orange orange .'
     'spark spark . . . . flower';
 
+  .text {
+    grid-area: text;
+  }
+  .mid1 {
+    grid-area: mid1;
+  }
+  .mid2 {
+    grid-area: mid2;
+  }
+  .quarter {
+    grid-area: quarter;
+  }
+  .cross {
+    grid-area: cross;
+  }
+  .wave {
+    grid-area: wave;
+  }
+  .green {
+    grid-area: green;
+  }
+  .orange {
+    grid-area: orange;
+  }
+  .spark {
+    grid-area: spark;
+  }
+  .flower {
+    grid-area: flower;
+  }
+}
+
+// hero elements sizing
+
+.hero-container {
+  position: relative;
+  max-width: 900px;
+  margin-block: 3em 5em;
+}
+
+.hero {
+  position: relative;
+  min-width: 250px;
+  aspect-ratio: 7 / 6;
+  // aspect-ratio: 1 /1;
+  margin-inline: auto;
   overflow: hidden;
 
   .mid2,
@@ -110,7 +140,6 @@ body {
   .mid1 {
     position: relative;
     background-color: var(--accent);
-    grid-area: mid1;
 
     .oval {
       position: absolute;
@@ -134,7 +163,6 @@ body {
 
   .mid2 {
     background-color: var(--text);
-    grid-area: mid2;
 
     .semi-circle {
       width: 100%;
@@ -148,8 +176,6 @@ body {
     margin: 5px;
     border-top-right-radius: 100%;
     background-color: var(--secondary);
-
-    grid-area: quarter;
   }
 
   .cross {
@@ -157,7 +183,6 @@ body {
     position: relative;
     top: -250%;
     height: 250%;
-    grid-area: cross;
     padding: 10%;
     border-bottom-left-radius: 62.5% 25%;
     border-bottom-right-radius: 62.5% 25%;
@@ -172,14 +197,11 @@ body {
       aspect-ratio: 1 / 1;
     }
   }
-  .wave {
-    grid-area: wave;
-  }
-  .container {
+
+  .wave-container {
     position: relative;
     width: 100%;
     height: 100%;
-    // margin-inline-end: -1em;
     overflow: hidden;
 
     & > * {
@@ -222,7 +244,6 @@ body {
 
   .green {
     background-color: var(--primary);
-    grid-area: green;
 
     &::after {
       right: -25%;
@@ -232,7 +253,6 @@ body {
 
   .orange {
     background-color: var(--accent);
-    grid-area: orange;
 
     &::after {
       left: -25%;
@@ -243,33 +263,13 @@ body {
   .spark {
     width: 100%;
     height: 100%;
-    grid-area: spark;
     scale: 0;
   }
 
   .flower {
     width: 100%;
     height: 100%;
-    grid-area: flower;
     transform-origin: center;
-  }
-}
-
-.hero-container {
-  position: relative;
-  max-width: 900px;
-  margin-inline: auto;
-
-  .lines {
-    position: absolute;
-    top: 45%;
-    right: 0.5em;
-    width: 60%;
-    aspect-ratio: 15 / 3;
-    // // background: no-repeat url('../../src/assets/svg/lines.svg') center;
-    // // background-size: cover;
-    transform-origin: top right;
-    transform: rotate(55deg);
   }
 }
 
@@ -277,10 +277,10 @@ body {
   position: relative;
 }
 
-/* MOZAIC ANIMATIONS */
+// Hero animations
 
 .hero {
-  --animation-timing-function: linear(
+  --smooth-overshoot-animation: linear(
     0,
     0.49 7.4%,
     0.864 15.3%,
@@ -302,28 +302,16 @@ body {
 
 .days {
   .num::after {
-    animation: fade-in 0.2s linear 4s forwards;
-
-    @keyframes fade-in {
-      to {
-        right: 0;
-      }
-    }
+    animation: roll-in 0.5s linear 4s forwards;
   }
 
   .scribble {
     animation: scribble 1s linear 3s forwards;
-
-    @keyframes scribble {
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
   }
 }
 
 .mid1 {
-  --animation-flicker: linear(
+  --flicker-animation: linear(
     0,
     0.006 5.5%,
     0.028 8.9%,
@@ -371,103 +359,68 @@ body {
 
   .oval {
     opacity: 0;
-    animation: flicker 1s var(--animation-flicker) forwards;
+    animation: flicker 5s var(--flicker-animation) 5 alternate forwards;
   }
 
   .oval-2 {
-    animation-duration: 1.8s;
+    animation-duration: 5.8s;
   }
 
   .oval-3 {
-    animation-duration: 1.3s;
-  }
-
-  @keyframes flicker {
-    to {
-      opacity: 1;
-    }
+    animation-duration: 5.3s;
   }
 }
 
 .mid2 .semi-circle {
-  transform: rotateY(90deg);
-  animation: scale-circle 0.45s
-    linear(
-      0,
-      0.453 7.8%,
-      0.803 16.1%,
-      1.048 24.9%,
-      1.132 29.5%,
-      1.194 34.4%,
-      1.227 38.4%,
-      1.245 42.5%,
-      1.25 46.9%,
-      1.242 51.7%,
-      1.2 60.5%,
-      1.038 84.9%,
-      1.009 92.5%,
-      1
-    )
-    0.4s forwards;
+  --semi-cirle-animation: linear(
+    0,
+    0.453 7.8%,
+    0.803 16.1%,
+    1.048 24.9%,
+    1.132 29.5%,
+    1.194 34.4%,
+    1.227 38.4%,
+    1.245 42.5%,
+    1.25 46.9%,
+    1.242 51.7%,
+    1.2 60.5%,
+    1.038 84.9%,
+    1.009 92.5%,
+    1
+  );
 
-  @keyframes scale-circle {
-    to {
-      transform: rotateY(360deg);
-    }
-  }
+  transform: rotateY(90deg);
+  animation: circle-scale 2.45s var(--semi-cirle-animation) 0.8s forwards;
 }
 
 .quarter {
   transform-origin: bottom left;
   transform: scale(0);
 
-  animation: grow-quarter 2s ease-in-out forwards;
-
-  @keyframes grow-quarter {
-    to {
-      transform: scale(1);
-    }
-  }
+  animation: quarter-grow 2s ease-in-out forwards;
 }
 
 .wave .container {
-  & > * {
-    opacity: 0;
-    animation: animation-wave 0.4s ease-in-out forwards;
-  }
-
   @include u.random-delay(div, 0.5s, 1, 4);
 
-  @keyframes animation-wave {
-    to {
-      opacity: 1;
-    }
+  & > * {
+    opacity: 0;
+    animation: wave-animation 0.4s ease-in-out forwards;
   }
 }
 
 .spark {
-  animation: spark 0.45s var(--animation-timing-function) 0.5s forwards;
-
-  @keyframes spark {
-    100% {
-      scale: 1;
-    }
-  }
+  animation: spark 0.45s var(--smooth-overshoot-animation) 0.5s forwards;
 }
 
 .flower {
-  animation: scale 0.45s var(--animation-timing-function) 1s forwards;
   transform: scale(0) rotate(60deg);
-
-  @keyframes scale {
-    100% {
-      transform: scale(1) rotate(0deg);
-    }
-  }
+  overflow: visible;
+  animation: scale 0.45s var(--smooth-overshoot-animation) 1s forwards;
 }
 
 .cross {
-  --smooth-overshoot: linear(
+  --roll-down-animation: linear(
     0,
     0.402 7.4%,
     0.711 15.3%,
@@ -484,60 +437,123 @@ body {
     1
   );
 
-  animation: slide-down 2s var(--smooth-overshoot) 1.5s forwards;
+  animation: slide-down 2s var(--roll-down-animation) 1.5s forwards;
 
   svg {
     transform: scale(1) rotate(-200deg);
     animation: scale 3s ease-out 1.5s forwards;
   }
-
-  @keyframes slide-down {
-    to {
-      top: -50%;
-    }
-  }
 }
 
-.lines {
-  // width: 200px;
-  // height: auto;
+.gallery-lines {
+  position: absolute;
+  top: 45%;
+  right: 0.5em;
+  width: 60%;
+  aspect-ratio: 15 / 3;
+  transform-origin: top right;
+  transform: rotate(55deg);
 
   .lines-svg {
     width: 100%;
     height: 100%;
-    stroke-dasharray: 99;
-    stroke-dashoffset: 100;
-    animation: lines-animation 4s cubic-bezier(0.61, 1, 0.87, 1) forwards;
-  }
-
-  @keyframes lines-animation {
-    to {
-      stroke-dasharray: 100;
-      stroke-dashoffset: 0;
-    }
+    stroke-dasharray: 100%;
+    stroke-dashoffset: -20;
+    animation: lines-animation 5s cubic-bezier(0.61, 1, 0.87, 1) forwards;
   }
 }
 
-/* MAIN */
+// Hero animation keyframes
+
+//days
+@keyframes roll-in {
+  to {
+    right: 0;
+  }
+}
+
+// scrible
+@keyframes scribble {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+// mid-1
+@keyframes flicker {
+  70%,
+  100% {
+    opacity: 1;
+  }
+}
+
+// circle
+@keyframes circle-scale {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+// quarter
+@keyframes quarter-grow {
+  to {
+    transform: scale(1);
+  }
+}
+
+// wave
+@keyframes wave-animation {
+  to {
+    opacity: 1;
+  }
+}
+
+// spark
+@keyframes spark {
+  to {
+    scale: 1;
+  }
+}
+
+// flower
+@keyframes scale {
+  to {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+// cross
+@keyframes slide-down {
+  to {
+    top: -50%;
+  }
+}
+
+// gallery-lines
+@keyframes lines-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+// Main
 
 .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   position: relative;
   padding-inline: 1rem;
   margin-inline: auto;
   width: clamp(300px, 100%, 1200px);
-  height: 50vh;
 
   &:target {
     scroll-margin-block-start: 5em;
   }
-
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
 }
 
 .gallery {
-  // flex: 1;
   position: relative;
   padding-block: var(--padding-outline);
 
@@ -778,6 +794,9 @@ body {
 }
 
 .animated-elements {
+  margin-block-start: auto;
+  width: 100%;
+
   .circle-wrapper {
     height: 35vh;
     position: absolute;
