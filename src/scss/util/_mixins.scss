@@ -1,24 +1,9 @@
 @use 'sass:list';
 @use 'functions' as f;
 
-// GRID LAYOUTS
+/* === Grid Layouts === */
 
 @mixin list-tab($col) {
-  // display: grid;
-  // row-gap: 1.25em;
-  // // FIX
-  // row-gap: 3vw;
-  // // grid-template-columns: repeat($col, min(7%, 4em));
-  // grid-template-columns: repeat($col, 5%);
-  // // padding-inline-end: 2rem;
-
-  // @for $i from 2 through $col {
-  //   &__item:nth-child(#{$i}) {
-  //     grid-column: $i;
-  //     grid-row: $i;
-  //   }
-  // }
-
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -41,11 +26,10 @@
   display: grid;
   width: 100%;
   gap: 2em;
-  // justify-content: space-around;
   align-items: center;
 }
 
-// FLEX LAYOUTS
+/* === Flex Layouts === */
 
 @mixin flex-center-vertical {
   display: flex;
@@ -54,7 +38,7 @@
   flex-direction: column;
 }
 
-// COLOR-THEME OUTLINE
+/* === Color-theme A11y Outline === */
 
 @mixin outline-theme($bg) {
   background-color: $bg;
@@ -65,7 +49,7 @@
   }
 }
 
-// NEO BRUTALIST SHADOW
+/* === Neo Brutalist Shadow === */
 
 @mixin box-shadow {
   @include pseudo;
@@ -77,7 +61,7 @@
   z-index: -1;
 }
 
-// NEO BRUTALIST WINDOW
+/* === Neo Brutalist Window === */
 
 @mixin window($color) {
   position: relative;
@@ -94,12 +78,14 @@
   }
 }
 
+/* === Pseudo Element === */
+
 @mixin pseudo {
   position: absolute;
   content: '';
 }
 
-// H2 HIGHLIGHT
+/* === H2 Highlight === */
 
 @mixin highlight {
   display: block;
@@ -117,7 +103,7 @@
   z-index: -1;
 }
 
-// RANDOM DELAY
+/* === Random Duration, Delay === */
 
 @mixin random-duration($item, $count, $animation) {
   $a-duration: 5s;
@@ -141,9 +127,7 @@
   }
 }
 
-// PORTFOLIO GALLERY COLORS
-
-// PROJECT-10
+/* === Project 10 === */
 
 @mixin populate-dots($num) {
   $rotate: 15deg;
@@ -154,6 +138,8 @@
     $rotate: $rotate + 15deg;
   }
 }
+
+/* === Color Palette === */
 
 @mixin set-color-palette($item, $color-palette, $pseudo-element: false) {
   @for $i from 1 through list.length($color-palette) {
