@@ -23,10 +23,12 @@
     align-self: start;
     word-wrap: balance;
 
-    p {
-      display: inline-block;
+    .small {
+      display: block;
       font-size: clamp(1.25rem, 3vw, 2rem);
+      font-family: 'Source Sans 3';
       letter-spacing: 1%;
+      color: var(--text);
     }
 
     h1 {
@@ -125,6 +127,7 @@
     // visibility: hidden;
     opacity: 0;
   }
+
   h3,
   &__frame {
     display: none;
