@@ -7,6 +7,7 @@ export const showMenu = (isDesktop) => {
   menu.ariaExpanded = isWide ? 'undefined' : 'false';
   menu.style.display = isWide ? 'flex' : 'none';
 };
+export const sttBtn = document.getElementById('stt-btn');
 
 // NAVIGATION TOGGLE
 
@@ -14,18 +15,25 @@ export function initNavToggle(isDesktop) {
   const menuBtn = document.getElementById('menu-btn');
   const menuLinks = Array.from(document.querySelectorAll('.menu__link'));
   const overlay = document.querySelector('.nav-overlay');
-
   let isOpen = false;
 
   const toggleMenu = () => {
     isOpen = !isOpen;
     menu.ariaExpanded = isOpen;
-    document.body.classList.toggle('stop-scrolling', isOpen);
+    // document.body.classList.toggle('stop-scrolling', isOpen);
 
     if (isOpen) {
+      document.body.addEventListener('wheel', preventScroll, {
+        passive: false,
+      });
+
       menu.style.display = 'block';
       overlay.addEventListener('click', toggleMenu, { once: true });
     } else {
+      document.body.removeEventListener('wheel', preventScroll, {
+        passive: false,
+      });
+
       menu.addEventListener(
         'animationend',
         () => {
@@ -43,6 +51,10 @@ export function initNavToggle(isDesktop) {
       if (menu.ariaExpanded !== 'undefined') toggleMenu();
     })
   );
+
+  function preventScroll(e) {
+    e.preventDefault();
+  }
 }
 
 // ANIMATION OBSERVER
@@ -68,4 +80,17 @@ export function initAnimationObserver() {
     );
   }
   return animationObserver;
+}
+
+/* Scroll to top */
+
+export function scrollToTop() {
+  if (
+    document.body.scrollTop > 700 ||
+    document.documentElement.scrollTop > 700
+  ) {
+    sttBtn.classList.add('active');
+  } else {
+    sttBtn.classList.remove('active');
+  }
 }

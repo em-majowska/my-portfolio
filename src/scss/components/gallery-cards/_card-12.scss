@@ -2,7 +2,7 @@
   min-height: 350px;
 
   div.card__top {
-    font-size: 1.125rem;
+    font-size: 18px;
     font-weight: 400;
     color: hsl(0, 0%, 100%);
     background-color: hsl(from var(--saturated) h 30% 60%);
@@ -24,10 +24,10 @@
 
   .quote {
     position: absolute;
-    top: 0.5rem;
-    left: -1.225rem;
+    top: 0.5em;
+    left: -1.225em;
     opacity: 0.3;
-    font-size: 16rem;
+    font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 0.7;
     pointer-events: none;
@@ -35,7 +35,7 @@
 
   blockquote p {
     position: relative;
-    margin: 1rem;
+    margin: 1em;
     hyphens: none;
   }
 
@@ -64,13 +64,13 @@
     padding: 0;
     transition: all 0.5s ease-in-out 0.3s;
     opacity: 0;
-    font-size: 1rem;
+    font-size: 16px;
     z-index: -1;
     background-color: hsl(from var(--saturated) h 30% 35%);
 
     &__text {
       display: block;
-      padding: 0.725rem;
+      padding: 0.725em;
     }
   }
 
@@ -128,7 +128,7 @@
 
   blockquote footer {
     margin-inline-start: 1rem;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: 300;
     font-style: italic;
   }

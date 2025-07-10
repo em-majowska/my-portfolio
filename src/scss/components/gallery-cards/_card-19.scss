@@ -13,7 +13,7 @@
   input {
     @include u.center;
     position: relative;
-    width: 4rem;
+    width: 64px;
     text-align: center;
     appearance: none;
     -webkit-appearance: none;
@@ -35,7 +35,7 @@
   .ball {
     position: absolute;
     top: 8px;
-    left: calc((12rem / 3) - 32px);
+    left: calc((192px / 3) - 32px);
     transform: translate(-50%, 0);
     width: 48px;
     height: 48px;
@@ -52,7 +52,7 @@
     left: -100%;
   }
   .right:checked ~ .ball {
-    left: calc((8rem + 22px) + 32px);
+    left: calc((128px + 22px) + 32px);
   }
   &:has(.right:checked) .bg {
     left: -200%;

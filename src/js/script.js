@@ -4,6 +4,8 @@ import {
   showMenu,
   initNavToggle,
   initAnimationObserver,
+  sttBtn,
+  scrollToTop,
 } from './utils.js';
 import { initCard10 } from './gallery/card10.js';
 
@@ -43,6 +45,10 @@ window.addEventListener('resize', () => {
   updateHero();
   showMenu(isDesktop);
 });
+
+window.onscroll = function () {
+  scrollToTop();
+};
 
 function updateHero() {
   const isWide = isDesktop();

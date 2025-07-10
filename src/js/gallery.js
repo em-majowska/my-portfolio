@@ -3,6 +3,8 @@ import {
   showMenu,
   initNavToggle,
   initAnimationObserver,
+  sttBtn,
+  scrollToTop,
 } from './utils.js';
 
 let jsModuleObserver;
@@ -22,6 +24,9 @@ window.addEventListener('resize', () => {
   showMenu(isDesktop);
 });
 
+window.onscroll = function () {
+  scrollToTop();
+};
 /* OBSERVERS */
 
 // Javascript modules loader

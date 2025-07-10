@@ -10,9 +10,10 @@
   row-gap: 3vmin;
   align-items: flex-start;
 
+  // Evenly distributed list items
   @for $i from 2 through $col {
     &__item:nth-child(#{$i}) {
-      margin-inline-start: calc(($i - 1) * 12%);
+      margin-inline-start: calc(($i - 1) * 11%);
     }
   }
 }

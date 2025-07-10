@@ -19,7 +19,12 @@ footer {
   container-name: footer;
 }
 
-@container header (min-width: calc(680px - 2rem)) {
+// ======================
+/* Header & Navigation */
+// ======================
+
+// @container header (min-width: calc(680px - 2rem)) {
+@container header (min-width: 680px) {
   body {
     .menu-btn {
       display: none;
@@ -30,6 +35,7 @@ footer {
       justify-content: flex-start;
 
       .navbar {
+        padding-inline-end: 1em;
         margin-inline: 0;
       }
     }
@@ -41,7 +47,7 @@ footer {
       gap: 20px;
       padding: 0;
       padding-inline: var(--padding-outline);
-      padding-block-end: var(--padding-outline);
+      padding-block-end: calc(var(--padding-outline) + 0.25rem);
       margin-inline-end: 1em;
       width: fit-content;
       height: auto;
@@ -61,7 +67,7 @@ footer {
         text-wrap: nowrap;
         position: relative;
         padding: 0.5em;
-        padding-block-end: 0.25em;
+        padding-block-end: 4px;
 
         &::after {
           @include u.pseudo;
@@ -89,12 +95,13 @@ footer {
       // gap: 0.5em;
     }
 
-    header .hero .wrapper {
-      gap: 3em;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1200px;
+    .hero {
+      &.wrapper:where(:has(.hero__text)) {
+        gap: 3em;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
     }
 
     .hero {
@@ -131,11 +138,12 @@ footer {
   }
 }
 
-@container header (min-width: calc(1000px - 2rem)) {
+// @container header (min-width: calc(1000px - 2rem)) {
+@container header (min-width: 1000px) {
   body {
     nav {
-      padding-inline: 1em;
       min-width: fit-content;
+      padding-inline: 1rem;
 
       .color-palette {
         margin-block-end: -1em;
@@ -149,12 +157,17 @@ footer {
       .navbar {
         padding-inline-start: 0;
       }
+
       .color-palette {
         display: flex;
       }
     }
 
     .hero {
+      &:where(:has(.btn)) {
+        padding-block-end: 7vmax;
+      }
+
       &__img {
         right: 0;
       }
@@ -168,8 +181,14 @@ footer {
   }
 }
 
+// ======================
+/* Main */
+// ======================
+
 @container main (min-width: 680px) {
   body {
+    /* === Code Section === */
+
     .code {
       .circle {
         top: -5%;
@@ -205,11 +224,9 @@ footer {
   }
 }
 
-// MAIN
-
 @container main (min-width: 1000px) {
   body {
-    /* MULTILINGUAL HEADERS */
+    /* === About Me Section === */
 
     .about-me {
       h3 {
@@ -277,7 +294,7 @@ footer {
       }
     }
 
-    /* ABOUT-ME LAYOUT */
+    // About Me Layout
 
     .about-me {
       & > .wrapper {
@@ -343,9 +360,7 @@ footer {
       }
     }
 
-    // CODE
-
-    /* PORTFOLIO */
+    /* === Portfolio Section === */
 
     .portfolio {
       &::after {
@@ -386,17 +401,18 @@ footer {
       }
     }
 
-    // CONTACT
+    /* === Contact Section === */
 
     .contact {
-      .wrapper {
+      & > .wrapper:first-child {
         height: 85vh;
         display: flex;
         align-items: flex-start;
 
         .window {
           margin: 0;
-          transform: translateY(70%);
+          // transform: translateY(70%);
+          align-self: center;
         }
 
         .sun {
@@ -405,7 +421,6 @@ footer {
       }
     }
     .animated-elements {
-      max-width: 1200px;
       height: auto;
 
       .cat-wrapper {
@@ -426,11 +441,18 @@ footer {
   }
 }
 
-// CSS CHALLENGE GALLERY
+// ======================
+/* CSS Challenge Gallery */
+// ======================
+
+@container header (min-width: 1000px) {
+  body .hero__gallery {
+    margin: 150px auto 80px auto;
+  }
+}
 
 @container main (min-width: 1000px) {
   body .gallery {
-    padding-inline: 3em;
-    margin-block-end: 18em;
+    margin-block-end: 300px;
   }
 }

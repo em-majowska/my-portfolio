@@ -9,15 +9,13 @@
 @use '../util/typed' as t;
 @use 'sass:string';
 
-/* HERO */
+/* === Hero Section === */
 
 .hero {
-  & > .wrapper {
+  &.wrapper {
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-inline: auto;
-    max-width: 600px;
   }
 
   &__text {
@@ -97,7 +95,7 @@
   }
 }
 
-// ABOUT ME
+/* === About Me Section === */
 
 .about-me {
   position: relative;
@@ -123,7 +121,10 @@
     }
   }
 
-  h2,
+  h2 {
+    // visibility: hidden;
+    opacity: 0;
+  }
   h3,
   &__frame {
     display: none;
@@ -131,6 +132,7 @@
 
   &__text {
     max-width: 65ch;
+    min-width: 25ch;
 
     p:first-child {
       margin-block-end: 1em;
@@ -138,7 +140,7 @@
   }
 }
 
-// WIDGET
+/* About Me - Widget */
 
 .widget {
   width: clamp(343px, 80%, 450px);
@@ -152,8 +154,8 @@
   }
 
   &__text {
-    overflow: hidden;
     font-family: 'Playfair Display';
+    overflow: hidden;
 
     & > text {
       position: relative;
@@ -188,12 +190,15 @@
     }
   }
 
+  &__avatar,
+  &__img {
+    margin-inline: auto;
+    aspect-ratio: 1 / 1;
+  }
+
   &__avatar {
     @include u.center;
     max-width: 70%;
-
-    aspect-ratio: 1 / 1;
-    margin-inline: auto;
     background-color: var(--accent);
     transform-origin: center;
     animation: spin 90s linear infinite;
@@ -205,9 +210,7 @@
   &__img {
     align-self: end;
     width: 100%;
-    aspect-ratio: 1 / 1;
     object-fit: cover;
-    margin-inline: auto;
     transform-origin: center;
 
     animation: spin 90s linear reverse infinite;
@@ -220,7 +223,7 @@
   }
 }
 
-// CODE
+/* === Code Section === */
 
 .code {
   box-shadow: var(--shadow);
@@ -295,15 +298,16 @@
       font-size: clamp(1rem, 4vw, 2rem);
       top: 20%;
       left: 5%;
-      background-color: var(--background);
+      max-height: 80%;
+      overflow-y: scroll;
 
-      // Typing effect SCSS mixin by @branmcconnell
-      // Source: https://github.com/brandonmcconnell/typed.css
-      // License: CC0
+      /* Typing effect SCSS mixin by @branmcconnell
+      Source: https://github.com/brandonmcconnell/typed.css
+      License: CC0 */
 
       @include t.typed(
         '<h1>Hello World!</h1>',
-        '.spark {\A   display: flex;\A   color: orange;\A}',
+        '.spark {\A   display: your-design;\A   color: orange;\A}',
         '@media screen and (min-width: 80rem) {\A  .text {\A    text-align: center;\A  }\A}',
         'let design = "clean, clever & user-friendly";\A if (challenge) solveIt();',
         'git commit -m "Merge creativity with code"',
@@ -336,11 +340,12 @@
   }
 }
 
-// PORTFOLIO
+/* === Portfolio Section === */
 
 .portfolio {
   position: relative;
   text-align: center;
+  font-size: 16px;
 
   &::after {
     @include u.pseudo;
@@ -361,10 +366,9 @@
   );
 
   .portfolio-gallery {
-    width: 100%;
     display: flex;
     justify-content: center;
-    // font-size: 16px;
+    width: 100%;
 
     &__card {
       position: relative;
@@ -453,7 +457,7 @@
 
       .top,
       .data__text {
-        font-size: clamp(0.75rem, 2vw, 1rem);
+        font-size: clamp(0.75rem, 2vw, 16px);
       }
 
       .top span,
@@ -475,7 +479,7 @@
   justify-content: space-between;
 }
 
-// CONTACT
+/* === Contact Section === */
 
 .contact {
   position: relative;
@@ -494,6 +498,7 @@
   h2 {
     max-width: 10ch;
     font-size: clamp(2.8rem, 7vw, 5.25rem);
+    font-size: clamp(2.8rem, 7vw, 84px);
     line-height: 1.12;
     z-index: 1;
 
@@ -512,7 +517,7 @@
     }
   }
 
-  /* CONTACT WINDOW */
+  /* Contact Window */
 
   .window {
     max-width: fit-content;
@@ -521,7 +526,7 @@
     width: auto;
 
     h3 {
-      padding: 0.15em 0.15em 0.15em 1.5em;
+      padding: 0.15em 0.15em 0.15em 1.5rem;
       line-height: 3rem;
       color: var(--background);
     }
@@ -529,7 +534,7 @@
 
   &__metadata {
     height: auto;
-    padding: 1.5em 2em 1.5em 1.5em;
+    padding: 1.5em 2em 1.5em 1.5rem;
     border-radius: 0 0 25px 25px;
     color: var(--text);
     background-color: var(--background);
@@ -571,13 +576,13 @@
     }
   }
 
-  /* SUN */
+  /* Sun Element */
 
   .sun-wrapper {
     position: absolute;
     margin-block-start: 0;
     bottom: 0;
-    left: -1em;
+    // left: -1em;
     width: 100vw;
     height: 100%;
     overflow: hidden;
@@ -637,35 +642,3 @@
     rotate: 0deg;
   }
 }
-
-/* CAT */
-
-// .animated-elements {
-//   --cat-size: clamp(200px, 30vw, 400px);
-
-//   position: relative;
-//   height: var(--cat-size);
-//   margin-inline: auto;
-
-//   .cat-wrapper {
-//     position: absolute;
-//     overflow-y: hidden;
-//     width: clamp(var(--cat-size), 50vw, 400px);
-//     height: calc(var(--cat-size) + 100px);
-//     bottom: -4.925rem;
-//     left: calc((10% * -1.5));
-//     z-index: 2;
-//   }
-
-//   .cat {
-//     --pivot: 0% 63%;
-
-//     position: absolute;
-//     bottom: 0;
-//     left: 0;
-//     width: 200px;
-//     height: 200px;
-//     transform-origin: var(--pivot);
-//     transform: scale(1) translateY(-5%);
-//   }
-// }

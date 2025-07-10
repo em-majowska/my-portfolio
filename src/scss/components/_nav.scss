@@ -2,17 +2,14 @@
 
 nav {
   position: relative;
-  width: 100vw;
-  left: -1rem;
-  max-width: 1200px;
-  margin-inline: auto;
   margin-block-end: 1.5em;
 
   .navbar {
     position: relative;
     display: flex;
     justify-content: space-between;
-    padding: 1em 1em 0.5em 1em;
+    padding: 1rem;
+
     background-color: var(--background);
     z-index: 99;
   }
@@ -128,7 +125,6 @@ nav {
     display: none;
     position: absolute;
     left: 0;
-    transform: translateY(-120%);
     width: 100vw;
     padding-block: 6.5em var(--padding-outline);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
@@ -192,7 +188,7 @@ nav {
   display: none;
   align-items: center;
   min-width: calc(45px * 5);
-  margin-inline: auto 1em;
+  margin-inline: auto 0;
 
   &::after {
     content: '';
@@ -205,23 +201,28 @@ nav {
   }
 }
 
-// NAV ANIMATIONS
+// Nav Animations
+
+nav {
+  --nav-closed: -500%;
+  --nav-opened: -13%;
+}
 
 @keyframes open-nav {
   from {
-    transform: translateY(-120%);
+    top: var(--nav-closed);
   }
 
   to {
-    transform: translateY(-20%);
+    top: var(--nav-opened);
   }
 }
 
 @keyframes close-nav {
   from {
-    transform: translateY(-20%);
+    top: var(--nav-opened);
   }
   to {
-    transform: translateY(-120%);
+    top: var(--nav-closed);
   }
 }

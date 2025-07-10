@@ -22,6 +22,7 @@
     border: none;
     padding-inline: 10px 15px;
     font-weight: 600;
+    font-size: 20px;
     width: 100%;
 
     &::placeholder {
@@ -40,13 +41,13 @@
   i {
     position: relative;
     height: 20px;
-    font-size: 1.25rem;
+    font-size: 20px;
   }
 
   .accordeon {
     display: none;
     padding-inline: 15px;
-    font-size: 0.825rem;
+    font-size: 14px;
     background-color: white;
   }
 

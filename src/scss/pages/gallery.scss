@@ -8,6 +8,15 @@ body {
   min-width: 375px;
 }
 
+nav {
+  position: fixed;
+  z-index: 99;
+  background-color: var(--background);
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 // ======================
 /* Hero Layout & Grid */
 // ======================
@@ -17,7 +26,8 @@ body {
   min-width: 250px;
   max-width: 900px;
   aspect-ratio: 7 / 6;
-  margin: 3em auto 5em auto;
+  margin: 110px auto 80px auto;
+  // padding-inline: 1rem;
 
   /* Grid Layout */
   display: grid;
@@ -44,13 +54,13 @@ body {
     font-weight: normal;
     background-color: var(--primary);
     overflow: hidden;
-    font-size: var(--font-size);
+    font-size: var(--h1-size);
 
     .days,
     .accent {
       display: block;
       padding-inline: 0.5em;
-      font-size: var(--font-size);
+      font-size: var(--h1-size);
     }
 
     .days {
@@ -554,10 +564,7 @@ body {
   flex-direction: column;
   align-items: center;
 
-  // position: relative;
   padding-inline: 1rem;
-  margin-inline: auto;
-  width: clamp(300px, 100%, 1200px);
   min-height: 30vh;
 
   &:target {
@@ -569,6 +576,7 @@ body {
 .gallery {
   position: relative;
   padding-block: var(--padding-outline);
+  margin-block-end: 5em;
 
   // --grid-max-col-count: 3;
   --grid-min-col-size: 300px;
@@ -595,9 +603,10 @@ body {
 .gallery > article {
   display: grid;
   grid-template-rows: 1fr 4rem;
+  grid-template-rows: 1fr auto;
   position: relative;
   width: 100%;
-  max-width: 330px;
+  // max-width: 330px;
   border: var(--border);
   border-radius: var(--border-radius);
   background-color: var(--text);
@@ -616,7 +625,9 @@ body {
       top: 0px;
       right: 1em;
       width: 55px;
+      width: 3.125rem;
       height: 70px;
+      height: 4rem;
 
       padding-block-start: 1.5em;
       border-bottom-left-radius: 50% 30%;
@@ -645,12 +656,50 @@ body {
   &:is(:hover, .animate, :focus-visible, :focus-within) {
     &::after {
       animation-play-state: paused;
-      top: -80px;
+      top: -4rem;
     }
+  }
+
+  /* Reset Animation Button */
+  .btn--reset {
+    position: absolute;
+    bottom: -100%;
+    height: auto;
+    padding: 0.5em 1.75em;
+    border: 2px solid var(--background);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: center;
+    color: var(--background);
+    background-color: var(--text);
+    box-shadow: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+      bottom 0.5s ease-in-out;
+
+    z-index: 5;
+
+    &.active {
+      bottom: -0.125rem;
+      visibility: visible;
+    }
+  }
+
+  .btn--reset:is(:hover, :focus-visible) {
+    color: var(--text);
+    background-color: var(--background);
+    outline-color: var(--background);
   }
 }
 
+// Articles
 .card {
+  & > * {
+    width: inherit;
+    max-width: inherit;
+  }
+
   &:focus-visible {
     scroll-margin-top: 30vh;
     scroll-margin-bottom: 30vh;
@@ -666,12 +715,13 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
+    min-height: 250px;
 
+    a,
     p,
     li,
-    .btn {
-      font-size: inherit;
-      font-size: 1rem;
+    button.btn {
+      font-size: 16px;
     }
 
     .overlay {
@@ -685,46 +735,16 @@ body {
         opacity: 1;
       }
     }
-
-    /* Reset Animation Button */
-    .btn--reset {
-      position: absolute;
-      bottom: -60px;
-      height: 60px;
-      padding: 0.5em 1.75em;
-      border: 2px solid var(--background);
-      border-radius: var(--border-radius) var(--border-radius) 0 0;
-      font-size: 1.5rem;
-      font-weight: 900;
-      line-height: 1.1;
-      text-align: center;
-      color: var(--background);
-      background-color: var(--text);
-      box-shadow: none;
-      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
-        bottom 0.5s ease-in-out;
-
-      z-index: 5;
-
-      &.active {
-        bottom: -10px;
-        visibility: visible;
-      }
-    }
-
-    .btn--reset:is(:hover, :focus-visible) {
-      color: var(--text);
-      background-color: var(--background);
-      outline-color: var(--background);
-    }
   }
 
   &__bar {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     align-content: center;
     justify-content: space-between;
-    gap: 1em;
+    column-gap: 1em;
+    // gap: 1em;
     width: 100%;
     padding: 1em;
     color: var(--background);
@@ -739,6 +759,8 @@ body {
     }
 
     &__title {
+      max-width: 13ch;
+      overflow-wrap: normal;
       align-self: end;
       font-size: 1.125rem;
       font-family: var(--mono-font);
@@ -773,6 +795,7 @@ body {
   bottom: -5em;
   width: 200px;
   height: 80px;
+  height: auto;
   padding-block-start: 2em;
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
@@ -784,9 +807,10 @@ body {
   span {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
-    transform: translateY(5em);
+    transform: translateY(80px);
 
-    animation: loader-animation 1s alternate infinite cubic-bezier(0.86, 0, 0.07, 1);
+    animation: loader-animation 1s alternate infinite
+      cubic-bezier(0.86, 0, 0.07, 1);
   }
 
   @include u.random-delay(span, 70ms, 1, 7);
@@ -837,7 +861,7 @@ body {
   }
 }
 
-/* MainAnimations */
+/* Main Animations */
 
 @keyframes tag-bounce {
   0%,
@@ -862,6 +886,6 @@ body {
 
 @keyframes loader-animation {
   to {
-    transform: translateY(0em);
+    transform: translateY(0px);
   }
 }
