@@ -3,7 +3,7 @@
 
 $bg: hsl(45, 100%, 96%);
 
-// Reset
+/* Reset */
 
 *,
 *:before,
@@ -54,29 +54,25 @@ body {
   height: 100%;
 }
 
-nav,
 header,
 main,
 footer {
   min-width: 375px;
 }
 
-section > .wrapper,
-footer > .wrapper {
-  max-width: 1200px;
-}
-
 header,
+nav,
 section:not(.hero) {
-  width: 100vw;
-  padding-inline: 1em;
-  // margin-inline: auto;
+  width: 100%;
 }
 
-header,
-main,
 .wrapper {
+  max-width: 1200px;
   margin-inline: auto;
+
+  &:not(nav) {
+    padding-inline: 1rem;
+  }
 }
 
 :is(.about-me, .code, .portfolio) > .wrapper {
@@ -96,7 +92,7 @@ svg.icon {
   height: 34px;
 }
 
-// Typography
+/* Typography */
 
 input,
 button,
@@ -133,7 +129,7 @@ h1 {
     display: inline-block;
     line-height: 1;
 
-    font-size: clamp(2.325rem, 8vw, 3rem);
+    font-size: clamp(2.325rem, 8vw, 64px);
 
     &::after {
       @include m.highlight;
@@ -173,7 +169,7 @@ footer ::selection {
   background-color: var(--secondary);
 }
 
-// Outline A11Y
+/* Outline A11Y */
 
 *:focus-visible {
   outline: 3px dashed;
@@ -257,7 +253,7 @@ button {
   }
 }
 
-// Skip to main content button
+/* Skip to main content button */
 
 .screen-reader-text {
   position: absolute;
@@ -276,17 +272,30 @@ button {
   }
 }
 
-// Scrolling
+/* Scrolling */
 
 .stt {
-  // display: none;
   position: fixed;
   bottom: 2.5em;
-  right: 0.75em;
+  right: 5%;
   z-index: 10;
+  transition: 0.5s;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 // PREVENT SCROLLING
+// .stop-scrolling {
+// height: 100%;
+// overflow: hidden;
+// }
 
 /* Cat Element */
 
@@ -338,7 +347,7 @@ button {
   }
 }
 
-// Cat element
+/* Cat Element */
 
 .animated-elements {
   --cat-size: clamp(200px, 30vw, 400px);
@@ -352,7 +361,7 @@ button {
     overflow-y: hidden;
     width: clamp(var(--cat-size), 50vw, 400px);
     height: calc(var(--cat-size) + 100px);
-    bottom: -4.925rem; // height of the footer
+    bottom: -77px; // height of the footer
     left: calc((10% * -1.5));
     z-index: 2;
   }

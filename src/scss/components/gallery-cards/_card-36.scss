@@ -32,7 +32,7 @@
     background-color: transparent;
     cursor: pointer;
     transition: color 0.5s ease-in-out 0.2s,
-    background-color 0.5s ease-in-out 0.2s;
+      background-color 0.5s ease-in-out 0.2s;
 
     &:is(:hover, :focus-visible) i {
       color: #fff;
@@ -45,7 +45,7 @@
   }
 
   button i {
-    font-size: 1rem;
+    font-size: 16px;
     pointer-events: none;
     transition: color 0.3s ease-in-out;
   }
@@ -78,7 +78,7 @@
   }
 
   h3 {
-    font-size: 1.125rem;
+    font-size: 18px;
     font-weight: 400;
     margin-block-end: 15px;
     color: hsl(203, 28%, 25%);

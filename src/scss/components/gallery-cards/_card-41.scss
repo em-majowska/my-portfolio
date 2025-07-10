@@ -21,7 +21,7 @@
     height: 230px;
     border-radius: 3px;
     box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3);
-    font-size: 0.875rem;
+    font-size: 14px;
     color: rgba(0, 0, 0, 0.7);
     background-color: #fff;
     text-align: center;
@@ -49,11 +49,11 @@
   .error i {
     margin-block-end: 15px;
     color: hsl(0, 90%, 65%);
-    font-size: 2.5rem;
+    font-size: 40px;
   }
 
   h3 {
-    font-size: 1.25rem;
+    font-size: 20px;
   }
 
   .card__top p {
@@ -65,7 +65,7 @@
   .btn {
     width: 100%;
     border: none;
-    font-size: 1rem;
+    font-size: 16px;
     color: white;
     background-color: hsl(0, 90%, 65%);
     cursor: pointer;

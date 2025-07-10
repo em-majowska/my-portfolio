@@ -43,7 +43,9 @@
 
 	<!-- HEADER -->
 	<header id="header">
-		<a href="#header" role="button" class="stt btn btn--round " title="Scroll to top" aria-label="Scroll to top">
+		<!-- <header id="header" class="wrapper"> -->
+		<a href="#header" role="button" id="stt-btn" class="stt btn btn--round " title="Scroll to top"
+			aria-label="Scroll to top">
 			<div class="btn__shadow"></div>
 			<div class="btn__fill">
 				<svg>
@@ -54,7 +56,7 @@
 
 		<!-- NAVIGATION -->
 
-		<nav id="nav">
+		<nav id="nav" class="wrapper">
 			<div class="navbar">
 				<a role="button" href="./index.html" class="logo" aria-label="Homepage">
 					<img src="./assets/svg/logo.svg" aria-hidden="true">
@@ -75,38 +77,38 @@
 
 		<!-- HERO  -->
 
-		<section class="hero">
-			<div class="wrapper">
-				<div class="hero__text">
-					<p>Hello, I'm Ewa and </p>
-					<h1>I'll help you build your <span class="accent">website</span></h1>
-					<a role="button" href="#contact" class="btn btn--border">
-						<div class="btn__shadow">
-						</div>
-						<div class="btn__fill">Contact Me</div>
-					</a>
-				</div>
-				<div class="hero__img">
-					<img srcset="./assets/img/blob-mobile.png 384w, ./assets/img/blob-desktop.png 680w"
-						sizes="(max-width: 679px) 384px, 680px" src="./assets/img/blob-mobile.png" alt="">
-					<svg class="outline" id="outline" viewBox="0 0 368 390" preserveAspectRatio="none" fill="none"
-						xmlns="http://www.w3.org/2000/svg" stroke="#181306">
-						<path
-							d="M36.7469 296.791C41.7457 207.302 255.386 191.208 205.716 95.071C156.047 -1.06573 309.004 24.7279 327.646 67.5485C346.289 110.369 307.825 106.902 317.879 150.422C329.126 199.108 318.523 286.903 259.423 311.141C200.323 335.379 31.7481 386.279 36.7469 296.791Z" />
-						<path
-							d="M31.6008 288.495C41.1247 199.388 255.296 194.537 210.561 95.9192C165.826 -2.69851 317.273 31.0952 333.722 74.8381C350.171 118.581 311.934 113.098 319.771 157.089C328.538 206.3 313.503 293.422 253.254 314.523C193.005 335.625 22.0768 377.602 31.6008 288.495Z" />
-						<path
-							d="M28.6697 283.304C40.9429 194.547 255.158 196.564 213.493 96.5613C171.828 -3.44168 322.155 35.1903 337.244 79.4388C352.333 123.687 314.285 116.981 320.758 161.201C328 210.67 310.28 297.266 249.409 316.425C188.537 335.585 16.3966 372.062 28.6697 283.304Z" />
-						<path
-							d="M34.05 292.561C41.3765 203.239 255.361 192.919 208.211 95.4746C161.062 -1.96935 313.293 27.9452 330.814 71.2541C348.336 114.563 309.976 110.058 318.893 153.835C328.869 202.807 315.985 290.285 256.274 312.919C196.564 335.553 26.7234 381.883 34.05 292.561Z" />
-					</svg>
-				</div>
-				<div class="lines">
-					<svg class="lines-svg">
-						<use xlink:href="./assets/svg/elements.svg#lines"></use>
-					</svg>
-				</div>
+		<section class="hero wrapper">
+			<!-- <div class="wrapper"> -->
+			<div class="hero__text">
+				<p>Hello, I'm Ewa and </p>
+				<h1>I'll help you build your <span class="accent">website</span></h1>
+				<a role="button" href="#contact" class="btn btn--border">
+					<div class="btn__shadow">
+					</div>
+					<div class="btn__fill">Contact Me</div>
+				</a>
 			</div>
+			<div class="hero__img">
+				<img srcset="./assets/img/blob-mobile.png 384w, ./assets/img/blob-desktop.png 680w"
+					sizes="(max-width: 679px) 384px, 680px" src="./assets/img/blob-mobile.png" alt="">
+				<svg class="outline" id="outline" viewBox="0 0 368 390" preserveAspectRatio="none" fill="none"
+					xmlns="http://www.w3.org/2000/svg" stroke="#181306">
+					<path
+						d="M36.7469 296.791C41.7457 207.302 255.386 191.208 205.716 95.071C156.047 -1.06573 309.004 24.7279 327.646 67.5485C346.289 110.369 307.825 106.902 317.879 150.422C329.126 199.108 318.523 286.903 259.423 311.141C200.323 335.379 31.7481 386.279 36.7469 296.791Z" />
+					<path
+						d="M31.6008 288.495C41.1247 199.388 255.296 194.537 210.561 95.9192C165.826 -2.69851 317.273 31.0952 333.722 74.8381C350.171 118.581 311.934 113.098 319.771 157.089C328.538 206.3 313.503 293.422 253.254 314.523C193.005 335.625 22.0768 377.602 31.6008 288.495Z" />
+					<path
+						d="M28.6697 283.304C40.9429 194.547 255.158 196.564 213.493 96.5613C171.828 -3.44168 322.155 35.1903 337.244 79.4388C352.333 123.687 314.285 116.981 320.758 161.201C328 210.67 310.28 297.266 249.409 316.425C188.537 335.585 16.3966 372.062 28.6697 283.304Z" />
+					<path
+						d="M34.05 292.561C41.3765 203.239 255.361 192.919 208.211 95.4746C161.062 -1.96935 313.293 27.9452 330.814 71.2541C348.336 114.563 309.976 110.058 318.893 153.835C328.869 202.807 315.985 290.285 256.274 312.919C196.564 335.553 26.7234 381.883 34.05 292.561Z" />
+				</svg>
+			</div>
+			<div class="lines">
+				<svg class="lines-svg">
+					<use xlink:href="./assets/svg/elements.svg#lines"></use>
+				</svg>
+			</div>
+			<!-- </div> -->
 		</section>
 	</header>
 
@@ -347,7 +349,7 @@
 				</div>
 			</div>
 
-			<div class="animated-elements">
+			<div class="animated-elements wrapper">
 				<div class="cat-wrapper">
 					<div class="cat" id="cat-animation">
 						<script>

@@ -27,9 +27,18 @@
 	<a href="#main-content" class="screen-reader-text">Skip to main content</a>
 	<header id="header">
 
+		<a href="#header" role="button" id="stt-btn" class="stt btn btn--round " title="Scroll to top"
+			aria-label="Scroll to top">
+			<div class="btn__shadow"></div>
+			<div class="btn__fill">
+				<svg>
+					<use href="./assets/svg/icons.svg#arrow-up"></use>
+				</svg>
+			</div>
+		</a>
 		<!-- NAV -->
 
-		<nav id="nav">
+		<nav id="nav" class="wrapper">
 			<div class="navbar">
 				<a role="button" href="./index.html" class="logo" aria-label="Homepage"><img src="./assets/svg/logo.svg"
 						aria-hidden="true">
@@ -50,7 +59,7 @@
 
 		<!-- HERO -->
 
-		<section class="hero">
+		<section class="hero hero__gallery wrapper">
 			<h1 class="hero__item text" aria-label="100 days CSS challenge">
 				<span class="days"><span class="num">
 						100
@@ -104,7 +113,7 @@
 
 	<!-- MAIN -->
 
-	<main class="main" id="main-content">
+	<main class="main wrapper" id="main-content">
 		<section class="gallery" id="css-challenge-gallery" aria-label="Gallery of 100... Sorry, 42 days CSS challenge">
 
 			<div class="loader" id="loader">
@@ -167,8 +176,8 @@
 			</div> <!-- end of loader element div-->
 		</section>
 
-		<div class="animated-elements">
-			<div class="cat-wrapper">
+		<div class="animated-elements wrapper" tabindex="-1">
+			<div class="cat-wrapper" tabindex="-1">
 				<div class="cat" id="cat-animation">
 					<script>
 						var animation = bodymovin.loadAnimation({
@@ -183,7 +192,7 @@
 				</div>
 			</div> <!-- end of cat-wrapper div -->
 
-			<div class="circle-wrapper">
+			<div class="circle-wrapper" tabindex="-1">
 				<div class="circle"></div>
 			</div>
 		</div> <!-- end of animated-elements div -->
