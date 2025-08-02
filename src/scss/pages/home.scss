@@ -257,9 +257,11 @@
       font-weight: 700;
       background-color: hsl(from var(--secondary) h s l / 0.58);
       text-wrap: nowrap;
-      transition: transform 0.3s ease-out;
+      transition: transform 0.3s ease-out, background-color 0.3s ease-out;
 
       &:hover {
+        background-color: hsl(from var(--saturated) h s l / 0.58);
+
         transform: translateX(1.5em);
       }
     }
@@ -372,6 +374,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    max-width: 900px;
 
     &__card {
       position: relative;

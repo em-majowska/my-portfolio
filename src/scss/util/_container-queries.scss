@@ -224,6 +224,32 @@ footer {
   }
 }
 
+@container main (min-width: 850px) {
+  body {
+    .portfolio-gallery__card {
+      &:first-child {
+        top: 43px;
+        rotate: -20deg;
+      }
+
+      &:nth-child(2) {
+        top: 10px;
+        rotate: -10deg;
+      }
+
+      &:nth-child(4) {
+        top: 10px;
+        rotate: 10deg;
+      }
+
+      &:nth-child(5) {
+        top: 43px;
+        rotate: 20deg;
+      }
+    }
+  }
+}
+
 @container main (min-width: 1000px) {
   body {
     /* === About Me Section === */
@@ -317,12 +343,10 @@ footer {
         grid-column: 1/3;
 
         display: block;
-        // position: absolute;
         height: 100%;
         width: 100%;
         stroke-width: 1;
         stroke-dasharray: 0 1;
-        // z-index: 0;
       }
 
       &__text {
@@ -349,7 +373,6 @@ footer {
       grid-column: 1/2;
 
       margin-inline-start: -3em;
-      // height: max-content;
 
       &__avatar {
         max-width: unset;
@@ -373,31 +396,11 @@ footer {
         content: '';
         inset: 0;
         height: 100%;
-        width: 90%;
-        max-width: 1070px;
+        width: clamp(995px, 90%, 1100px);
         margin-inline: auto;
         background: url('../../src/assets/svg/dots-path-background.svg')
-          no-repeat 50% 20%;
+          no-repeat 50% 20px;
         z-index: -1;
-      }
-
-      .portfolio-gallery__card {
-        &:first-child {
-          transform: translateY(32px);
-          rotate: -15deg;
-        }
-        &:nth-child(2) {
-          transform: translateY(4px);
-          rotate: -7.5deg;
-        }
-        &:nth-child(4) {
-          transform: translateY(13px);
-          rotate: 7.5deg;
-        }
-        &:nth-child(5) {
-          transform: translateY(43px);
-          rotate: 15deg;
-        }
       }
     }
 

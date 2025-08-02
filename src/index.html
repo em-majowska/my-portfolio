@@ -20,7 +20,6 @@
 
 	<!-- HEADER -->
 	<header id="header">
-		<!-- <header id="header" class="wrapper"> -->
 		<a href="#header" role="button" id="stt-btn" class="stt btn btn--round " title="Scroll to top"
 			aria-label="Scroll to top">
 			<div class="btn__shadow"></div>
@@ -35,8 +34,8 @@
 
 		<nav id="nav" class="wrapper">
 			<div class="navbar">
-				<a role="button" href="./index.html" class="logo" aria-label="Homepage">
-					<img src="./assets/svg/logo.svg" aria-hidden="true">
+				<a role="button" href="./index.html" class="logo" aria-label="Ewa Majowska homepage">
+					<img src="./assets/svg/logo.svg" alt="" aria-hidden="true">
 				</a>
 				<button type="button" class="menu-btn" id="menu-btn" aria-label="Open menu">
 					<span class="menu-btn__burger"></span>
@@ -55,7 +54,6 @@
 		<!-- HERO  -->
 
 		<section class="hero wrapper">
-			<!-- <div class="wrapper"> -->
 			<div class="hero__text">
 				<h1>
 					<span class="small">Hello, I'm Ewa and </span>
@@ -87,11 +85,10 @@
 					<use xlink:href="./assets/svg/elements.svg#lines"></use>
 				</svg>
 			</div>
-			<!-- </div> -->
 		</section>
 	</header>
 
-	<main>
+	<main id="main-content">
 
 		<!-- ABOUT ME -->
 		<section class="section about-me" id="about-me">
@@ -348,12 +345,12 @@
 				</div>
 
 				<div class="sun-wrapper">
-					<object class="sun" type="image/svg+xml" data="./assets/svg/sun.svg"></object>
+					<img class="sun" src="./assets/svg/sun.svg" alt="">
 				</div>
 			</div>
 
 			<div class="animated-elements wrapper">
-				<div class="cat-wrapper">
+				<div class="cat-wrapper" tabindex="-1">
 					<div class="cat" id="cat-animation">
 						<script>
 							var animation = bodymovin.loadAnimation({

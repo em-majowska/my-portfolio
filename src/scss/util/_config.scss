@@ -260,8 +260,8 @@ button {
   left: -9999px;
   padding: 1em;
   color: var(--background);
-  background-color: var(--accent);
-  opacity: 0;
+  background-color: var(--text);
+  // opacity: 0;
   font-size: 1.5rem;
   z-index: 100;
 
@@ -311,8 +311,11 @@ button {
     width: clamp(var(--cat-size), 50vw, 400px);
     height: calc(var(--cat-size) + 100px);
     bottom: -77px; // height of the footer
-    left: calc((10% * -1.5));
+    right: 60vw;
     z-index: 2;
+
+    pointer-events: none;
+    user-select: none;
   }
 
   .cat {
