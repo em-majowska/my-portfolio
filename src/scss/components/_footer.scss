@@ -1,15 +1,16 @@
 .footer {
   width: 100vw;
-  border-block-start: 2px solid var(--text);
+  border-block-start: 2px solid var(--accent);
   background-color: var(--accent);
 
   &__wrapper {
-    position: relative;
-    display: grid;
     height: 75px;
     padding-inline-end: 1em;
-    align-items: center;
-    justify-content: end;
+    line-height: 75px;
     text-align: right;
+
+    p {
+      font-size: 1.225rem;
+    }
   }
 }
