@@ -188,13 +188,18 @@ footer {
 @container main (min-width: 680px) {
   body {
     /* === Code Section === */
+    .about-me .widget {
+      margin-block-start: 0;
+    }
 
+    .section.code .wrapper p {
+      margin-inline: unset;
+    }
     .code {
       .circle {
         top: -5%;
         right: -35%;
       }
-
       &__container {
         grid-template-columns: 50% 50%;
         align-items: center;
@@ -227,6 +232,10 @@ footer {
 @container main (min-width: 850px) {
   body {
     .portfolio-gallery__card {
+      .data {
+        scale: 1;
+      }
+
       &:first-child {
         top: 43px;
         rotate: -20deg;
@@ -256,13 +265,9 @@ footer {
 
     .about-me {
       h3 {
-        position: relative;
-        display: flex;
-        padding-inline-end: 100px;
-
-        justify-content: space-between;
-        font-size: 3rem;
-        font-weight: 500;
+        height: initial;
+        width: initial;
+        overflow: initial;
 
         & > *:not(:last-child) {
           transform: translateY(30px);
