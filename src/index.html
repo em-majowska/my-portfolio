@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Ewa Majowska</title>
+	<title>Ewa Majowska | Front-End Developer</title>
 
 	<link rel="stylesheet" href="../dist/css/home.css">
 	<link rel="icon" href="./assets/svg/favicon.png" sizes="any">
@@ -20,11 +20,10 @@
 
 	<!-- HEADER -->
 	<header id="header">
-		<a href="#header" role="button" id="stt-btn" class="stt btn btn--round " title="Scroll to top"
-			aria-label="Scroll to top">
+		<a href="#header" id="stt-btn" class="stt btn btn--round " title="Scroll to top" aria-label="Scroll to top">
 			<div class="btn__shadow"></div>
 			<div class="btn__fill">
-				<svg>
+				<svg aria-hidden="true">
 					<use href="./assets/svg/icons.svg#arrow-up"></use>
 				</svg>
 			</div>
@@ -32,10 +31,10 @@
 
 		<!-- NAVIGATION -->
 
-		<nav id="nav" class="wrapper">
+		<nav id="nav" class="wrapper" aria-label="Primary">
 			<div class="navbar">
-				<a role="button" href="./index.html" class="logo" aria-label="Ewa Majowska homepage">
-					<img src="./assets/svg/logo.svg" alt="" aria-hidden="true">
+				<a aria-current="page" href="/" class="logo">
+					<img src="./assets/svg/logo.svg" alt="Ewa Majowska homepage">
 				</a>
 				<button type="button" class="menu-btn" id="menu-btn" aria-label="Open menu">
 					<span class="menu-btn__burger"></span>
@@ -59,7 +58,7 @@
 					<span class="small">Hello, I'm Ewa and </span>
 					I'll help you build your <span class="accent">website</span>
 				</h1>
-				<a role="button" href="#contact" class="btn btn--border">
+				<a href="#contact" class="btn btn--border">
 					<div class="btn__shadow">
 					</div>
 					<div class="btn__fill">Contact Me</div>
@@ -69,7 +68,7 @@
 				<img srcset="./assets/img/blob-mobile.png 384w, ./assets/img/blob-desktop.png 680w"
 					sizes="(max-width: 679px) 384px, 680px" src="./assets/img/blob-mobile.png" alt="">
 				<svg class="outline" id="outline" viewBox="0 0 368 390" preserveAspectRatio="none" fill="none"
-					xmlns="http://www.w3.org/2000/svg" stroke="#181306">
+					xmlns="http://www.w3.org/2000/svg" stroke="#181306" role="presentation">
 					<path
 						d="M36.7469 296.791C41.7457 207.302 255.386 191.208 205.716 95.071C156.047 -1.06573 309.004 24.7279 327.646 67.5485C346.289 110.369 307.825 106.902 317.879 150.422C329.126 199.108 318.523 286.903 259.423 311.141C200.323 335.379 31.7481 386.279 36.7469 296.791Z" />
 					<path
@@ -81,7 +80,7 @@
 				</svg>
 			</div>
 			<div class="lines">
-				<svg class="lines-svg">
+				<svg class="lines-svg" role="presentation">
 					<use xlink:href="./assets/svg/elements.svg#lines"></use>
 				</svg>
 			</div>
@@ -91,9 +90,9 @@
 	<main id="main-content">
 
 		<!-- ABOUT ME -->
-		<section class="section about-me" id="about-me">
+		<section class="section about-me" aria-labelledby="about-me">
 			<div class="wrapper">
-				<h2>About Me</h2>
+				<h2 id="about-me">About Me</h2>
 				<h3>
 					<span lang="en">Hello</span>
 					<span lang="pl">Cześć</span>
@@ -101,11 +100,12 @@
 					<span id="japanese-word" lang="ja-Hira">おはようございます</span>
 				</h3>
 				<div class="about-me__container">
-					<svg class="about-me__frame">
+					<svg class="about-me__frame" role="presentation">
 						<use xlink:href="./assets/svg/elements.svg#about-me__frame"></use>
 					</svg>
 					<div class="widget">
-						<svg class="widget__text" viewBox="0 0 160 160" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<svg class="widget__text" viewBox="0 0 160 160" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink"
+							aria-hidden="true">
 							<path id="curve" d="M16 80 a65 65 0 1 1 130 0 a65 65 0 1 1 -130 0" />
 							<text fill="hsl(44, 58%, 6%)" font-weight="700" lang="en">
 								<textPath xlink:href="#curve" startOffset="3%">Hello</textPath>
@@ -127,14 +127,14 @@
 					</div>
 					<div class="about-me__text wrapper">
 						<p>I am a Front-End Developer based in Saint Leu, Réunion Island.</p>
-						<p>Passioned by the languages, I graduated English Philology with Japanese at Silesian University.
+						<p>Passioned by the languages, I graduated English Philology with Japanese at Silesian University in Poland.
 							Relocating to France motivated me to learn the local language and explore a new form of communication —
 							the
 							language of the web.
 						</p>
 					</div>
 				</div>
-				<a role="button" href="#contact" class="btn btn--border">
+				<a href="#contact" class="btn btn--border">
 					<div class="btn__shadow">
 					</div>
 					<div class="btn__fill">Contact Me</div>
@@ -142,18 +142,24 @@
 			</div>
 		</section>
 
-		<!-- CODE -->
+		<!-- SKILLS -->
 
-		<section class="section code" id="code">
+		<section class="section code" aria-labelledby="code">
 			<div class="wrapper">
 				<div class="circle"></div>
 				<div class="section__header">
-					<h2>Skills</h2>
+					<h2 id="code">Skills</h2>
+				</div>
+				<div class="code__text">
+					<p>
+						I've always had a drive to make things. I started with drawing, moved into digital painting, and eventually
+						started to play with design. Along the way, I taught myself tools like Photoshop, Krita, and Figma. </p>
+					<p>Learning new skills and tools is part of the fun!</p>
 				</div>
 				<div class="code__container">
-					<ul class="code__list">
+					<ul class="code__list" aria-label="My skills">
 						<li class="code__list__item">HTML5</li>
-						<li class="code__list__item">A11Y</li>
+						<li class="code__list__item" aria-label="Accessibility">A11Y</li>
 						<li class="code__list__item">CSS3 & SCSS</li>
 						<li class="code__list__item">Responsive Design</li>
 						<li class="code__list__item">JavaScript</li>
@@ -161,17 +167,15 @@
 						<li class="code__list__item">Node.js</li>
 						<li class="code__list__item">Figma</li>
 
-						<svg class="spark spark-1">
+						<svg class="spark spark-1" role="presentation">
 							<use href="./assets/svg/elements.svg#spark"></use>
 						</svg>
-						<svg class="spark spark-2">
+						<svg class="spark spark-2" role="presentation">
 							<use href="./assets/svg/elements.svg#spark"></use>
 						</svg>
-						<!-- <img class="spark spark-1" src="./assets/svg/spark.svg" alt="">
-						<img class="spark spark-2" src="./assets/svg/spark.svg" alt=""> -->
 					</ul>
 
-					<div class="window">
+					<div class="window" aria-hidden="true">
 						<div class="window__header">
 							<span></span>
 							<span></span>
@@ -187,13 +191,13 @@
 
 		<!-- PORTFOLIO -->
 
-		<section class="section portfolio" id="portfolio">
+		<section class="section portfolio" aria-labelledby="portfolio">
 			<div class="wrapper">
 				<div class="section__header">
-					<h2>Portfolio</h2>
+					<h2 id="portfolio">Portfolio</h2>
 				</div>
-				<ul class="portfolio-gallery">
-					<li tabIndex="0" class="portfolio-gallery__card gallery__card">
+				<ul class="portfolio-gallery" aria-label="Some of my CSS projects">
+					<li aria-label="Project #1: the pyramide" class="portfolio-gallery__card gallery__card">
 						<div class="card-03">
 							<div class="frame">
 								<div class="sky">
@@ -206,26 +210,31 @@
 							</div>
 						</div>
 					</li>
-					<li tabIndex="0" class="portfolio-gallery__card gallery__card">
+					<li aria-label="Project #2: penrose triangle" class="portfolio-gallery__card gallery__card">
 						<div class="card-17">
-							<div class="center penrose"><svg class="middle">
+							<div class="center penrose">
+								<svg class="middle" role="presentation">
 									<use href="./assets/svg/gallery/gallery-elements.svg#middle"></use>
-								</svg><svg class="light">
+								</svg>
+								<svg class="light" role="presentation">
 									<use href="./assets/svg/gallery/gallery-elements.svg#light"></use>
-								</svg><svg class="dark">
+								</svg>
+								<svg class="dark" role="presentation">
 									<use href="./assets/svg/gallery/gallery-elements.svg#dark"></use>
-								</svg></div>
+								</svg>
+							</div>
 						</div>
 					</li>
-					<li tabIndex="0" class="portfolio-gallery__card gallery__card" data-module="card-10">
+					<li aria-label="Project #3: the watch face" class="portfolio-gallery__card gallery__card"
+						data-module="card-10">
 						<div class="card-10">
 							<div class="center">
 								<div class="data"><span class="top"></span><span class="time"></span>
 									<div class="bottom">
-										<span class="beat">
+										<span class="beat" aria-label="Your heartbeat is:">
 											<div class="heart"></div> 81
 										</span>
-										<span class="calories">1248 KCAL</span>
+										<span class="calories" aria-label="Burnt calories: ">1248 KCAL</span>
 									</div>
 								</div>
 								<div class="dots">
@@ -241,40 +250,40 @@
 									<div class="dots-10"></div>
 									<div class="dots-11"></div>
 									<div class="dots-12"></div>
-								</div><svg class="second" viewBox="0 0 10 10" fill="none">
+								</div><svg class="second" viewBox="0 0 10 10" fill="none" role="presentation">
 									<circle cx="5" cy="5" r="4.65" stroke-width="0.15"></circle>
 								</svg>
 							</div>
 						</div>
 					</li>
-					<li tabIndex="0" class="portfolio-gallery__card gallery__card">
+					<li aria-label="Project #4: fitness tracker" class="portfolio-gallery__card gallery__card">
 						<div class="card-22">
 							<div class="frame">
 								<div class="top">your daily<span>progress</span></div>
-								<div class="center"><svg viewBox="0 0 100 100">
+								<div class="center"><svg viewBox="0 0 100 100" role="presentation">
 										<circle cx="50" cy="50" r="45"></circle>
 										<circle class="progress-bar" pathLength="100" cx="50" cy="50" r="45"></circle>
 									</svg>
-									<p class="data__text">2758<span class="small">kcal</span></p>
+									<p class="data__text">2758<span class="small" aria-label="calories">kcal</span></p>
 								</div>
 								<div class="bottom">
-									<div class="steps"><svg viewBox="0 0 100 100">
+									<div class="steps"><svg viewBox="0 0 100 100" role="presentation">
 											<circle cx="50" cy="50" r="45"></circle>
 											<circle class="progress-bar" pathLength="100" cx="50" cy="50" r="45"></circle>
 										</svg>
 										<p class="data__text">8563<span class="small">steps</span></p>
 									</div>
-									<div class="kilometers"><svg viewBox="0 0 100 100">
+									<div class="kilometers"><svg viewBox="0 0 100 100" role="presentation">
 											<circle cx="50" cy="50" r="45"></circle>
 											<circle class="progress-bar" pathLength="100" cx="50" cy="50" r="45"></circle>
 										</svg>
-										<p class="data__text">6,2<span class="small">km</span></p>
+										<p class="data__text">6,2<span class="small" aria-label="kilometers">km</span></p>
 									</div>
 								</div>
 							</div>
 						</div>
 					</li>
-					<li tabIndex="0" class="portfolio-gallery__card gallery__card">
+					<li aria-label="Project #5: loading animation" class="portfolio-gallery__card gallery__card">
 						<div class="card-04">
 							<div class="circle circle1"></div>
 							<div class="circle circle2"></div>
@@ -300,17 +309,16 @@
 						</div>
 					</button>
 				</div> -->
-				</ul>
-				<a role="button" href="./gallery.html" class="btn btn--border">
+				<a href="./gallery.html" class="btn btn--border">
 					<div class="btn__shadow"></div>
 					<div class="btn__fill">See more</div>
 				</a>
 
-			</div>
+			</div> <!-- Close portfolio wrapper div -->
 		</section>
 
 		<!-- CONTACT -->
-		<section class="section contact" id="contact">
+		<section class="section contact" aria-labelledby="contact">
 
 			<div class="wrapper">
 				<div class="section__header">
@@ -318,24 +326,27 @@
 				</div>
 
 				<div class="window">
-					<h3>Contact</h3>
+					<h3 id="contact">Contact</h3>
 					<address class="contact__metadata">
 
-						<a href="https://github.com/em-majowska" target="_blank">
+						<a href="https://github.com/em-majowska" target="_blank" aria-label="Check out my github repositories">
 							<svg class="icon">
+								<title>Github</title>
 								<use href="./assets/svg/icons.svg#github"></use>
 							</svg>
 							/em-majowska
 						</a>
 
-						<a href="mailto:em.majowska@gmail.com">
+						<a href="mailto:em.majowska@gmail.com" aria-label="Contact me via mail">
 							<svg class="icon">
+								<title>E-mail</title>
 								<use href="./assets/svg/icons.svg#mail"></use>
 							</svg>
 							em.majowska@gmail.com</a>
 
-						<a href="tel:+262692639837">
+						<a href="tel:+262692639837" aria-label="Call me">
 							<svg class="icon">
+								<title>Phone</title>
 								<use href="./assets/svg/icons.svg#phone"></use>
 							</svg>
 							+262 692 63 98 37
@@ -344,12 +355,12 @@
 					</address>
 				</div>
 
-				<div class="sun-wrapper">
+				<div class="sun-wrapper" aria-hidden="true">
 					<img class="sun" src="./assets/svg/sun.svg" alt="">
 				</div>
 			</div>
 
-			<div class="animated-elements wrapper">
+			<div class="animated-elements wrapper" aria-hidden="true">
 				<div class="cat-wrapper" tabindex="-1">
 					<div class="cat" id="cat-animation">
 						<script>

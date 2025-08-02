@@ -128,7 +128,21 @@
     opacity: 0;
   }
 
-  h3,
+  h3 {
+    // Hide for mobile
+    height: 0;
+    width: 0;
+    overflow: hidden;
+
+    position: relative;
+    display: flex;
+    padding-inline-end: 100px;
+
+    justify-content: space-between;
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
   &__frame {
     display: none;
   }
@@ -150,6 +164,7 @@
   margin-inline: auto;
   display: grid;
   align-items: center;
+  margin-block-start: -100px;
 
   & > * {
     grid-column: 1 / 2;
@@ -244,6 +259,10 @@
     border-radius: 50%;
     background-color: hsl(from var(--secondary) h s l / 0.19);
     z-index: -1;
+  }
+
+  &__text p:first-child {
+    margin-block-end: 1em;
   }
 
   &__list {
@@ -437,6 +456,10 @@
       .center {
         width: 90%;
         font-size: clamp(0.35rem, 1.5vw, 0.75rem);
+      }
+
+      .data {
+        scale: 0.7;
       }
       .time {
         font-size: clamp(1rem, 6vw, 2.5rem);

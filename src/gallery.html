@@ -4,8 +4,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>100 Days CSS Challenge - EM</title>
+	<title>100 Days CSS Challenge - Ewa Majowska</title>
+
 	<link rel="stylesheet" href="../dist/css/gallery.css">
+	<link rel="icon" href="./assets/svg/favicon.png" sizes="any">
+	<link rel="icon" href="./assets/svg/favicon.svg" type="image/svg+xml">
+
 	<script src="https://kit.fontawesome.com/f81a1d0727.js" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"
 		integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg=="
@@ -14,20 +18,22 @@
 
 <body>
 	<a href="#main-content" class="screen-reader-text">Skip to main content</a>
-	<header id="header">
 
+	<!-- HEADER -->
+	<header id="header">
 		<a href="#header" role="button" id="stt-btn" class="stt btn btn--round " title="Scroll to top"
 			aria-label="Scroll to top">
 			<div class="btn__shadow"></div>
 			<div class="btn__fill">
-				<svg>
+				<svg aria-hidden="true">
 					<use href="./assets/svg/icons.svg#arrow-up"></use>
 				</svg>
 			</div>
 		</a>
-		<!-- NAV -->
 
-		<nav id="nav" class="wrapper">
+		<!-- NAVIGATION -->
+
+		<nav id="nav" class="wrapper" aria-label="Primary">
 			<div class="navbar">
 				<a role="button" href="./index.html" class="logo" aria-label="Homepage"><img src="./assets/svg/logo.svg"
 						aria-hidden="true">
@@ -181,7 +187,7 @@
 				</div>
 			</div> <!-- end of cat-wrapper div -->
 
-			<div class="circle-wrapper">
+			<div class="circle-wrapper" tabindex="-1">
 				<div class="circle"></div>
 			</div>
 		</div> <!-- end of animated-elements div -->
