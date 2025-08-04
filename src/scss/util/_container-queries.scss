@@ -394,6 +394,10 @@ footer {
         mask-image: none;
       }
 
+      .wrapper > * + * {
+        margin-block-start: clamp(52px, 5.5vmax, 70px);
+      }
+
       .wrapper::after {
         position: absolute;
         content: '';

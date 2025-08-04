@@ -373,6 +373,7 @@
 
 .portfolio {
   position: relative;
+  min-height: 550px;
   text-align: center;
   font-size: 16px;
 
@@ -384,6 +385,10 @@
       70%;
     mask-image: linear-gradient(to bottom, transparent 15%, black 140%);
     z-index: -2;
+  }
+
+  .wrapper > * + * {
+    margin-block-start: 75px;
   }
 
   $color-palette-gallery: hsl(312, 100%, 96%), hsl(251, 100%, 89%),

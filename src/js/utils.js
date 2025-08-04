@@ -8,7 +8,8 @@ export const showMenu = (isDesktop) => {
   menu.style.display = isWide ? 'flex' : 'none';
 };
 export const sttBtn = document.getElementById('stt-btn');
-
+export const touch = window.matchMedia('(pointer: coarse)').matches;
+export const spotlight = document.querySelector('.spotlight--outer');
 // NAVIGATION TOGGLE
 
 export function initNavToggle(isDesktop) {
@@ -96,5 +97,26 @@ export function scrollToTop() {
     sttBtn.classList.add('active');
   } else {
     sttBtn.classList.remove('active');
+  }
+}
+
+/* Spotlight cursor initialization */
+
+export function initSpotlightCursor() {
+  document.addEventListener('mousemove', spotlightCursor);
+
+  function spotlightCursor(e) {
+    const spotlight = document.querySelector('.spotlight--outer');
+
+    spotlight.animate(
+      {
+        top: e.pageY + 'px',
+        left: e.pageX + 'px',
+      },
+      {
+        duration: 500,
+        fill: 'forwards',
+      }
+    );
   }
 }
