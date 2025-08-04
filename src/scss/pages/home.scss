@@ -21,7 +21,6 @@
   &__text {
     max-width: 520px;
     align-self: start;
-    word-wrap: balance;
 
     .small {
       display: block;
@@ -51,11 +50,11 @@
     height: auto;
     align-self: center;
 
-    img {
+    picture {
       position: relative;
       top: 0;
       right: 0;
-      width: 100%;
+      // width: 100%;
       height: auto;
       object-fit: contain;
       z-index: -1;
@@ -123,17 +122,17 @@
     }
   }
 
-  h2 {
-    // visibility: hidden;
-    opacity: 0;
-  }
+  // Hide for mobile
 
+  h2,
   h3 {
-    // Hide for mobile
     height: 0;
     width: 0;
     overflow: hidden;
+    margin: 0;
+  }
 
+  h3 {
     position: relative;
     display: flex;
     padding-inline-end: 100px;
@@ -160,7 +159,7 @@
 /* About Me - Widget */
 
 .widget {
-  width: clamp(343px, 80%, 450px);
+  width: clamp(345px, 85%, 600px);
   margin-inline: auto;
   display: grid;
   align-items: center;
@@ -217,7 +216,7 @@
   &__avatar {
     @include u.center;
     max-width: 70%;
-    background-color: var(--accent);
+    background-color: var(--saturated);
     transform-origin: center;
     animation: spin 90s linear infinite;
     mask-image: url('../../src/assets/svg/widget-star.svg');
@@ -226,6 +225,7 @@
   }
 
   &__img {
+    position: relative;
     align-self: end;
     width: 100%;
     object-fit: cover;
@@ -266,7 +266,6 @@
   }
 
   &__list {
-    position: relative;
     @include u.list-tab(8);
 
     &__item {
@@ -292,11 +291,17 @@
     justify-items: center;
   }
 
+  div:has(> .spark) {
+    position: relative;
+    width: 100%;
+  }
+
   .window {
     @include u.window(var(--background));
+    margin-block-start: 50px;
     aspect-ratio: 4 / 3;
     z-index: auto;
-    margin-block-start: 15%;
+    justify-self: center;
 
     &__header {
       display: flex;
@@ -323,7 +328,7 @@
       top: 20%;
       left: 5%;
       max-height: 80%;
-      overflow-y: scroll;
+      overflow-y: hidden;
 
       /* Typing effect SCSS mixin by @branmcconnell
       Source: https://github.com/brandonmcconnell/typed.css
@@ -457,7 +462,9 @@
         width: 90%;
         font-size: clamp(0.35rem, 1.5vw, 0.75rem);
       }
-
+      .dots {
+        width: 78%;
+      }
       .data {
         scale: 0.7;
       }
@@ -501,12 +508,12 @@
   }
 }
 
-.buttons-gallery {
-  position: relative;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}
+// .buttons-gallery {
+//   position: relative;
+//   display: flex;
+//   width: 100%;
+//   justify-content: space-between;
+// }
 
 /* === Contact Section === */
 

@@ -165,7 +165,7 @@ nav {
   .gallery-lines {
     grid-area: lines;
     grid-row: 1 / span 3;
-    grid-column: span 3;
+    grid-column: span 3 / -1;
 
     position: absolute;
     width: 100%;
@@ -180,7 +180,7 @@ nav {
       aspect-ratio: 15 / 3;
 
       transform-origin: bottom left;
-      transform: translate(-20%, -120%) rotate(50deg);
+      transform: translate(-20%, -110%) rotate(50deg);
 
       stroke-dasharray: 100%;
       stroke-dashoffset: -20;

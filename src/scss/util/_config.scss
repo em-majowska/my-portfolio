@@ -82,7 +82,7 @@ section:not(.hero) {
 .about-me__container,
 :is(.about-me, .code, .portfolio, .contact) > .wrapper {
   & > * + * {
-    margin-block-start: clamp(52px, 5.5vmax, 86px);
+    margin-block-start: clamp(52px, 5.5vmax, 70px);
     margin-inline: auto;
   }
 }
@@ -114,9 +114,7 @@ h4,
 h1 {
   font-weight: 400;
   line-height: 1.35;
-  letter-spacing: 2%;
-
-  font-size: clamp(2.5rem, 8vw, 96px);
+  font-size: clamp(2.5rem, 10vw, 96px);
 }
 
 .section__header {
@@ -145,8 +143,7 @@ p,
 .contact__metadata {
   max-width: 65ch;
   overflow-wrap: break-word;
-  // text-wrap: pretty;
-  hyphens: auto;
+  text-wrap: pretty;
 
   font-size: clamp(1rem, 4vw, 1.5rem);
 }

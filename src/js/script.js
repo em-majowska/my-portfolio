@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Animate sections
   const animationObserver = initAnimationObserver();
-  const animatedSections = Array.from(document.querySelectorAll('section'));
+  const animatedSections = Array.from(
+    document.querySelectorAll('.about-me, .contact')
+  );
   animatedSections.forEach((section) => animationObserver.observe(section));
 
   // Card 10 demo
@@ -62,16 +64,3 @@ function updateHero() {
     line.setAttribute('d', selectedPaths[i]);
   });
 }
-
-/* Typewriter code */
-
-// const code = document.querySelector('code');
-// const codeText = window.getComputedStyle(code, ':before');
-
-// code.addEventListener('resize', () => {
-//   console.log('yes');
-
-//   const codeContent = window.getComputedStyle(codeText, ':before').content;
-
-//   console.log(codeContent);
-// });

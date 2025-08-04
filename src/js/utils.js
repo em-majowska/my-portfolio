@@ -66,7 +66,11 @@ export function initAnimationObserver() {
     animationObserver = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
-          if (entry.target.id && entry.isIntersecting) {
+          if (
+            (entry.target.id && entry.isIntersecting) ||
+            (entry.target.classList.contains('about-me') &&
+              entry.isIntersecting)
+          ) {
             entry.target.classList.add('animate');
             observer.unobserve(entry.target);
           } else {
@@ -75,7 +79,7 @@ export function initAnimationObserver() {
         });
       },
       {
-        threshold: 0.6,
+        threshold: 0.4,
       }
     );
   }
