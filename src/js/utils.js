@@ -10,6 +10,7 @@ export const showMenu = (isDesktop) => {
 export const sttBtn = document.getElementById('stt-btn');
 export const touch = window.matchMedia('(pointer: coarse)').matches;
 export const spotlight = document.querySelector('.spotlight--outer');
+export let dataCache = null;
 // NAVIGATION TOGGLE
 
 export function initNavToggle(isDesktop) {
@@ -21,7 +22,6 @@ export function initNavToggle(isDesktop) {
   const toggleMenu = () => {
     isOpen = !isOpen;
     menu.ariaExpanded = isOpen;
-    // document.body.classList.toggle('stop-scrolling', isOpen);
 
     if (isOpen) {
       document.body.addEventListener('wheel', preventScroll, {
@@ -119,4 +119,17 @@ export function initSpotlightCursor() {
       }
     );
   }
+}
+
+export async function fetchGalleryData() {
+  if (!dataCache) {
+    const response = await fetch('./assets/gallery-data.json');
+
+    if (!response.ok)
+      throw new Error(`HTTP error, status = ${response.status}`);
+
+    const { cards } = await response.json();
+    dataCache = cards;
+  }
+  return dataCache;
 }

@@ -8,6 +8,7 @@ import {
   scrollToTop,
   initSpotlightCursor,
   spotlight,
+  fetchGalleryData,
 } from './utils.js';
 
 let jsModuleObserver;
@@ -31,6 +32,7 @@ window.addEventListener('resize', () => {
 window.onscroll = function () {
   scrollToTop();
 };
+
 /* OBSERVERS */
 
 // Javascript modules loader
@@ -123,19 +125,6 @@ async function loadCards() {
 
   if (!hasMore) loader.style.display = 'none';
   loader.classList.toggle('show');
-}
-
-async function fetchGalleryData() {
-  if (!dataCache) {
-    const response = await fetch('./assets/gallery-data.json');
-
-    if (!response.ok)
-      throw new Error(`HTTP error, status = ${response.status}`);
-
-    const { cards } = await response.json();
-    dataCache = cards;
-  }
-  return dataCache;
 }
 
 // Gallery card template

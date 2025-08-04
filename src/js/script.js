@@ -8,6 +8,7 @@ import {
   scrollToTop,
   initSpotlightCursor,
   spotlight,
+  fetchGalleryData,
 } from './utils.js';
 import { initCard10 } from './gallery/card10.js';
 
@@ -64,3 +65,26 @@ function updateHero() {
     line.setAttribute('d', selectedPaths[i]);
   });
 }
+
+// Populate portfolio cards with fetched data
+async function populatePortfolioCards() {
+  const portfolioCards = document.querySelectorAll('.portfolio-gallery__card');
+  const cardsData = await fetchGalleryData();
+  if (!cardsData) return;
+
+  portfolioCards.forEach((card) => {
+    let container = card.children[0];
+    let cardId = container.classList[0].split('-')[1];
+    if (cardId && cardId[0] === '0') cardId = cardId.slice(1);
+    // Convert cardId to number for strict comparison if needed
+    const cardData = cardsData.find(
+      (item) =>
+        String(item.day) === cardId || Number(item.day) === Number(cardId)
+    );
+    if (cardData) {
+      container.innerHTML = cardData.content;
+    }
+  });
+}
+
+populatePortfolioCards();
