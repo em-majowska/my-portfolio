@@ -1,10 +1,13 @@
 import {
   isDesktop,
+  touch,
   showMenu,
   initNavToggle,
   initAnimationObserver,
   sttBtn,
   scrollToTop,
+  initSpotlightCursor,
+  spotlight,
 } from './utils.js';
 
 let jsModuleObserver;
@@ -15,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavToggle(isDesktop);
   initCardModuleObserver();
   setupLoaderObserver();
+  touch ? (spotlight.style.display = 'none') : initSpotlightCursor();
 
   // Animate intersecting cards
   observeGalleryCards();
@@ -68,8 +72,6 @@ function initCardModuleObserver() {
 // To show tags if a card is interactive
 
 function observeGalleryCards(animationObserver) {
-  const touch = window.matchMedia('(pointer: coarse)').matches;
-
   document.querySelectorAll('.gallery__card:not(.observed)').forEach((card) => {
     if (touch && card.dataset.animated) animationObserver.observe(card);
     if (card.dataset.module) jsModuleObserver.observe(card);

@@ -1,17 +1,20 @@
 import {
   isDesktop,
-  // menu,
+  touch,
   showMenu,
   initNavToggle,
   initAnimationObserver,
   sttBtn,
   scrollToTop,
+  initSpotlightCursor,
+  spotlight,
 } from './utils.js';
 import { initCard10 } from './gallery/card10.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavToggle(isDesktop);
   updateHero();
+  touch ? (spotlight.style.display = 'none') : initSpotlightCursor();
 
   // Animate sections
   const animationObserver = initAnimationObserver();
