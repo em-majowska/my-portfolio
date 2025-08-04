@@ -23,78 +23,74 @@ footer {
 /* Header & Navigation */
 // ======================
 
-// @container header (min-width: calc(680px - 2rem)) {
-@container header (min-width: 680px) {
-  body {
-    .menu-btn {
-      display: none;
+@media screen and (min-width: 680px) {
+  .menu-btn {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    justify-content: flex-start;
+
+    .navbar {
+      padding-inline-end: 1em;
+      margin-inline: 0;
+    }
+  }
+
+  nav ul.menu {
+    position: initial;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+    padding-inline: var(--padding-outline);
+    padding-block-end: calc(var(--padding-outline) + 0.25rem);
+    margin-inline-end: 1em;
+    width: fit-content;
+    height: auto;
+    transform: none;
+    border-radius: 0;
+    box-shadow: none;
+    animation: none;
+    align-items: flex-end;
+    justify-content: start;
+
+    & .menu__item {
+      display: flex;
+      margin-block-start: 0.25em;
     }
 
-    nav {
-      display: flex;
-      justify-content: flex-start;
+    & .menu__link {
+      text-wrap: nowrap;
+      position: relative;
+      padding: 0.5em;
+      padding-block-end: 4px;
 
-      .navbar {
-        padding-inline-end: 1em;
-        margin-inline: 0;
-      }
-    }
-
-    nav ul.menu {
-      position: initial;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 0;
-      padding-inline: var(--padding-outline);
-      padding-block-end: calc(var(--padding-outline) + 0.25rem);
-      margin-inline-end: 1em;
-      width: fit-content;
-      height: auto;
-      transform: none;
-      border-radius: 0;
-      box-shadow: none;
-      animation: none;
-      align-items: flex-end;
-      justify-content: start;
-
-      & .menu__item {
-        display: flex;
-        margin-block-start: 0.25em;
+      &::after {
+        @include u.pseudo;
+        left: 0;
+        bottom: 0;
+        height: 0;
+        width: 100%;
+        background-color: var(--accent);
+        transition: height 0.3s ease-in-out;
       }
 
-      & .menu__link {
-        text-wrap: nowrap;
-        position: relative;
-        padding: 0.5em;
-        padding-block-end: 4px;
+      &:active,
+      &:hover {
+        background-color: transparent;
 
         &::after {
-          @include u.pseudo;
-          left: 0;
-          bottom: 0;
-          height: 0;
-          width: 100%;
-          background-color: var(--accent);
-          transition: height 0.3s ease-in-out;
-        }
-
-        &:active,
-        &:hover {
-          background-color: transparent;
-
-          &::after {
-            height: 5px;
-          }
+          height: 5px;
         }
       }
     }
+  }
+}
 
-    .color-palette {
-      margin-inline-start: auto;
-      // gap: 0.5em;
-    }
-
+@container header (min-width: 680px) {
+  body {
     .hero {
       &.wrapper:where(:has(.hero__text)) {
         gap: 3em;
@@ -111,7 +107,9 @@ footer {
 
         h1 {
           max-width: unset;
+          text-wrap: nowrap;
           line-height: 1.2;
+          font-size: clamp(2.5rem, 8vw, 96px);
         }
       }
 
@@ -135,33 +133,6 @@ footer {
         display: none;
       }
     }
-  }
-}
-
-// @container header (min-width: calc(1000px - 2rem)) {
-@container header (min-width: 1000px) {
-  body {
-    nav {
-      min-width: fit-content;
-      padding-inline: 1rem;
-
-      .color-palette {
-        margin-block-end: -1em;
-      }
-
-      .logo {
-        width: 70px;
-        padding-inline-start: 0;
-      }
-
-      .navbar {
-        padding-inline-start: 0;
-      }
-
-      .color-palette {
-        display: flex;
-      }
-    }
 
     .hero {
       &:where(:has(.btn)) {
@@ -181,6 +152,29 @@ footer {
   }
 }
 
+@container header (min-width: 1000px) {
+  body {
+    nav {
+      min-width: fit-content;
+      padding-inline: 1rem;
+
+      .logo {
+        width: 70px;
+        padding-inline-start: 0;
+      }
+
+      .navbar {
+        padding-inline-start: 0;
+      }
+
+      .color-palette {
+        display: flex;
+        margin: 0 0 -1em auto;
+      }
+    }
+  }
+}
+
 // ======================
 /* Main */
 // ======================
@@ -195,11 +189,14 @@ footer {
     .section.code .wrapper p {
       margin-inline: unset;
     }
+
     .code {
       .circle {
         top: -5%;
+        top: 15%;
         right: -35%;
       }
+
       &__container {
         grid-template-columns: 50% 50%;
         align-items: center;
@@ -377,7 +374,8 @@ footer {
       grid-row: 1/2;
       grid-column: 1/2;
 
-      margin-inline-start: -3em;
+      margin-inline-start: -50px;
+      margin-block-start: 80px;
 
       &__avatar {
         max-width: unset;
@@ -419,7 +417,6 @@ footer {
 
         .window {
           margin: 0;
-          // transform: translateY(70%);
           align-self: center;
         }
 
@@ -436,6 +433,16 @@ footer {
       }
       .cat {
         transform: scale(2) translateY(-3%);
+      }
+    }
+  }
+}
+
+@container main (min-width: 1300px) {
+  body {
+    .code {
+      .spark-2 {
+        left: -15%;
       }
     }
   }

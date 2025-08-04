@@ -4,6 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="Ewa Majowska | Front-End Developer based in Saint Leu. Passionate about web development, design and digital art.">
 	<title>Ewa Majowska | Front-End Developer</title>
 
 	<link rel="stylesheet" href="../dist/css/home.css">
@@ -56,7 +58,9 @@
 			<div class="hero__text">
 				<h1>
 					<span class="small">Hello, I'm Ewa and </span>
-					I'll help you build your <span class="accent">website</span>
+					I'll help you<br>
+					build your<br>
+					<span class="accent">website</span>
 				</h1>
 				<a href="#contact" class="btn btn--border">
 					<div class="btn__shadow">
@@ -65,8 +69,10 @@
 				</a>
 			</div>
 			<div class="hero__img">
-				<img srcset="./assets/img/blob-mobile.png 384w, ./assets/img/blob-desktop.png 680w"
-					sizes="(max-width: 679px) 384px, 680px" src="./assets/img/blob-mobile.png" alt="">
+				<picture>
+					<source media="(max-width: 680px)" srcset="./assets/img/blob-mobile.png">
+					<img src="./assets/img/blob-desktop.png" alt="">
+				</picture>
 				<svg class="outline" id="outline" viewBox="0 0 368 390" preserveAspectRatio="none" fill="none"
 					xmlns="http://www.w3.org/2000/svg" stroke="#181306" role="presentation">
 					<path
@@ -121,8 +127,9 @@
 							</text>
 						</svg>
 						<div class="widget__avatar">
-							<img class="widget__img" srcset="./assets/img/my-photo-370w.png 370w, ./assets/img/my-photo-740w.png 680w"
-								sizes="(max-width: 679px) 370px, 680px" src="./assets/img/my-photo-370w.png" alt="This is me">
+							<img class="widget__img" srcset="./assets/img/my-photo-300.png 300w,
+											./assets/img/my-photo-729.png 729w,
+											./assets/img/my-photo-1000.png 1000w" sizes="420px" src="./assets/img/my-photo-300.png" alt="This is me">
 						</div>
 					</div>
 					<div class="about-me__text wrapper">
@@ -157,15 +164,17 @@
 					<p>Learning new skills and tools is part of the fun!</p>
 				</div>
 				<div class="code__container">
-					<ul class="code__list" aria-label="My skills">
-						<li class="code__list__item">HTML5</li>
-						<li class="code__list__item" aria-label="Accessibility">A11Y</li>
-						<li class="code__list__item">CSS3 & SCSS</li>
-						<li class="code__list__item">Responsive Design</li>
-						<li class="code__list__item">JavaScript</li>
-						<li class="code__list__item">Git</li>
-						<li class="code__list__item">Node.js</li>
-						<li class="code__list__item">Figma</li>
+					<div>
+						<ul class="code__list" aria-label="My skills">
+							<li class="code__list__item">HTML5</li>
+							<li class="code__list__item" aria-label="Accessibility">A11Y</li>
+							<li class="code__list__item">CSS3 & SCSS</li>
+							<li class="code__list__item">Responsive Design</li>
+							<li class="code__list__item">JavaScript</li>
+							<li class="code__list__item">Git</li>
+							<li class="code__list__item">Node.js</li>
+							<li class="code__list__item">Figma</li>
+						</ul>
 
 						<svg class="spark spark-1" role="presentation">
 							<use href="./assets/svg/elements.svg#spark"></use>
@@ -173,7 +182,7 @@
 						<svg class="spark spark-2" role="presentation">
 							<use href="./assets/svg/elements.svg#spark"></use>
 						</svg>
-					</ul>
+					</div>
 
 					<div class="window" aria-hidden="true">
 						<div class="window__header">
@@ -311,7 +320,7 @@
 				</div> -->
 				<a href="./gallery.html" class="btn btn--border">
 					<div class="btn__shadow"></div>
-					<div class="btn__fill">See more</div>
+					<div class="btn__fill">See more projects</div>
 				</a>
 
 			</div> <!-- Close portfolio wrapper div -->

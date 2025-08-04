@@ -11,13 +11,14 @@
 
     position: relative;
     display: grid;
+    align-items: center;
+    justify-content: center;
     width: var(--width);
     aspect-ratio: 1 / 1;
     background-color: hsl(0, 0%, 14%);
     border: 0.5em solid hsl(0, 0%, 23%);
     border-radius: 50%;
     color: #fff;
-    align-items: center;
     margin-inline: auto;
   }
 

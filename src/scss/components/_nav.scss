@@ -124,7 +124,6 @@ nav {
   .menu {
     display: none;
     position: absolute;
-    left: 0;
     width: 100vw;
     padding-block: 6.5em var(--padding-outline);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
@@ -138,7 +137,7 @@ nav {
     &__link {
       display: block;
       padding: 1em;
-      letter-spacing: 5%;
+      letter-spacing: 0.125rem;
       font-size: 1.5rem;
 
       &:active,
