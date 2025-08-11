@@ -1,7 +1,7 @@
-@use '../util' as u;
-@use '../util/functions' as f;
-@use '../util/mixins' as m;
-@use '../components';
+@use './util' as u;
+@use './util/functions' as f;
+@use './util/mixins' as m;
+@use './components';
 
 body {
   position: relative;
