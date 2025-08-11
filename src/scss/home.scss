@@ -1,12 +1,12 @@
-@use '../util' as u;
-@use '../components/footer';
-@use '../components/nav';
-@use '../components/gallery-cards/card-03';
-@use '../components/gallery-cards/card-04';
-@use '../components/gallery-cards/card-10';
-@use '../components/gallery-cards/card-17';
-@use '../components/gallery-cards/card-22';
-@use '../util/typed' as t;
+@use './util' as u;
+@use './components/footer';
+@use './components/nav';
+@use './components/gallery-cards/card-03';
+@use './components/gallery-cards/card-04';
+@use './components/gallery-cards/card-10';
+@use './components/gallery-cards/card-17';
+@use './components/gallery-cards/card-22';
+@use './util/typed' as t;
 @use 'sass:string';
 
 /* === Hero Section === */
