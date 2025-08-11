@@ -465,13 +465,10 @@
 
       .center {
         width: 90%;
-        font-size: clamp(0.35rem, 1.5vw, 0.75rem);
       }
-      .dots {
-        width: 78%;
-      }
+
       .data {
-        scale: 0.7;
+        font-size: clamp(0.25rem, 60%, 0.75rem);
       }
       .time {
         font-size: clamp(1rem, 6vw, 2.5rem);
@@ -623,7 +620,6 @@
     position: absolute;
     margin-block-start: 0;
     bottom: 0;
-    // left: -1em;
     width: 100vw;
     height: 100%;
     overflow: hidden;

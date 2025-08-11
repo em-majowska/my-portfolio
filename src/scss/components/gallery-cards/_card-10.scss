@@ -22,10 +22,13 @@
     margin-inline: auto;
   }
 
-  .center > *,
+  .data,
+  .dots,
   .dots > * {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
+    height: 85%;
+    aspect-ratio: 1 / 1;
   }
 
   .data {
