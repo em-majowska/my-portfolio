@@ -74,6 +74,7 @@
     clip-path: polygon(33.33% 0, 66.66% 0, 100% 10%);
     animation: shadow3 4s ease-in-out infinite;
     animation-play-state: paused;
+    transform-origin: top;
   }
 
   .pyr {
@@ -155,20 +156,23 @@
   @keyframes shadow3 {
     0% {
       clip-path: polygon(33.33% 0, 66.66% 0, 100% 0%);
+      transform: translateX(-50%) scaleY(1);
+      transform-origin: top center;
     }
     30% {
-      height: 19.44%;
       clip-path: polygon(33.33% 0, 66.66% 0, 90% 100%);
+      transform: translateX(-50%) scaleY(1);
     }
     50% {
-      height: 6.67%;
+      transform: translateX(-50%) scaleY(0.34);
     }
     65% {
-      height: 11.11%;
       clip-path: polygon(33.33% 0, 66.66% 0, 25% 100%);
+      transform: translateX(-50%) scaleY(0.57);
     }
     90% {
       clip-path: polygon(33.33% 0, 66.66% 0, 0% 0%);
+      transform: translateX(-50%) scaleY(1);
     }
   }
 }

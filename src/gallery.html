@@ -25,6 +25,7 @@
 
 <body>
 	<a href="#main-content" class="screen-reader-text">Skip to main content</a>
+	<div class="spotlight spotlight--outer"></div>
 
 	<!-- HEADER -->
 	<header id="header">
@@ -39,7 +40,6 @@
 		</a>
 
 		<!-- NAVIGATION -->
-
 		<nav id="nav" class="wrapper" aria-label="Primary">
 			<div class="navbar">
 				<a role="button" href="./index.html" class="logo" aria-label="Homepage"><img src="./assets/svg/logo.svg"
@@ -60,7 +60,6 @@
 		<div class="nav-overlay"></div>
 
 		<!-- HERO -->
-
 		<section class="hero hero__gallery wrapper">
 			<h1 class="hero__item text" aria-label="100 days CSS challenge">
 				<span class="days"><span class="num">
@@ -114,7 +113,6 @@
 	</header>
 
 	<!-- MAIN -->
-
 	<main class="main wrapper" id="main-content">
 		<section class="gallery" id="css-challenge-gallery" aria-label="Gallery of 100... Sorry, 42 days CSS challenge">
 
@@ -200,14 +198,16 @@
 		</div> <!-- end of animated-elements div -->
 	</main>
 
+	<!-- FOOTER -->
 	<footer class="footer">
 		<div class="footer__wrapper wrapper">
 			<p>Copyright &copy; 2025 Ewa Majowska</p>
 		</div>
 	</footer>
 
+	<script src="./polyfills/minified.js"></script>
+	<script src="./polyfills/runtime.js"></script>
 	<script src="./js/gallery.js" type="module"></script>
-
 </body>
 
 </html>
