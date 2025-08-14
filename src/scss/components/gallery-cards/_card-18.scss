@@ -18,13 +18,15 @@ article.card-18 {
     width: 100%;
   }
 
-  .top {
-    height: 50%;
-    background-color: var(--saturated);
-  }
-
+  .top,
   .bottom {
     height: 50%;
+    width: 100%;
+  }
+  .top {
+    background-color: var(--saturated);
+  }
+  .bottom {
     background-color: var(--accent);
   }
   .container {

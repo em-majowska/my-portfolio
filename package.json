@@ -2,11 +2,11 @@
   "name": "my-portfolio",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "sass src/scss/main.scss:dist/style.css --watch",
-    "build": "gulp build",
-    "deploy": "gulp deploy"
+    "dev": "cross-env NODE_ENV=development gulp",
+    "build": "cross-env NODE_ENV=production gulp",
+    "deploy": "gulp deployGhPages"
   },
   "keywords": [],
   "author": "",
