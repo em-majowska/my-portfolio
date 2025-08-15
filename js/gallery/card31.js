@@ -1,12 +1,1 @@
-'use strict';
-
-export function initCard31(card) {
-  if (card.classList.contains('initialized')) return;
-  card.classList.add('initialized');
-  const balls = card.querySelectorAll('.ball');
-  let duration = 1.2;
-  balls.forEach(function (ball) {
-    duration *= 1.01;
-    ball.style.animationDuration = `${duration}s`;
-  });
-}
+function initCard31(i){if(!i.classList.contains("initialized")){i.classList.add("initialized");i=i.querySelectorAll(".ball");let t=1.2;i.forEach(function(i){t*=1.01,i.style.animationDuration=t+"s"})}}export{initCard31};
