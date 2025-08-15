@@ -1,0 +1,49 @@
+.card-35 {
+  &:is(:hover, .animate, :focus-visible) .loading {
+    animation-play-state: running;
+  }
+
+  .card__top {
+    background: linear-gradient(
+      to top right,
+      hsl(172, 65%, 52%),
+      hsl(303, 80%, 80%)
+    );
+  }
+
+  svg {
+    width: 100px;
+  }
+
+  .loading {
+    stroke: #fff;
+    stroke-linecap: round;
+    transform-origin: center;
+    animation: spin35 2s linear infinite,
+      load35 3s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+    animation-play-state: paused;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 0;
+  }
+
+  circle {
+    fill: none;
+    stroke: transparent;
+    stroke-width: 2;
+  }
+
+  @keyframes spin35 {
+    from {
+      stroke-dashoffset: 0;
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes load35 {
+    to {
+      stroke-dashoffset: -100;
+    }
+  }
+}

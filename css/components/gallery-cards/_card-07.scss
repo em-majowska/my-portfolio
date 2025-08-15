@@ -1,0 +1,272 @@
+@use '../../util' as u;
+
+article.card-07 {
+  .card__top {
+    min-height: 320px;
+  }
+
+  &:is(:hover, .animate, :focus-visible, :focus-within) {
+    .event {
+      animation-play-state: running;
+    }
+  }
+
+  .card__top {
+    background-color: var(--primary);
+    color: hsl(0, 0%, 100%);
+  }
+
+  .frame--shadow {
+    width: 90%;
+    height: 90%;
+  }
+
+  a {
+    text-decoration: none;
+    color: hsl(208, 30%, 60%);
+    transition: color 0.4s ease-in-out;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .bar .frame__nav {
+    background-color: hsl(208, 30%, 38%);
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    position: absolute;
+    bottom: 0;
+    left: -150px;
+    height: calc(100% - 60px);
+    width: 150px;
+    border-radius: 0px 5px 5px 0px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transition: left 0.5s ease-in-out;
+
+    &[aria-expanded='true'] {
+      left: 0;
+    }
+
+    &__item {
+      display: flex;
+      align-items: stretch;
+    }
+    &__link {
+      display: block;
+      align-content: center;
+      width: 100%;
+      border: 3px solid transparent;
+      padding-inline-start: 1rem;
+      transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+
+      &:is(:hover, :focus-visible) {
+        background-color: hsl(208, 30%, 30%);
+        color: #fff;
+      }
+
+      &:focus-visible {
+        outline: none;
+        border: 3px dashed var(--background);
+      }
+    }
+
+    i {
+      margin-inline-end: 5px;
+    }
+  }
+
+  .frame__nav__link .frame__nav__link:is(:hover, :focus-visible) {
+    color: #fff;
+  }
+
+  .dashboard {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'header', 'events';
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    color: #333;
+  }
+
+  .bar {
+    $bg: hsl(209, 52%, 59%);
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding-outline);
+    color: #fff;
+
+    @include u.outline-theme($bg);
+  }
+
+  .menu {
+    height: 50px;
+    padding: 10px;
+  }
+
+  .menu-icon {
+    position: relative;
+    height: 3px;
+    width: 30px;
+    top: -4px;
+    border-radius: 2px;
+    background-color: hsl(209, 82%, 80%);
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .menu-icon::before {
+    display: block;
+    content: '';
+    position: absolute;
+    border: 2px solid var(--blue-color);
+    height: 11px;
+    width: 11px;
+    border-radius: 50%;
+    background-color: hsl(209, 82%, 80%);
+    top: 50%;
+    right: -2px;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .menu-icon::after {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    border-radius: 2px;
+    background-color: hsl(209, 82%, 80%);
+    bottom: -11px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .menu,
+  .header i {
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  .menu:is(:hover, :focus-visible) {
+    .menu-icon,
+    .menu-icon::before,
+    .menu-icon::after {
+      background-color: #fff;
+    }
+  }
+
+  .search-btn i {
+    position: relative;
+    color: hsl(209, 82%, 80%);
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+    z-index: 2;
+  }
+
+  .search-btn {
+    width: 45px;
+    height: 50px;
+  }
+  .search-btn:is(:hover, :focus-visible) i {
+    color: #fff;
+  }
+
+  .search-bar {
+    position: absolute;
+    top: 31px;
+    left: 70%;
+    width: 60%;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 20px;
+    color: hsl(0, 0%, 40%);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out, left 0.3s ease-in-out;
+    font-size: 16px;
+    opacity: 0;
+  }
+
+  .search-bar.open {
+    left: 50%;
+    opacity: 1;
+  }
+
+  .timeline {
+    position: absolute;
+    left: 25px;
+    top: 84px;
+    bottom: 0;
+    width: 4px;
+    background-color: hsl(0, 0%, 90%);
+  }
+
+  .events {
+    height: 100%;
+    display: grid;
+    justify-content: space-between;
+
+    padding: 10px 10px 10px 45px;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .event {
+    position: relative;
+    color: hsl(0, 0%, 40%);
+    opacity: 0;
+    animation: slide 0.5s ease-in-out 1s forwards;
+    animation-play-state: paused;
+  }
+
+  .event * {
+    transition: color 0.4s ease-in-out;
+  }
+
+  .event:is(:hover, :focus-visible) {
+    cursor: pointer;
+    color: hsl(209, 52%, 59%);
+  }
+
+  .event__time {
+    font-size: 14px;
+  }
+
+  .event__time::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: -24px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    border: 2px solid hsl(209, 52%, 59%);
+    background-color: #fff;
+    outline: 3px solid #fff;
+  }
+
+  .name {
+    margin-inline-end: 0.5em;
+    font-weight: 700;
+  }
+}
+
+@keyframes slide {
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}

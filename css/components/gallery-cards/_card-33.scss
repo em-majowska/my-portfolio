@@ -1,0 +1,84 @@
+.card-33 {
+  &:is(:hover, .animate, :focus-visible) {
+    .sun,
+    .cloud {
+      animation-play-state: running;
+    }
+  }
+
+  .card__top {
+    background: hsl(200, 71%, 68%);
+    position: relative;
+  }
+
+  .center {
+    width: 100%;
+    height: 100%;
+  }
+  svg {
+    position: absolute;
+  }
+  .sun {
+    top: 15%;
+    left: 15%;
+    width: 75px;
+    height: 75px;
+    stroke: hsl(48, 100%, 62%);
+    fill: hsl(48, 100%, 62%);
+    animation: sun33 60s ease-in-out infinite alternate;
+    animation-play-state: paused;
+  }
+
+  .cloud {
+    stroke: #fff;
+    fill: #fff;
+  }
+  .cloud-1 {
+    width: 180px;
+    height: 80px;
+    bottom: 20%;
+    left: -100px;
+    animation: cloud-1 60s linear infinite alternate;
+    animation-play-state: paused;
+  }
+
+  .cloud-2 {
+    top: 15%;
+    left: 110px;
+    width: 100px;
+    height: 50px;
+    animation: cloud-2 60s linear infinite alternate;
+    animation-play-state: paused;
+  }
+
+  .cloud-3 {
+    width: 150px;
+    height: 80px;
+    top: 50%;
+    left: 100px;
+    animation: cloud-3 50s linear infinite alternate;
+    animation-play-state: paused;
+  }
+
+  @keyframes sun33 {
+    to {
+      transform: translateX(30%);
+    }
+  }
+
+  @keyframes cloud-1 {
+    to {
+      transform: translateX(450px);
+    }
+  }
+  @keyframes cloud-2 {
+    to {
+      transform: translateX(200px);
+    }
+  }
+  @keyframes cloud-3 {
+    to {
+      transform: translateX(330px);
+    }
+  }
+}
