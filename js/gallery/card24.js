@@ -1,1 +1,21 @@
-function initCard24(i){var e,t,a;i.classList.contains("initialized")||(i.classList.add("initialized"),e=i.querySelector("#btn"),t=i.querySelector(".circle"),a=!1,e.addEventListener("click",function(){(a=!a)?(e.classList.add("animate"),t.classList.add("animate"),e.blur()):(e.classList.remove("animate"),t.classList.remove("animate"))}))}Object.defineProperty(exports,"__esModule",{value:!0}),exports.initCard24=initCard24;
+'use strict';
+
+export function initCard24(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+  const btn = card.querySelector('#btn');
+  const circle = card.querySelector('.circle');
+  let isToggled = false;
+  btn.addEventListener('click', toggleBtn);
+  function toggleBtn() {
+    isToggled = !isToggled;
+    if (isToggled) {
+      btn.classList.add('animate');
+      circle.classList.add('animate');
+      btn.blur();
+    } else {
+      btn.classList.remove('animate');
+      circle.classList.remove('animate');
+    }
+  }
+}

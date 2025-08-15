@@ -1,1 +1,35 @@
-function initCard40(t){if(!t.classList.contains("initialized")){t.classList.add("initialized");for(var e=Array.from(t.querySelectorAll("button")),s=!1,n=0,o=e;n<o.length;n++)(()=>{var i=o[n];i.addEventListener("click",function(t){s=s?(i.classList.remove("open"),e.forEach(function(t){i!==t&&(t.classList.remove("off"),t.tabIndex="0")}),setTimeout(function(){i.classList.remove("ontop")},500),!1):(i.classList.add("open"),i.classList.add("ontop"),e.forEach(function(t){i!==t&&(t.classList.add("off"),t.tabIndex="-1")}),!0)})})()}}Object.defineProperty(exports,"__esModule",{value:!0}),exports.initCard40=initCard40;
+'use strict';
+
+export function initCard40(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+  const gallery = Array.from(card.querySelectorAll('button'));
+  let isOpen = false;
+  for (let img of gallery) {
+    img.addEventListener('click', function (e) {
+      if (!isOpen) {
+        img.classList.add('open');
+        img.classList.add('ontop');
+        gallery.forEach(function (el) {
+          if (img !== el) {
+            el.classList.add('off');
+            el.tabIndex = '-1';
+          }
+        });
+        isOpen = true;
+      } else {
+        img.classList.remove('open');
+        gallery.forEach(function (el) {
+          if (img !== el) {
+            el.classList.remove('off');
+            el.tabIndex = '0';
+          }
+        });
+        setTimeout(function () {
+          img.classList.remove('ontop');
+        }, 500);
+        isOpen = false;
+      }
+    });
+  }
+}

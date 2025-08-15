@@ -1,1 +1,26 @@
-function initCard10(r){var c,o;r.classList.contains("initialized")||(r.classList.add("initialized"),setInterval(function(){var t=new Date,e=t.getDay(),e=o[e],n=t.getDate(),a=t.getMonth(),a=c[a],i=t.getFullYear(),e="".concat(e," ").concat(n," ").concat(a," ").concat(i),n=t.getHours().toString().padStart(2,"0"),a=t.getMinutes().toString().padStart(2,"0"),i="".concat(n,":").concat(a);r.querySelector(".top").innerHTML=e,r.querySelector(".time").innerHTML=i},1e3),c=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],o=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"])}Object.defineProperty(exports,"__esModule",{value:!0}),exports.initCard10=initCard10;
+'use strict';
+
+export function initCard10(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+  setInterval(updateTime, 1000);
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const dayWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  function updateTime() {
+    const now = new Date();
+    const weekIndex = now.getDay();
+    const dWeek = dayWeek[weekIndex];
+    const day = now.getDate();
+    const monthIndex = now.getMonth();
+    const month = months[monthIndex];
+    const year = now.getFullYear();
+    const today = `${dWeek} ${day} ${month} ${year}`;
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const time = `${hours}:${minutes}`;
+    const dateEl = card.querySelector('.top');
+    dateEl.innerHTML = today;
+    const timeEl = card.querySelector('.time');
+    timeEl.innerHTML = time;
+  }
+}

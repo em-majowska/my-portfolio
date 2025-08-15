@@ -1,1 +1,26 @@
-function initCard30(t){var i,s,e;t.classList.contains("initialized")||(t.classList.add("initialized"),i=t.querySelector(".btn--reset"),s=t.querySelector(".overlay"),e=t.querySelector(".animal"),i.addEventListener("click",function(e){t.focus(),i.tabIndex="-1",t.classList.add("reset"),t.offsetHeight,t.classList.remove("reset"),i.classList.remove("active"),s.classList.remove("active")}),e.addEventListener("animationend",function(){setTimeout(function(){i.tabIndex="0",i.classList.add("active"),s.classList.add("active")},3e3)}))}Object.defineProperty(exports,"__esModule",{value:!0}),exports.initCard30=initCard30;
+'use strict';
+
+export function initCard30(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+  const resetBtn = card.querySelector('.btn--reset');
+  const overlay = card.querySelector('.overlay');
+  const longestAnimationEl = card.querySelector('.animal');
+  resetBtn.addEventListener('click', resetAnimation);
+  function resetAnimation(e) {
+    card.focus();
+    resetBtn.tabIndex = '-1';
+    card.classList.add('reset');
+    card.offsetHeight;
+    card.classList.remove('reset');
+    resetBtn.classList.remove('active');
+    overlay.classList.remove('active');
+  }
+  longestAnimationEl.addEventListener('animationend', function () {
+    setTimeout(function () {
+      resetBtn.tabIndex = '0';
+      resetBtn.classList.add('active');
+      overlay.classList.add('active');
+    }, 3000);
+  });
+}

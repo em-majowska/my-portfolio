@@ -1,1 +1,23 @@
-function initCard02(e){var i,t,n;e.classList.contains("initialized")||(e.classList.add("initialized"),i=e.querySelector(".center"),t=e.querySelectorAll(".line"),n=!1,i.addEventListener("click",function(e){e.stopPropagation(),n?t.forEach(function(e){return e.classList.replace("open","closed")}):t.forEach(function(e){e.classList.remove("closed"),e.classList.add("open")}),n=!n}))}Object.defineProperty(exports,"__esModule",{value:!0}),exports.initCard02=initCard02;
+'use strict';
+
+export function initCard02(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+  const burgerBtn = card.querySelector('.center');
+  const line = card.querySelectorAll('.line');
+  let isOpen = false;
+  burgerBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (!isOpen) {
+      line.forEach(function (el) {
+        el.classList.remove('closed');
+        el.classList.add('open');
+      });
+    } else {
+      line.forEach(function (el) {
+        return el.classList.replace('open', 'closed');
+      });
+    }
+    isOpen = !isOpen;
+  });
+}

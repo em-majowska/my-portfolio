@@ -1,4 +1,4 @@
-
+@charset "UTF-8";
 /* === Grid Layouts === */
 /* === Flex Layouts === */
 /* === Color-theme A11y Outline === */
@@ -337,32 +337,32 @@ button {
 @font-face {
   font-family: "Source Sans 3";
   font-weight: 400;
-  src: url("./../../src/assets/fonts/Source_Sans_3/SourceSans3-Medium.woff2") format("woff2"), url("./../../src/assets/fonts/Source_Sans_3/SourceSans3-Medium.woff") format("woff");
+  src: url("./../../assets/fonts/Source_Sans_3/SourceSans3-Medium.woff2") format("woff2"), url("./../../assets/fonts/Source_Sans_3/SourceSans3-Medium.woff") format("woff");
 }
 @font-face {
   font-family: "Source Sans 3";
   font-weight: 400;
   font-style: italic;
-  src: url("./../../src/assets/fonts/Source_Sans_3/SourceSans3-MediumItalic.woff2") format("woff2"), url("./../../src/assets/fonts/Source_Sans_3/SourceSans3-MediumItalic.woff") format("woff");
+  src: url("./../../assets/fonts/Source_Sans_3/SourceSans3-MediumItalic.woff2") format("woff2"), url("./../../assets/fonts/Source_Sans_3/SourceSans3-MediumItalic.woff") format("woff");
 }
 @font-face {
   font-family: "Source Sans 3";
   font-weight: 700;
-  src: url("./../../src/assets/fonts/Source_Sans_3/SourceSans3-Bold.woff2") format("woff2"), url("./../../src/assets/fonts/Source_Sans_3/SourceSans3-Bold.woff") format("woff");
+  src: url("./../../assets/fonts/Source_Sans_3/SourceSans3-Bold.woff2") format("woff2"), url("./../../assets/fonts/Source_Sans_3/SourceSans3-Bold.woff") format("woff");
 }
 @font-face {
   font-family: "Playfair Display";
   font-weight: 400;
-  src: url("./../../src/assets/fonts/Playfair_Display/PlayfairDisplay-Medium.woff2") format("woff2"), url("./../../src/assets/fonts/Playfair_Display/PlayfairDisplay-Medium.woff") format("woff");
+  src: url("./../../assets/fonts/Playfair_Display/PlayfairDisplay-Medium.woff2") format("woff2"), url("./../../assets/fonts/Playfair_Display/PlayfairDisplay-Medium.woff") format("woff");
 }
 @font-face {
   font-family: "Playfair Display";
   font-weight: 700;
-  src: url("./../../src/assets/fonts/Playfair_Display/PlayfairDisplay-Bold.woff2") format("woff2"), url("./../../src/assets/fonts/Playfair_Display/PlayfairDisplay-Bold.woff") format("woff");
+  src: url("./../../assets/fonts/Playfair_Display/PlayfairDisplay-Bold.woff2") format("woff2"), url("./../../assets/fonts/Playfair_Display/PlayfairDisplay-Bold.woff") format("woff");
 }
 @font-face {
   font-family: "Cutive Mono";
-  src: url("./../../src/assets/fonts/Cutive_Mono/cutivemono-regular-webfont.woff2") format("woff2"), url("./../../src/assets/fonts/Cutive_Mono/cutivemono-regular-webfont.woff") format("woff");
+  src: url("./../../assets/fonts/Cutive_Mono/cutivemono-regular-webfont.woff2") format("woff2"), url("./../../assets/fonts/Cutive_Mono/cutivemono-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -683,7 +683,7 @@ footer {
     height: 100%;
     width: clamp(995px, 90%, 1100px);
     margin-inline: auto;
-    background: url("../../src/assets/svg/dots-path-background.svg") no-repeat 50% 20px;
+    background: url("../assets/svg/dots-path-background.svg") no-repeat 50% 20px;
     z-index: -1;
   }
   body .contact > .wrapper:first-child {
@@ -999,6 +999,7 @@ nav {
   clip-path: polygon(33.33% 0, 66.66% 0, 100% 10%);
   animation: shadow3 4s ease-in-out infinite;
   animation-play-state: paused;
+  transform-origin: top;
 }
 .card-03 .pyr {
   width: 64.44%;
@@ -1064,20 +1065,23 @@ nav {
 @keyframes shadow3 {
   0% {
     clip-path: polygon(33.33% 0, 66.66% 0, 100% 0%);
+    transform: translateX(-50%) scaleY(1);
+    transform-origin: top center;
   }
   30% {
-    height: 19.44%;
     clip-path: polygon(33.33% 0, 66.66% 0, 90% 100%);
+    transform: translateX(-50%) scaleY(1);
   }
   50% {
-    height: 6.67%;
+    transform: translateX(-50%) scaleY(0.34);
   }
   65% {
-    height: 11.11%;
     clip-path: polygon(33.33% 0, 66.66% 0, 25% 100%);
+    transform: translateX(-50%) scaleY(0.57);
   }
   90% {
     clip-path: polygon(33.33% 0, 66.66% 0, 0% 0%);
+    transform: translateX(-50%) scaleY(1);
   }
 }
 
@@ -1710,7 +1714,7 @@ nav {
   background-color: var(--saturated);
   transform-origin: center;
   animation: spin 90s linear infinite;
-  mask-image: url("../../src/assets/svg/widget-star.svg");
+  mask-image: url("../../assets/svg/widget-star.svg");
   mask-repeat: no-repeat;
   mask-size: cover;
 }
@@ -5054,7 +5058,7 @@ nav {
   content: "";
   inset: 0;
   height: 100%;
-  background: url("../../src/assets/svg/dots-background.svg") no-repeat 70% 70%;
+  background: url("../assets/svg/dots-background.svg") no-repeat 70% 70%;
   mask-image: linear-gradient(to bottom, transparent 15%, black 140%);
   z-index: -2;
 }
@@ -5338,3 +5342,4 @@ nav {
 .contact.animate .sun {
   rotate: 0deg;
 }
+/*# sourceMappingURL=home.css.map */

@@ -1,1 +1,31 @@
-function initCard32(e){var r,a,t;e.classList.contains("initialized")||(e.classList.add("initialized"),r=e.querySelectorAll("#btn"),a=e.querySelector("#counter"),t=0,r.forEach(function(e){e.addEventListener("click",function(e){var r=a.querySelector(".old-number"),r=(r&&r.remove(),a.querySelector(".number")),e=e.target.classList.contains("plus"),r=(t+=e?1:-1,r&&(r.classList.remove("appearGrow","appearShrink","disappearGrow","disappearShrink"),r.classList.add(e?"disappearGrow":"disappearShrink"),r.classList.add("old-number"),setTimeout(function(){var e=a.querySelector(".old-number");e&&e.remove()},400)),document.createElement("span"));r.className="number ".concat(e?"appearGrow":"appearShrink"),r.textContent=t,a.insertAdjacentElement("afterbegin",r)})}))}Object.defineProperty(exports,"__esModule",{value:!0}),exports.initCard32=initCard32;
+'use strict';
+
+export function initCard32(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+  const btns = card.querySelectorAll('#btn');
+  const counter = card.querySelector('#counter');
+  let sum = 0;
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      const prevOldNum = counter.querySelector('.old-number');
+      if (prevOldNum) prevOldNum.remove();
+      const currentNum = counter.querySelector('.number');
+      const isPlus = e.target.classList.contains('plus');
+      sum += isPlus ? 1 : -1;
+      if (currentNum) {
+        currentNum.classList.remove('appearGrow', 'appearShrink', 'disappearGrow', 'disappearShrink');
+        currentNum.classList.add(isPlus ? 'disappearGrow' : 'disappearShrink');
+        currentNum.classList.add('old-number');
+        setTimeout(function () {
+          const oldNum = counter.querySelector('.old-number');
+          if (oldNum) oldNum.remove();
+        }, 400);
+      }
+      const newNum = document.createElement('span');
+      newNum.className = `number ${isPlus ? 'appearGrow' : 'appearShrink'}`;
+      newNum.textContent = sum;
+      counter.insertAdjacentElement('afterbegin', newNum);
+    });
+  });
+}

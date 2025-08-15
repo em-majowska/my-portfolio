@@ -1,1 +1,58 @@
-function _toConsumableArray(e){return _arrayWithoutHoles(e)||_iterableToArray(e)||_unsupportedIterableToArray(e)||_nonIterableSpread()}function _nonIterableSpread(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}function _unsupportedIterableToArray(e,r){var t;if(e)return"string"==typeof e?_arrayLikeToArray(e,r):"Map"===(t="Object"===(t={}.toString.call(e).slice(8,-1))&&e.constructor?e.constructor.name:t)||"Set"===t?Array.from(e):"Arguments"===t||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)?_arrayLikeToArray(e,r):void 0}function _iterableToArray(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}function _arrayWithoutHoles(e){if(Array.isArray(e))return _arrayLikeToArray(e)}function _arrayLikeToArray(e,r){(null==r||r>e.length)&&(r=e.length);for(var t=0,n=Array(r);t<r;t++)n[t]=e[t];return n}function initCard15(e){var r,t,n,a,o,i,l,d;e.classList.contains("initialized")||(e.classList.add("initialized"),r=document.getElementById("drop-zone"),t=document.querySelector(".file-name"),n=document.querySelector(".cloud-icon"),a=document.querySelector(".loading-icon"),o=document.querySelector(".done-icon"),i=document.querySelector(".loading-bar"),l=document.querySelector(".upload-btn"),document.querySelector("#upload-file").addEventListener("click",function(e){}),r.addEventListener("drag dragstart dragend dragover dragenter dragleave drop",function(e){e.preventDefault()}),r.addEventListener("dragover",function(e){e.preventDefault(),r.style.backgroundColor="hsl(0, 0.00%, 29.40%)"}),r.addEventListener("dragleave",function(e){r.style.backgroundColor="transparent"}),d=!1,r.addEventListener("change",function(e){r.style.backgroundColor="transparent",n.style.display="none",e.target.files[0]&&_toConsumableArray(e.target.files).forEach(function(e,r){t.innerHTML="".concat(e.name),d=!0})}),l.addEventListener("click",function(){"Done"!==l.innerHTML&&(d?(r.style.display="none",l.innerHTML="Uploading...",a.style.opacity="0.5",a.classList.add("animation"),i.classList.add("animation"),setTimeout(function(){a.style.opacity="0",o.style.opacity="0.5",l.innerHTML="Done"},4e3)):(n.style.display="none",t.innerHTML="Drop a file first!"))}))}Object.defineProperty(exports,"__esModule",{value:!0}),exports.initCard15=initCard15;
+'use strict';
+
+export function initCard15(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+  const dropZone = document.getElementById('drop-zone');
+  const fileName = document.querySelector('.file-name');
+  const cloud = document.querySelector('.cloud-icon');
+  const loading = document.querySelector('.loading-icon');
+  const done = document.querySelector('.done-icon');
+  const loadingBar = document.querySelector('.loading-bar');
+  const uploadBtn = document.querySelector('.upload-btn');
+  const uploadInput = document.querySelector('#upload-file');
+  uploadInput.addEventListener('click', function (e) {
+    // e.preventDefault();
+  });
+  dropZone.addEventListener('drag dragstart dragend dragover dragenter dragleave drop', function (e) {
+    e.preventDefault();
+  });
+  dropZone.addEventListener('dragover', function (e) {
+    e.preventDefault();
+    dropZone.style.backgroundColor = 'hsl(0, 0.00%, 29.40%)';
+  });
+  dropZone.addEventListener('dragleave', function (e) {
+    dropZone.style.backgroundColor = 'transparent';
+  });
+  let isDropped = false;
+  dropZone.addEventListener('change', function (e) {
+    dropZone.style.backgroundColor = 'transparent';
+    cloud.style.display = 'none';
+    if (e.target.files[0]) {
+      [...e.target.files].forEach(function (file, i) {
+        fileName.innerHTML = `${file.name}`;
+        isDropped = true;
+      });
+    }
+  });
+  uploadBtn.addEventListener('click', uploadFiles);
+  function uploadFiles() {
+    if (uploadBtn.innerHTML === 'Done') {
+      return;
+    } else if (isDropped) {
+      dropZone.style.display = 'none';
+      uploadBtn.innerHTML = 'Uploading...';
+      loading.style.opacity = '0.5';
+      loading.classList.add('animation');
+      loadingBar.classList.add('animation');
+      setTimeout(function () {
+        loading.style.opacity = '0';
+        done.style.opacity = '0.5';
+        uploadBtn.innerHTML = 'Done';
+      }, 4000);
+    } else {
+      cloud.style.display = 'none';
+      fileName.innerHTML = 'Drop a file first!';
+    }
+  }
+}

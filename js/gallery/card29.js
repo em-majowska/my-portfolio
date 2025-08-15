@@ -1,1 +1,35 @@
-function initCard29(e){var n,i,t,s;function a(){t.style.display="block",i.forEach(function(e){e.innerHTML=s.join("")})}e.classList.contains("initialized")||(e.classList.add("initialized"),n=e.querySelector("#search-bar-input"),i=e.querySelectorAll(".active-search"),t=e.querySelector(".accordeon"),(s=[])||(t.style.display="none"),n.addEventListener("keypress",function(e){e=e.key;s.push(e="Enter"===e?"":e),a()}),n.addEventListener("keydown",function(e){"Backspace"===e.key&&(s=s.slice(0,-1)),a(),0===s.length&&(t.style.display="none")}))}Object.defineProperty(exports,"__esModule",{value:!0}),exports.initCard29=initCard29;
+'use strict';
+
+export function initCard29(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+  const searchBar = card.querySelector('#search-bar-input');
+  const activeSearch = card.querySelectorAll('.active-search');
+  const accordeon = card.querySelector('.accordeon');
+  let text = [];
+  if (!text) {
+    accordeon.style.display = 'none';
+  }
+  searchBar.addEventListener('keypress', function (event) {
+    let key = event.key;
+    if (key === 'Enter') key = '';
+    text.push(key);
+    changeSuggestions();
+  });
+  searchBar.addEventListener('keydown', function (event) {
+    let key = event.key;
+    if (key === 'Backspace') {
+      text = text.slice(0, -1);
+    }
+    changeSuggestions();
+    if (text.length === 0) {
+      accordeon.style.display = 'none';
+    }
+  });
+  function changeSuggestions() {
+    accordeon.style.display = 'block';
+    activeSearch.forEach(function (span) {
+      span.innerHTML = text.join('');
+    });
+  }
+}

@@ -1,1 +1,28 @@
-function initCard25(e){var t,i,a,n;function r(){a=!a,t.classList.toggle("animate"),a?(i.tabIndex="-1",n.forEach(function(e){e.tabIndex="0"})):(i.tabIndex="0",n.forEach(function(e){e.tabIndex="-1"}))}e.classList.contains("initialized")||(e.classList.add("initialized"),t=e.querySelector("#card25"),i=e.querySelector("#front-face"),e=e.querySelector("#back-face"),a=!1,i.addEventListener("click",r),e.addEventListener("click",r),n=Array.from(e.querySelectorAll("button")))}Object.defineProperty(exports,"__esModule",{value:!0}),exports.initCard25=initCard25;
+'use strict';
+
+export function initCard25(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+  const card25 = card.querySelector('#card25');
+  const front = card.querySelector('#front-face');
+  const back = card.querySelector('#back-face');
+  let isToggled = false;
+  front.addEventListener('click', toggle);
+  back.addEventListener('click', toggle);
+  const backBtns = Array.from(back.querySelectorAll('button'));
+  function toggle() {
+    isToggled = !isToggled;
+    card25.classList.toggle('animate');
+    if (isToggled) {
+      front.tabIndex = '-1';
+      backBtns.forEach(function (btn) {
+        btn.tabIndex = '0';
+      });
+    } else {
+      front.tabIndex = '0';
+      backBtns.forEach(function (btn) {
+        btn.tabIndex = '-1';
+      });
+    }
+  }
+}

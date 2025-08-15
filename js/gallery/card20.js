@@ -1,1 +1,24 @@
-function initCard20(e){var i,t,n,a;e.classList.contains("initialized")||(e.classList.add("initialized"),i=e.querySelector(".send-btn"),t=e.querySelector(".reset-btn"),n=!1,i.addEventListener("click",function(){n?(clearInterval(a),e.classList.remove("animate"),t.innerHTML="SEND MAIL"):(e.classList.add("animate"),a=setInterval(function(){t.innerHTML="RESET"},3800));n=!n}))}Object.defineProperty(exports,"__esModule",{value:!0}),exports.initCard20=initCard20;
+'use strict';
+
+export function initCard20(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+  const sendBtn = card.querySelector('.send-btn');
+  const resetBtn = card.querySelector('.reset-btn');
+  let isSent = false;
+  let intervalId;
+  sendBtn.addEventListener('click', sendMail);
+  function sendMail() {
+    if (!isSent) {
+      card.classList.add('animate');
+      intervalId = setInterval(function () {
+        resetBtn.innerHTML = 'RESET';
+      }, 3800);
+    } else {
+      clearInterval(intervalId);
+      card.classList.remove('animate');
+      resetBtn.innerHTML = 'SEND MAIL';
+    }
+    isSent = !isSent;
+  }
+}

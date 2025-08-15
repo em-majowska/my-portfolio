@@ -1,1 +1,18 @@
-function initCard09(e){var t,i;e.classList.contains("initialized")||(e.classList.add("initialized"),t=e.querySelectorAll(".big"),i=e.querySelectorAll(".mid"),e=e.querySelectorAll(".small"),t.forEach(function(e,t){e.style.left=30*(t+1)+"px"}),i.forEach(function(e,t){e.style.left=40.5*(t+1)+"px"}),e.forEach(function(e,t){e.style.left=75.5*(t+1)+"px"}))}Object.defineProperty(exports,"__esModule",{value:!0}),exports.initCard09=initCard09;
+'use strict';
+
+export function initCard09(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+  const bigDrop = card.querySelectorAll('.big');
+  const midDrop = card.querySelectorAll('.mid');
+  const smallDrop = card.querySelectorAll('.small');
+  bigDrop.forEach(function (drop, i) {
+    drop.style.left = (i + 1) * 30 + 'px';
+  });
+  midDrop.forEach(function (drop, i) {
+    drop.style.left = (i + 1) * 40.5 + 'px';
+  });
+  smallDrop.forEach(function (drop, i) {
+    drop.style.left = (i + 1) * 75.5 + 'px';
+  });
+}

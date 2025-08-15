@@ -1,1 +1,29 @@
-function initCard38(t){var e,i,n;t.classList.contains("initialized")||(t.classList.add("initialized"),e=t.querySelector("#logo"),i=t.querySelector("#logo2"),n=!1,t.addEventListener("click",function(){((n=!n)?(e.tabIndex="-1",i.tabIndex="0",i):(e.tabIndex="0",i.tabIndex="-1",e)).focus(),e.classList.toggle("animate"),i.classList.toggle("animate")}),e.addEventListener("keypress",function(e){"Enter"===e.key&&t.click()}),i.addEventListener("keypress",function(e){"Enter"===e.key&&t.click()}))}Object.defineProperty(exports,"__esModule",{value:!0}),exports.initCard38=initCard38;
+'use strict';
+
+export function initCard38(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+  const logo = card.querySelector('#logo');
+  const logo2 = card.querySelector('#logo2');
+  let isSwitched = false;
+  card.addEventListener('click', function () {
+    isSwitched = !isSwitched;
+    if (isSwitched) {
+      logo.tabIndex = '-1';
+      logo2.tabIndex = '0';
+      logo2.focus();
+    } else {
+      logo.tabIndex = '0';
+      logo2.tabIndex = '-1';
+      logo.focus();
+    }
+    logo.classList.toggle('animate');
+    logo2.classList.toggle('animate');
+  });
+  logo.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') card.click();
+  });
+  logo2.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') card.click();
+  });
+}
