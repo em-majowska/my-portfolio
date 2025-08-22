@@ -13,7 +13,6 @@
 	<meta property="og:image" content="https://i.postimg.cc/PJh45DkT/facebook-image.png">
 	<title>Ewa Majowska | Front-End Developer</title>
 
-	<link rel="stylesheet" href="./css/normalize.css">
 	<link rel=" stylesheet" href="./css/home.css">
 	<link rel="icon" href="./assets/svg/favicon.png" sizes="any">
 	<link rel="icon" href="./assets/svg/favicon.svg" type="image/svg+xml">
@@ -75,8 +74,11 @@
 			</div>
 			<div class="hero__img">
 				<picture>
-					<source media="(max-width: 680px)" srcset="./assets/img/blob-mobile.webp">
-					<img src="./assets/img/blob-desktop.webp" alt="">
+					<source media="(max-width: 679px)" srcset="./assets/img/blob-mobile.webp" type="image/webp">
+					<source media="(max-width: 679px)" srcset="./assets/img/blob-mobile.jpeg" type="image/jpeg">
+					<source media="(min-width: 680px)" srcset="./assets/img/blob-desktop.webp" type="image/webp">
+					<source media="(min-width: 680px)" srcset="./assets/img/blob-desktop.jpg" type="image/jpeg">
+					<img src="./assets/img/blob-desktop.jpg" alt="">
 				</picture>
 				<svg class="outline" id="outline" viewBox="0 0 368 390" preserveAspectRatio="none" fill="none"
 					xmlns="http://www.w3.org/2000/svg" stroke="#181306" role="presentation">
@@ -132,9 +134,19 @@
 							</text>
 						</svg>
 						<div class="widget__avatar">
-							<img class="widget__img" srcset="./assets/img/my-photo-300.webp 300w,
-											./assets/img/my-photo-729.webp 729w,
-											./assets/img/my-photo-1000.webp 1000w" sizes="420px" src="./assets/img/my-photo-300.webp" alt="This is me">
+							<picture class="widget__img">
+								<source srcset="
+									./assets/img/my-photo-300.webp 300w,
+									./assets/img/my-photo-729.webp 729w,
+									./assets/img/my-photo-1000.webp 1000w
+								" sizes="420px" type="image/webp">
+								<source srcset="
+										./assets/img/my-photo-300.jpg 300w,
+										./assets/img/my-photo-729.jpg 729w,
+										./assets/img/my-photo-1000.jpg 1000w
+									" sizes="420px" type="image/jpeg">
+								<img src="./assets/img/my-photo-300.jpg" alt="This is me">
+							</picture>
 						</div>
 					</div>
 					<div class="about-me__text wrapper">

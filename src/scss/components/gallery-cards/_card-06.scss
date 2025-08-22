@@ -48,11 +48,15 @@
     }
   }
 
-  img {
+  picture {
     position: relative;
     z-index: 2;
     border-radius: 50%;
     width: 80px;
+
+    img {
+      border-radius: 50%;
+    }
   }
 
   .meta {
@@ -107,7 +111,7 @@
   .circle-1,
   .circle-2,
   .circle-3,
-  img {
+  picture {
     grid-column: 1 / 2;
     grid-row: 1/ 2;
     margin-inline: auto;

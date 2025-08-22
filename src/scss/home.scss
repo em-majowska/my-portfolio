@@ -208,7 +208,7 @@
   }
 
   &__avatar,
-  &__img {
+  &__img > * {
     margin-inline: auto;
     aspect-ratio: 1 / 1;
   }
@@ -224,7 +224,7 @@
     mask-size: cover;
   }
 
-  &__img {
+  &__img > * {
     position: relative;
     align-self: end;
     width: 100%;
