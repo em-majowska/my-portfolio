@@ -16,6 +16,14 @@ import { promisify } from 'util';
 import browserSync from 'browser-sync';
 import imagemin, { optipng, svgo } from 'gulp-imagemin';
 import noop from 'gulp-noop';
+import webp from 'gulp-webp';
+
+export function webpConvert() {
+  return gulp
+    .src('src/assets/img/**/*.{png,jpg,jpeg}')
+    .pipe(webp({ quality: 100 }))
+    .pipe(gulp.dest('src/assets/img'));
+}
 
 const isProd = process.env.NODE_ENV === 'production';
 const sassCompiler = gulpSass(dartSass);
