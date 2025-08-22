@@ -13,11 +13,12 @@
 	<meta property="og:image" content="https://i.postimg.cc/PJh45DkT/facebook-image.png">
 	<title>Ewa Majowska | Front-End Developer</title>
 
+	<link rel="stylesheet" href="./css/normalize.css">
 	<link rel=" stylesheet" href="./css/home.css">
 	<link rel="icon" href="./assets/svg/favicon.png" sizes="any">
 	<link rel="icon" href="./assets/svg/favicon.svg" type="image/svg+xml">
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"
+	<script async src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"
 		integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
@@ -34,12 +35,10 @@
 				<svg aria-hidden="true">
 					<use href="./assets/svg/icons.svg#arrow-up"></use>
 				</svg>
-
 			</div>
 		</a>
 
 		<!-- NAVIGATION -->
-
 		<nav id="nav" class="wrapper" aria-label="Primary">
 			<div class="navbar">
 				<a aria-current="page" href="/" class="logo">
@@ -60,7 +59,6 @@
 		<div class="nav-overlay"></div>
 
 		<!-- HERO  -->
-
 		<section class="hero wrapper">
 			<div class="hero__text">
 				<h1>
@@ -77,8 +75,8 @@
 			</div>
 			<div class="hero__img">
 				<picture>
-					<source media="(max-width: 680px)" srcset="./assets/img/blob-mobile.png">
-					<img src="./assets/img/blob-desktop.png" alt="">
+					<source media="(max-width: 680px)" srcset="./assets/img/blob-mobile.jpg">
+					<img src="./assets/img/blob-desktop.jpg" alt="">
 				</picture>
 				<svg class="outline" id="outline" viewBox="0 0 368 390" preserveAspectRatio="none" fill="none"
 					xmlns="http://www.w3.org/2000/svg" stroke="#181306" role="presentation">
@@ -134,9 +132,9 @@
 							</text>
 						</svg>
 						<div class="widget__avatar">
-							<img class="widget__img" srcset="./assets/img/my-photo-300.png 300w,
-											./assets/img/my-photo-729.png 729w,
-											./assets/img/my-photo-1000.png 1000w" sizes="420px" src="./assets/img/my-photo-300.png" alt="This is me">
+							<img class="widget__img" srcset="./assets/img/my-photo-300.jpg 300w,
+											./assets/img/my-photo-729.jpg 729w,
+											./assets/img/my-photo-1000.jpg 1000w" sizes="420px" src="./assets/img/my-photo-300.jpg" alt="This is me">
 						</div>
 					</div>
 					<div class="about-me__text wrapper">
@@ -157,7 +155,6 @@
 		</section>
 
 		<!-- SKILLS -->
-
 		<section class="section code" aria-labelledby="code">
 			<div class="wrapper">
 				<div class="circle"></div>
@@ -201,12 +198,11 @@
 						<!-- Typing animation SCSS mixin by @branmcconnell: https://github.com/brandonmcconnell/typed.css -->
 						<code></code>
 					</div>
-				</div>
-			</div>
+				</div> <!-- /end .code__container -->
+			</div> <!-- /end .wrapper div (Skills section) -->
 		</section>
 
 		<!-- PORTFOLIO -->
-
 		<section class="section portfolio" aria-labelledby="portfolio">
 			<div class="wrapper">
 				<div class="section__header">
@@ -235,7 +231,6 @@
 					<div class="btn__shadow"></div>
 					<div class="btn__fill">See more projects</div>
 				</a>
-
 			</div> <!-- /end .wrapper div (Portfolio section) -->
 		</section>
 
@@ -275,12 +270,12 @@
 						</a>
 
 					</address>
-				</div>
+				</div> <!-- /end .window div -->
 
 				<div class="sun-wrapper" aria-hidden="true">
 					<img class="sun" src="./assets/svg/sun.svg" alt="">
 				</div>
-			</div>
+			</div> <!-- /end .wrapper div (Contact section) -->
 
 			<div class="animated-elements wrapper" aria-hidden="true">
 				<div class="cat-wrapper" tabindex="-1">
@@ -301,14 +296,16 @@
 		</section>
 	</main>
 
+	<!-- FOOTER -->
 	<footer class="footer">
 		<div class="footer__wrapper wrapper">
 			<p>Copyright &copy; 2025 Ewa Majowska</p>
 		</div>
 	</footer>
 
+	<script src="./polyfills/minified.js"></script>
+	<script src="./polyfills/runtime.js"></script>
 	<script src="./js/script.js" type="module"></script>
-
 </body>
 
 </html>

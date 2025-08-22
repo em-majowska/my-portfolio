@@ -2,33 +2,69 @@
   "name": "my-portfolio",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "sass src/scss/main.scss:dist/style.css --watch",
-    "build": "gulp build",
-    "deploy": "gulp deploy"
+    "dev": "cross-env NODE_ENV=development gulp",
+    "build": "cross-env NODE_ENV=production gulp",
+    "deploy": "cross-env NODE_ENV=production gulp deployGhPages"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@babel/cli": "^7.28.0",
     "@babel/core": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
     "@eslint/js": "^9.33.0",
+    "browser-sync": "^3.0.4",
+    "cross-env": "^7.0.3",
+    "cssnano": "^7.1.0",
+    "del": "^8.0.0",
     "eslint": "^9.33.0",
+    "gh-pages": "^6.3.0",
     "globals": "^16.3.0",
-    "gulp": "^5.0.1",
+    "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
-    "gulp-clean": "^0.4.0",
     "gulp-eslint-new": "^2.4.0",
-    "gulp-gh-pages": "^0.5.4",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^9.1.0",
+    "gulp-noop": "^1.0.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-replace": "^1.1.4",
     "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
+    "imagemin": "^9.0.1",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
     "sass": "^1.90.0"
   },
   "dependencies": {
-    "@lottiefiles/dotlottie-web": "^0.41.0"
+    "@lottiefiles/dotlottie-web": "^0.41.0",
+    "autoprefixer": "^10.4.21",
+    "core-js": "^3.45.0",
+    "core-js-bundle": "^3.45.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^11.0.1",
+    "regenerator-runtime": "^0.14.1"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "usage",
+          "corejs": "3",
+          "modules": false,
+          "bugfixes": true
+        }
+      ]
+    ],
+    "plugins": [
+      "@babel/plugin-transform-arrow-functions"
+    ]
   }
 }

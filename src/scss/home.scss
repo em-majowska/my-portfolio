@@ -219,7 +219,7 @@
     background-color: var(--saturated);
     transform-origin: center;
     animation: spin 90s linear infinite;
-    mask-image: url('../../src/assets/svg/widget-star.svg');
+    mask-image: url('../../assets/svg/widget-star.svg');
     mask-repeat: no-repeat;
     mask-size: cover;
   }
@@ -381,8 +381,7 @@
     @include u.pseudo;
     inset: 0;
     height: 100%;
-    background: url('../../src/assets/svg/dots-background.svg') no-repeat 70%
-      70%;
+    background: url('../assets/svg/dots-background.svg') no-repeat 70% 70%;
     mask-image: linear-gradient(to bottom, transparent 15%, black 140%);
     z-index: -2;
   }
