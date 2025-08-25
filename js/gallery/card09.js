@@ -1,0 +1,1 @@
+function initCard09(i){var l,t;i.classList.contains("initialized")||(i.classList.add("initialized"),l=i.querySelectorAll(".big"),t=i.querySelectorAll(".mid"),i=i.querySelectorAll(".small"),l.forEach(function(i,l){i.style.left=30*(l+1)+"px"}),t.forEach(function(i,l){i.style.left=40.5*(l+1)+"px"}),i.forEach(function(i,l){i.style.left=75.5*(l+1)+"px"}))}export{initCard09};

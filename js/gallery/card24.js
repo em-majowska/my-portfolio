@@ -1,0 +1,1 @@
+function initCard24(e){if(!e.classList.contains("initialized")){e.classList.add("initialized");let i=e.querySelector("#btn"),t=e.querySelector(".circle"),a=!1;i.addEventListener("click",function(){(a=!a)?(i.classList.add("animate"),t.classList.add("animate"),i.blur()):(i.classList.remove("animate"),t.classList.remove("animate"))})}}export{initCard24};
