@@ -146,7 +146,9 @@ export const build = gulp.series(
 );
 
 export const deployGhPages = gulp.series(build, async () => {
-  await publish('dist');
+  await publish('dist', {
+    history: false,
+  });
 });
 
 export default gulp.series(build, serve);
