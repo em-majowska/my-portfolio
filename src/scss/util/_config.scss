@@ -297,10 +297,7 @@ button {
 
 .animated-elements {
   --cat-size: clamp(200px, 30vw, 400px);
-
-  position: relative;
-  height: var(--cat-size);
-  margin-inline: auto;
+  pointer-events: none;
 
   .cat-wrapper {
     position: absolute;

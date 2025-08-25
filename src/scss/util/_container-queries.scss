@@ -217,7 +217,7 @@ footer {
 
     .animated-elements {
       .sun {
-        bottom: 65%;
+        top: 5%;
       }
       .cat {
         transform: scale(1.5) translateY(-3%);
@@ -414,6 +414,10 @@ footer {
     /* === Contact Section === */
 
     .contact {
+      .wrapper {
+        padding-block-end: 0px;
+      }
+
       & > .wrapper:first-child {
         height: 85vh;
         display: flex;

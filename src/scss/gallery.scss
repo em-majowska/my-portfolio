@@ -841,8 +841,10 @@ nav {
 
 /* Cat and Circle Elements */
 .animated-elements {
-  margin-block-start: auto;
+  position: relative;
+  height: var(--cat-size);
   width: 100%;
+  margin-block-start: auto;
 
   .circle-wrapper {
     height: 35vh;

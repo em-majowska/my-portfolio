@@ -520,13 +520,12 @@
 
 .contact {
   position: relative;
-
-  & > .wrapper {
-    position: relative;
-  }
-
   box-shadow: var(--shadow);
   background-color: var(--primary);
+
+  & > .wrapper {
+    padding-block-end: 180px;
+  }
 
   .section__header {
     margin-block-end: 3rem;
@@ -615,11 +614,15 @@
 
   /* Sun Element */
 
+  .animated-elements {
+    position: absolute;
+    inset: 0;
+  }
+
   .sun-wrapper {
     position: absolute;
-    margin-block-start: 0;
     bottom: 0;
-    width: 100vw;
+    width: 100vw; // ignore wrapper
     height: 100%;
     overflow: hidden;
   }
