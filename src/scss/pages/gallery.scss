@@ -557,7 +557,7 @@ body {
   position: relative;
   // padding-inline: 1rem;
   // padding: 0 1rem 15rem 1rem;
-  overflow-y: clip;
+  // overflow-y: clip;
   overflow-x: visible;
   margin-inline: auto;
   width: clamp(300px, 100%, 1200px);
@@ -594,7 +594,7 @@ body {
   }
 }
 
-.gallery > *:not(.loader) {
+.gallery > article {
   display: grid;
   grid-template-rows: 1fr 4rem;
   position: relative;
@@ -641,6 +641,7 @@ body {
       content: 'Click me!';
     }
   }
+
   &:is(:hover, .animate, :focus-visible, :focus-within) {
     &::after {
       animation-play-state: paused;
@@ -654,6 +655,7 @@ body {
     scroll-margin-top: 30vh;
     scroll-margin-bottom: 30vh;
   }
+
   &.show {
     opacity: 0;
     animation: showCard 0.5s ease-in-out 0.5s forwards;
@@ -664,6 +666,10 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
+    p,
+    li {
+      font-size: 1rem;
+    }
 
     .overlay {
       position: absolute;
@@ -705,7 +711,6 @@ body {
     .btn--reset:is(:hover, :focus-visible) {
       color: var(--text);
       background-color: var(--background);
-
       outline-color: var(--background);
     }
   }
@@ -736,6 +741,7 @@ body {
       font-family: var(--mono-font);
       line-height: 1.2;
       hyphens: none;
+      font-size: 1.125rem;
     }
   }
 }
@@ -754,16 +760,7 @@ body {
   @include u.center;
 }
 
-main > .circle {
-  position: absolute;
-  height: 65vh;
-  width: 65vh;
-  bottom: -20rem;
-  right: -10%;
-  border-radius: 50%;
-  background-color: hsl(40.4, 100%, 89.2%);
-  z-index: -1;
-}
+/* LOADER */
 
 .loader {
   position: absolute;
@@ -772,12 +769,7 @@ main > .circle {
   bottom: -5rem;
   width: 200px;
   height: 80px;
-  // opacity: 0;
   transition: opacity 0.4s ease-in-out;
-
-  // &.show {
-  //   opacity: 1;
-  // }
 
   span {
     grid-row: 1 / 2;
@@ -810,6 +802,24 @@ main > .circle {
       transform: translate(6px, 3px);
       z-index: -1;
     }
+  }
+}
+
+.animated-elements {
+  .circle-wrapper {
+    height: 35vh;
+    position: absolute;
+    bottom: 0;
+    right: -10%;
+    overflow-y: hidden;
+    z-index: -1;
+  }
+
+  .circle {
+    height: 65vh;
+    width: 65vh;
+    border-radius: 50%;
+    background-color: hsl(40.4, 100%, 89.2%);
   }
 }
 

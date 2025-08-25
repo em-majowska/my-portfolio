@@ -199,7 +199,7 @@ footer {
 
     .animated-elements {
       .sun {
-        bottom: 65%;
+        top: 5%;
       }
       .cat {
         transform: scale(1.5) translateY(-3%);
@@ -348,16 +348,6 @@ footer {
 
     // CODE
 
-    // .code {
-    //   .code__container {
-    //     display: flex;
-
-    //     & > * {
-    //       width: 50%;
-    //     }
-    //   }
-    // }
-
     /* PORTFOLIO */
 
     .portfolio {
@@ -378,9 +368,8 @@ footer {
           no-repeat 50% 20%;
         z-index: -1;
       }
-    }
-    .gallery {
-      &__card {
+
+      .gallery__card {
         &:first-child {
           transform: translateY(32px);
           rotate: -15deg;
@@ -404,6 +393,10 @@ footer {
 
     .contact {
       .wrapper {
+        padding-block-end: 0px;
+      }
+
+      & > .wrapper:first-child {
         height: 85vh;
         display: flex;
         align-items: flex-start;
@@ -420,7 +413,7 @@ footer {
     }
     .animated-elements {
       max-width: 1200px;
-      height: auto;
+      // height: auto;
 
       .cat-wrapper {
         left: 0;

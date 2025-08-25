@@ -168,6 +168,13 @@ footer ::selection {
   background-color: var(--secondary);
 }
 
+/* OUTLINE A11Y */
+
+*:focus-visible {
+  outline: 3px dashed;
+  outline-offset: 3px;
+}
+
 /* BUTTONS */
 
 button {
@@ -245,7 +252,7 @@ button {
   }
 }
 
-// SKIP TO MAIN CONTENT BUTTON
+/* SKIP TO MAIN CONTENT BUTTON */
 
 .screen-reader-text {
   position: absolute;
@@ -264,14 +271,7 @@ button {
   }
 }
 
-// OUTLINE A11Y
-
-*:focus-visible {
-  outline: 3px dashed;
-  outline-offset: 3px;
-}
-
-// SCROLL TO TOP
+/* SCROLLING */
 
 .stt {
   // display: none;
@@ -283,7 +283,84 @@ button {
 
 // PREVENT SCROLLING
 
-.stop-scrolling {
-  height: 100%;
-  overflow: hidden;
+/* Cat Element */
+
+.animated-elements {
+  --cat-size: clamp(200px, 30vw, 400px);
+  pointer-events: none;
+
+  .cat-wrapper {
+    position: absolute;
+    overflow-y: hidden;
+    width: clamp(var(--cat-size), 50vw, 400px);
+    height: calc(var(--cat-size) + 100px);
+    bottom: -77px; // height of the footer
+    right: 60vw;
+    z-index: 2;
+
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .cat {
+    --pivot: 0% 63%;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    transform-origin: var(--pivot);
+    transform: scale(1) translateY(-5%);
+  }
+}
+
+// spotlight
+
+.spotlight {
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1000;
+
+  &--outer {
+    --size: 40px;
+    width: var(--size);
+    height: var(--size);
+    background-color: hsla(from var(--accent) h s l / 0.4);
+    mix-blend-mode: multiply;
+  }
+}
+
+/* CAT */
+
+.animated-elements {
+  --cat-size: clamp(200px, 30vw, 400px);
+
+  position: relative;
+  height: var(--cat-size);
+  margin-inline: auto;
+
+  .cat-wrapper {
+    position: absolute;
+    overflow-y: hidden;
+    width: clamp(var(--cat-size), 50vw, 400px);
+    height: calc(var(--cat-size) + 100px);
+    bottom: -4.925rem;
+    left: calc((10% * -1.5));
+    z-index: 2;
+  }
+
+  .cat {
+    --pivot: 0% 63%;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    transform-origin: var(--pivot);
+    transform: scale(1) translateY(-5%);
+  }
 }

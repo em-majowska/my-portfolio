@@ -475,13 +475,12 @@
 
 .contact {
   position: relative;
-
-  & > .wrapper {
-    position: relative;
-  }
-
   box-shadow: var(--shadow);
   background-color: var(--primary);
+
+  & > .wrapper {
+    padding-block-end: 180px;
+  }
 
   .section__header {
     margin-block-end: 3rem;
@@ -569,12 +568,15 @@
 
   /* SUN */
 
+  .animated-elements {
+    position: absolute;
+    inset: 0;
+  }
+
   .sun-wrapper {
     position: absolute;
-    margin-block-start: 0;
     bottom: 0;
-    left: -1em;
-    width: 100vw;
+    width: 100vw; // ignore wrapper
     height: 100%;
     overflow: hidden;
   }
@@ -636,32 +638,32 @@
 
 /* CAT */
 
-.animated-elements {
-  --cat-size: clamp(200px, 30vw, 400px);
+// .animated-elements {
+//   --cat-size: clamp(200px, 30vw, 400px);
 
-  position: relative;
-  height: var(--cat-size);
-  margin-inline: auto;
+//   position: relative;
+//   height: var(--cat-size);
+//   margin-inline: auto;
 
-  .cat-wrapper {
-    position: absolute;
-    overflow-y: hidden;
-    width: 100%;
-    height: calc(var(--cat-size) + 100px);
-    bottom: -4.85rem;
-    left: calc((10% * -1.5));
-    z-index: 2;
-  }
+//   .cat-wrapper {
+//     position: absolute;
+//     overflow-y: hidden;
+//     width: clamp(var(--cat-size), 50vw, 400px);
+//     height: calc(var(--cat-size) + 100px);
+//     bottom: -4.925rem;
+//     left: calc((10% * -1.5));
+//     z-index: 2;
+//   }
 
-  .cat {
-    --pivot: 0% 63%;
+//   .cat {
+//     --pivot: 0% 63%;
 
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 200px;
-    height: 200px;
-    transform-origin: var(--pivot);
-    transform: scale(1) translateY(-5%);
-  }
-}
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     width: 200px;
+//     height: 200px;
+//     transform-origin: var(--pivot);
+//     transform: scale(1) translateY(-5%);
+//   }
+// }
