@@ -67,16 +67,33 @@ export function initAnimationObserver() {
     animationObserver = new IntersectionObserver(
       (entries, observer) => {
         entries.forEach((entry) => {
+          if (!entry.isIntersecting && !entry.target.id) return;
+
+          entry.target.classList.add('animate');
+
+          // Load bodymovin script dynamically
           if (
-            (entry.target.id && entry.isIntersecting) ||
-            (entry.target.classList.contains('about-me') &&
-              entry.isIntersecting)
+            entry.target.classList.contains('contact') &&
+            entry.isIntersecting
           ) {
-            entry.target.classList.add('animate');
-            observer.unobserve(entry.target);
-          } else {
-            entry.target.classList.toggle('animate', entry.isIntersecting);
+            const script = document.createElement('script');
+            script.src =
+              'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js';
+            script.onload = () => {
+              bodymovin.loadAnimation({
+                container: document.getElementById('cat-animation'),
+                path: './assets/cat-animation.json',
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                name: 'cat animation',
+              });
+            };
+            document.body.appendChild(script);
           }
+          observer.unobserve(entry.target);
+
+          // entry.target.classList.toggle('animate', entry.isIntersecting);
         });
       },
       {

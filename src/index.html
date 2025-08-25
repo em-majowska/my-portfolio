@@ -20,10 +20,6 @@
 	<link rel=" stylesheet" href="./css/home.css">
 	<link rel="icon" href="./assets/svg/favicon.png" sizes="any">
 	<link rel="icon" href="./assets/svg/favicon.svg" type="image/svg+xml">
-
-	<script async src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"
-		integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg=="
-		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -288,25 +284,14 @@
 					</address>
 				</div> <!-- /end .window div -->
 
-				<div class="sun-wrapper" aria-hidden="true">
-					<img class="sun" src="./assets/svg/sun.svg" alt="">
-				</div>
 			</div> <!-- /end .wrapper div (Contact section) -->
 
 			<div class="animated-elements wrapper" aria-hidden="true">
+				<div class="sun-wrapper" aria-hidden="true">
+					<img class="sun" src="./assets/svg/sun.svg" alt="">
+				</div>
 				<div class="cat-wrapper" tabindex="-1">
-					<div class="cat" id="cat-animation">
-						<script>
-							var animation = bodymovin.loadAnimation({
-								container: document.getElementById('cat-animation'),
-								path: './assets/cat-animation.json',
-								renderer: 'svg',
-								loop: true,
-								autoplay: true,
-								name: 'cat animation'
-							});
-						</script>
-					</div>
+					<div class="cat" id="cat-animation"></div>
 				</div>
 			</div>
 		</section>
