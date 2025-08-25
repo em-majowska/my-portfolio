@@ -219,7 +219,7 @@
     background-color: var(--saturated);
     transform-origin: center;
     animation: spin 90s linear infinite;
-    mask-image: url('../../assets/svg/widget-star.svg');
+    mask-image: url('./../assets/svg/widget-star.svg');
     mask-repeat: no-repeat;
     mask-size: cover;
   }

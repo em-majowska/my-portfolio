@@ -3,24 +3,24 @@
 @font-face {
   font-family: 'Source Sans 3';
   font-weight: 400;
-  src: url('./../../assets/fonts/Source_Sans_3/SourceSans3-Medium.woff2')
+  src: url('./../assets/fonts/Source_Sans_3/SourceSans3-Medium.woff2')
       format('woff2'),
-    url('./../../assets/fonts/Source_Sans_3/SourceSans3-Medium.woff')
+    url('./../assets/fonts/Source_Sans_3/SourceSans3-Medium.woff')
       format('woff');
 }
 @font-face {
   font-family: 'Source Sans 3';
   font-weight: 400;
   font-style: italic;
-  src: url('./../../assets/fonts/Source_Sans_3/SourceSans3-MediumItalic.woff2')
+  src: url('./../assets/fonts/Source_Sans_3/SourceSans3-MediumItalic.woff2')
       format('woff2'),
-    url('./../../assets/fonts/Source_Sans_3/SourceSans3-MediumItalic.woff')
+    url('./../assets/fonts/Source_Sans_3/SourceSans3-MediumItalic.woff')
       format('woff');
 }
 @font-face {
   font-family: 'Source Sans 3';
   font-weight: 700;
-  src: url('./../../assets/fonts/Source_Sans_3/SourceSans3-Bold.woff2')
+  src: url('./../assets/fonts/Source_Sans_3/SourceSans3-Bold.woff2')
       format('woff2'),
     url('./../../assets/fonts/Source_Sans_3/SourceSans3-Bold.woff')
       format('woff');
@@ -31,17 +31,17 @@
 @font-face {
   font-family: 'Playfair Display';
   font-weight: 400;
-  src: url('./../../assets/fonts/Playfair_Display/PlayfairDisplay-Medium.woff2')
+  src: url('./../assets/fonts/Playfair_Display/PlayfairDisplay-Medium.woff2')
       format('woff2'),
-    url('./../../assets/fonts/Playfair_Display/PlayfairDisplay-Medium.woff')
+    url('./../assets/fonts/Playfair_Display/PlayfairDisplay-Medium.woff')
       format('woff');
 }
 @font-face {
   font-family: 'Playfair Display';
   font-weight: 700;
-  src: url('./../../assets/fonts/Playfair_Display/PlayfairDisplay-Bold.woff2')
+  src: url('./../assets/fonts/Playfair_Display/PlayfairDisplay-Bold.woff2')
       format('woff2'),
-    url('./../../assets/fonts/Playfair_Display/PlayfairDisplay-Bold.woff')
+    url('./../assets/fonts/Playfair_Display/PlayfairDisplay-Bold.woff')
       format('woff');
 }
 
@@ -49,9 +49,9 @@
 
 @font-face {
   font-family: 'Cutive Mono';
-  src: url('./../../assets/fonts/Cutive_Mono/cutivemono-regular-webfont.woff2')
+  src: url('./../assets/fonts/Cutive_Mono/cutivemono-regular-webfont.woff2')
       format('woff2'),
-    url('./../../assets/fonts/Cutive_Mono/cutivemono-regular-webfont.woff')
+    url('./../assets/fonts/Cutive_Mono/cutivemono-regular-webfont.woff')
       format('woff');
   font-weight: normal;
   font-style: normal;
