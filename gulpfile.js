@@ -31,7 +31,18 @@ const publish = promisify(ghpages.publish);
 const sync = browserSync.create();
 const plugins = {
   dev: [autoprefixer()],
-  prod: [autoprefixer(), cssnano()],
+  prod: [
+    autoprefixer(),
+    cssnano({
+      preset: [
+        'default',
+        {
+          discardComments: { removeAll: true },
+          minifyFontValues: { removeQuotes: false },
+        },
+      ],
+    }),
+  ],
 };
 
 const paths = {
@@ -114,21 +125,12 @@ function images() {
 }
 const assets = gulp.parallel(otherAssets, images);
 
-function babelPolyfill() {
-  return gulp
-    .src([
-      './node_modules/core-js-bundle/minified.js',
-      './node_modules/regenerator-runtime/runtime.js',
-    ])
-    .pipe(gulp.dest('dist/polyfills'));
-}
-
 /* Clean & Serve */
 function cleanDist() {
   return deleteAsync(['dist']);
 }
 
-function serve() {
+export function serve() {
   sync.init({
     server: 'dist',
     port: 8080,
@@ -142,7 +144,8 @@ function serve() {
 
 export const build = gulp.series(
   cleanDist,
-  gulp.parallel(styles, html, assets, scripts, babelPolyfill)
+  gulp.parallel(styles, html, assets, scripts),
+  serve
 );
 
 export const deployGhPages = gulp.series(build, async () => {
