@@ -67,7 +67,6 @@
   .heart {
     position: relative;
     display: block;
-    content: '';
     top: -2px;
     width: 7px;
     height: 8px;
@@ -77,27 +76,26 @@
     animation: beat 1s ease-out infinite;
   }
 
-  .heart::before {
-    position: absolute;
+  .heart::before,
+  .heart::after {
     display: block;
+    position: absolute;
     content: '';
+    background-color: tomato;
+  }
+  .heart::before {
     top: -5px;
     left: 0;
     height: 17px;
     width: 14px;
     clip-path: polygon(50% 100%, 90% 72%, 50% 50%, 10% 72%);
-    background-color: tomato;
   }
 
   .heart::after {
-    position: absolute;
-    display: block;
-    content: '';
     top: 0;
     right: -7px;
     width: 7px;
     height: 8px;
-    background-color: tomato;
     border-radius: 50%;
   }
 
