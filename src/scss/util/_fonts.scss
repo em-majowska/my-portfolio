@@ -8,15 +8,16 @@
     url('./../assets/fonts/Source_Sans_3/SourceSans3-Medium.woff')
       format('woff');
 }
-@font-face {
-  font-family: 'Source Sans 3';
-  font-weight: 400;
-  font-style: italic;
-  src: url('./../assets/fonts/Source_Sans_3/SourceSans3-MediumItalic.woff2')
-      format('woff2'),
-    url('./../assets/fonts/Source_Sans_3/SourceSans3-MediumItalic.woff')
-      format('woff');
-}
+// @font-face {
+//   font-family: 'Source Sans 3';
+//   font-weight: 400;
+//   font-style: italic;
+//   src: url('./../assets/fonts/Source_Sans_3/SourceSans3-MediumItalic.woff2')
+//       format('woff2'),
+//     url('./../assets/fonts/Source_Sans_3/SourceSans3-MediumItalic.woff')
+//       format('woff');
+//   font-display: swap;
+// }
 @font-face {
   font-family: 'Source Sans 3';
   font-weight: 700;
@@ -43,6 +44,7 @@
       format('woff2'),
     url('./../assets/fonts/Playfair_Display/PlayfairDisplay-Bold.woff')
       format('woff');
+  font-display: swap;
 }
 
 // CUTIVE MONO

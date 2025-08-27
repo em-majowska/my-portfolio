@@ -5,38 +5,24 @@ $bg: hsl(45, 100%, 96%);
 
 /* Reset */
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
 * {
   margin: 0;
   padding: 0;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 html {
-  font-size: 100%;
+  box-sizing: border-box;
+  // min-height: 100%;
   overflow-y: scroll;
   scroll-behavior: smooth;
 
-  min-height: 100%;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-ol,
-ul {
-  list-style: '';
-}
-
-a {
-  color: var(--text);
-  text-decoration: none;
+  font-size: 100%;
 }
 
 body {
@@ -44,6 +30,7 @@ body {
   font-family: var(--main-font);
   line-height: 1.5;
   color: var(--text);
+  background-color: var(--background);
 
   @include m.outline-theme($bg);
 }
@@ -52,6 +39,12 @@ html,
 body {
   overflow-x: clip;
   height: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 header,
@@ -148,13 +141,19 @@ p,
   font-size: clamp(1rem, 4vw, 1.5rem);
 }
 
+ul,
+ol {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
 li {
   font-size: clamp(1rem, 3vw, 1.5rem);
 }
 
-i,
-.btn > i {
-  height: auto;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 ::selection {
@@ -236,9 +235,7 @@ button {
     }
   }
 
-  &:hover,
-  &.animate,
-  &:focus-visible {
+  &:is(:hover, .animate, :focus-visible) {
     .btn__fill {
       background-color: var(--background);
       transform: translate(-5px, -5px);
