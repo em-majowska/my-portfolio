@@ -7,7 +7,6 @@ import {
   showMenu,
   initNavToggle,
   initAnimationObserver,
-  sttBtn,
   scrollToTop,
   initSpotlightCursor,
   spotlight,
@@ -91,3 +90,23 @@ async function populatePortfolioCards() {
 }
 
 populatePortfolioCards();
+
+// lazy load type-code.css
+
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = './css/dynamic/type-code.css';
+        document.head.appendChild(link);
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.3 }
+);
+
+const code = document.querySelector('code');
+observer.observe(code);

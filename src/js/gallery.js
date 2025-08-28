@@ -7,7 +7,6 @@ import {
   showMenu,
   initNavToggle,
   initAnimationObserver,
-  sttBtn,
   scrollToTop,
   initSpotlightCursor,
   spotlight,
