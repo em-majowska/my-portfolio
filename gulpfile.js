@@ -101,7 +101,7 @@ function otherAssets() {
 
 function images() {
   return gulp
-    .src('src/assets/**/*.{png,svg}')
+    .src('src/assets/**/*.{jpg,png,svg}')
     .pipe(
       isProd
         ? imagemin(

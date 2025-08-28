@@ -85,11 +85,23 @@
 			</div>
 			<div class="hero__img">
 				<picture>
-					<source media="(max-width: 679px)" srcset="./assets/img/blob-mobile.webp" type="image/webp">
-					<source media="(max-width: 679px)" srcset="./assets/img/blob-mobile.jpeg" type="image/jpeg">
-					<source media="(min-width: 680px)" srcset="./assets/img/blob-desktop.webp" type="image/webp">
-					<source media="(min-width: 680px)" srcset="./assets/img/blob-desktop.jpg" type="image/jpeg">
-					<img src="./assets/img/blob-desktop.jpg" alt="">
+					<source media="(max-width: 679px)" srcset="./assets/img/blob-mobile-384.webp 384w,
+					./assets/img/blob-mobile-750.webp 750w" type="image/webp" sizes="(min-width: 440px) calc(100vw - 32px), 384px">
+					<source media="(max-width: 679px)" srcset="./assets/img/blob-mobile-384.jpg 384w,
+					./assets/img/blob-mobile-750.jpg 750w
+					" type="image/jpeg" sizes="(min-width: 440px) calc(100vw - 32px), 384px">
+
+					<source media="(min-width: 680px)" srcset="./assets/img/blob-desktop-680.webp 680w,
+					./assets/img/blob-desktop-882.webp 882w,
+					./assets/img/blob-desktop-1038.webp 1038w"
+						sizes="(min-width: 1500px) 621px, (min-width: 860px) calc(32.1vw + 146px), (min-width: 680px) calc(16.88vw + 269px)"
+						type="image/webp">
+					<source media="(min-width: 680px)" srcset="./assets/img/blob-desktop-680.jpg 680w,
+					./assets/img/blob-desktop-882.jpg 882w,
+					./assets/img/blob-desktop-1038.jpg 1038w"
+						sizes="(min-width: 1500px) 621px, (min-width: 860px) calc(32.1vw + 146px), (min-width: 680px) calc(16.88vw + 269px)"
+						type="image/jpeg">
+					<img src="./assets/img/blob-desktop-680.jpg" alt="">
 				</picture>
 				<svg class="outline" id="outline" viewBox="0 0 368 390" preserveAspectRatio="none" fill="none"
 					xmlns="http://www.w3.org/2000/svg" stroke="#181306" role="presentation">
@@ -150,12 +162,14 @@
 									./assets/img/my-photo-300.webp 300w,
 									./assets/img/my-photo-729.webp 729w,
 									./assets/img/my-photo-1000.webp 1000w
-								" sizes="420px" type="image/webp">
+								" sizes="(min-width: 1820px) 397px, (min-width: 1000px) calc(6.5vw + 280px), (min-width: 880px) 420px, (min-width: 480px) calc(40.26vw + 74px), calc(8.13vw + 218px)"
+									type="image/webp">
 								<source srcset="
 										./assets/img/my-photo-300.jpg 300w,
 										./assets/img/my-photo-729.jpg 729w,
 										./assets/img/my-photo-1000.jpg 1000w
-									" sizes="420px" type="image/jpeg">
+									" sizes="(min-width: 1820px) 397px, (min-width: 1000px) calc(6.5vw + 280px), (min-width: 880px) 420px, (min-width: 480px) calc(40.26vw + 74px), calc(8.13vw + 218px)"
+									type="image/jpeg">
 								<img src="./assets/img/my-photo-300.jpg" alt="This is me" loading="lazy">
 							</picture>
 						</div>
