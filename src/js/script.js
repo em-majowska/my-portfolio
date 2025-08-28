@@ -1,5 +1,6 @@
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
+import 'https://cdn.jsdelivr.net/npm/core-js-bundle@3.45/minified.js';
+import 'https://cdn.jsdelivr.net/npm/regenerator-runtime/runtime.min.js';
+
 import {
   isDesktop,
   touch,
