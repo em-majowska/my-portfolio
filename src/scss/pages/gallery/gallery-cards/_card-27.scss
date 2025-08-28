@@ -1,0 +1,110 @@
+@use '../../../abstracts/' as u;
+
+.card-27 {
+  .card__top {
+    color: hsl(176, 60%, 14%);
+    background: hsl(0, 20%, 83%);
+  }
+
+  .frame {
+    width: 250px;
+    border-radius: 3px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: hsl(33, 53%, 93%);
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .date {
+    @include u.center;
+    align-content: center;
+
+    padding-block-end: 15px;
+    border-block-end: 1px solid rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: hsl(176, 60%, 24%);
+  }
+  .day {
+    margin-block-end: 5px;
+    font-size: 22px;
+  }
+  .date-year {
+    font-size: 14px;
+  }
+
+  .list {
+    padding-block-start: 20px;
+    list-style: none;
+    font-size: 15px;
+    display: grid;
+    gap: 20px;
+  }
+
+  .list-item {
+    position: relative;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+
+  li input {
+    position: absolute;
+    appearance: none;
+    outline: none;
+  }
+
+  label:has(input:checked) {
+    color: hsl(176, 20%, 74%);
+  }
+
+  input:checked + .checkbox-container svg {
+    stroke-dasharray: 100;
+  }
+  input:not(:checked) + .checkbox-container svg {
+    transition: stroke-dasharray 0.3s ease-in-out;
+  }
+  input:checked + .checkbox-container .checkbox {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  input:not(:checked) + .checkbox-container .checkbox {
+    transition: all 0.3s ease-in-out 0.3s;
+  }
+
+  .checkbox-container {
+    display: grid;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    & > * {
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+    }
+    .checkbox {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 1px solid hsl(7, 63%, 57%);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    stroke-dasharray: 0 100;
+    transition: stroke-dasharray 0.3s ease-in-out 0.3s;
+    stroke: hsl(176, 20%, 74%);
+  }
+
+  label:has(input:focus-visible) {
+    outline: 3px dashed var(--text);
+    outline-offset: 3px;
+  }
+}

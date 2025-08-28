@@ -1,0 +1,112 @@
+@use '../../abstracts' as u;
+
+.code {
+  box-shadow: var(--shadow);
+
+  & > .wrapper {
+    position: relative;
+  }
+
+  .circle {
+    position: absolute;
+    width: clamp(600px, 100vw, 850px);
+    aspect-ratio: 1 / 1;
+    right: 5%;
+    top: 7%;
+    border-radius: 50%;
+    background-color: hsl(from var(--secondary) h s l / 0.19);
+    z-index: -1;
+  }
+
+  &__text p:first-child {
+    margin-block-end: 1em;
+  }
+
+  &__list {
+    @include u.list-tab(8);
+
+    &__item {
+      width: fit-content;
+      padding: 0.185em 1rem;
+      border-radius: 21px;
+      font-weight: 700;
+      background-color: hsl(from var(--secondary) h s l / 0.58);
+      text-wrap: nowrap;
+      transition: transform 0.3s ease-out, background-color 0.3s ease-out;
+
+      &:hover {
+        background-color: hsl(from var(--saturated) h s l / 0.58);
+
+        transform: translateX(1.5em);
+      }
+    }
+  }
+
+  &__container {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+  }
+
+  div:has(> .spark) {
+    position: relative;
+    width: 100%;
+  }
+
+  .window {
+    @include u.window(var(--background));
+    margin-block-start: 50px;
+    aspect-ratio: 4 / 3;
+    z-index: auto;
+    justify-self: center;
+
+    &__header {
+      display: flex;
+      align-items: center;
+      gap: 0.25em;
+      height: 15%;
+      padding-inline-start: 1em;
+      border-block-end: var(--border);
+      border-radius: 22px 22px 0 0;
+      background-color: var(--primary);
+
+      span {
+        height: 55%;
+        aspect-ratio: 1 / 1;
+        border: 1px solid var(--text);
+        border-radius: 50%;
+        background-color: var(--background);
+      }
+    }
+
+    code {
+      position: absolute;
+      font-size: clamp(1rem, 4vw, 2rem);
+      top: 20%;
+      left: 5%;
+      max-height: 80%;
+      overflow-y: hidden;
+    }
+  }
+
+  .spark {
+    position: absolute;
+    aspect-ratio: 1 / 1;
+    margin: 0;
+    fill: var(--accent);
+    transition: filter 0.5s ease-in-out, scale 0.5s ease-in-out,
+      rotate 0.5s ease-in-out;
+  }
+
+  .spark-1 {
+    width: clamp(75px, 10vw, 100px);
+    top: -15%;
+    right: 5%;
+  }
+
+  .spark-2 {
+    width: clamp(75px, 10vw, 150px);
+    top: 80%;
+    left: 5%;
+  }
+}

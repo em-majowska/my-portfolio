@@ -1,0 +1,81 @@
+@use '../../../abstracts/' as u;
+
+.gallery__card:is(:hover, :focus-visible) .card-04,
+.card-04:is(:hover, .animate, :focus-visible) {
+  .circle1,
+  .circle2,
+  .circle3 {
+    animation-play-state: running;
+  }
+}
+.card-04 {
+  .card__top {
+    background: var(--saturated);
+  }
+
+  .circle {
+    position: absolute;
+    background-color: var(--background);
+    transform: scale(0);
+    border-radius: 50%;
+  }
+
+  .circle1 {
+    width: 90px;
+    height: 90px;
+    box-shadow: 6px 9px 17px 2px rgb(0 0 0 / 30%);
+    animation: 2s cubic-bezier(0.19, 1.01, 0.68, 1) infinite alternate circle1;
+    animation-play-state: paused;
+  }
+
+  .circle2 {
+    width: 58px;
+    height: 58px;
+    box-shadow: 8px 5px 13px 1px rgba(0, 0, 0, 0.281);
+    animation: 2s cubic-bezier(0.19, 1.01, 0.68, 1) infinite alternate circle2;
+    animation-play-state: paused;
+  }
+  .circle3 {
+    width: 27px;
+    height: 27px;
+    box-shadow: 8px 8px 13px 2px rgba(0, 0, 0, 0.274);
+    animation: 2s cubic-bezier(0.19, 1.01, 0.68, 1) infinite alternate circle3;
+    animation-play-state: paused;
+  }
+
+  @keyframes circle1 {
+    0%,
+    10% {
+      transform: scale(0);
+      box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 30%);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 10px 10px 15px 0 rgb(0 0 0 / 30%);
+    }
+  }
+
+  @keyframes circle2 {
+    35% {
+      transform: scale(0);
+      box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 30%);
+    }
+
+    100% {
+      transform: scale(1);
+      box-shadow: 10px 10px 15px 0 rgb(0 0 0 / 30%);
+    }
+  }
+
+  @keyframes circle3 {
+    60% {
+      transform: scale(0);
+      box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 30%);
+    }
+
+    100% {
+      transform: scale(1);
+      box-shadow: 10px 10px 15px 0 rgb(0 0 0 / 30%);
+    }
+  }
+}

@@ -1,0 +1,165 @@
+@use '../../abstracts' as u;
+
+.contact {
+  position: relative;
+  box-shadow: var(--shadow);
+  background-color: var(--primary);
+
+  & > .wrapper {
+    padding-block-end: 180px;
+  }
+
+  .section__header {
+    margin-block-end: 3rem;
+  }
+
+  h2 {
+    max-width: 10ch;
+    font-size: clamp(2.8rem, 7vw, 5.25rem);
+    font-size: clamp(2.8rem, 7vw, 84px);
+    line-height: 1.12;
+    z-index: 1;
+
+    &::after {
+      display: none;
+    }
+
+    span {
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        @include u.highlight;
+        height: 35%;
+      }
+    }
+  }
+
+  /* Contact Window */
+
+  .window {
+    max-width: fit-content;
+
+    @include u.window(var(--text));
+    width: auto;
+
+    h3 {
+      padding: 0.15em 0.15em 0.15em 1.5rem;
+      line-height: 3rem;
+      color: var(--background);
+    }
+  }
+
+  &__metadata {
+    height: auto;
+    padding: 1.5em 2em 1.5em 1.5rem;
+    border-radius: 0 0 25px 25px;
+    color: var(--text);
+    background-color: var(--background);
+    font-style: normal;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+
+    & > a:not(a:last-child) {
+      margin-block-end: 1.5em;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      gap: 1em;
+
+      hyphens: none;
+      word-break: break-all;
+      transition: color ease-in-out 0.2s;
+
+      &:not([href^='tel']) {
+        text-decoration: underline;
+      }
+
+      &:is(:hover, :focus-visible) {
+        color: var(--accent);
+      }
+    }
+
+    .icon {
+      --icon-size: clamp(36px, 4vw, 3.125rem);
+
+      width: var(--icon-size);
+      height: var(--icon-size);
+      padding: 5px;
+      border-radius: 5px;
+      background-color: var(--text);
+      font-size: clamp(1rem, 1vw, 4rem);
+    }
+  }
+
+  /* Sun Element */
+
+  .animated-elements {
+    position: absolute;
+    inset: 0;
+  }
+
+  .sun-wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100vw; // ignore wrapper
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .sun {
+    --sun-size: clamp(230px, 40vw, 400px);
+    --linear-function: linear(
+      0,
+      0.002 0.6%,
+      0.007 1.2%,
+      0.015 1.8%,
+      0.027 2.5%,
+      0.043 3.2%,
+      0.062 3.9%,
+      0.11 5.4%,
+      0.159 6.7%,
+      0.217 8.1%,
+      0.469 13.8%,
+      0.578 16.4%,
+      0.632 17.8%,
+      0.683 19.2%,
+      0.731 20.6%,
+      0.771 21.9%,
+      0.808 23.2%,
+      0.844 24.6%,
+      0.877 26%,
+      0.905 27.4%,
+      0.93 28.8%,
+      0.952 30.2%,
+      0.972 31.7%,
+      0.989 33.2%,
+      1.011 35.8%,
+      1.026 38.6%,
+      1.035 41.7%,
+      1.039 45.2%,
+      1.035 50.2%,
+      1.013 64.4%,
+      1.003 73.2%,
+      0.999 83.9%,
+      1
+    );
+
+    position: absolute;
+    width: var(--sun-size);
+    height: var(--sun-size);
+    fill: var(--secondary);
+    top: 15%;
+    left: 55vw;
+
+    rotate: 80deg;
+    transform-origin: -100% 300%;
+    transition: rotate 1.5s var(--linear-function) 1.5s;
+  }
+
+  &.animate .sun {
+    rotate: 0deg;
+  }
+}

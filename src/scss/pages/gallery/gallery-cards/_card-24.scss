@@ -1,0 +1,118 @@
+@use '../../../abstracts/' as u;
+
+.card-24 {
+  background: linear-gradient(
+    to top right,
+    rgb(228, 158, 88),
+    rgb(34, 152, 211)
+  );
+
+  .center > * {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+
+  .btn,
+  .btn > *,
+  svg,
+  .fa-check {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  button {
+    position: relative;
+    width: 220px;
+    height: 60px;
+    border: 2px solid white;
+    border-radius: 60px;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, width 0.3s ease-in-out,
+      border-color 0.3s ease-in-out;
+
+    & > * {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  button:hover {
+    background-color: hsla(20, 0%, 0%, 0.3);
+  }
+
+  button.animate#btn {
+    border-color: hsla(20, 0%, 0%, 0.3);
+    width: 60px;
+    cursor: pointer;
+
+    &:is(:hover, :focus-visible, :focus, :target, :active) {
+      border-color: hsla(20, 0%, 0%, 0.3);
+      background-color: transparent;
+    }
+
+    .btn__text {
+      opacity: 0;
+    }
+
+    .fa-check {
+      animation: appear-24 0.3s ease-in-out 1.4s forwards;
+    }
+  }
+
+  .circle.animate {
+    animation: circle-24 2s ease-in-out;
+  }
+
+  .btn__text {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  svg {
+    fill: none;
+    width: 120px;
+    pointer-events: none;
+  }
+
+  .circle {
+    transform-origin: center;
+    transform: rotate(-90deg);
+    stroke: white;
+    stroke-width: 1;
+    stroke-dasharray: 0 100;
+  }
+
+  @keyframes circle-24 {
+    75% {
+      stroke-dasharray: 110;
+      r: 12;
+      opacity: 1;
+    }
+
+    90%,
+    100% {
+      stroke-dasharray: 110;
+      r: 20;
+      opacity: 0;
+    }
+  }
+
+  .fa-check {
+    opacity: 0;
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  @keyframes appear-24 {
+    100% {
+      opacity: 1;
+    }
+  }
+}
