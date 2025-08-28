@@ -1,0 +1,157 @@
+@use '../../../abstracts/' as u;
+
+.card-25 {
+  .card__top {
+    $bg: rgb(0, 53, 167);
+    color: #000;
+
+    @include u.outline-theme($bg);
+  }
+
+  .frame {
+    position: relative;
+    width: 250px;
+    height: 80%;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  .card25,
+  .back-face {
+    width: 100%;
+    height: 100%;
+  }
+
+  .front-face {
+    height: 100px;
+    cursor: pointer;
+    width: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .back-face {
+    $bg: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease-in-out;
+    transform: rotateY(-180deg);
+    border-radius: 5px;
+    overflow: hidden;
+
+    @include u.outline-theme($bg);
+
+    & > * + * {
+      margin-block-start: 10px;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 35%;
+      background: no-repeat url('https://100dayscss.com/codepen/surfshop.jpg')
+        center;
+      background-size: cover;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .name {
+      margin-block-end: 5px;
+      font-weight: 600;
+    }
+
+    .address {
+      font-size: 15px;
+    }
+
+    .buttons {
+      display: flex;
+      height: 30px;
+      font-size: 16px;
+    }
+    button {
+      background-color: transparent;
+      border: none;
+      color: rgb(8, 71, 206);
+      width: 50%;
+      height: 100%;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:is(:hover, :focus-visible) {
+        background-color: rgb(8, 71, 206);
+        color: #fff;
+      }
+    }
+
+    .save {
+      border-right: 1px solid rgb(8, 71, 206);
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    animation: hover 2s ease-in-out infinite;
+  }
+
+  .shadow {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 5px;
+    width: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: shadow 2s ease-in-out infinite;
+  }
+
+  @keyframes hover {
+    50% {
+      transform: translate(-50%, -60%);
+    }
+  }
+
+  @keyframes shadow {
+    50% {
+      transform: translateX(-50%) scale(1.5);
+    }
+  }
+
+  .frame {
+    perspective: 400px;
+  }
+
+  .card25 {
+    transform-style: preserve-3d;
+
+    border-radius: 5px;
+    transition: all 1s ease-in-out;
+  }
+
+  .face {
+    position: absolute;
+  }
+
+  .back-face {
+    backface-visibility: hidden;
+  }
+
+  .card25.animate {
+    transform: rotateY(-180deg);
+
+    .back-face {
+      opacity: 1;
+    }
+  }
+}

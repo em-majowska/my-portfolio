@@ -1,0 +1,22 @@
+.animated-elements {
+  position: relative;
+  height: var(--cat-size);
+  width: 100%;
+  margin-block-start: auto;
+
+  .circle-wrapper {
+    height: 35vh;
+    position: absolute;
+    bottom: 0;
+    right: -10%;
+    overflow-y: hidden;
+    z-index: -1;
+  }
+
+  .circle {
+    height: 65vh;
+    width: 65vh;
+    border-radius: 50%;
+    background-color: hsl(40.4, 100%, 89.2%);
+  }
+}

@@ -1,0 +1,122 @@
+@use '../../../abstracts/' as u;
+
+.card-36 {
+  min-height: 320px;
+
+  .card__top {
+    background: hsl(203, 38%, 15%);
+    padding-block: 20px;
+  }
+
+  .frame {
+    width: clamp(240px, 330px, 80%);
+    height: 250px;
+    background-color: #fff;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  .header36 {
+    background-color: hsl(203, 28%, 25%);
+    display: flex;
+    height: 45px;
+  }
+
+  button {
+    box-sizing: border-box;
+    display: block;
+    // height: 50px;
+    width: 45px;
+    border: 3px solid transparent;
+    border-radius: 0;
+    color: hsl(203, 28%, 65%);
+    background-color: transparent;
+    cursor: pointer;
+    transition: color 0.5s ease-in-out 0.2s,
+      background-color 0.5s ease-in-out 0.2s;
+
+    &:is(:hover, :focus-visible) i {
+      color: #fff;
+    }
+
+    &:focus-visible {
+      outline: none;
+      border: 3px dashed var(--background);
+    }
+  }
+
+  button i {
+    font-size: 16px;
+    pointer-events: none;
+    transition: color 0.3s ease-in-out;
+  }
+
+  button.active {
+    background-color: hsl(203, 68%, 55%);
+  }
+  button.active i {
+    color: #fff;
+  }
+
+  button:last-child {
+    margin-left: auto;
+  }
+
+  .content {
+    position: absolute;
+    width: 100%;
+
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(7px);
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  }
+
+  .content.active {
+    transition: transform 0.5s ease-in-out 0.3s, opacity 0.5s ease-in-out 0.3s;
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-block-end: 15px;
+    color: hsl(203, 28%, 25%);
+  }
+
+  .card__top span {
+    display: block;
+    margin-block-end: 7px;
+    height: 5px;
+    width: 100%;
+    background-color: #e6e6e6;
+  }
+
+  .text1 {
+    margin-block-end: 15px;
+  }
+
+  .text1 span:first-child,
+  .text2 span:nth-child(3) {
+    width: 80%;
+  }
+
+  .text1 span:nth-child(3),
+  .text2 span:nth-child(2) {
+    width: 60%;
+  }
+
+  .text1 span:nth-child(4),
+  .text2 span:first-child,
+  .text2 span:nth-child(4) {
+    width: 90%;
+  }
+
+  .text1 span:nth-child(5) {
+    width: 20%;
+  }
+
+  .text2 span:nth-child(5) {
+    width: 40%;
+  }
+}
