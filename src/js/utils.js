@@ -58,7 +58,7 @@ export function initNavToggle(isDesktop) {
   }
 }
 
-// ANIMATION OBSERVER
+// ANIMATION SERVER
 
 let animationObserver = null;
 

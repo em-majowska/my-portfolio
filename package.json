@@ -15,6 +15,7 @@
   "devDependencies": {
     "@babel/core": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
+    "@babel/runtime": "^7.28.3",
     "@eslint/js": "^9.33.0",
     "browser-sync": "^3.0.4",
     "cross-env": "^7.0.3",
@@ -58,14 +59,14 @@
         "@babel/preset-env",
         {
           "useBuiltIns": "usage",
-          "corejs": "3",
+          "corejs": "3.45",
           "modules": false,
           "bugfixes": true
         }
       ]
     ],
     "plugins": [
-      "@babel/plugin-transform-arrow-functions"
+      "@babel/plugin-transform-runtime"
     ]
   }
 }

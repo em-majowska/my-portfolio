@@ -1,10 +1,11 @@
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 import {
   isDesktop,
   touch,
   showMenu,
   initNavToggle,
   initAnimationObserver,
-  sttBtn,
   scrollToTop,
   initSpotlightCursor,
   spotlight,
