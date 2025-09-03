@@ -28,7 +28,8 @@
 	<meta name="twitter:image" content="https://i.postimg.cc/631x1hS4/twitter-image.png">
 	<title>Ewa Majowska | Front-End Developer</title>
 
-	<link rel=" stylesheet" href="./css/home.css">
+	<link rel="stylesheet" href="./css/essentials.css">
+	<link rel="stylesheet" href="./css/home.css" media="print" onload="this.media='all'">
 	<link rel="icon" href="./assets/img/favicon.ico" sizes="any">
 	<link rel="icon" href="./assets/svg/favicon.svg" type="image/svg+xml">
 </head>
@@ -52,7 +53,7 @@
 		<nav id="nav" class="wrapper" aria-label="Primary">
 			<div class="navbar">
 				<a aria-current="page" href="/" class="logo">
-					<img src="./assets/svg/logo.svg" alt="Ewa Majowska homepage">
+					<img src="./assets/svg/logo.svg" width="45" height="45" alt="Ewa Majowska homepage">
 				</a>
 				<button type="button" class="menu-btn" id="menu-btn" aria-label="Open menu">
 					<span class="menu-btn__burger"></span>
@@ -85,23 +86,34 @@
 			</div>
 			<div class="hero__img">
 				<picture>
-					<source media="(max-width: 679px)" srcset="./assets/img/blob-mobile-384.webp 384w,
-					./assets/img/blob-mobile-750.webp 750w" type="image/webp" sizes="(min-width: 440px) calc(100vw - 32px), 384px">
-					<source media="(max-width: 679px)" srcset="./assets/img/blob-mobile-384.jpg 384w,
-					./assets/img/blob-mobile-750.jpg 750w
-					" type="image/jpeg" sizes="(min-width: 440px) calc(100vw - 32px), 384px">
+					<source media="(max-width: 679px)" srcset="
+					./assets/img/blob-mobile-342.webp 342w,
+					./assets/img/blob-mobile-380.webp 380w,
+					./assets/img/blob-mobile-412.webp 412w,
+					./assets/img/blob-mobile-447.webp 447w,
+					./assets/img/blob-mobile-481.webp 481w,
+					./assets/img/blob-mobile-500.webp 500w" type="image/webp"
+						sizes="(min-width: 1340px) 500px, (min-width: 680px) 47.5vw, (min-width: 460px) calc(100vw - 32px), 342px">
+					<source media="(max-width: 679px)" srcset="		./assets/img/blob-mobile-342.png 342w,
+					./assets/img/blob-mobile-380.png 380w,
+					./assets/img/blob-mobile-412.png 412w,
+					./assets/img/blob-mobile-447.png 447w,
+					./assets/img/blob-mobile-481.png 481w,
+					./assets/img/blob-mobile-500.png 500w" type="image/png"
+						sizes="(min-width: 1340px) 500px, (min-width: 680px) 47.5vw, (min-width: 460px) calc(100vw - 32px), 342px">
 
-					<source media="(min-width: 680px)" srcset="./assets/img/blob-desktop-680.webp 680w,
-					./assets/img/blob-desktop-882.webp 882w,
-					./assets/img/blob-desktop-1038.webp 1038w"
-						sizes="(min-width: 1500px) 621px, (min-width: 860px) calc(32.1vw + 146px), (min-width: 680px) calc(16.88vw + 269px)"
-						type="image/webp">
-					<source media="(min-width: 680px)" srcset="./assets/img/blob-desktop-680.jpg 680w,
-					./assets/img/blob-desktop-882.jpg 882w,
-					./assets/img/blob-desktop-1038.jpg 1038w"
-						sizes="(min-width: 1500px) 621px, (min-width: 860px) calc(32.1vw + 146px), (min-width: 680px) calc(16.88vw + 269px)"
-						type="image/jpeg">
-					<img src="./assets/img/blob-desktop-680.jpg" alt="">
+					<source media="(min-width: 680px)" srcset="./assets/img/blob-desktop-300.webp 300w,
+					./assets/img/blob-desktop-478.webp 478w,
+					./assets/img/blob-desktop-620.webp 620w,
+					./assets/img/blob-desktop-1039.webp 1039w" type="image/webp"
+						sizes="(min-width: 1200px) 620px, (min-width: 680px) 47.5vw">
+					<source media="(min-width: 680px)" srcset="./assets/img/blob-desktop-300.png 300w,
+					./assets/img/blob-desktop-478.png 478w,
+					./assets/img/blob-desktop-620.png 620w,
+					./assets/img/blob-desktop-1039.png 1039w" type="image/png"
+						sizes="(min-width: 1200px) 620px, (min-width: 680px) 46vw">
+					<img src="./assets/img/blob-desktop-776.png" alt="" fetchpriority="high" loading="eager" width="300"
+						height="360">
 				</picture>
 				<svg class="outline" id="outline" viewBox="0 0 368 390" preserveAspectRatio="none" fill="none"
 					xmlns="http://www.w3.org/2000/svg" stroke="#181306" role="presentation">
@@ -156,23 +168,29 @@
 								<textPath xlink:href="#curve" startOffset="57%" font-family="Inter">おはようございます</textPath>
 							</text>
 						</svg>
-						<div class="widget__avatar">
-							<picture class="widget__img">
-								<source srcset="
-									./assets/img/my-photo-300.webp 300w,
-									./assets/img/my-photo-729.webp 729w,
-									./assets/img/my-photo-1000.webp 1000w
-								" sizes="(min-width: 1820px) 397px, (min-width: 1000px) calc(6.5vw + 280px), (min-width: 880px) 420px, (min-width: 480px) calc(40.26vw + 74px), calc(8.13vw + 218px)"
-									type="image/webp">
-								<source srcset="
-										./assets/img/my-photo-300.jpg 300w,
-										./assets/img/my-photo-729.jpg 729w,
-										./assets/img/my-photo-1000.jpg 1000w
-									" sizes="(min-width: 1820px) 397px, (min-width: 1000px) calc(6.5vw + 280px), (min-width: 880px) 420px, (min-width: 480px) calc(40.26vw + 74px), calc(8.13vw + 218px)"
-									type="image/jpeg">
-								<img src="./assets/img/my-photo-300.jpg" alt="This is me" loading="lazy">
-							</picture>
-						</div>
+						<!-- <div class="widget__avatar"> -->
+						<picture class="widget__avatar">
+							<source srcset="
+									./assets/img/my-photo-242.webp 242w,
+									./assets/img/my-photo-401.webp 401w,
+									./assets/img/my-photo-518.webp 518w,
+									./assets/img/my-photo-621.webp 621w,
+									./assets/img/my-photo-732.webp 732w,
+									./assets/img/my-photo-800.webp 800w
+								" sizes="(min-width: 1340px) 397px, (min-width: 1000px) calc(16.25vw + 183px), (min-width: 660px) 325px, (min-width: 500px) calc(47.14vw + 23px), 232px"
+								type="image/webp">
+							<source srcset="
+						./assets/img/my-photo-242.png 242w,
+									./assets/img/my-photo-401.png 401w,
+									./assets/img/my-photo-518.png 518w,
+									./assets/img/my-photo-621.png 621w,
+									./assets/img/my-photo-732.png 732w,
+									./assets/img/my-photo-800.png 800w
+									" sizes="(min-width: 1340px) 397px, (min-width: 1000px) calc(16.25vw + 183px), (min-width: 660px) 325px, (min-width: 500px) calc(47.14vw + 23px), 232px"
+								type="image/png">
+							<img src="./assets/img/my-photo-597.png" width="242" height="242" alt="This is me" loading="lazy">
+						</picture>
+						<!-- </div> -->
 					</div>
 					<div class="about-me__text wrapper">
 						<p>I am a Front-End Developer based in Saint Leu, Réunion Island.</p>
@@ -206,6 +224,9 @@
 				</div>
 				<div class="code__container">
 					<div>
+						<svg class="spark spark-1" role="presentation">
+							<use href="./assets/svg/elements.svg#spark"></use>
+						</svg>
 						<ul class="code__list" aria-label="My skills">
 							<li class="code__list__item">HTML5</li>
 							<li class="code__list__item" aria-label="Accessibility">A11Y</li>
@@ -216,10 +237,6 @@
 							<li class="code__list__item">Node.js</li>
 							<li class="code__list__item">Figma</li>
 						</ul>
-
-						<svg class="spark spark-1" role="presentation">
-							<use href="./assets/svg/elements.svg#spark"></use>
-						</svg>
 						<svg class="spark spark-2" role="presentation">
 							<use href="./assets/svg/elements.svg#spark"></use>
 						</svg>

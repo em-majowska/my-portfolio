@@ -34,19 +34,13 @@
 
   &__img {
     position: relative;
-    top: -80px;
-    min-width: 384px;
+    top: -120px;
     height: auto;
     align-self: center;
+    z-index: -1;
 
-    picture {
-      position: relative;
-      top: 0;
-      right: 0;
-      // width: 100%;
-      height: auto;
-      object-fit: contain;
-      z-index: -1;
+    img {
+      min-width: 384px;
     }
 
     .outline {
@@ -61,6 +55,7 @@
       );
 
       path {
+        stroke-width: 0.6;
         transform-origin: 65% 70%;
       }
 

@@ -55,7 +55,8 @@
     "core-js-bundle": "^3.45.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^11.0.1",
-    "regenerator-runtime": "^0.14.1"
+    "regenerator-runtime": "^0.14.1",
+    "uuid": "^11.1.0"
   },
   "browserslist": [
     "defaults"
