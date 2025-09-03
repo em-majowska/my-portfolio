@@ -1,3 +1,5 @@
+@use '../../../abstracts' as u;
+
 .card-33 {
   &:is(:hover, .animate, :focus-visible) {
     .sun,
@@ -12,8 +14,7 @@
   }
 
   .center {
-    width: 100%;
-    height: 100%;
+    @include u.filling-element;
   }
   svg {
     position: absolute;

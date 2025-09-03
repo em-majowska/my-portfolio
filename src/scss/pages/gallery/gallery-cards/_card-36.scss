@@ -24,7 +24,6 @@
   button {
     box-sizing: border-box;
     display: block;
-    // height: 50px;
     width: 45px;
     border: 3px solid transparent;
     border-radius: 0;
@@ -42,12 +41,16 @@
       outline: none;
       border: 3px dashed var(--background);
     }
+    & > * {
+      border: unset;
+    }
   }
 
   button i {
     font-size: 16px;
     pointer-events: none;
     transition: color 0.3s ease-in-out;
+    @include u.center-element;
   }
 
   button.active {

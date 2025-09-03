@@ -175,16 +175,15 @@ footer ::selection {
 
 .screen-reader-text {
   position: absolute;
-  left: -9999px;
   padding: 1em;
   color: var(--background);
   background-color: var(--text);
   font-size: 1.5rem;
+  transform: translate(-9999px, 0);
   z-index: 100;
 
   &:focus-visible {
-    left: 6px;
-    top: 6px;
+    transform: translate(6px, 6px);
     opacity: 1;
   }
 }

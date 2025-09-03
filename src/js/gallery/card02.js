@@ -4,7 +4,7 @@ export function initCard02(card) {
   if (card.classList.contains('initialized')) return;
   card.classList.add('initialized');
 
-  const burgerBtn = card.querySelector('.frame');
+  const burgerBtn = card.querySelector('.center');
   const line = card.querySelectorAll('.line');
 
   let isOpen = false;

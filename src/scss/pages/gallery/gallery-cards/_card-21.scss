@@ -1,3 +1,5 @@
+@use '../../../abstracts' as u;
+
 .card-21 {
   &:is(:hover, .animate, :focus-visible) {
     .pacman,
@@ -9,10 +11,7 @@
     }
   }
   .card__top {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include u.flex-container(column, center, center);
   }
 
   .center {

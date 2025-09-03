@@ -56,8 +56,7 @@ article.card-07 {
     }
 
     &__item {
-      display: flex;
-      align-items: stretch;
+      @include u.flex-container(null, null, null);
     }
     &__link {
       display: block;
@@ -92,8 +91,7 @@ article.card-07 {
     display: grid;
     grid-template-rows: auto 1fr;
     grid-template-areas: 'header', 'events';
-    width: 100%;
-    height: 100%;
+    @include u.filling-element;
     background: #fff;
     color: #333;
   }
@@ -102,9 +100,7 @@ article.card-07 {
     $bg: hsl(209, 52%, 59%);
 
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include u.flex-container(null, space-between, center);
     padding: var(--padding-outline);
     color: #fff;
 
@@ -125,32 +121,29 @@ article.card-07 {
     background-color: hsl(209, 82%, 80%);
     transition: background-color 0.3s ease-in-out;
   }
-
-  .menu-icon::before {
-    display: block;
-    content: '';
-    position: absolute;
-    border: 2px solid var(--blue-color);
-    height: 11px;
-    width: 11px;
-    border-radius: 50%;
-    background-color: hsl(209, 82%, 80%);
-    top: 50%;
-    right: -2px;
-    transform: translateY(-50%);
-    transition: background-color 0.3s ease-in-out;
-  }
-
+  .menu-icon::before,
   .menu-icon::after {
     display: block;
     content: '';
     position: absolute;
+    background-color: hsl(209, 82%, 80%);
+    transition: background-color 0.3s ease-in-out;
+  }
+  .menu-icon::before {
+    border: 2px solid var(--blue-color);
+    height: 11px;
+    width: 11px;
+    border-radius: 50%;
+    top: 50%;
+    right: -2px;
+    transform: translateY(-50%);
+  }
+
+  .menu-icon::after {
     height: 3px;
     width: 30px;
     border-radius: 2px;
-    background-color: hsl(209, 82%, 80%);
     bottom: -11px;
-    transition: background-color 0.3s ease-in-out;
   }
 
   .menu,

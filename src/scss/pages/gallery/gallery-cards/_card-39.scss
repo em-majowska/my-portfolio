@@ -11,7 +11,7 @@
     width: clamp(260px, 70%, 280px);
     height: 40px;
   }
-  .menu-btn {
+  .menu-button {
     position: absolute;
     width: 60px;
     height: 45px;
@@ -21,21 +21,21 @@
     background: none;
   }
 
-  .menu-btn:is(:hover, :focus-visible) {
+  .menu-button:is(:hover, :focus-visible) {
     background: none;
   }
 
-  .menu-btn.open {
+  .menu-button.open {
     animation: open 1s ease-out forwards;
     cursor: auto;
   }
 
-  .menu-btn.close {
+  .menu-button.close {
     animation: close 1s ease-out forwards;
   }
 
-  .menu-btn::before,
-  .menu-btn::after {
+  .menu-button::before,
+  .menu-button::after {
     display: block;
     content: '';
     position: absolute;
@@ -47,19 +47,19 @@
     transform: translateX(-50%);
   }
 
-  .menu-btn.open::before,
-  .menu-btn.open::after {
+  .menu-button.open::before,
+  .menu-button.open::after {
     animation: thinner 1s ease-out forwards;
   }
-  .menu-btn.close::before,
-  .menu-btn.close::after {
+  .menu-button.close::before,
+  .menu-button.close::after {
     animation: thicker 1s ease-out forwards;
   }
-  .menu-btn::before {
+  .menu-button::before {
     top: 0;
   }
 
-  .menu-btn::after {
+  .menu-button::after {
     bottom: 0;
   }
 
@@ -71,7 +71,7 @@
     pointer-events: none;
   }
 
-  .menu-btn.open ~ .nav39 {
+  .menu-button.open ~ .nav39 {
     opacity: 1;
     transition: opacity 0.3s ease-in-out 0.7s;
     pointer-events: all;
@@ -82,9 +82,7 @@
     list-style: none;
     text-transform: uppercase;
     font-size: 18px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    @include u.flex-container(null, space-around, center);
   }
 
   .menu__item a {

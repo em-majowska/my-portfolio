@@ -1,3 +1,5 @@
+@use '../../../abstracts' as u;
+
 .card-11 {
   &:is(:hover, .animate, :focus-visible) {
     .shoe,
@@ -15,15 +17,13 @@
   }
 
   .floor {
-    width: 100%;
-    height: 100%;
+    @include u.filling-element;
     background-color: hsl(0, 0%, 14%);
   }
 
   .center {
     position: relative;
-    height: 100%;
-    width: 100%;
+    @include u.filling-element;
   }
 
   .shoe {

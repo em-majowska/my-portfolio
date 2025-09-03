@@ -18,8 +18,7 @@
   }
 
   .center {
-    @include u.center;
-    place-items: center;
+    @include u.center-element;
   }
 
   .blob {
@@ -64,8 +63,7 @@
     width: 200px;
     height: 200px;
     position: absolute;
-    display: grid;
-    place-items: center;
+    @include u.center-element;
   }
 
   .tri-sparkle,

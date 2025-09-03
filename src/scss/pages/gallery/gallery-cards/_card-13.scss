@@ -8,8 +8,7 @@ article.card-13 {
   }
 
   .user-gallery {
-    height: 100%;
-    width: 100%;
+    @include u.filling-element;
     border: 5px solid var(--background);
     display: grid;
     grid-gap: 5px;
@@ -29,11 +28,10 @@ article.card-13 {
   }
 
   .user-gallery__img .gallery__overlay {
-    @include u.center;
+    @include u.center-element;
     position: absolute;
     top: 0;
-    height: 100%;
-    width: 100%;
+    @include u.filling-element;
     background: transparent;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
@@ -45,7 +43,7 @@ article.card-13 {
 
   .open-profile,
   .cta {
-    @include u.center;
+    @include u.center-element;
     height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -55,7 +53,7 @@ article.card-13 {
   }
 
   .gallery__overlay .open-profile {
-    @include u.center;
+    @include u.center-element;
     transform: scale(2.5);
     opacity: 0;
   }
@@ -99,8 +97,7 @@ article.card-13 {
   .profile {
     position: absolute;
     top: 0;
-    height: 100%;
-    width: 100%;
+    @include u.filling-element;
     pointer-events: none;
   }
 
@@ -112,7 +109,7 @@ article.card-13 {
   .profile-header {
     position: absolute;
     height: calc(50% - 20px);
-    top: calc(-50% + 20px);
+    top: -50%;
     background-color: var(--background);
   }
 
@@ -136,14 +133,12 @@ article.card-13 {
     .buttons {
       margin-inline: auto;
       width: auto;
-      display: flex;
+      @include u.flex-container(null, space-between, null);
       gap: 15px;
-      justify-content: space-between;
     }
 
     .buttons button {
-      display: grid;
-      place-items: center;
+      @include u.center-element;
       font-size: 1.25rem;
       height: 50px;
       width: 50px;

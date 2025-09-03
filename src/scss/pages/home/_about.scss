@@ -61,11 +61,10 @@
 /* About Me - Widget */
 
 .widget {
-  width: clamp(345px, 85%, 600px);
-  margin-inline: auto;
+  width: clamp(345px, 85%, 500px);
+  margin-block-start: -100px;
   display: grid;
   align-items: center;
-  margin-block-start: -100px;
 
   & > * {
     grid-column: 1 / 2;
@@ -78,7 +77,7 @@
 
     & > text {
       position: relative;
-      font-size: 18px;
+      font-size: 16px;
       opacity: 0;
 
       &:last-child {
@@ -109,30 +108,20 @@
     }
   }
 
-  &__avatar,
-  &__img > * {
-    margin-inline: auto;
-    aspect-ratio: 1 / 1;
-  }
-
   &__avatar {
-    @include u.center;
-    max-width: 70%;
+    width: clamp(242px, 65%, 400px);
+    aspect-ratio: 1 / 1;
+    margin-inline: auto;
     background-color: var(--saturated);
     transform-origin: center;
     animation: spin 90s linear infinite;
-    mask-image: url('./../assets/svg/widget-star.svg');
-    mask-repeat: no-repeat;
+    mask: url('./../assets/svg/widget-star.svg') no-repeat;
     mask-size: cover;
   }
 
-  &__img > * {
-    position: relative;
-    align-self: end;
+  img {
     width: 100%;
-    object-fit: cover;
     transform-origin: center;
-
     animation: spin 90s linear reverse infinite;
   }
 
