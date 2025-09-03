@@ -1,3 +1,5 @@
+@use '../../../abstracts/mixins' as m;
+
 .card-33 {
   &:is(:hover, .animate, :focus-visible) {
     .sun,
@@ -12,8 +14,7 @@
   }
 
   .center {
-    width: 100%;
-    height: 100%;
+    @include m.filling-element;
   }
   svg {
     position: absolute;

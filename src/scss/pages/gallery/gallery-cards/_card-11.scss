@@ -1,3 +1,5 @@
+@use '../../../abstracts/mixins' as m;
+
 .card-11 {
   &:is(:hover, .animate, :focus-visible) {
     .shoe,
@@ -15,15 +17,13 @@
   }
 
   .floor {
-    width: 100%;
-    height: 100%;
+    @include m.filling-element;
     background-color: hsl(0, 0%, 14%);
   }
 
   .center {
     position: relative;
-    height: 100%;
-    width: 100%;
+    @include m.filling-element;
   }
 
   .shoe {

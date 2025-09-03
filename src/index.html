@@ -30,8 +30,20 @@
 	<meta name="twitter:image" content="https://i.postimg.cc/631x1hS4/twitter-image.png">
 	<title>Ewa Majowska | Front-End Developer</title>
 
-	<link rel="stylesheet" href="./css/normalize.css">
-	<link rel=" stylesheet" href="./css/home.css">
+	<!-- Fonts -->
+	<link href="./assets/fonts/Playfair_Display/PlayfairDisplay-Medium.woff2" type="font/woff2" rel="preload" as="font"
+		crossorigin>
+	<link href="./assets/fonts/Playfair_Display/PlayfairDisplay-Bold.woff2" type="font/woff2" rel="preload" as="font"
+		crossorigin>
+	<link href="./assets/fonts/Source_Sans_3/SourceSans3-Medium.woff2" type="font/woff2" rel="preload" as="font"
+		crossorigin>
+	<link href="./assets/fonts/Source_Sans_3/SourceSans3-Bold.woff2" type="font/woff2" rel="preload" as="font"
+		crossorigin>
+	<link href="./assets/fonts/Cutive_Mono/cutivemono-regular-webfont.woff2" type="font/woff2" rel="preload" as="font"
+		crossorigin>
+
+	<link rel="stylesheet" href="./css/essentials.css">
+	<link rel="stylesheet" href="./css/home.css" media="print" onload="this.media='all'">
 	<link rel="icon" href="./assets/img/favicon.ico" sizes="any">
 	<link rel="icon" href="./assets/svg/favicon.svg" type="image/svg+xml">
 </head>
@@ -55,7 +67,7 @@
 		<nav id="nav" class="wrapper" aria-label="Primary">
 			<div class="navbar">
 				<a aria-current="page" href="/" class="logo">
-					<img src="./assets/svg/logo.svg" alt="Ewa Majowska homepage">
+					<img src="./assets/svg/logo.svg" width="45" height="45" alt="Ewa Majowska homepage">
 				</a>
 				<button type="button" class="menu-btn" id="menu-btn" aria-label="Open menu">
 					<span class="menu-btn__burger"></span>
@@ -88,8 +100,48 @@
 			</div>
 			<div class="hero__img">
 				<picture>
-					<source media="(max-width: 680px)" srcset="./assets/img/blob-mobile.webp">
-					<img src="./assets/img/blob-desktop.webp" alt="">
+					<!-- Mobile -->
+					<source media="(max-width: 679px)" srcset="
+					./assets/img/blob-mobile-342.webp 342w,
+					./assets/img/blob-mobile-390.webp 390w,
+					./assets/img/blob-mobile-420.webp 420w,
+					./assets/img/blob-mobile-450.webp 450w,
+					./assets/img/blob-mobile-470.webp 470w,
+					./assets/img/blob-mobile-500.webp 500w" type="image/webp" sizes="
+						(max-width: 679px) calc(100vw - 32px)">
+
+					<source media="(max-width: 679px)" srcset="
+					./assets/img/blob-mobile-342.png 342w,
+					./assets/img/blob-mobile-390.png 390w,
+					./assets/img/blob-mobile-420.png 420w,
+					./assets/img/blob-mobile-450.png 450w,
+					./assets/img/blob-mobile-470.png 470w,
+					./assets/img/blob-mobile-500.png 500w" type="image/png" sizes="
+					(max-width: 679px) calc(100vw - 32px)">
+
+					<!-- Desktop -->
+					<source media="(min-width: 680px)" srcset="
+					./assets/img/blob-desktop-342.webp 342w,
+					./assets/img/blob-desktop-400.webp 400w,
+					./assets/img/blob-desktop-470.webp 470w,
+					./assets/img/blob-desktop-525.webp 525w,
+					./assets/img/blob-desktop-580.webp 580w,
+					./assets/img/blob-desktop-620.webp 620w
+					" type="image/webp" sizes="
+					(max-width: 1199px) 46vw,
+						620px
+						">
+					<source media="(min-width: 680px)" srcset="
+					./assets/img/blob-desktop-342.png 342w,
+					./assets/img/blob-desktop-400.png 400w,
+					./assets/img/blob-desktop-470.png 470w,
+					./assets/img/blob-desktop-525.png 525w,
+					./assets/img/blob-desktop-580.png 580w,
+					./assets/img/blob-desktop-620.webp 620w
+					" type="image/png" sizes="(max-width: 1199px) 46vw, 620px">
+					<img id="heroImg" src="" data-src="./assets/img/blob-desktop-470.png" alt="" fetchpriority="high"
+						loading="eager" width="300" height="360">
+
 				</picture>
 				<svg class="outline" id="outline" viewBox="0 0 368 390" preserveAspectRatio="none" fill="none"
 					xmlns="http://www.w3.org/2000/svg" stroke="#181306" role="presentation">
@@ -144,11 +196,34 @@
 								<textPath xlink:href="#curve" startOffset="57%" font-family="Inter">おはようございます</textPath>
 							</text>
 						</svg>
-						<div class="widget__avatar">
-							<img class="widget__img" srcset="./assets/img/my-photo-300.webp 300w,
-											./assets/img/my-photo-729.webp 729w,
-											./assets/img/my-photo-1000.webp 1000w" sizes="420px" src="./assets/img/my-photo-300.webp" alt="This is me">
-						</div>
+						<picture class="widget__avatar">
+							<source srcset="
+									./assets/img/my-photo-242.webp 242w,
+									./assets/img/my-photo-325.webp 325w,
+									./assets/img/my-photo-400.webp 400w,
+									./assets/img/my-photo-484.webp 484w,
+									./assets/img/my-photo-650.webp 650w,
+									./assets/img/my-photo-800.webp 800w" sizes="
+								(max-width:499px) 242px,
+								(max-width: 659px) calc(47.14vw + 23px),
+								(max-width: 999px) 325px,
+								(max-width: 1199px) calc(16.25vw + 183px),
+								400px" type="image/webp">
+							<source srcset="
+									./assets/img/my-photo-242.png 242w,
+									./assets/img/my-photo-325.png 325w,
+									./assets/img/my-photo-400.png 400w,
+									./assets/img/my-photo-484.png 484w,
+									./assets/img/my-photo-650.png 650w,
+									./assets/img/my-photo-800.png 800w" sizes="
+									(max-width:499px) 242px,
+									(max-width: 659px) calc(47.14vw + 23px),
+									(max-width: 999px) 325px,
+									(max-width: 1199px) calc(16.25vw + 183px), 400px" type="image/png">
+							<img id="widgetImg" src="" data-src="./assets/img/my-photo-400.png" width="242" height="242"
+								alt="This is me" loading="lazy">
+
+						</picture>
 					</div>
 					<div class="about-me__text wrapper">
 						<p>I am a Front-End Developer based in Saint Leu, Réunion Island.</p>
@@ -182,6 +257,9 @@
 				</div>
 				<div class="code__container">
 					<div>
+						<svg class="spark spark-1" role="presentation">
+							<use href="./assets/svg/elements.svg#spark"></use>
+						</svg>
 						<ul class="code__list" aria-label="My skills">
 							<li class="code__list__item">HTML5</li>
 							<li class="code__list__item" aria-label="Accessibility">A11Y</li>
@@ -192,10 +270,6 @@
 							<li class="code__list__item">Node.js</li>
 							<li class="code__list__item">Figma</li>
 						</ul>
-
-						<svg class="spark spark-1" role="presentation">
-							<use href="./assets/svg/elements.svg#spark"></use>
-						</svg>
 						<svg class="spark spark-2" role="presentation">
 							<use href="./assets/svg/elements.svg#spark"></use>
 						</svg>

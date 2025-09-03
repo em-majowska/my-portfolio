@@ -1,11 +1,11 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
 
 .card-02 {
   $bg: hsl(20, 73%, 58%);
   .card__top {
     color: white;
 
-    @include u.outline-theme($bg);
+    @include m.outline-theme($bg);
   }
 
   .center {

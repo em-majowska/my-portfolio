@@ -1,3 +1,5 @@
+@use '../../../abstracts/mixins' as m;
+
 .card-32 {
   background: linear-gradient(to top right, var(--secondary), var(--accent));
 
@@ -34,11 +36,10 @@
 
   .btn::after,
   .btn::before {
-    position: absolute;
+    @include m.pseudo;
     top: calc(50% - 1px);
     left: calc(50% - 10px);
     display: block;
-    content: '';
     width: 20px;
     height: 2px;
     transition: background-color 0.3s ease-in-out;

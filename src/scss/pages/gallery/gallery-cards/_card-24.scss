@@ -1,4 +1,4 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
 
 .card-24 {
   background: linear-gradient(
@@ -10,16 +10,7 @@
   .center > * {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
-  }
-
-  .btn,
-  .btn > *,
-  svg,
-  .fa-check {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    @include m.center-element;
   }
 
   button {
@@ -70,7 +61,10 @@
   .circle.animate {
     animation: circle-24 2s ease-in-out;
   }
-
+  .btn__text,
+  i {
+    border: unset;
+  }
   .btn__text {
     transition: opacity 0.3s ease-in-out;
   }

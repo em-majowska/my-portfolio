@@ -1,4 +1,4 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
 
 .card-34 {
   &:is(:hover, .animate, :focus-visible) {
@@ -24,7 +24,7 @@
   }
 
   .frame {
-    @include u.center;
+    @include m.center-element;
     position: relative;
     width: clamp(260px, 70%, 320px);
     height: 100px;

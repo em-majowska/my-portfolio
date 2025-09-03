@@ -1,4 +1,4 @@
-@use '../../abstracts' as u;
+@use '../../abstracts/mixins' as m;
 
 .loader {
   position: absolute;
@@ -24,7 +24,7 @@
       cubic-bezier(0.86, 0, 0.07, 1);
   }
 
-  @include u.random-delay(span, 70ms, 1, 7);
+  @include m.random-delay(span, 70ms, 1, 7);
 
   &__letter {
     display: grid;

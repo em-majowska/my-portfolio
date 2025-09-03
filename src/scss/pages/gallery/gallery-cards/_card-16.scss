@@ -1,4 +1,4 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
 
 .card-16 {
   &:is(:hover, .animate, :focus-visible) {
@@ -18,8 +18,7 @@
   }
 
   .center {
-    @include u.center;
-    place-items: center;
+    @include m.center-element;
   }
 
   .blob {
@@ -64,8 +63,7 @@
     width: 200px;
     height: 200px;
     position: absolute;
-    display: grid;
-    place-items: center;
+    @include m.center-element;
   }
 
   .tri-sparkle,

@@ -1,3 +1,5 @@
+@use '../../../abstracts/mixins' as m;
+
 .card-12 {
   min-height: 350px;
 
@@ -85,8 +87,7 @@
 
   .tooltip::before {
     display: block;
-    content: '';
-    position: absolute;
+    @include m.pseudo;
     top: -8px;
     left: calc(50% - 7.5px);
     width: 15px;

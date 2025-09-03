@@ -297,7 +297,7 @@
       "isAnimated": false,
       "isInteractive": true,
       "JSModule": true,
-      "content": "<div class=\"center\"><button class=\"menu-btn\"></button><div class=\"nav39\"><ul class=\"menu__list\"><li  tabindex=\"-1\" class=\"menu__item\"><a>home</a></li><li  tabindex=\"-1\" class=\"menu__item\"><a>work</a></li><li  tabindex=\"-1\" class=\"menu__item\"><a>life</a></li><li  tabindex=\"-1\" class=\"menu__item\"><a>spirit</a></li></ul></div></div>"
+      "content": "<div class=\"center\"><button class=\"menu-button\"></button><div class=\"nav39\"><ul class=\"menu__list\"><li  tabindex=\"-1\" class=\"menu__item\"><a>home</a></li><li  tabindex=\"-1\" class=\"menu__item\"><a>work</a></li><li  tabindex=\"-1\" class=\"menu__item\"><a>life</a></li><li  tabindex=\"-1\" class=\"menu__item\"><a>spirit</a></li></ul></div></div>"
     },
     {
       "day": "40",

@@ -1,4 +1,4 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
 
 .card-15 {
   .card__top {
@@ -21,7 +21,7 @@
     border-radius: 5px;
     box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.3);
 
-    @include u.outline-theme($bg);
+    @include m.outline-theme($bg);
   }
 
   .frame p {
@@ -33,6 +33,7 @@
     position: absolute;
     top: 50px;
     height: 3px;
+    width: 0;
     background-color: var(--accent);
   }
 
@@ -54,8 +55,7 @@
 
   .drop {
     position: relative;
-    display: flex;
-    justify-content: start;
+    @include m.flex-container(null, flex-start, null);
     height: 80px;
     width: 100%;
     border: 1px dashed hsl(0, 0%, 50%);

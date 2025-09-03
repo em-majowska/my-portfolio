@@ -14,14 +14,14 @@ import uglify from 'gulp-uglify';
 import ghpages from 'gh-pages';
 import { promisify } from 'util';
 import browserSync from 'browser-sync';
-import imagemin, { optipng, svgo } from 'gulp-imagemin';
+import imagemin, { mozjpeg, optipng, svgo } from 'gulp-imagemin';
 import noop from 'gulp-noop';
 import webp from 'gulp-webp';
 
 export function webpConvert() {
   return gulp
     .src('src/assets/img/**/*.{png,jpg,jpeg}')
-    .pipe(webp({ quality: 100 }))
+    .pipe(webp())
     .pipe(gulp.dest('src/assets/img'));
 }
 
@@ -70,14 +70,16 @@ function html() {
 
 /* Styles */
 function styles() {
-  return gulp
-    .src(paths.styles)
-    .pipe(isProd ? noop() : sourcemaps.init())
-    .pipe(sassCompiler().on('error', sassCompiler.logError))
-    .pipe(postcss(isProd ? plugins.prod : plugins.dev))
-    .pipe(replace('../../src/assets', '../assets'))
-    .pipe(isProd ? noop() : sourcemaps.write('.'))
-    .pipe(gulp.dest('dist/css'));
+  return (
+    gulp
+      .src(paths.styles)
+      // .pipe(isProd ? noop() : sourcemaps.init())
+      .pipe(sassCompiler().on('error', sassCompiler.logError))
+      .pipe(postcss(isProd ? plugins.prod : plugins.dev))
+      .pipe(replace('../../assets', '../assets'))
+      // .pipe(isProd ? noop() : sourcemaps.write('.'))
+      .pipe(gulp.dest('dist/css'))
+  );
 }
 
 /* Scripts */
@@ -95,13 +97,15 @@ function scripts() {
 /* Assets */
 function otherAssets() {
   return gulp
-    .src([paths.assets, `!${paths.assets}/**/*.{png,svg}`], { base: 'src' })
+    .src([paths.assets, `!${paths.assets}/**/*.{jpg, png, svg}`], {
+      base: 'src',
+    })
     .pipe(gulp.dest('dist'));
 }
 
 function images() {
   return gulp
-    .src('src/assets/**/*.{png,svg}')
+    .src('src/assets/**/*.{jpg,png,svg}')
     .pipe(
       isProd
         ? imagemin(
@@ -144,8 +148,7 @@ export function serve() {
 
 export const build = gulp.series(
   cleanDist,
-  gulp.parallel(styles, html, assets, scripts),
-  serve
+  gulp.parallel(styles, html, assets, scripts)
 );
 
 export const deployGhPages = gulp.series(build, async () => {

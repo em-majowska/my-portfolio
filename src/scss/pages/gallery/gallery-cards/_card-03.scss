@@ -1,4 +1,5 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
+@use '../../../abstracts/functions' as f;
 
 .card-03:is(:hover, .animate, :focus-visible),
 .gallery__card:is(:hover, .animate, :focus-visible) {
@@ -26,8 +27,7 @@
 
   .sky {
     position: relative;
-    height: 100%;
-    width: 100%;
+    @include m.filling-element;
     background-color: #7ddffc;
     animation: disappear3 4s ease-in-out infinite;
     animation-play-state: paused;

@@ -1,5 +1,10 @@
-@use './abstracts' as *;
-@use './base' as *;
-@use './components';
+@use './components/animated-cat';
+@use './components/buttons';
+@use './components/spotlight';
+@use './components/footer';
+// @use './base/fonts';
 @use './vendors';
-@use './pages/home';
+@use './pages/home/about';
+@use './pages/home/code';
+@use './pages/home/portfolio';
+@use './pages/home/contact';

@@ -1,3 +1,5 @@
+@use '../../../abstracts/mixins' as m;
+
 .card-40 {
   min-width: calc(300px + 16px);
 
@@ -31,8 +33,7 @@
   }
 
   .tile button {
-    width: 100%;
-    height: 100%;
+    @include m.filling-element;
     overflow: hidden;
     border: 3px solid #fff;
     transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;

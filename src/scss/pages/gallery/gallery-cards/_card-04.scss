@@ -1,4 +1,4 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
 
 .gallery__card:is(:hover, :focus-visible) .card-04,
 .card-04:is(:hover, .animate, :focus-visible) {

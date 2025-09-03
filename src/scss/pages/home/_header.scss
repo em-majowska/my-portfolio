@@ -1,10 +1,8 @@
-@use '../../abstracts' as u;
+@use '../../abstracts/mixins' as m;
 
 .hero {
   &.wrapper {
-    display: flex;
-    flex-direction: column;
-    position: relative;
+    @include m.flex-container(column, space-between, null);
   }
 
   &__text {
@@ -14,9 +12,10 @@
     .small {
       display: block;
       font-size: clamp(1.25rem, 3vw, 2rem);
-      font-family: 'Source Sans 3';
-      letter-spacing: 1%;
+      font-family: var(--main-font);
+      letter-spacing: 2px;
       color: var(--text);
+      max-width: max-content;
     }
 
     h1 {
@@ -32,39 +31,34 @@
     }
   }
 
+  img {
+    min-width: 342px;
+    width: 100%;
+  }
+
   &__img {
     position: relative;
-    top: -80px;
-    min-width: 384px;
-    height: auto;
-    align-self: center;
-
-    picture {
-      position: relative;
-      top: 0;
-      right: 0;
-      // width: 100%;
-      height: auto;
-      object-fit: contain;
-      z-index: -1;
-    }
+    align-self: flex-end;
+    max-width: 500px;
+    transform: translateY(-120px);
+    z-index: -1;
 
     .outline {
       position: absolute;
-      top: -10%;
-      right: -12%;
-      width: 125%;
+      inset: 0;
+      width: 122%;
+      transform: translate(-9%, -8%);
       mask-image: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0.4),
         rgba(0, 0, 0, 0.7)
       );
+      @include m.random-duration(path, 5, outline-rotate);
 
       path {
+        stroke-width: 0.6;
         transform-origin: 65% 70%;
       }
-
-      @include u.random-duration(path, 5, outline-rotate);
 
       @keyframes outline-rotate {
         to {
@@ -75,7 +69,7 @@
   }
 
   .lines {
-    margin-block-start: -5rem;
+    margin-block-start: -6rem;
     transform: translateX(-2rem);
   }
 

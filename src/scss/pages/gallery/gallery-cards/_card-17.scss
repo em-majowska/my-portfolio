@@ -1,4 +1,5 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
+
 .card-17:is(:focus-visible, .animate) .center,
 .card-17 .center:is(:hover, .animate) {
   transform: rotate(90deg);
@@ -45,7 +46,7 @@
     );
   }
   .center {
-    @include u.center;
+    @include m.center-element;
     position: relative;
     width: 50%;
     aspect-ratio: 1 / 1;

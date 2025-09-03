@@ -1,4 +1,4 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
 
 .card-27 {
   .card__top {
@@ -16,7 +16,7 @@
   }
 
   .date {
-    @include u.center;
+    @include m.center-element;
     align-content: center;
 
     padding-block-end: 15px;
@@ -45,9 +45,7 @@
   }
 
   label {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include m.flex-container(null, space-between, center);
     cursor: pointer;
     transition: color 0.3s ease-in-out;
   }
@@ -87,8 +85,7 @@
       grid-column: 1 / 2;
     }
     .checkbox {
-      width: 100%;
-      height: 100%;
+      @include m.filling-element;
       border-radius: 50%;
       border: 1px solid hsl(7, 63%, 57%);
       transition: all 0.3s ease-in-out;
@@ -96,8 +93,7 @@
   }
 
   svg {
-    width: 100%;
-    height: 100%;
+    @include m.filling-element;
     stroke-dasharray: 0 100;
     transition: stroke-dasharray 0.3s ease-in-out 0.3s;
     stroke: hsl(176, 20%, 74%);

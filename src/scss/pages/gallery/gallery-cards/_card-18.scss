@@ -1,4 +1,4 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
 
 article.card-18 {
   &:is(:hover, .animate, :focus-visible) {
@@ -10,8 +10,7 @@ article.card-18 {
   .card__top {
     display: block;
     position: relative;
-    width: 100%;
-    height: 100%;
+    @include m.filling-element;
   }
 
   & > * {
@@ -33,8 +32,7 @@ article.card-18 {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100%;
-    height: 100%;
+    @include m.filling-element;
     transform: translate(-50%, -50%);
     perspective: 600px;
     -webkit-perspective: 600px;
@@ -66,8 +64,8 @@ article.card-18 {
 
   .face {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    @include m.filling-element;
+
     border-radius: 50%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;

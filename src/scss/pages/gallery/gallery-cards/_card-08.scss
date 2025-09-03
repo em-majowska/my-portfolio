@@ -1,4 +1,4 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
 
 .card-08 {
   &:is(:hover, .animate, :focus-visible) {
@@ -53,15 +53,11 @@
   .bubble.big {
     width: 50px;
     height: 50px;
-    top: 50%;
-    left: 20%;
     transform-origin: 170% 90%;
   }
 
   .bubble.big:nth-child(odd) {
-    top: 10%;
-    left: 170%;
-    transform-origin: 50% 250%;
+    transform-origin: 20% 150%;
     animation-delay: 1.2s;
   }
 
@@ -75,8 +71,6 @@
   .bubble.small {
     width: 30px;
     height: 30px;
-    top: 10%;
-    left: 50%;
     transform-origin: 40% -100%;
     animation-delay: 1s;
   }
@@ -87,11 +81,13 @@
     transform-origin: 10% 200%;
     animation-delay: 0.7s;
   }
+  .bubble::before,
+  .bubble::after {
+    @include m.pseudo;
+    display: block;
+  }
 
   .bubble::after {
-    position: absolute;
-    display: block;
-    content: '';
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -101,9 +97,6 @@
   }
 
   .bubble::before {
-    position: absolute;
-    display: block;
-    content: '';
     width: 20px;
     height: 20px;
     border-radius: 50%;

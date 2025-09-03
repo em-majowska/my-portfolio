@@ -1,5 +1,5 @@
-@use './abstracts' as *;
-@use './base' as *;
+@use './abstracts' as m;
+@use './base';
 @use './components';
 @use './pages/gallery';
 
@@ -10,22 +10,17 @@ body {
 
 nav {
   position: fixed;
-  z-index: 99;
+  inset: 0 0 auto 0;
   background-color: var(--background);
-  top: 0;
-  left: 0;
-  right: 0;
+  z-index: 99;
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  padding-inline: 1rem;
+  @include m.flex-container(column, null, center);
   min-height: 30vh;
+  padding-inline: 1rem;
 
   &:target {
-    scroll-margin-block-start: 5em;
+    scroll-margin-block-start: 5rem;
   }
 }

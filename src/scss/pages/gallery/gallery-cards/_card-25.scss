@@ -1,11 +1,11 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
 
 .card-25 {
   .card__top {
     $bg: rgb(0, 53, 167);
     color: #000;
 
-    @include u.outline-theme($bg);
+    @include m.outline-theme($bg);
   }
 
   .frame {
@@ -18,8 +18,7 @@
 
   .card25,
   .back-face {
-    width: 100%;
-    height: 100%;
+    @include m.filling-element;
   }
 
   .front-face {
@@ -34,6 +33,7 @@
   }
 
   .back-face {
+    @include m.flex-container(column, null, null);
     $bg: #fff;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.5s ease-in-out;
@@ -41,7 +41,7 @@
     border-radius: 5px;
     overflow: hidden;
 
-    @include u.outline-theme($bg);
+    @include m.outline-theme($bg);
 
     & > * + * {
       margin-block-start: 10px;
@@ -57,6 +57,8 @@
     }
 
     .contact {
+      flex: 1;
+      align-content: center;
       text-align: center;
     }
 
@@ -71,7 +73,7 @@
 
     .buttons {
       display: flex;
-      height: 30px;
+      height: 45px;
       font-size: 16px;
     }
     button {

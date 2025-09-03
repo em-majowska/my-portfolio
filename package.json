@@ -1,12 +1,17 @@
 {
   "name": "my-portfolio",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=18.20.7",
+    "npm": ">=10.8.2",
+    "nvm": ">=1.2.2"
+  },
   "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "cross-env NODE_ENV=development gulp",
-    "build": "cross-env NODE_ENV=production gulp",
-    "deploy": "gulp deployGhPages"
+    "build": "cross-env NODE_ENV=production gulp build",
+    "deploy": "cross-env NODE_ENV=production gulp deployGhPages"
   },
   "keywords": [],
   "author": "",
@@ -50,7 +55,8 @@
     "core-js-bundle": "^3.45.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^11.0.1",
-    "regenerator-runtime": "^0.14.1"
+    "regenerator-runtime": "^0.14.1",
+    "uuid": "^11.1.0"
   },
   "browserslist": [
     "defaults"

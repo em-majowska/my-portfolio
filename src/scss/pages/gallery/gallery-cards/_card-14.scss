@@ -1,4 +1,4 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
 
 .card-14 {
   &:is(:hover, .animate, :focus-visible, :focus-within) {
@@ -31,8 +31,7 @@
   }
 
   .wrapper {
-    width: 100%;
-    height: 100%;
+    @include m.filling-element;
     overflow: hidden;
   }
 
@@ -142,8 +141,7 @@
 
   .card {
     position: relative;
-    width: 100%;
-    height: 100%;
+    @include m.filling-element;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.6);
     background-color: var(--secondary);
     transform-style: preserve-3d;
@@ -165,8 +163,7 @@
 
   .card__face {
     position: absolute;
-    height: 100%;
-    width: 100%;
+    @include m.filling-element;
     background-color: var(--secondary);
     backface-visibility: hidden;
   }

@@ -1,4 +1,4 @@
-@use '../../abstracts' as u;
+@use '../../abstracts/mixins' as m;
 
 @use '../gallery/gallery-cards/card-03';
 @use '../gallery/gallery-cards/card-04';
@@ -13,44 +13,39 @@
   font-size: 16px;
 
   &::after {
-    @include u.pseudo;
+    @include m.pseudo;
     inset: 0;
     height: 100%;
-    background: url('../assets/svg/dots-background.svg') no-repeat 70% 70%;
+    background: url('../../assets/svg/dots-background.svg') no-repeat 70% 70%;
     mask-image: linear-gradient(to bottom, transparent 15%, black 140%);
     z-index: -2;
   }
 
-  .wrapper > * + * {
-    margin-block-start: 75px;
-  }
-
   $color-palette-gallery: hsl(312, 100%, 96%), hsl(251, 100%, 89%),
     hsl(45, 100%, 84%), hsl(30, 100%, 88%), hsl(152, 100%, 80%);
-  @include u.set-color-palette(
+  @include m.set-color-palette(
     '.portfolio-gallery__card',
     $color-palette-gallery,
     true
   );
 
   .portfolio-gallery {
-    display: flex;
-    justify-content: center;
+    @include m.flex-container(null, center, null);
     width: 100%;
     max-width: 900px;
 
     &__card {
       position: relative;
-      border: 2px solid var(--text);
-      border-radius: 25px;
       min-width: 105px;
-      width: clamp(105px, 30vw, 200px);
+      width: clamp(105px, 25vw, 250px);
       aspect-ratio: 3/5;
+      border: var(--border);
+      border-radius: 25px;
       overflow: hidden;
       transition: transform 0.3s ease-out;
 
       &::after {
-        @include u.pseudo;
+        @include m.pseudo;
         inset: 0;
         opacity: 0.8;
         transition: opacity 0.3s ease-in-out;
@@ -61,24 +56,23 @@
       }
 
       &:is(:hover, :focus-visible) {
-        transform: translateY(-2em);
-
         &::after {
           opacity: 0;
         }
 
-        & ~ .portfolio-gallery__card {
-          transform: translateX(calc(-3em * -1));
+        @container main (max-width: 849px) {
+          transform: translateY(-2em);
+
+          & ~ .portfolio-gallery__card {
+            transform: translateX(calc(-3em * -1));
+          }
         }
       }
 
       > * {
+        @include m.center-element;
         position: relative;
-        width: 100%;
-        height: 100%;
-
-        display: grid;
-        place-items: center;
+        @include m.filling-element;
       }
     }
 

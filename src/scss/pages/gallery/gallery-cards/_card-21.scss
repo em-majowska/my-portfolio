@@ -1,3 +1,5 @@
+@use '../../../abstracts/mixins' as m;
+
 .card-21 {
   &:is(:hover, .animate, :focus-visible) {
     .pacman,
@@ -9,10 +11,7 @@
     }
   }
   .card__top {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include m.flex-container(column, center, center);
   }
 
   .center {

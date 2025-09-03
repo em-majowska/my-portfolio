@@ -49,6 +49,8 @@ const paths = {
   ],
 };
 
+/* Update Hero on window resize */
+
 window.addEventListener('resize', () => {
   updateHero();
   showMenu(isDesktop);
@@ -68,7 +70,8 @@ function updateHero() {
   });
 }
 
-// Populate portfolio cards with fetched data
+/* Populate portfolio cards with fetched data */
+
 async function populatePortfolioCards() {
   const portfolioCards = document.querySelectorAll('.portfolio-gallery__card');
   const cardsData = await fetchGalleryData();
@@ -91,7 +94,7 @@ async function populatePortfolioCards() {
 
 populatePortfolioCards();
 
-// lazy load type-code.css
+/* Lazy load type-code.css */
 
 const observer = new IntersectionObserver(
   (entries, observer) => {
@@ -110,3 +113,59 @@ const observer = new IntersectionObserver(
 
 const code = document.querySelector('code');
 observer.observe(code);
+
+/* Scroll to top button appearance */
+window.onscroll = function () {
+  scrollToTop();
+};
+
+/* Cache API for images */
+
+if ('caches' in window) {
+  cacheImages();
+  document.querySelectorAll('img[data-src]').forEach(async (img) => {
+    img.ssrc = await getImageFromCache(img.dataset.src);
+  });
+} else {
+  console.log('Cache API not supported in this browser.');
+}
+
+async function cacheImages() {
+  try {
+    // Open cache
+    const cache = await caches.open('image-cache');
+    const imgSources = Array.from(document.querySelectorAll('img')).map(
+      (img) => img.src
+    );
+
+    // Fetch and cache each image
+    await Promise.all(
+      imgSources.map(async (imgSource) => {
+        const response = await fetch(imgSource);
+        await cache.put(imgSource, response);
+      })
+    );
+    // console.log('Images cached successfully');
+  } catch (err) {
+    console.error('Error caching images:', err);
+  }
+}
+
+// Retrieve image from cache or fetch if not present
+async function getImageFromCache(imgSource) {
+  try {
+    const cache = await caches.open('image-cache');
+    const cachedResponse = await cache.match(imgSource);
+
+    if (cachedResponse) {
+      return cachedResponse;
+    } else {
+      const response = await fetch(imgSource);
+      await cache.put(imgSource, response.clone());
+      return response;
+    }
+  } catch (err) {
+    console.log('Error retrieving image from cache:', err);
+    return fetch(imgSource);
+  }
+}

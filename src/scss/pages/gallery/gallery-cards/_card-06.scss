@@ -1,4 +1,4 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
 
 .card-06 {
   .frame {
@@ -88,7 +88,7 @@
     grid-template-rows: 1fr 1fr 1fr;
     color: #333;
 
-    @include u.outline-theme($bg);
+    @include m.outline-theme($bg);
   }
 
   .profile {
@@ -99,9 +99,8 @@
   }
 
   .profile__img {
-    @include u.center;
-    width: 100%;
-    height: 100%;
+    @include m.center-element;
+    @include m.filling-element;
   }
 
   .circle-1,

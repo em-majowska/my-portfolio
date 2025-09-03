@@ -1,3 +1,5 @@
+@use '../../../abstracts/mixins' as m;
+
 .card-23 {
   &:is(:hover, .animate, :focus-visible) {
     .bracket::before,
@@ -55,8 +57,7 @@
   .bracket::before,
   .bracket::after {
     display: block;
-    position: absolute;
-    content: '';
+    @include m.pseudo;
     background-color: white;
     height: 4px;
     width: 0;

@@ -1,4 +1,4 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
 
 .card-10 {
   .card__top {
@@ -32,8 +32,7 @@
   }
 
   .data {
-    width: 100%;
-    height: 100%;
+    @include m.filling-element;
     display: grid;
     grid-template-rows: auto auto auto;
     justify-content: center;
@@ -56,18 +55,13 @@
   }
 
   .bottom {
-    display: flex;
-    // display: grid;
-    // grid-template-columns: repeat(3, auto);
+    @include m.flex-container(null, center, center);
     gap: 0.25em;
-    justify-content: center;
-    align-items: center;
   }
 
   .heart {
     position: relative;
     display: block;
-    content: '';
     top: -2px;
     width: 7px;
     height: 8px;
@@ -77,27 +71,25 @@
     animation: beat 1s ease-out infinite;
   }
 
-  .heart::before {
-    position: absolute;
+  .heart::before,
+  .heart::after {
     display: block;
-    content: '';
+    @include m.pseudo;
+    background-color: tomato;
+  }
+  .heart::before {
     top: -5px;
     left: 0;
     height: 17px;
     width: 14px;
     clip-path: polygon(50% 100%, 90% 72%, 50% 50%, 10% 72%);
-    background-color: tomato;
   }
 
   .heart::after {
-    position: absolute;
-    display: block;
-    content: '';
     top: 0;
     right: -7px;
     width: 7px;
     height: 8px;
-    background-color: tomato;
     border-radius: 50%;
   }
 
@@ -115,8 +107,7 @@
   }
 
   .beat {
-    display: flex;
-    align-items: center;
+    @include m.flex-container(null, null, center);
 
     & > * {
       display: inline-block;
@@ -125,7 +116,7 @@
 
   .dots {
     position: relative;
-    @include u.center;
+    @include m.center-element;
     width: 85%;
     margin-inline: auto;
     aspect-ratio: 1 / 1;
@@ -138,8 +129,7 @@
 
   .dots *::before,
   .dots *::after {
-    position: absolute;
-    content: '';
+    @include m.pseudo;
     display: block;
     left: 50%;
     transform: translateX(-50%);
@@ -167,12 +157,11 @@
     border: 0.5px solid #fff;
   }
 
-  @include u.populate-dots(12);
+  @include m.populate-dots(12);
 
   .second {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    @include m.filling-element;
   }
 
   .second circle {

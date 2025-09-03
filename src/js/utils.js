@@ -1,4 +1,4 @@
-// CONSTANTS
+// Constants
 
 export const isDesktop = () => window.innerWidth >= 680;
 export const menu = document.querySelector('.menu');
@@ -11,7 +11,8 @@ export const sttBtn = document.getElementById('stt-btn');
 export const touch = window.matchMedia('(pointer: coarse)').matches;
 export const spotlight = document.querySelector('.spotlight--outer');
 export let dataCache = null;
-// NAVIGATION TOGGLE
+
+/* Toggle Navigation */
 
 export function initNavToggle(isDesktop) {
   const menuBtn = document.getElementById('menu-btn');
@@ -58,7 +59,7 @@ export function initNavToggle(isDesktop) {
   }
 }
 
-// ANIMATION SERVER
+/* Animation Ovserver */
 
 let animationObserver = null;
 

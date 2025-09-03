@@ -1,5 +1,4 @@
-@use './../abstracts/mixins' as m;
-@use './../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
 
 $bg: hsl(45, 100%, 96%);
 
@@ -58,6 +57,10 @@ section:not(.hero) {
   width: 100%;
 }
 
+main *:target {
+  scroll-margin-block-start: 3rem;
+}
+
 .wrapper {
   max-width: 1200px;
   margin-inline: auto;
@@ -68,7 +71,7 @@ section:not(.hero) {
 }
 
 :is(.about-me, .code, .portfolio) > .wrapper {
-  padding-block-end: 7vmax;
+  padding-block-end: 9vmax;
 }
 
 .about-me__container,
@@ -175,16 +178,15 @@ footer ::selection {
 
 .screen-reader-text {
   position: absolute;
-  left: -9999px;
   padding: 1em;
   color: var(--background);
   background-color: var(--text);
   font-size: 1.5rem;
+  transform: translate(-9999px, 0);
   z-index: 100;
 
   &:focus-visible {
-    left: 6px;
-    top: 6px;
+    transform: translate(6px, 6px);
     opacity: 1;
   }
 }

@@ -1,15 +1,11 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
 
 article.card-20 {
   $bg: hsl(190, 25%, 20%);
 
   .card__top {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    @include u.outline-theme($bg);
+    @include m.flex-container(column, center, center);
+    @include m.outline-theme($bg);
   }
 
   &.animate {
@@ -35,7 +31,7 @@ article.card-20 {
 
   .circle,
   .circle-ring {
-    @include u.center;
+    @include m.center-element;
   }
   .center > * {
     grid-column: 1 / 2;
@@ -50,8 +46,7 @@ article.card-20 {
 
   .circle,
   .circle-ring {
-    height: 100%;
-    width: 100%;
+    @include m.filling-element;
     border-radius: 50%;
   }
 

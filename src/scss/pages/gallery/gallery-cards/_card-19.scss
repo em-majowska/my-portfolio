@@ -1,4 +1,4 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
 .card-19 {
   .wrapper {
     position: relative;
@@ -11,12 +11,11 @@
   }
 
   input {
-    @include u.center;
+    @include m.center-element;
     position: relative;
     width: 64px;
     text-align: center;
     appearance: none;
-    -webkit-appearance: none;
     z-index: 2;
     left: unset;
   }

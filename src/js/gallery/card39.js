@@ -4,7 +4,7 @@ export function initCard39(card) {
   if (card.classList.contains('initialized')) return;
   card.classList.add('initialized');
 
-  const menuBtn = card.querySelector('.menu-btn');
+  const menuBtn = card.querySelector('.menu-button');
   const nav = card.querySelector('.nav39');
   const menuItems = nav.querySelectorAll('.menu__item');
 

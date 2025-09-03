@@ -1,4 +1,4 @@
-@use '../../../abstracts/' as u;
+@use '../../../abstracts/mixins' as m;
 
 .card-01 {
   .card__top {
@@ -53,8 +53,8 @@
   }
 
   .nr1::after {
-    position: absolute;
-    content: '';
+    @include m.pseudo;
+
     width: 20px;
     height: 45px;
     left: 2px;
