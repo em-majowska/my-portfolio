@@ -4,11 +4,7 @@ article.card-20 {
   $bg: hsl(190, 25%, 20%);
 
   .card__top {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+    @include u.flex-container(column, center, center);
     @include u.outline-theme($bg);
   }
 
@@ -35,7 +31,7 @@ article.card-20 {
 
   .circle,
   .circle-ring {
-    @include u.center;
+    @include u.center-element;
   }
   .center > * {
     grid-column: 1 / 2;
@@ -50,8 +46,7 @@ article.card-20 {
 
   .circle,
   .circle-ring {
-    height: 100%;
-    width: 100%;
+    @include u.filling-element;
     border-radius: 50%;
   }
 

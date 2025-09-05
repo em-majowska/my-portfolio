@@ -1,3 +1,5 @@
+@use '../../../abstracts' as u;
+
 article.card-09 {
   &:is(:hover, .animate, :focus-visible) {
     .moon,
@@ -20,8 +22,7 @@ article.card-09 {
 
   .widget {
     position: relative;
-    width: 100%;
-    height: 100%;
+    @include u.filling-element;
   }
 
   .moon {
@@ -127,8 +128,7 @@ article.card-09 {
   .rain {
     position: absolute;
     left: -100px;
-    width: 100%;
-    height: 100%;
+    @include u.filling-element;
   }
 
   .drop {
@@ -249,11 +249,8 @@ article.card-09 {
 
   .card {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
+    inset: auto 0 0 0;
+    @include u.flex-container(null, center, null);
     background-color: #fff;
     color: hsl(224, 32%, 28%);
     line-height: 1.2;

@@ -11,10 +11,9 @@
     position: absolute;
     width: clamp(600px, 100vw, 850px);
     aspect-ratio: 1 / 1;
-    right: 5%;
-    top: 7%;
     border-radius: 50%;
     background-color: hsl(from var(--secondary) h s l / 0.19);
+    transform: translate(-45%, 10%);
     z-index: -1;
   }
 
@@ -27,11 +26,11 @@
 
     &__item {
       width: fit-content;
-      padding: 0.185em 1rem;
+      padding: 0.185em 1em;
       border-radius: 21px;
       font-weight: 700;
-      background-color: hsl(from var(--secondary) h s l / 0.58);
       text-wrap: nowrap;
+      background-color: hsl(from var(--secondary) h s l / 0.58);
       transition: transform 0.3s ease-out, background-color 0.3s ease-out;
 
       &:hover {
@@ -43,9 +42,8 @@
   }
 
   &__container {
+    @include u.center-element;
     width: 100%;
-    display: grid;
-    justify-items: center;
   }
 
   div:has(> .spark) {
@@ -55,14 +53,13 @@
 
   .window {
     @include u.window(var(--background));
-    margin-block-start: 50px;
+    margin-block-start: 3.125rem;
     aspect-ratio: 4 / 3;
-    z-index: auto;
     justify-self: center;
+    z-index: auto;
 
     &__header {
-      display: flex;
-      align-items: center;
+      @include u.flex-container(null, null, center);
       gap: 0.25em;
       height: 15%;
       padding-inline-start: 1em;
@@ -81,10 +78,9 @@
 
     code {
       position: absolute;
-      font-size: clamp(1rem, 4vw, 2rem);
-      top: 20%;
-      left: 5%;
       max-height: 80%;
+      padding: 1rem;
+      font-size: clamp(1rem, 4vw, 2rem);
       overflow-y: hidden;
     }
   }
@@ -100,13 +96,11 @@
 
   .spark-1 {
     width: clamp(75px, 10vw, 100px);
-    top: -15%;
-    right: 5%;
+    transform: translate(70vw, -80%);
   }
 
   .spark-2 {
     width: clamp(75px, 10vw, 150px);
-    top: 80%;
-    left: 5%;
+    transform: translate(5%, -50%);
   }
 }

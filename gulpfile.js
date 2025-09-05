@@ -14,7 +14,7 @@ import uglify from 'gulp-uglify';
 import ghpages from 'gh-pages';
 import { promisify } from 'util';
 import browserSync from 'browser-sync';
-import imagemin, { optipng, svgo } from 'gulp-imagemin';
+import imagemin, { mozjpeg, svgo } from 'gulp-imagemin';
 import noop from 'gulp-noop';
 import webp from 'gulp-webp';
 
@@ -95,7 +95,9 @@ function scripts() {
 /* Assets */
 function otherAssets() {
   return gulp
-    .src([paths.assets, `!${paths.assets}/**/*.{png,svg}`], { base: 'src' })
+    .src([paths.assets, `!${paths.assets}/**/*.{jpg,svg}`], {
+      base: 'src',
+    })
     .pipe(gulp.dest('dist'));
 }
 
@@ -115,7 +117,7 @@ function images() {
                   { name: 'removeUnknownsAndDefaults', active: false },
                 ],
               }),
-              optipng(),
+              mozjpeg({ quality: 75 }),
             ],
             { verbose: true }
           )
@@ -148,10 +150,14 @@ export const build = gulp.series(
   serve
 );
 
-export const deployGhPages = gulp.series(build, async () => {
-  await publish('dist', {
-    history: false,
+function deploy() {
+  return new Promise((resolve, reject) => {
+    publish('dist', { branch: 'gh-pages', history: false }, (err) =>
+      err ? reject(err) : resolve()
+    );
   });
-});
+}
+
+export const deployGhPages = gulp.series(build, deploy);
 
 export default gulp.series(build, serve);

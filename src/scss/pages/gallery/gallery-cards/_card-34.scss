@@ -24,7 +24,7 @@
   }
 
   .frame {
-    @include u.center;
+    @include u.center-element;
     position: relative;
     width: clamp(260px, 70%, 320px);
     height: 100px;

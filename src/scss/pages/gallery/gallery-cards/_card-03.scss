@@ -26,8 +26,7 @@
 
   .sky {
     position: relative;
-    height: 100%;
-    width: 100%;
+    @include u.filling-element;
     background-color: #7ddffc;
     animation: disappear3 4s ease-in-out infinite;
     animation-play-state: paused;

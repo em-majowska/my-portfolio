@@ -45,7 +45,7 @@
     );
   }
   .center {
-    @include u.center;
+    @include u.center-element;
     position: relative;
     width: 50%;
     aspect-ratio: 1 / 1;

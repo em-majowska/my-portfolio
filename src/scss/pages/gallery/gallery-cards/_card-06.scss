@@ -103,9 +103,8 @@
   }
 
   .profile__img {
-    @include u.center;
-    width: 100%;
-    height: 100%;
+    @include u.center-element;
+    @include u.filling-element;
   }
 
   .circle-1,

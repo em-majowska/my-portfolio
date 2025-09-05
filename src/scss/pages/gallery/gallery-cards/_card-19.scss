@@ -11,7 +11,7 @@
   }
 
   input {
-    @include u.center;
+    @include u.center-element;
     position: relative;
     width: 64px;
     text-align: center;

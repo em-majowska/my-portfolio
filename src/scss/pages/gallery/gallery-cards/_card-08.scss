@@ -54,14 +54,11 @@
   .bubble.big {
     width: 50px;
     height: 50px;
-    // top: 50%;
-    // left: 20%;
+
     transform-origin: 170% 90%;
   }
 
   .bubble.big:nth-child(odd) {
-    // top: 40%;
-    // left: 50%;
     transform-origin: 20% 150%;
     animation-delay: 1.2s;
   }
@@ -76,8 +73,6 @@
   .bubble.small {
     width: 30px;
     height: 30px;
-    // top: 40%;
-    // left: 50%;
     transform-origin: 40% -100%;
     animation-delay: 1s;
   }

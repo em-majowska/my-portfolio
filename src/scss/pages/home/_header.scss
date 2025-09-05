@@ -2,9 +2,7 @@
 
 .hero {
   &.wrapper {
-    display: flex;
-    flex-direction: column;
-    position: relative;
+    @include u.flex-container(column, center, space-between);
   }
 
   &__text {
@@ -15,7 +13,7 @@
       display: block;
       font-size: clamp(1.25rem, 3vw, 2rem);
       font-family: 'Source Sans 3';
-      letter-spacing: 1%;
+      letter-spacing: 2px;
       color: var(--text);
     }
 
@@ -32,34 +30,33 @@
     }
   }
 
+  img {
+    width: 100%;
+    height: auto;
+  }
+
   &__img {
     position: relative;
-    top: -120px;
-    height: auto;
     align-self: center;
     z-index: -1;
-
-    img {
-      min-width: 384px;
-    }
+    transform: translateY(-120px);
 
     .outline {
       position: absolute;
-      top: -10%;
-      right: -12%;
-      width: 125%;
+      inset: 0;
+      width: 120%;
+      transform: translate(-8%, -6.5%);
       mask-image: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0.4),
         rgba(0, 0, 0, 0.7)
       );
+      @include u.random-duration(path, 5, outline-rotate);
 
       path {
         stroke-width: 0.6;
         transform-origin: 65% 70%;
       }
-
-      @include u.random-duration(path, 5, outline-rotate);
 
       @keyframes outline-rotate {
         to {

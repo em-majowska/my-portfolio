@@ -1,3 +1,5 @@
+@use '../../../abstracts' as u;
+
 .card-31 {
   .card__top {
     background-color: var(--primary);
@@ -11,9 +13,7 @@
     position: relative;
     width: 150px;
     height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    @include u.flex-container(column, space-around, null);
   }
   .ball {
     position: relative;

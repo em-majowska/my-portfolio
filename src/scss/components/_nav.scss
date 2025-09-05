@@ -1,82 +1,6 @@
 @use '../abstracts/' as u;
 
 nav {
-  position: relative;
-  margin-block-end: 1.5em;
-
-  .navbar {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-
-    background-color: var(--background);
-    z-index: 99;
-  }
-
-  .logo {
-    width: 55px;
-    aspect-ratio: 1/1;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  // BURGER OPEN
-
-  .menu-btn {
-    position: relative;
-    width: 55px;
-    height: 55px;
-    z-index: 100;
-
-    &__burger,
-    &__burger::before,
-    &__burger::after {
-      width: 40px;
-      height: 2px;
-      border-radius: 2px;
-      background-color: var(--text);
-      margin-inline: auto;
-      transition: all 0.4s ease-in-out;
-    }
-
-    &__burger {
-      position: relative;
-      display: block;
-      left: 0;
-
-      &::before,
-      &::after {
-        @include u.pseudo;
-        top: -11px;
-        left: 0;
-      }
-
-      &::after {
-        top: 11px;
-      }
-    }
-  }
-
-  // BURGER CLOSE
-
-  &:has(.menu[aria-expanded='true']) .menu-btn > * {
-    background: transparent;
-    width: 0;
-
-    &::before {
-      transform: translate(-20px, 11px) rotate(405deg);
-    }
-    &::after {
-      transform: translate(-20px, -12px) rotate(-405deg);
-    }
-  }
-}
-
-// MENU
-nav {
   --animation-timing-function: linear(
     0,
     0.002 0.5%,
@@ -120,15 +44,87 @@ nav {
     0.999 84.9%,
     1
   );
+  --menu-item-height: calc(1.75rem + 2rem);
+  --nav-closed: calc(-7 * var(--menu-item-height));
+  --nav-opened: calc(-1 * var(--menu-item-height));
 
+  position: relative;
+  margin-block-end: 4rem;
+
+  .navbar {
+    position: relative;
+    @include u.flex-container(row, space-between, null);
+    padding: 1rem;
+    background-color: var(--background);
+    z-index: 99;
+  }
+
+  .logo img,
+  .menu-btn {
+    width: 55px;
+  }
+
+  // Burger Opened
+
+  .menu-btn {
+    position: relative;
+    z-index: 100;
+
+    &__burger,
+    &__burger::before,
+    &__burger::after {
+      width: 40px;
+      height: 2px;
+      border-radius: 2px;
+      margin-inline: auto;
+      background-color: var(--text);
+      transition: all 0.4s ease-in-out;
+    }
+
+    &__burger {
+      position: relative;
+      display: block;
+
+      &::before,
+      &::after {
+        @include u.pseudo;
+      }
+
+      &::before {
+        transform: translate(-20px, -11px);
+      }
+
+      &::after {
+        transform: translate(-20px, 11px);
+      }
+    }
+  }
+
+  // Burger Closed
+
+  &:has(.menu[aria-expanded='true']) .menu-btn > * {
+    width: 0;
+    background: transparent;
+
+    &::before {
+      transform: translate(-20px, 0px) rotate(405deg);
+    }
+    &::after {
+      transform: translate(-20px, 0px) rotate(-405deg);
+    }
+  }
+}
+
+// Menu
+nav {
   .menu {
     display: none;
     position: absolute;
     width: 100vw;
-    padding-block: 6.5em var(--padding-outline);
+    padding-block: var(--menu-item-height) var(--padding-outline);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
+    box-shadow: 7px 12px var(--text);
     background: var(--background);
-    box-shadow: 7px 10px var(--text);
     text-align: center;
 
     overflow: hidden;
@@ -136,7 +132,7 @@ nav {
 
     &__link {
       display: block;
-      padding: 1em;
+      padding: 1rem;
       letter-spacing: 0.125rem;
       font-size: 1.5rem;
 
@@ -147,27 +143,28 @@ nav {
     }
 
     &[aria-expanded='false'] {
+      display: block;
       animation: close-nav 0.65s forwards;
-      animation-timing-function: var(--animation-timing-function);
     }
 
     &[aria-expanded='true'] {
       display: block;
       animation: open-nav 0.65s forwards;
+    }
+
+    &[aria-expanded='false'],
+    &[aria-expanded='true'] {
       animation-timing-function: var(--animation-timing-function);
     }
   }
 
   & + .nav-overlay {
     position: fixed;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    transition: visibility 0.2s ease-in-out, 0.2s ease-in-out;
+    inset: 0;
     backdrop-filter: blur(5px);
     opacity: 0;
     visibility: hidden;
+    transition: visibility 0.2s ease-in-out, 0.2s ease-in-out;
     z-index: 10;
   }
 
@@ -202,26 +199,20 @@ nav {
 
 // Nav Animations
 
-nav {
-  --nav-closed: -500%;
-  --nav-opened: -13%;
-}
-
 @keyframes open-nav {
   from {
-    top: var(--nav-closed);
+    transform: translateY(var(--nav-closed));
   }
-
   to {
-    top: var(--nav-opened);
+    transform: translateY(var(--nav-opened));
   }
 }
 
 @keyframes close-nav {
   from {
-    top: var(--nav-opened);
+    transform: translateY(var(--nav-opened));
   }
   to {
-    top: var(--nav-closed);
+    transform: translateY(var(--nav-closed));
   }
 }

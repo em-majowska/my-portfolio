@@ -1,3 +1,5 @@
+@use '../../../abstracts' as u;
+
 .card-29 {
   .card__top {
     background: var(--saturated);
@@ -13,9 +15,7 @@
     padding: var(--padding-outline);
     border-block-end: 1px solid var(--saturated);
     background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include u.flex-container(null, space-between, center);
   }
 
   input {
