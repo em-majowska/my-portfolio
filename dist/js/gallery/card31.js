@@ -1,0 +1,1 @@
+function initCard31(i){if(!i.classList.contains("initialized")){i.classList.add("initialized");i=i.querySelectorAll(".ball");let t=1.2;i.forEach(i=>{t*=1.01,i.style.animationDuration=t+"s"})}}export{initCard31};
