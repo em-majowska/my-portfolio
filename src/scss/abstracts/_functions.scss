@@ -1,9 +1,0 @@
-@use 'sass:color';
-
-@function outline-clr($color) {
-  @if (color.channel($color, 'lightness', $space: hsl) > 50) {
-    @return var(--text);
-  } @else {
-    @return var(--background);
-  }
-}
