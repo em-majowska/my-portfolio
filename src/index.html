@@ -75,11 +75,18 @@
 			</div>
 			<ul class="menu" aria-expanded="false">
 				<li class="menu__item"><a href="./index.html#about-me" class="menu__link">about</a></li>
-				<li class="menu__item"><a href="./index.html#code" class="menu__link">code</a></li>
+				<li class="menu__item"><a href="./index.html#code" class="menu__link">skills</a></li>
 				<li class="menu__item"><a href="./index.html#portfolio" class="menu__link">portfolio</a></li>
 				<li class="menu__item"><a href="./index.html#contact" class="menu__link">contact</a></li>
 			</ul>
 			<div class="color-palette"></div>
+			<nav class="nav-lang" aria-label="Language selector">
+				<ul>
+					<li><a href="index.html" onclick="changeLanguage('en'); return false;" lang="en">EN</a></li>
+					<li><a href="index.html" onclick="changeLanguage('pl'); return false;" lang="pl">PL</a></li>
+					<li><a href="index.html" onclick="changeLanguage('fr'); return false;" lang="fr">FR</a></li>
+				</ul>
+			</nav>
 		</nav>
 		<div class="nav-overlay"></div>
 
@@ -172,7 +179,7 @@
 				<h3>
 					<span lang="en">Hello</span>
 					<span lang="pl">Cześć</span>
-					<span lang="fr-FR">Bonjour</span>
+					<span lang="fr-FR">Salut</span>
 					<span id="japanese-word" lang="ja-Hira">おはようございます</span>
 				</h3>
 				<div class="about-me__container">
@@ -187,10 +194,10 @@
 								<textPath xlink:href="#curve" startOffset="3%">Hello</textPath>
 							</text>
 							<text fill="hsl(44, 0%, 50%)" font-weight="700" lang="pl">
-								<textPath xlink:href="#curve" startOffset="18%">Cześć</textPath>
+								<textPath xlink:href="#curve" startOffset="20%">Cześć</textPath>
 							</text>
 							<text fill="hsl(44, 58%, 6%)" font-weight="700" lang="fr-FR">
-								<textPath xlink:href="#curve" startOffset="33%">Bonjour</textPath>
+								<textPath xlink:href="#curve" startOffset="37%">Salut</textPath>
 							</text>
 							<text fill="hsl(44, 58%, 6%)" letter-spacing="4px" lang="ja-Hira">
 								<textPath xlink:href="#curve" startOffset="57%" font-family="Inter">おはようございます</textPath>
@@ -226,11 +233,10 @@
 						</picture>
 					</div>
 					<div class="about-me__text wrapper">
-						<p>I am a Front-End Developer based in Saint Leu, Réunion Island.</p>
+						<p>My name is Ewa Majowska and I'm a Front-End Developer based in Saint Leu, Réunion Island.</p>
 						<p>Passioned by the languages, I graduated English Philology with Japanese at Silesian University in Poland.
 							Relocating to France motivated me to learn the local language and explore a new form of communication —
-							the
-							language of the web.
+							the language of the web. I'm also passionate about sports and digital art.
 						</p>
 					</div>
 				</div> <!-- /end .about-me__container (About Me section) -->
@@ -251,9 +257,10 @@
 				</div>
 				<div class="code__text">
 					<p>
-						I've always had a drive to make things. I started with drawing, moved into digital painting, and eventually
+						I've always had a drive to make and fix things. I started with drawing, moved into digital painting, and
+						eventually
 						started to play with design. Along the way, I taught myself tools like Photoshop, Krita, and Figma. </p>
-					<p>Learning new skills and tools is part of the fun!</p>
+					<p>I'm always curious to learn new skills and tools!</p>
 				</div>
 				<div class="code__container">
 					<div>

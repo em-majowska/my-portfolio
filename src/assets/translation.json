@@ -1,0 +1,32 @@
+{
+  "pl": [
+    {
+      "menu_list": "['o mnie', 'umiejętności', 'portfolio', 'kontakt']",
+      "welcome_message": "['Cześć, jestem Ewa', 'Stworzę Twoją wymarzoną stronę internetową']",
+      "about": "['Z tej strony Ewa Majowska i projektuję i tworzę strony internetowe.', 'Moją pasją są języki: ukończyłam filologię angielską z językiem japońskim na Uniwersytecie Śląskim. Wyprowadzka do Francji była zaś dobrym pretekstem do nauczenia się francuskiego 😉', 'Sporą częścią mojego życia są również podróże, sport i digital art, a wolnym czasię lubię obejrzeć dobry serial.']",
+      "skills": "['Tworzenie i kontakt z technologią od dziecka sprawiały mi dużo satysfakcji. Zaczęło się od rysowania, a pierwszy tablet graficzny otworzył mi drzwi do poznania rożnych narzędzi graficznych (Photoshop, Krita, Figma).', 'Wszystkie te pasje — języki, design, technologie — odnalazłam w tworzeniu stron WWW.']",
+      "buttons": "['Napisz do mnie', 'Zobacz więcej projektów']",
+      "headers": "['O mnie', 'Umiejętności', 'Portfolio', 'Stwórzmy coś razem!', 'Contact']"
+    }
+  ],
+  "fr": [
+    {
+      "menu_list": "['o mnie', 'umiejętności', 'portfolio', 'kontakt']",
+      "welcome_message": "['Cześć, jestem Ewa', 'Stworzę Twoją wymarzoną stronę internetową']",
+      "about": "['Z tej strony Ewa Majowska i projektuję i tworzę strony internetowe.', 'Moją pasją są języki: ukończyłam filologię angielską z językiem japońskim na Uniwersytecie Śląskim. Wyprowadzka do Francji była zaś dobrym pretekstem do nauczenia się francuskiego 😉', 'Sporą częścią mojego życia są również podróże, sport i digital art, a wolnym czasię lubię obejrzeć dobry serial.']",
+      "skills": "['Tworzenie i kontakt z technologią od dziecka sprawiały mi dużo satysfakcji. Zaczęło się od rysowania, a pierwszy tablet graficzny otworzył mi drzwi do poznania rożnych narzędzi graficznych (Photoshop, Krita, Figma).', 'Wszystkie te pasje — języki, design, technologie — odnalazłam w tworzeniu stron WWW.']",
+      "buttons": "['Napisz do mnie', 'Zobacz więcej projektów']",
+      "headers": "['O mnie', 'Umiejętności', 'Portfolio', 'Stwórzmy coś razem!', 'Kontakt']"
+    }
+  ],
+  "en": [
+    {
+      "menu_list": "['about', 'skills', 'portfolio', 'contact']",
+      "welcome_message": "<span class=\"small\">Hello, I'm Ewa and </span>I'll help you<br>build your<br><span class=\"accent\">website</span>",
+      "about": "<p>My name is Ewa Majowska and I'm a Front-End Developer based in Saint Leu, Réunion Island.</p><p>Passioned by the languages, I graduated English Philology with Japanese at Silesian University in Poland.Relocating to France motivated me to learn the local language and explore a new form of communication — the language of the web. I'm also passionate about sports and digital art.</p>",
+      "skills": "<p>I've always had a drive to make and fix things. I started with drawing, moved into digital painting, and eventually started to play with design. Along the way, I taught myself tools like <p>I'm always curious to learn new skills and tools!</p>",
+      "buttons": "['Contact Me', 'See more projects']",
+      "headers": "['About Me','Skills','Portfolio',`Let's create something <span>together!</span>`,'Contact']"
+    }
+  ]
+}
