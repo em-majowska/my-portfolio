@@ -50,6 +50,7 @@ const paths = {
   styles: './src/scss/**/*.scss',
   scripts: './src/js/**/*.js',
   assets: './src/assets/**/*.*',
+  others: './src/languages/*.*',
 };
 
 /* HTML */
@@ -95,15 +96,24 @@ function scripts() {
 }
 
 /* Assets */
-function otherAssets() {
+function copy() {
   return gulp
-    .src([paths.assets, `!${paths.assets}/**/*.{jpg, png, svg}`], {
-      base: 'src',
-    })
+    .src(
+      [
+        'src/**/*',
+        `!${paths.assets}/**/*.{jpg, png, svg}`,
+        `!${paths.html}`,
+        `!${paths.styles}`,
+        `!${paths.scripts}`,
+      ],
+      {
+        base: 'src',
+      }
+    )
     .pipe(gulp.dest('dist'));
 }
 
-function images() {
+function assets() {
   return gulp
     .src('src/assets/**/*.{jpg,png,svg}')
     .pipe(
@@ -127,7 +137,6 @@ function images() {
     )
     .pipe(gulp.dest('dist/assets'));
 }
-const assets = gulp.parallel(otherAssets, images);
 
 /* Clean & Serve */
 function cleanDist() {
@@ -144,11 +153,13 @@ export function serve() {
   gulp.watch(paths.html, html).on('change', sync.reload);
   gulp.watch(paths.styles, styles).on('change', sync.reload);
   gulp.watch(paths.scripts, scripts).on('change', sync.reload);
+  gulp.watch(paths.assets, assets).on('change', sync.reload);
+  gulp.watch(paths.others, copy).on('change', sync.reload);
 }
 
 export const build = gulp.series(
   cleanDist,
-  gulp.parallel(styles, html, assets, scripts)
+  gulp.parallel(styles, html, assets, scripts, copy)
 );
 
 export const deployGhPages = gulp.series(build, async () => {

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-i18l="html_lang">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Open Graph -->
-	<meta property="og:title" content="Ewa Majowska | Front-End Developer">
-	<meta name="description"
+	<meta property="og:title" data-i18l="meta_title" content="Ewa Majowska | Front-End Developer">
+	<meta name="description" data-i18l="meta_description"
 		content="Ewa Majowska | Front-End Developer based in Saint Leu. Passionate about web development, design and digital art.">
-	<meta name="og:description"
+	<meta name="og:description" data-i18l="meta_description"
 		content="Ewa Majowska | Front-End Developer based in Saint Leu. Passionate about web development, design and digital art.">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://em-majowska.github.io">
@@ -26,9 +26,8 @@
 	<meta property="og:image:height" content="1200">
 
 	<meta name="twitter:card" content="summary">
-
 	<meta name="twitter:image" content="https://i.postimg.cc/631x1hS4/twitter-image.png">
-	<title>Ewa Majowska | Front-End Developer</title>
+	<title data-i18l="title">Ewa Majowska | Front-End Developer</title>
 
 	<!-- Fonts -->
 	<link href="./assets/fonts/Playfair_Display/PlayfairDisplay-Medium.woff2" type="font/woff2" rel="preload" as="font"
@@ -48,13 +47,14 @@
 	<link rel="icon" href="./assets/svg/favicon.svg" type="image/svg+xml">
 </head>
 
-<body>
-	<a href="#main-content" class="screen-reader-text">Skip to main content</a>
+<body class="preload">
+	<a href="#main-content" class="screen-reader-text" data-i18l="skip_nav_btn">Skip to main content</a>
 	<div class="spotlight spotlight--outer"></div>
 
 	<!-- HEADER -->
 	<header id="header">
-		<a href="#header" id="stt-btn" class="stt btn btn--round " title="Scroll to top" aria-label="Scroll to top">
+		<a href="#header" id="stt-btn" class="stt btn btn--round " data-i18l="stt" title="Scroll to top"
+			aria-label="Scroll to top">
 			<div class="btn__shadow"></div>
 			<div class="btn__fill">
 				<svg aria-hidden="true">
@@ -64,81 +64,87 @@
 		</a>
 
 		<!-- NAVIGATION -->
-		<nav id="nav" class="wrapper" aria-label="Primary">
+		<nav id="nav" class="nav wrapper" data-i18l="nav" aria-label="Primary">
 			<div class="navbar">
 				<a aria-current="page" href="/" class="logo">
-					<img src="./assets/svg/logo.svg" width="45" height="45" alt="Ewa Majowska homepage">
+					<img src="./assets/svg/logo.svg" width="45" height="45" data-i18l="logo" alt="Ewa Majowska homepage">
 				</a>
-				<button type="button" class="menu-btn" id="menu-btn" aria-label="Open menu">
+				<button type="button" class="menu-btn" id="menu-btn" data-i18l="menu_btn" aria-label="Open menu">
 					<span class="menu-btn__burger"></span>
 				</button>
 			</div>
 			<ul class="menu" aria-expanded="false">
-				<li class="menu__item"><a href="./index.html#about-me" class="menu__link">about</a></li>
-				<li class="menu__item"><a href="./index.html#code" class="menu__link">code</a></li>
-				<li class="menu__item"><a href="./index.html#portfolio" class="menu__link">portfolio</a></li>
-				<li class="menu__item"><a href="./index.html#contact" class="menu__link">contact</a></li>
+				<li class="menu__item"><a href="./index.html#about-me" class="menu__link" data-i18l="menu_link">about</a></li>
+				<li class="menu__item"><a href="./index.html#skills" class="menu__link" data-i18l="menu_link">skills</a></li>
+				<li class="menu__item"><a href="./index.html#portfolio" class="menu__link" data-i18l="menu_link">portfolio</a>
+				</li>
+				<li class="menu__item"><a href="./index.html#contact" class="menu__link" data-i18l="menu_link">contact</a></li>
 			</ul>
-			<div class="color-palette"></div>
+			<nav class="lang-nav" id="langNav" data-i18l="lang_nav" aria-label="Language selector" aria-expanded="false">
+				<ul>
+					<li class="lang-nav__item" aria-selected="true"><a class="lang-nav__link" data-i18l="lang_link" href=""
+							lang="en" aria-label="English">en</a>
+					</li>
+					<li class="lang-nav__item"><a class="lang-nav__link" data-i18l="lang_link" href="" lang="pl"
+							aria-label="Polski">pl</a></li>
+					<li class="lang-nav__item"><a class="lang-nav__link" data-i18l="lang_link" href="" lang="fr"
+							aria-label="Français">fr</a></li>
+				</ul>
+			</nav>
 		</nav>
 		<div class="nav-overlay"></div>
 
 		<!-- HERO  -->
 		<section class="hero wrapper">
 			<div class="hero__text">
-				<h1>
-					<span class="small">Hello, I'm Ewa and </span>
-					I'll help you<br>
-					build your<br>
-					<span class="accent">website</span>
+				<h1 data-i18l="welcome_message">
+					<span class="small">Hello, I'm Ewa and </span>I'll help you<br>build your<br><span
+						class="accent">website</span>
 				</h1>
 				<a href="#contact" class="btn btn--border">
 					<div class="btn__shadow">
 					</div>
-					<div class="btn__fill">Contact Me</div>
+					<div class="btn__fill" data-i18l="buttons">Contact Me</div>
 				</a>
 			</div>
 			<div class="hero__img">
 				<picture>
 					<!-- Mobile -->
-					<source media="(max-width: 679px)" srcset="
+					<source media="(max-width: 769px)" srcset="
 					./assets/img/blob-mobile-342.webp 342w,
 					./assets/img/blob-mobile-390.webp 390w,
 					./assets/img/blob-mobile-420.webp 420w,
 					./assets/img/blob-mobile-450.webp 450w,
 					./assets/img/blob-mobile-470.webp 470w,
 					./assets/img/blob-mobile-500.webp 500w" type="image/webp" sizes="
-						(max-width: 679px) calc(100vw - 32px)">
+						(max-width: 769px) calc(100vw - 32px)">
 
-					<source media="(max-width: 679px)" srcset="
+					<source media="(max-width: 769px)" srcset="
 					./assets/img/blob-mobile-342.png 342w,
 					./assets/img/blob-mobile-390.png 390w,
 					./assets/img/blob-mobile-420.png 420w,
 					./assets/img/blob-mobile-450.png 450w,
 					./assets/img/blob-mobile-470.png 470w,
 					./assets/img/blob-mobile-500.png 500w" type="image/png" sizes="
-					(max-width: 679px) calc(100vw - 32px)">
+					(max-width: 769px) calc(100vw - 32px)">
 
 					<!-- Desktop -->
-					<source media="(min-width: 680px)" srcset="
+					<source media="(min-width: 770px)" srcset="
 					./assets/img/blob-desktop-342.webp 342w,
 					./assets/img/blob-desktop-400.webp 400w,
 					./assets/img/blob-desktop-470.webp 470w,
 					./assets/img/blob-desktop-525.webp 525w,
 					./assets/img/blob-desktop-580.webp 580w,
 					./assets/img/blob-desktop-620.webp 620w
-					" type="image/webp" sizes="
-					(max-width: 1199px) 46vw,
-						620px
-						">
-					<source media="(min-width: 680px)" srcset="
+					" type="image/webp" sizes="(max-width: 850px) 46vw, 620px">
+					<source media="(min-width: 770px)" srcset="
 					./assets/img/blob-desktop-342.png 342w,
 					./assets/img/blob-desktop-400.png 400w,
 					./assets/img/blob-desktop-470.png 470w,
 					./assets/img/blob-desktop-525.png 525w,
 					./assets/img/blob-desktop-580.png 580w,
-					./assets/img/blob-desktop-620.webp 620w
-					" type="image/png" sizes="(max-width: 1199px) 46vw, 620px">
+					./assets/img/blob-desktop-620.png 620w
+					" type="image/png" sizes="(max-width: 850px) 46vw, 620px">
 					<img id="heroImg" src="" data-src="./assets/img/blob-desktop-470.png" alt="" fetchpriority="high"
 						loading="eager" width="300" height="360">
 
@@ -168,11 +174,11 @@
 		<!-- ABOUT ME -->
 		<section class="section about-me" aria-labelledby="about-me">
 			<div class="wrapper">
-				<h2 id="about-me">About Me</h2>
+				<h2 id="about-me" data-i18l="headers">About Me</h2>
 				<h3>
 					<span lang="en">Hello</span>
 					<span lang="pl">Cześć</span>
-					<span lang="fr-FR">Bonjour</span>
+					<span lang="fr-FR">Salut</span>
 					<span id="japanese-word" lang="ja-Hira">おはようございます</span>
 				</h3>
 				<div class="about-me__container">
@@ -187,10 +193,10 @@
 								<textPath xlink:href="#curve" startOffset="3%">Hello</textPath>
 							</text>
 							<text fill="hsl(44, 0%, 50%)" font-weight="700" lang="pl">
-								<textPath xlink:href="#curve" startOffset="18%">Cześć</textPath>
+								<textPath xlink:href="#curve" startOffset="20%">Cześć</textPath>
 							</text>
 							<text fill="hsl(44, 58%, 6%)" font-weight="700" lang="fr-FR">
-								<textPath xlink:href="#curve" startOffset="33%">Bonjour</textPath>
+								<textPath xlink:href="#curve" startOffset="37%">Salut</textPath>
 							</text>
 							<text fill="hsl(44, 58%, 6%)" letter-spacing="4px" lang="ja-Hira">
 								<textPath xlink:href="#curve" startOffset="57%" font-family="Inter">おはようございます</textPath>
@@ -221,54 +227,61 @@
 									(max-width: 999px) 325px,
 									(max-width: 1199px) calc(16.25vw + 183px), 400px" type="image/png">
 							<img id="widgetImg" src="" data-src="./assets/img/my-photo-400.png" width="242" height="242"
-								alt="This is me" loading="lazy">
-
+								alt="This is me" loading="lazy" data-i18l="my_photo">
 						</picture>
 					</div>
-					<div class="about-me__text wrapper">
-						<p>I am a Front-End Developer based in Saint Leu, Réunion Island.</p>
-						<p>Passioned by the languages, I graduated English Philology with Japanese at Silesian University in Poland.
-							Relocating to France motivated me to learn the local language and explore a new form of communication —
-							the
-							language of the web.
-						</p>
+					<div class="about-me__text" data-i18l="about">
+						<p>Hey, I'm Ewa Majowska, a&nbsp;Front-End Developer based in&nbsp;Saint Leu, Réunion Island.</p>
+						<p>My&nbsp;passion for&nbsp;languages led me&nbsp;to&nbsp;graduate in&nbsp;English Philology
+							and&nbsp;Japanese at&nbsp;Silesian
+							University in&nbsp;Poland. Relocating to&nbsp;France motivated me to&nbsp;learn the&nbsp;local language
+							and&nbsp;explore
+							a&nbsp;new form of&nbsp;communication: the&nbsp;language of&nbsp;the&nbsp;web.</p>
+						<p>In&nbsp;my free time, I&nbsp;enjoy yoga, running, and&nbsp;good brain puzzles, like board games with
+							friends or&nbsp;escape rooms. My&nbsp;favorite way to&nbsp;relax, though, is&nbsp;digital painting while
+							listening to&nbsp;a&nbsp;podcast!</p>
 					</div>
 				</div> <!-- /end .about-me__container (About Me section) -->
 				<a href="#contact" class="btn btn--border">
 					<div class="btn__shadow">
 					</div>
-					<div class="btn__fill">Contact Me</div>
+					<div class="btn__fill" data-i18l="buttons">Say Hello</div>
 				</a>
 			</div> <!-- /end .wrapper (About Me section) -->
 		</section>
 
 		<!-- SKILLS -->
-		<section class="section code" aria-labelledby="code">
+		<section class="section skills" aria-labelledby="skills">
 			<div class="wrapper">
 				<div class="circle"></div>
 				<div class="section__header">
-					<h2 id="code">Skills</h2>
+					<h2 id="skills" data-i18l="headers">Skills</h2>
 				</div>
-				<div class="code__text">
-					<p>
-						I've always had a drive to make things. I started with drawing, moved into digital painting, and eventually
-						started to play with design. Along the way, I taught myself tools like Photoshop, Krita, and Figma. </p>
-					<p>Learning new skills and tools is part of the fun!</p>
+				<div class="skills__text" data-i18l="skills">
+					<p>From a young age, I&nbsp;was always drawn to both art and&nbsp;technology. I&nbsp;began with traditional
+						drawing,
+						transitioned to&nbsp;digital painting, and&nbsp;eventually found myself experimenting with&nbsp;design.
+						As&nbsp;I&nbsp;progressed, I&nbsp;grew comfortable using tools such as&nbsp;Photoshop, Krita,
+						and&nbsp;Figma.</p>
+					<p> Ultimately, my&nbsp;passion for&nbsp;languages, design, and&nbsp;technology all&nbsp;came together
+						in&nbsp;one place: web
+						development. But&nbsp;it&nbsp;doesn’t stop there — I’m&nbsp;always eager to&nbsp;pick up&nbsp;new skills!
+					</p>
 				</div>
-				<div class="code__container">
+				<div class="skills__container">
 					<div>
 						<svg class="spark spark-1" role="presentation">
 							<use href="./assets/svg/elements.svg#spark"></use>
 						</svg>
-						<ul class="code__list" aria-label="My skills">
-							<li class="code__list__item">HTML5</li>
-							<li class="code__list__item" aria-label="Accessibility">A11Y</li>
-							<li class="code__list__item">CSS3 & SCSS</li>
-							<li class="code__list__item">Responsive Design</li>
-							<li class="code__list__item">JavaScript</li>
-							<li class="code__list__item">Git</li>
-							<li class="code__list__item">Node.js</li>
-							<li class="code__list__item">Figma</li>
+						<ul class="skills__list" aria-label="My skills">
+							<li class="skills__list__item">HTML5</li>
+							<li class="skills__list__item" aria-label="Accessibility">A11Y</li>
+							<li class="skills__list__item">CSS3 & SCSS</li>
+							<li class="skills__list__item">Responsive Design</li>
+							<li class="skills__list__item">JavaScript</li>
+							<li class="skills__list__item">Git</li>
+							<li class="skills__list__item">Node.js</li>
+							<li class="skills__list__item">Figma</li>
 						</ul>
 						<svg class="spark spark-2" role="presentation">
 							<use href="./assets/svg/elements.svg#spark"></use>
@@ -285,7 +298,7 @@
 						<!-- Typing animation SCSS mixin by @branmcconnell: https://github.com/brandonmcconnell/typed.css -->
 						<code></code>
 					</div>
-				</div> <!-- /end .code__container -->
+				</div> <!-- /end .skills__container -->
 			</div> <!-- /end .wrapper div (Skills section) -->
 		</section>
 
@@ -293,30 +306,34 @@
 		<section class="section portfolio" aria-labelledby="portfolio">
 			<div class="wrapper">
 				<div class="section__header">
-					<h2 id="portfolio">Portfolio</h2>
+					<h2 id="portfolio" data-i18l="headers">Portfolio</h2>
 				</div>
-				<ul class="portfolio-gallery" aria-label="Some of my CSS projects">
-					<li aria-label="Project #1: the pyramide" class="portfolio-gallery__card gallery__card">
+				<ul class="portfolio-gallery" aria-label="Some of my CSS projects" data-i18l="portfolio_header">
+					<li aria-label="Project #1: the pyramide" class="portfolio-gallery__card gallery__card"
+						data-i18l="portfolio_list">
 						<div class="card-03"></div>
 					</li>
-					<li aria-label="Project #2: penrose triangle" class="portfolio-gallery__card gallery__card">
+					<li aria-label="Project #2: penrose triangle" class="portfolio-gallery__card gallery__card"
+						data-i18l="portfolio_list">
 						<div class="card-17"></div>
 					</li>
 					<li aria-label="Project #3: the watch face" class="portfolio-gallery__card gallery__card"
-						data-module="card-10">
+						data-module="card-10" data-i18l="portfolio_list">
 						<div class="card-10"></div>
 					</li>
-					<li aria-label="Project #4: fitness tracker" class="portfolio-gallery__card gallery__card">
+					<li aria-label="Project #4: fitness tracker" class="portfolio-gallery__card gallery__card"
+						data-i18l="portfolio_list">
 						<div class="card-22"></div>
 					</li>
-					<li aria-label="Project #5: loading animation" class="portfolio-gallery__card gallery__card">
+					<li aria-label="Project #5: loading animation" class="portfolio-gallery__card gallery__card"
+						data-i18l="portfolio_list">
 						<div class="card-04"></div>
 					</li>
 				</ul>
 
 				<a href="./gallery.html" class="btn btn--border">
 					<div class="btn__shadow"></div>
-					<div class="btn__fill">See more projects</div>
+					<div class="btn__fill" data-i18l="buttons">See more projects</div>
 				</a>
 			</div> <!-- /end .wrapper div (Portfolio section) -->
 		</section>
@@ -326,14 +343,15 @@
 
 			<div class="wrapper">
 				<div class="section__header">
-					<h2>Let's create something <span>together!</span></h2>
+					<h2 data-i18l="headers">Let's create something <span>together!</span></h2>
 				</div>
 
 				<div class="window">
-					<h3 id="contact">Contact</h3>
+					<h3 id="contact" data-i18l="headers">Contact</h3>
 					<address class="contact__metadata">
 
-						<a href="https://github.com/em-majowska" aria-label="Check out my github repositories">
+						<a href="https://github.com/em-majowska" aria-label="Check out my github repositories"
+							data-i18l="contact_data">
 							<svg class="icon">
 								<title>Github</title>
 								<use href="./assets/svg/icons.svg#github"></use>
@@ -341,14 +359,14 @@
 							/em-majowska
 						</a>
 
-						<a href="mailto:em.majowska@gmail.com" aria-label="Send me a mail">
+						<a href="mailto:em.majowska@gmail.com" aria-label="Send me a mail" data-i18l="contact_data">
 							<svg class="icon">
 								<title>E-mail</title>
 								<use href="./assets/svg/icons.svg#mail"></use>
 							</svg>
 							em.majowska@gmail.com</a>
 
-						<a href="tel:+262692639837" aria-label="Call me">
+						<a href="tel:+262692639837" aria-label="Call me" data-i18l="contact_data">
 							<svg class="icon">
 								<title>Phone</title>
 								<use href="./assets/svg/icons.svg#phone"></use>
