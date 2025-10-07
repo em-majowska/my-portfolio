@@ -1,6 +1,6 @@
 @use '../abstracts/mixins' as m;
 
-nav {
+.nav {
   --animation-timing-function: linear(
     0,
     0.002 0.5%,
@@ -59,7 +59,8 @@ nav {
     z-index: 99;
   }
 
-  .logo img,
+  .logo,
+  .logo > img,
   .menu-btn {
     width: 55px;
   }
@@ -116,7 +117,7 @@ nav {
 }
 
 // Menu
-nav {
+.nav {
   .menu {
     position: absolute;
     width: 100vw;
@@ -174,6 +175,91 @@ nav {
   }
 }
 
+.lang-nav {
+  $color-palette-nav: var(--accent), var(--secondary), var(--saturated);
+
+  width: 57px;
+  padding: 0 var(--padding-outline) var(--padding-outline);
+  margin: 0 1rem 0 auto;
+
+  ul {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 8px;
+
+    @include m.set-color-palette(li, $color-palette-nav);
+
+    & > li {
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      transition: border 0.3s ease-in-out;
+      border: 2px solid transparent;
+      flex-shrink: 0;
+      pointer-events: pointer;
+
+      &:nth-child(2) {
+        z-index: 2;
+      }
+
+      &:hover {
+        border: 2px solid var(--text);
+      }
+
+      a {
+        display: block;
+        font-size: 1.325rem;
+        width: 100%;
+        line-height: 41px;
+        text-align: center;
+        user-select: none;
+        pointer-events: none;
+      }
+
+      &[aria-selected='true'] {
+        text-transform: uppercase;
+        cursor: pointer;
+        z-index: 3;
+      }
+    }
+  }
+
+  &[aria-expanded='true'] {
+    a {
+      pointer-events: all;
+    }
+    li[aria-selected='true'] {
+      border: 2px solid var(--text);
+
+      a {
+        pointer-events: none;
+      }
+    }
+
+    li:nth-child(2) {
+      animation: open-langNav-2 0.25s linear forwards;
+    }
+    li:nth-child(3) {
+      animation: open-langNav-3 0.5s linear forwards;
+    }
+  }
+
+  &[aria-expanded='false'] {
+    li:nth-child(2) {
+      animation: close-langNav-2 0.25s linear 0.25s forwards;
+      z-index: 2;
+    }
+
+    li:nth-child(3) {
+      animation: close-langNav-3 0.5s linear forwards;
+    }
+
+    a {
+      pointer-events: none;
+    }
+  }
+}
 .color-palette {
   display: none;
 }
@@ -195,5 +281,46 @@ nav {
   }
   to {
     transform: translateY(var(--nav-closed));
+  }
+}
+
+/* Lang Nav */
+
+// open
+@keyframes open-langNav-2 {
+  from {
+    transform: translateX(53px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes open-langNav-3 {
+  from {
+    transform: translateX(106px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+}
+// close lang nav
+@keyframes close-langNav-2 {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(53px);
+  }
+}
+
+@keyframes close-langNav-3 {
+  from {
+    transform: translateX(0px);
+  }
+
+  to {
+    transform: translateX(106px);
   }
 }
