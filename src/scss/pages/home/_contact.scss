@@ -90,6 +90,11 @@
       border-radius: 5px;
       background-color: var(--text);
       font-size: clamp(1rem, 1vw, 4rem);
+
+      &.whatsapp {
+        background-color: transparent;
+        fill: var(--text);
+      }
     }
   }
 
