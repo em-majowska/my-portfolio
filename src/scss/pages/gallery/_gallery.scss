@@ -177,6 +177,7 @@
     }
 
     &__title {
+      min-width: initial;
       max-width: 13ch;
       overflow-wrap: normal;
       align-self: end;

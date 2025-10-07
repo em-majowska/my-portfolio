@@ -12,16 +12,6 @@
     text {
       animation: pop-up 0.4s ease-out 1s forwards;
     }
-
-    .about-me__frame {
-      animation: path-length 4s ease-in-out forwards;
-
-      @keyframes path-length {
-        to {
-          stroke-dasharray: 1;
-        }
-      }
-    }
   }
 
   // Hide for mobile
@@ -41,13 +31,8 @@
     display: none;
   }
 
-  &__text {
-    max-width: 65ch;
-    min-width: 25ch;
-
-    p:first-child {
-      margin-block-end: 1em;
-    }
+  &__text > * + * {
+    margin-block-start: 1rem;
   }
 }
 
@@ -55,7 +40,6 @@
 
 .widget {
   width: clamp(345px, 85%, 500px);
-  // margin-block-start: -100px;
   display: grid;
   align-items: center;
 

@@ -24,6 +24,13 @@ html {
   font-size: 100%;
 }
 
+// Disable animation before loading
+.preload *,
+.preload *::before,
+.preload *::after {
+  animation-duration: 0 !important;
+}
+
 body {
   overflow-x: clip;
   font-family: var(--main-font);
@@ -52,7 +59,7 @@ footer {
 }
 
 header,
-nav,
+.nav,
 section:not(.hero) {
   width: 100%;
 }
@@ -65,17 +72,17 @@ main *:target {
   max-width: 1200px;
   margin-inline: auto;
 
-  &:not(nav) {
+  &:not(.nav) {
     padding-inline: 1rem;
   }
 }
 
-:is(.about-me, .code, .portfolio) > .wrapper {
+:is(.about-me, .skills, .portfolio) > .wrapper {
   padding-block-end: 9vmax;
 }
 
 .about-me__container,
-:is(.about-me, .code, .portfolio, .contact) > .wrapper {
+:is(.about-me, .skills, .portfolio, .contact) > .wrapper {
   & > * + * {
     margin-block-start: clamp(52px, 5.5vmax, 70px);
     margin-inline: auto;
@@ -135,8 +142,11 @@ h3 {
 }
 
 p,
+.about-me__text,
+.skills__text,
 .contact__metadata {
-  max-width: 65ch;
+  min-width: 25ch;
+  max-width: 70ch;
   overflow-wrap: break-word;
   text-wrap: pretty;
 
