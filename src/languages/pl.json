@@ -1,0 +1,87 @@
+{
+  "html_lang": {
+    "lang": "pl"
+  },
+  "title": "Ewa Majowska | Deweloper Front-End",
+  "title_gallery": "100 Days CSS Challenge - Ewa Majowska | Deweloper Front-End",
+  "meta_title": { "content": "Ewa Majowska | Deweloper Front-End" },
+  "meta_description": {
+    "content": "Ewa Majowska | Deweloper Front-End. Łączę pasję do tworzenia stron internetowych, designu i digital artu."
+  },
+  "skip_nav_btn": "Pomiń nawigację",
+  "nav": {
+    "aria-label": "Menu główne"
+  },
+  "menu_link": ["o mnie", "technologie", "portfolio", "kontakt"],
+  "menu_btn": {
+    "open": {
+      "aria-label": "Otwórz menu"
+    },
+    "close": {
+      "aria-label": "Zamknij menu"
+    }
+  },
+  "lang_nav": {
+    "aria-label": "Wybór języka"
+  },
+  "lang_link": [
+    {
+      "innerHTML": "pl",
+      "aria-label": "Polski",
+      "href": "",
+      "lang": "pl"
+    },
+    {
+      "innerHTML": "en",
+      "aria-label": "English",
+      "href": "",
+      "lang": "en"
+    },
+    {
+      "innerHTML": "fr",
+      "aria-label": "Français",
+      "href": "",
+      "lang": "fr"
+    }
+  ],
+  "welcome_message": "<span class=\"small\">Cześć, jestem Ewa i</span>Stworzę <br>Twoją stronę<br><span class=\"accent\">internetową</span>",
+  "headers": [
+    "O mnie",
+    "Technologie",
+    "Portfolio",
+    "Stwórzmy Twoją stronę<br><span>razem!</span>",
+    "Kontakt"
+  ],
+  "buttons": ["Napisz do mnie", "Pogadajmy! 🖐", "Zobacz więcej projektów"],
+  "about": "<p>Hej, z&nbsp;tej strony Ewa Majowska. Projektuję i&nbsp;tworzę strony internetowe z&nbsp;francuskiej wyspy Réunion. Moją pasją są&nbsp;języki: ukończyłam filologię angielską z&nbsp;językiem japońskim na&nbsp;Uniwersytecie Śląskim. Przeprowadzka stała się zaś dobrym pretekstem do&nbsp;opanowania francuskiego i&nbsp;odkrycia nowej formy komunikacji: języka sieci.</p><p>W&nbsp;wolnym czasie stawiam na&nbsp;bieganie i&nbsp;jogę. Oprócz tego uwielbiam gry logiczne. Często spotykam się ze&nbsp;znajomymi na&nbsp;granie w&nbsp;planszówki, czy escape roomy. Wieczorami zaś relaksuję się, rysując postacie z&nbsp;seriali z&nbsp;dobrym podcastem w&nbsp;tle.</p>",
+  "skills": "<p>Zajęcia kreatywne i&nbsp;kontakt z&nbsp;technologią od&nbsp;dziecka sprawiały mi&nbsp;dużo satysfakcji. Zaczęło się od&nbsp;rysowania, a&nbsp;pierwszy tablet otworzył mi&nbsp;drzwi do&nbsp;poznania rożnych narzędzi graficznych (Photoshop, Krita, Figma). Moje zainteresowania naturalnie skierowały się w&nbsp;stronę designu.</p><p>Wszystkie te&nbsp;pasje —&nbsp;języki, proces twórczy, technologie —&nbsp;odnalazłam w&nbsp;tworzeniu stron WWW.</p>",
+  "stt": {
+    "title": "Przewiń do góry",
+    "aria-label": "Przewiń do góry"
+  },
+  "my_photo": {
+    "alt": "To ja"
+  },
+  "portfolio_header": {
+    "aria-label": "Przykłady moich projektów CSS (30 days CSS challenge)"
+  },
+  "portfolio_list": [
+    { "aria-label": "Projekt #1: piramida" },
+    { "aria-label": "Projekt #2: trójkąt Penrose'a" },
+    { "aria-label": "Projekt #3: tarcza zegarka" },
+    { "aria-label": "Projekt #4: tracker aktywności" },
+    { "aria-label": "Projekt #5: animacja ładowania" }
+  ],
+  "contact_data": [
+    { "aria-label": "Zobacz moje repozytoria na GitHubie" },
+    { "aria-label": "Napisz do mnie" },
+    {
+      "aria-label": "Zadzwoń lub napisz na WhatsApp",
+      "href": "tel:+48538137303",
+      "innerHTML": "+48 538 137 303"
+    }
+  ],
+  "challenge_gallery": {
+    "aria-label": "100 dni... Ups, 42 dn projektów CSS (100 Days CSS Challenge)"
+  }
+}
