@@ -58,10 +58,10 @@ button {
     }
   }
 
-  &:is(:hover, .animate, :focus-visible) {
+  &:is(:hover, :focus-visible) {
     .btn__fill {
       background-color: var(--background);
-      transform: translate(-5px, -5px);
+      transform: translate(-5px, -5px); // round stt button
     }
 
     &.btn--border .btn__fill {

@@ -3,6 +3,7 @@
 .hero {
   &.wrapper {
     @include m.flex-container(column, space-between, null);
+    overflow: visible;
   }
 
   &__text {
@@ -39,8 +40,9 @@
   &__img {
     position: relative;
     align-self: flex-end;
+    // width: 120%;
     max-width: 500px;
-    transform: translateY(-120px);
+    transform: translate(calc(43% - 30vw), -175px);
     z-index: -1;
 
     .outline {
@@ -69,12 +71,12 @@
   }
 
   .lines {
-    margin-block-start: -6rem;
-    transform: translateX(-2rem);
-  }
+    margin-block-start: -150px;
+    transform: translateX(-1rem);
 
-  .lines-svg {
-    width: calc(100% + 4rem);
-    stroke: var(--text);
+    .lines-svg {
+      min-width: 100vw;
+      height: 100%;
+    }
   }
 }
