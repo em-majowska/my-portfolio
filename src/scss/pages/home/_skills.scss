@@ -1,6 +1,6 @@
 @use '../../abstracts/mixins' as m;
 
-.code {
+.skills {
   box-shadow: var(--shadow);
 
   & > .wrapper {
@@ -17,8 +17,12 @@
     z-index: -1;
   }
 
-  &__text p:first-child {
-    margin-block-end: 1em;
+  div.skills__text {
+    margin-inline: initial;
+
+    p:first-child {
+      margin-block-end: 1em;
+    }
   }
 
   &__list {
@@ -68,7 +72,7 @@
       background-color: var(--primary);
 
       span {
-        height: 55%;
+        height: 60%;
         aspect-ratio: 1 / 1;
         border: 1px solid var(--text);
         border-radius: 50%;
