@@ -18,13 +18,14 @@ footer {
 }
 
 // ======================
-/*  Navigation & Header */
+/*  Navigation */
 // ======================
 
 @media screen and (min-width: 770px) {
   .menu-btn {
     display: none;
   }
+
   body {
     .nav {
       @include m.flex-container(null, flex-start, null);
@@ -35,26 +36,38 @@ footer {
         padding: 1rem 3rem 0.5rem 1rem;
       }
     }
+
+    a.menu__link:is(:focus-visible, :hover),
+    nav.lang-nav:is(:focus-visible, :hover) {
+      background-color: transparent;
+
+      & li {
+        background-color: transparent;
+      }
+    }
   }
 
-  .nav ul.menu {
+  .nav div.menu {
     position: initial;
-    @include m.flex-container(null, flex-start, flex-end);
-    flex-wrap: wrap;
-    gap: 20px;
-    width: fit-content;
+    width: 100%;
     height: auto;
     padding: 0 var(--padding-outline) var(--padding-outline);
-    margin-inline-end: 1rem;
+    // margin-inline-end: 1rem;
     border-radius: 0;
     box-shadow: none;
     animation: none;
     transform: none;
     overflow: visible;
 
+    .menu-list {
+      @include m.flex-container(flex, flex-start, flex-end);
+      flex-wrap: wrap;
+      gap: 20px;
+      width: fit-content;
+    }
+
     & .menu__item {
       display: flex;
-      // margin-block: 0.25rem 0;
     }
 
     & .menu__link {
@@ -71,16 +84,61 @@ footer {
         transition: height 0.3s ease-in-out;
       }
 
-      &:focus-visible,
-      &:hover {
-        background-color: transparent;
+      &:is(:focus-visible, :hover)::after {
+        height: 4px;
+      }
+    }
 
-        &::after {
-          height: 4px;
+    .lang-nav {
+      $color-palette-nav: var(--saturated), var(--secondary), var(--accent);
+      --firstItemPos: 53px;
+      --secondItemPos: 106px;
+      --thirdItemPos: 159px;
+      margin: 0 0 0 auto;
+      padding: 0;
+      flex-direction: row-reverse;
+      width: 45px;
+
+      .lang-btn {
+        border: 2px solid var(--text);
+        border-radius: 12px;
+        // margin-inline: 8px 0;
+        margin: 0;
+        flex-shrink: 0;
+        background-color: var(--background);
+        transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out,
+          fill 0.3s ease-in-out;
+      }
+
+      &[aria-expanded='true'] {
+        .lang-btn {
+          border: 2px solid transparent;
+          background-color: var(--text);
+          fill: var(--background);
+        }
+      }
+
+      ul {
+        @include m.set-color-palette(li, $color-palette-nav);
+        flex-direction: row-reverse;
+        // transform: translateX(53px);
+
+        li {
+          border: 2px solid transparent;
+        }
+
+        li[aria-selected='true'],
+        li:hover:not([aria-selected='true']) {
+          border: 2px solid var(--text);
+          color: var(--text);
         }
       }
     }
   }
+
+  // ======================
+  /*  Hero */
+  // ======================
 
   body {
     .hero {
