@@ -45,7 +45,7 @@
     1
   );
   --menu-item-height: calc(1.75rem + 2rem);
-  --nav-closed: calc(-7 * var(--menu-item-height));
+  --nav-closed: calc(-8 * var(--menu-item-height));
   --nav-opened: calc(-1 * var(--menu-item-height) + var(--padding-outline));
 
   position: relative;
@@ -118,6 +118,12 @@
 
 // Menu
 .nav {
+  .menu__link,
+  .lang-nav__link {
+    letter-spacing: 0.125rem;
+    font-size: 1.5rem;
+  }
+
   .menu {
     position: absolute;
     width: 100vw;
@@ -133,13 +139,6 @@
     &__link {
       display: block;
       padding: 1rem;
-      letter-spacing: 0.125rem;
-      font-size: 1.5rem;
-
-      &:focus-visible,
-      &:hover {
-        background-color: hsl(from var(--accent) h s l / 0.5);
-      }
     }
 
     &[aria-expanded='false'] {
@@ -175,53 +174,85 @@
   }
 }
 
-.lang-nav {
-  $color-palette-nav: var(--accent), var(--secondary), var(--saturated);
+.menu__link:is(:focus-visible, :hover),
+.lang-nav:is(:focus-visible, :hover) {
+  background-color: hsl(from var(--accent) h s l / 0.5);
 
-  width: 57px;
-  padding: 0 var(--padding-outline) var(--padding-outline);
-  margin: 0 1rem 0 auto;
+  & .lang-btn {
+    background-color: hsl(22.978724, 75%, 75%);
+  }
+}
+
+.lang-nav {
+  //  position when nav is closed
+  --itemOffset: 53px;
+  --firstItemPos: 0px;
+  --secondItemPos: calc(-1 * var(--itemOffset));
+  --thirdItemPos: calc(-2 * var(--itemOffset));
+
+  @include m.filling-element;
+  padding-block: 1rem;
+  // margin: 0 auto 0 auto;
+  cursor: pointer;
+
+  .lang-btn,
+  ul {
+    cursor: pointer;
+  }
+
+  .lang-btn {
+    position: absolute;
+    transform: translate(-1px, -1px);
+    width: 47px;
+    height: 47px;
+    padding: 8px;
+    // border: 2px solid var(--text);
+    border-radius: 12px;
+    margin-inline: 0 8px;
+    background-color: var(--background);
+    z-index: 4;
+  }
 
   ul {
-    position: relative;
-    display: flex;
-    flex-direction: row-reverse;
+    display: inline-flex;
     gap: 8px;
+    width: 45px;
+    height: 45px;
+  }
 
-    @include m.set-color-palette(li, $color-palette-nav);
+  .lang-nav__item {
+    @include m.filling-element;
+    flex-shrink: 0;
+    border: 2px solid var(--text);
+    border-radius: 12px;
+    background-color: var(--background);
+    transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out;
 
-    & > li {
-      width: 45px;
-      height: 45px;
-      border-radius: 12px;
-      transition: border 0.3s ease-in-out;
-      border: 2px solid transparent;
-      flex-shrink: 0;
-      pointer-events: pointer;
+    &:nth-child(2) {
+      z-index: 2;
+    }
 
-      &:nth-child(2) {
-        z-index: 2;
-      }
+    &:hover:not([aria-selected='true']) {
+      border: 2px solid var(--text);
+      color: var(--background);
+      background-color: var(--text);
+    }
 
-      &:hover {
-        border: 2px solid var(--text);
-      }
+    a {
+      display: block;
+      line-height: 41px;
+      text-align: center;
+      user-select: none;
+      pointer-events: none;
+    }
 
-      a {
-        display: block;
-        font-size: 1.325rem;
-        width: 100%;
-        line-height: 41px;
-        text-align: center;
-        user-select: none;
-        pointer-events: none;
-      }
-
-      &[aria-selected='true'] {
-        text-transform: uppercase;
-        cursor: pointer;
-        z-index: 3;
-      }
+    &[aria-selected='true'] {
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--background);
+      background-color: var(--text);
+      z-index: 3;
     }
   }
 
@@ -229,30 +260,35 @@
     a {
       pointer-events: all;
     }
-    li[aria-selected='true'] {
-      border: 2px solid var(--text);
 
-      a {
-        pointer-events: none;
-      }
+    ul {
+      animation: open-langNav-1 0.25s linear forwards;
+    }
+
+    li[aria-selected='true'] a {
+      pointer-events: none;
     }
 
     li:nth-child(2) {
-      animation: open-langNav-2 0.25s linear forwards;
+      animation: open-langNav-2 0.75s linear forwards;
     }
     li:nth-child(3) {
-      animation: open-langNav-3 0.5s linear forwards;
+      animation: open-langNav-3 0.75s linear forwards;
     }
   }
 
   &[aria-expanded='false'] {
+    ul {
+      animation: close-langNav-1 0.75s linear forwards;
+    }
+
     li:nth-child(2) {
-      animation: close-langNav-2 0.25s linear 0.25s forwards;
+      animation: close-langNav-2 0.75s linear forwards;
       z-index: 2;
     }
 
     li:nth-child(3) {
-      animation: close-langNav-3 0.5s linear forwards;
+      animation: close-langNav-3 0.75s linear forwards;
     }
 
     a {
@@ -260,11 +296,8 @@
     }
   }
 }
-.color-palette {
-  display: none;
-}
 
-// Nav Animations
+/* Nav Animations */
 
 @keyframes open-nav {
   from {
@@ -286,41 +319,62 @@
 
 /* Lang Nav */
 
-// open
-@keyframes open-langNav-2 {
+@keyframes open-langNav-1 {
   from {
-    transform: translateX(53px);
+    transform: translateX(var(--firstItemPos));
   }
   to {
+    transform: translateX(var(--itemOffset));
+  }
+}
+@keyframes close-langNav-1 {
+  0%,
+  66.66% {
+    transform: translateX(var(--itemOffset));
+  }
+  100% {
+    transform: translateX(var(--firstItemPos));
+  }
+}
+
+@keyframes open-langNav-2 {
+  0%,
+  33.33% {
+    transform: translateX(var(--secondItemPos));
+  }
+  66.66%,
+  100% {
     transform: translateX(0px);
+  }
+}
+@keyframes close-langNav-2 {
+  0%,
+  33.33% {
+    transform: translateX(0px);
+  }
+  66.66%,
+  100% {
+    transform: translateX(var(--secondItemPos));
   }
 }
 
 @keyframes open-langNav-3 {
-  from {
-    transform: translateX(106px);
+  0%,
+  33.33% {
+    transform: translateX(var(--thirdItemPos));
   }
 
-  to {
-    transform: translateX(0px);
+  100% {
+    transform: translateX(var(--openPos));
   }
 }
-// close lang nav
-@keyframes close-langNav-2 {
-  from {
-    transform: translateX(0px);
-  }
-  to {
-    transform: translateX(53px);
-  }
-}
-
 @keyframes close-langNav-3 {
-  from {
-    transform: translateX(0px);
+  0% {
+    transform: translateX(var(--openPos));
   }
 
-  to {
-    transform: translateX(106px);
+  66.66%,
+  100% {
+    transform: translateX(var(--thirdItemPos));
   }
 }
