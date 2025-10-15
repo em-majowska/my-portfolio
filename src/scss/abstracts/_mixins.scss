@@ -1,4 +1,5 @@
 @use 'sass:list';
+@use 'sass:string';
 @use 'functions' as f;
 
 /* === Layouts === */
@@ -139,15 +140,16 @@
 
 /* === Color Palette === */
 
-@mixin set-color-palette($item, $color-palette, $pseudo-element: false) {
+@mixin set-color-palette($item, $color-palette, $element: null) {
   @for $i from 1 through list.length($color-palette) {
-    @if $pseudo-element {
-      #{$item}:nth-child(#{$i})::after {
-        background-color: #{list.nth($color-palette, $i)};
-      }
+    $selector: '#{$item}:nth-child(#{$i})';
+
+    @if $element {
+      $selector: $selector + #{$element};
     }
-    #{$item}:nth-child(#{$i}) {
-      background-color: #{list.nth($color-palette, $i)};
+
+    #{$selector} {
+      background-color: list.nth($color-palette, $i);
     }
   }
 }

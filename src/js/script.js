@@ -5,6 +5,7 @@ import {
   isDesktop,
   touch,
   showMenu,
+  setupLangNavEvents,
   initNavToggle,
   initAnimationObserver,
   scrollToTop,
@@ -17,7 +18,7 @@ import {
 import { initCard10 } from './gallery/card10.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  let langData = await translationSetup();
+  let langData = await translationSetup(isDesktop);
   initNavToggle(isDesktop, langData);
   updateHero();
 
@@ -59,6 +60,7 @@ const paths = {
 window.addEventListener('resize', () => {
   updateHero();
   showMenu(isDesktop);
+  setupLangNavEvents();
 });
 
 window.onscroll = function () {
