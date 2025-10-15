@@ -5,21 +5,27 @@ import {
   isDesktop,
   touch,
   showMenu,
+  setupLangNavEvents,
   initNavToggle,
   initAnimationObserver,
   scrollToTop,
   initSpotlightCursor,
   spotlight,
   fetchGalleryData,
+  translationSetup,
+  menuBtn,
 } from './utils.js';
 import { initCard10 } from './gallery/card10.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  initNavToggle(isDesktop);
+document.addEventListener('DOMContentLoaded', async () => {
+  let langData = await translationSetup(isDesktop);
+  initNavToggle(isDesktop, langData);
   updateHero();
-  touch ? (spotlight.style.display = 'none') : initSpotlightCursor();
 
-  // Animate sections
+  touch ? (spotlight.style.display = 'none') : initSpotlightCursor();
+  document.body.classList.remove('preload');
+
+  // Prepare sections animations on scroll
   const animationObserver = initAnimationObserver();
   const animatedSections = Array.from(
     document.querySelectorAll('.about-me, .contact')
@@ -54,6 +60,7 @@ const paths = {
 window.addEventListener('resize', () => {
   updateHero();
   showMenu(isDesktop);
+  setupLangNavEvents();
 });
 
 window.onscroll = function () {
@@ -124,7 +131,7 @@ window.onscroll = function () {
 if ('caches' in window) {
   cacheImages();
   document.querySelectorAll('img[data-src]').forEach(async (img) => {
-    img.ssrc = await getImageFromCache(img.dataset.src);
+    img.src = await getImageFromCache(img.dataset.src);
   });
 } else {
   console.log('Cache API not supported in this browser.');

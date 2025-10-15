@@ -11,14 +11,17 @@ import {
   initSpotlightCursor,
   spotlight,
   fetchGalleryData,
+  translationSetup,
+  menuBtn,
 } from './utils.js';
 
 let jsModuleObserver;
 let lastCardObserver;
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  let langData = await translationSetup();
+  initNavToggle(isDesktop, langData);
   const animationObserver = initAnimationObserver();
-  initNavToggle(isDesktop);
   initCardModuleObserver();
   setupLoaderObserver();
   touch ? (spotlight.style.display = 'none') : initSpotlightCursor();

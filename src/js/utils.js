@@ -1,7 +1,8 @@
 // Constants
 
-export const isDesktop = () => window.innerWidth >= 680;
+export const isDesktop = () => window.innerWidth >= 770;
 export const menu = document.querySelector('.menu');
+export const menuBtn = document.getElementById('menu-btn');
 export const showMenu = (isDesktop) => {
   const isWide = isDesktop();
   menu.ariaExpanded = isWide ? 'undefined' : 'false';
@@ -11,11 +12,12 @@ export const sttBtn = document.getElementById('stt-btn');
 export const touch = window.matchMedia('(pointer: coarse)').matches;
 export const spotlight = document.querySelector('.spotlight--outer');
 export let dataCache = null;
+const langNav = document.getElementById('langNav');
+const langNavBtn = document.getElementById('langNavBtn');
 
 /* Toggle Navigation */
 
-export function initNavToggle(isDesktop) {
-  const menuBtn = document.getElementById('menu-btn');
+export function initNavToggle(isDesktop, langData) {
   const menuLinks = Array.from(document.querySelectorAll('.menu__link'));
   const overlay = document.querySelector('.nav-overlay');
   let isOpen = false;
@@ -28,13 +30,14 @@ export function initNavToggle(isDesktop) {
       document.body.addEventListener('wheel', preventScroll, {
         passive: false,
       });
-
+      menuBtn.ariaLabel = langData.menu_btn.close['aria-label'];
       menu.style.display = 'block';
       overlay.addEventListener('click', toggleMenu, { once: true });
     } else {
       document.body.removeEventListener('wheel', preventScroll, {
         passive: false,
       });
+      menuBtn.ariaLabel = langData.menu_btn.open['aria-label'];
 
       menu.addEventListener(
         'animationend',
@@ -150,4 +153,184 @@ export async function fetchGalleryData() {
     dataCache = cards;
   }
   return dataCache;
+}
+
+/* Toggle Language Selection Menu */
+export function setupLangNavEvents() {
+  let isOpen = false;
+
+  // make langNav element tabbable if on mobile
+  // prevent double langNav opening button
+  if (isDesktop()) {
+    langNavBtn.addEventListener('click', toggleLangNav);
+    langNav.removeEventListener('click', toggleLangNav);
+    langNav.removeEventListener('keypress', (e) => {
+      if (e.key === 'Enter') toggleLangNav(e);
+    });
+
+    langNav.setAttribute('tabindex', '-1');
+    langNav.removeAttribute('role');
+    langNavBtn.setAttribute('tabindex', '0');
+    langNavBtn.setAttribute('ariahidden', 'true');
+  } else {
+    langNavBtn.removeEventListener('click', toggleLangNav);
+    langNav.addEventListener('click', toggleLangNav);
+    langNav.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') toggleLangNav(e);
+    });
+    langNav.setAttribute('tabindex', '0');
+    langNav.setAttribute('role', 'button');
+    langNavBtn.setAttribute('tabindex', '-1');
+    langNavBtn.setAttribute('ariahidden', 'false');
+  }
+
+  function toggleLangNav(e) {
+    const langMenu = document.getElementById('langMenu');
+
+    if (e.target.tagName === 'LI') return;
+
+    isOpen = !isOpen;
+    langNav.ariaExpanded = isOpen;
+
+    if (isOpen) {
+      langMenu.removeAttribute('inert');
+    } else {
+      langMenu.setAttribute('inert', '');
+    }
+  }
+}
+
+export async function translationSetup() {
+  const userPreferredLang = localStorage.getItem('language') || 'en';
+  let langData = await fetchLangData(userPreferredLang);
+
+  // Fetch language JSON data
+  async function fetchLangData(langCode) {
+    try {
+      const response = await fetch(`./languages/${langCode}.json`);
+      if (!response.ok) {
+        throw new Error(`HTTP error, status = ${response.status}`);
+      }
+
+      return await response.json();
+    } catch (err) {
+      console.error('Error loading language file:', err);
+      return {};
+    }
+  }
+
+  // Initialize language selector
+  function initLanguageSelector() {
+    const langLinks = langNav.firstElementChild.querySelectorAll('li a');
+
+    langLinks.forEach((link) => {
+      link.addEventListener('click', changeLanguage);
+    });
+
+    // Handle language change
+    async function changeLanguage(e) {
+      const langCode = e.target.lang;
+
+      setLangPreference(langCode);
+      updateContent(langData);
+    }
+
+    function setLangPreference(lang) {
+      localStorage.setItem('language', lang);
+      location.reload();
+    }
+
+    setupLangNavEvents();
+  }
+
+  // Update page content based on selected language
+  function updateContent(langData) {
+    const collection = document.querySelectorAll('[data-i18l]');
+    const catalogue = new Map();
+    let whatsappLogo = document.querySelector('.icon.whatsapp') ?? null;
+
+    // Remove WhatsApp logo if language is not Polish
+    if (langData.html_lang.lang !== 'pl' && whatsappLogo) {
+      whatsappLogo.remove();
+    }
+
+    // Create catalogue with arrays of elements for each key
+    collection.forEach((el) => {
+      const key = el.getAttribute('data-i18l');
+
+      !catalogue.has(key)
+        ? catalogue.set(key, [el])
+        : catalogue.get(key).push(el);
+    });
+
+    // Update elements based on their type and langData
+    for (const key in langData) {
+      const domElements = catalogue.get(key);
+      const langDataValue = langData[key];
+
+      if (!domElements) continue;
+
+      // Special handling for menu button
+      if (key === 'menu_btn') {
+        menuBtn.ariaLabel = langDataValue.open['aria-label'];
+        continue;
+      }
+
+      // Handle string type translation
+      if (typeof langDataValue === 'string') {
+        domElements[0].innerHTML = langDataValue;
+      }
+      // Handle object type translation
+      else if (
+        typeof langDataValue === 'object' &&
+        langDataValue !== null &&
+        !Array.isArray(langDataValue)
+      ) {
+        domElements.forEach((el) => handleObjectTranslation(el, langDataValue));
+      }
+      // Handle array type translation
+      else if (Array.isArray(langDataValue)) {
+        handleArrayTranslation(domElements, langDataValue);
+      }
+    }
+
+    function handleArrayTranslation(elements, values) {
+      for (let i = 0; i < values.length; i++) {
+        const langDataValue = values[i];
+        const domElement = elements[i];
+        if (typeof langDataValue === 'object') {
+          handleObjectTranslation(domElement, langDataValue);
+        } else if (typeof langDataValue === 'string') {
+          updateTextNode(domElement, langDataValue);
+        }
+      }
+    }
+
+    function handleObjectTranslation(element, object) {
+      for (const attr in object) {
+        const value = object[attr];
+
+        if (attr === 'innerHTML') {
+          updateTextNode(element, value);
+        } else {
+          element.setAttribute(attr, value);
+        }
+      }
+    }
+
+    function updateTextNode(element, value) {
+      for (let i = 1; i < element.childNodes.length; i++) {
+        const node = element.childNodes[i];
+        if (node.nodeType === Node.TEXT_NODE) {
+          node.nodeValue = value;
+          return;
+        }
+      }
+      element.innerHTML = value;
+    }
+  }
+
+  updateContent(langData);
+  initLanguageSelector();
+  return langData;
 }
