@@ -12,6 +12,8 @@ export const sttBtn = document.getElementById('stt-btn');
 export const touch = window.matchMedia('(pointer: coarse)').matches;
 export const spotlight = document.querySelector('.spotlight--outer');
 export let dataCache = null;
+const langNav = document.getElementById('langNav');
+const langNavBtn = document.getElementById('langNavBtn');
 
 /* Toggle Navigation */
 
@@ -154,6 +156,49 @@ export async function fetchGalleryData() {
 }
 
 /* Toggle Language Selection Menu */
+export function setupLangNavEvents() {
+  let isOpen = false;
+
+  // make langNav element tabbable if on mobile
+  // prevent double langNav opening button
+  if (isDesktop()) {
+    langNavBtn.addEventListener('click', toggleLangNav);
+    langNav.removeEventListener('click', toggleLangNav);
+    langNav.removeEventListener('keypress', (e) => {
+      if (e.key === 'Enter') toggleLangNav(e);
+    });
+
+    langNav.setAttribute('tabindex', '-1');
+    langNav.removeAttribute('role');
+    langNavBtn.setAttribute('tabindex', '0');
+    langNavBtn.setAttribute('ariahidden', 'true');
+  } else {
+    langNavBtn.removeEventListener('click', toggleLangNav);
+    langNav.addEventListener('click', toggleLangNav);
+    langNav.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') toggleLangNav(e);
+    });
+    langNav.setAttribute('tabindex', '0');
+    langNav.setAttribute('role', 'button');
+    langNavBtn.setAttribute('tabindex', '-1');
+    langNavBtn.setAttribute('ariahidden', 'false');
+  }
+
+  function toggleLangNav(e) {
+    const langMenu = document.getElementById('langMenu');
+
+    if (e.target.tagName === 'LI') return;
+
+    isOpen = !isOpen;
+    langNav.ariaExpanded = isOpen;
+
+    if (isOpen) {
+      langMenu.removeAttribute('inert');
+    } else {
+      langMenu.setAttribute('inert', '');
+    }
+  }
+}
 
 export async function translationSetup() {
   const userPreferredLang = localStorage.getItem('language') || 'en';
@@ -176,20 +221,11 @@ export async function translationSetup() {
 
   // Initialize language selector
   function initLanguageSelector() {
-    const langNav = document.getElementById('langNav');
     const langLinks = langNav.firstElementChild.querySelectorAll('li a');
-    let islangNavOpen = false;
-
-    langNav.addEventListener('click', toggleLangNav);
 
     langLinks.forEach((link) => {
       link.addEventListener('click', changeLanguage);
     });
-
-    function toggleLangNav() {
-      islangNavOpen = !islangNavOpen;
-      langNav.ariaExpanded = islangNavOpen;
-    }
 
     // Handle language change
     async function changeLanguage(e) {
@@ -203,6 +239,8 @@ export async function translationSetup() {
       localStorage.setItem('language', lang);
       location.reload();
     }
+
+    setupLangNavEvents();
   }
 
   // Update page content based on selected language
@@ -296,7 +334,3 @@ export async function translationSetup() {
   initLanguageSelector();
   return langData;
 }
-
-//to do
-
-// swap lang items in lang menu
