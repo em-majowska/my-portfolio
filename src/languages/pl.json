@@ -24,6 +24,14 @@
   "lang_nav": {
     "aria-label": "Wybór języka"
   },
+  "lang_nav_btn": {
+    "open": {
+      "aria-label": "Otwórz menu języka"
+    },
+    "close": {
+      "aria-label": "Zamknij menu języka"
+    }
+  },
   "lang_link": [
     {
       "innerHTML": "pl",
@@ -44,7 +52,7 @@
       "lang": "fr"
     }
   ],
-  "welcome_message": "<span class=\"small\">Cześć, jestem Ewa i</span>Stworzę <br>Twoją stronę<br><span class=\"accent\">internetową</span>",
+  "welcome_message": "<span class=\"small\">Cześć, jestem Ewa i</span>Stworzę<br>Twoją stronę<br><span class=\"accent\">internetową</span>",
   "headers": [
     "O mnie",
     "Technologie",

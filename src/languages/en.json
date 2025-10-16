@@ -23,6 +23,14 @@
   "lang_nav": {
     "aria-label": "Language selector"
   },
+  "lang_nav_btn": {
+    "open": {
+      "aria-label": "Open language selector"
+    },
+    "close": {
+      "aria-label": "Close language selector"
+    }
+  },
   "lang_link": [
     {
       "innerHTML": "en",
