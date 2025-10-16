@@ -74,11 +74,11 @@
     "aria-label": "Examples de mes projets en CSS (30 days CSS challenge)"
   },
   "portfolio_list": [
-    "Projet #1 : la pyramide",
-    "Projet #2 : le triangle de Penrose",
-    "Projet #3 : le montre numerique",
-    "Projet #4 : le tracker d'activité",
-    "Projet #5 : l'animation de chargement"
+    { "aria-label": "Projet #1 : la pyramide" },
+    { "aria-label": "Projet #2 : le triangle de Penrose" },
+    { "aria-label": "Projet #3 : le montre numerique" },
+    { "aria-label": "Projet #4 : le tracker d'activité" },
+    { "aria-label": "Projet #5 : l'animation de chargement" }
   ],
   "contact_data": [
     {

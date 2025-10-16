@@ -33,7 +33,7 @@ footer {
       min-height: 79px;
 
       .navbar {
-        padding: 1rem 3rem 0.5rem 1rem;
+        padding: 1rem 2.5rem 0.5rem 1rem;
         align-self: flex-start;
       }
     }
@@ -95,6 +95,7 @@ footer {
     --third-icon-closed: translate(0, calc(-2 * var(--icon-offset)));
 
     justify-content: end;
+    align-items: flex-end;
     max-width: 47px;
     height: 47px;
     padding: 0;
@@ -239,6 +240,8 @@ footer {
     }
 
     .lang-nav {
+      align-self: flex-end;
+
       &[aria-expanded='true'] {
         max-width: var(--max-width);
       }

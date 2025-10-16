@@ -73,11 +73,11 @@
     "aria-label": "Some of my CSS projects (30 days CSS challenge)"
   },
   "portfolio_list": [
-    "Project #1: the pyramide",
-    "Project #2: penrose triangle",
-    "Project #3: the watch face",
-    "Project #4: fitness tracker",
-    "Project #5: loading animation"
+    { "aria-label": "Project #1: the pyramide" },
+    { "aria-label": "Project #2: penrose triangle" },
+    { "aria-label": "Project #3: the watch face" },
+    { "aria-label": "Project #4: fitness tracker" },
+    { "aria-label": "Project #5: loading animation" }
   ],
   "contact_data": {
     "github": {

@@ -156,13 +156,13 @@ export async function fetchGalleryData() {
 }
 
 /* Toggle Language Selection Menu */
-export function setupLangNavEvents() {
+export function setupLangNavEvents(langData) {
   let isOpen = false;
 
   // make langNav element tabbable if on mobile
   // prevent double langNav opening button
   if (isDesktop()) {
-    langNavBtn.addEventListener('click', toggleLangNav);
+    langNavBtn.addEventListener('click', (e) => toggleLangNav(e, langData));
     langNav.removeEventListener('click', toggleLangNav);
     langNav.removeEventListener('keypress', (e) => {
       if (e.key === 'Enter') toggleLangNav(e);
@@ -174,7 +174,7 @@ export function setupLangNavEvents() {
     langNavBtn.setAttribute('aria-hidden', 'true');
   } else {
     langNavBtn.removeEventListener('click', toggleLangNav);
-    langNav.addEventListener('click', toggleLangNav);
+    langNav.addEventListener('click', (e) => toggleLangNav(e, langData));
     langNav.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') toggleLangNav(e);
     });
@@ -242,7 +242,7 @@ export async function translationSetup() {
       location.reload();
     }
 
-    setupLangNavEvents();
+    setupLangNavEvents(langData);
   }
 
   // Update page content based on selected language
