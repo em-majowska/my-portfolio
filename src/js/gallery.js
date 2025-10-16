@@ -5,6 +5,7 @@ import {
   isDesktop,
   touch,
   showMenu,
+  setupLangNavEvents,
   initNavToggle,
   initAnimationObserver,
   scrollToTop,
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const animationObserver = initAnimationObserver();
   initCardModuleObserver();
   setupLoaderObserver();
+
   touch ? (spotlight.style.display = 'none') : initSpotlightCursor();
 
   // Animate intersecting cards
@@ -32,6 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 window.addEventListener('resize', () => {
   showMenu(isDesktop);
+  setupLangNavEvents();
 });
 
 window.onscroll = function () {
