@@ -20,8 +20,8 @@ footer {
 // ======================
 /*  Navigation */
 // ======================
+
 @container header (min-width: 770px) {
-  // @media screen and (min-width: 770px) {
   .menu-btn {
     display: none;
   }
@@ -30,10 +30,11 @@ footer {
     .nav {
       @include m.flex-container(null, flex-start, null);
       align-items: flex-end;
-      // max-height: 79px;
+      min-height: 79px;
 
       .navbar {
         padding: 1rem 3rem 0.5rem 1rem;
+        align-self: flex-start;
       }
     }
 
@@ -45,8 +46,8 @@ footer {
   .nav div.menu {
     position: initial;
     width: 100%;
-    height: auto;
-    padding: 0 1rem var(--padding-outline) var(--padding-outline);
+    min-height: 69px;
+    padding: 1rem 1rem var(--padding-outline) var(--padding-outline);
     // margin-inline-end: 1rem;
     border-radius: 0;
     box-shadow: none;
@@ -70,6 +71,7 @@ footer {
       position: relative;
       padding: 0.5rem 0.5rem 0 0.5rem;
       text-wrap: nowrap;
+      line-height: inherit;
 
       &::after {
         @include m.pseudo;
@@ -92,7 +94,6 @@ footer {
     --second-icon-closed: translate(0, calc(-1 * var(--icon-offset)));
     --third-icon-closed: translate(0, calc(-2 * var(--icon-offset)));
 
-    // @include m.flex-container(row-reverse, null, null);
     justify-content: end;
     max-width: 47px;
     height: 47px;

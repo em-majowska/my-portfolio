@@ -8,3 +8,7 @@
 @use './pages/home/skills';
 @use './pages/home/portfolio';
 @use './pages/home/contact';
+
+section:not(.portfolio) p {
+  min-width: 35ch;
+}

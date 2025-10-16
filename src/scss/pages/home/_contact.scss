@@ -82,12 +82,10 @@
     }
 
     .icon {
-      --icon-size: clamp(36px, 4vw, 3.125rem);
-
       width: var(--icon-size);
       height: var(--icon-size);
       padding: 5px;
-      border-radius: 5px;
+      border-radius: var(--icon-border-radius);
       background-color: var(--text);
       font-size: clamp(1rem, 1vw, 4rem);
 
