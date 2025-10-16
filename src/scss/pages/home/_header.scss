@@ -40,16 +40,14 @@
   &__img {
     position: relative;
     align-self: flex-end;
-    // width: 120%;
-    max-width: 500px;
-    transform: translate(calc(43% - 30vw), -175px);
+    transform: translate(calc(65% - 50vw), calc(-109px - 10vw));
     z-index: -1;
 
     .outline {
       position: absolute;
       inset: 0;
-      width: 122%;
-      transform: translate(-9%, -8%);
+      width: 124%;
+      transform: translate(-10%, -8.5%);
       mask-image: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0.4),
@@ -71,12 +69,8 @@
   }
 
   .lines {
-    margin-block-start: -150px;
+    margin-block-start: -90px;
     transform: translateX(-1rem);
-
-    .lines-svg {
-      min-width: 100vw;
-      height: 100%;
-    }
+    min-width: 100vw;
   }
 }

@@ -178,12 +178,11 @@ footer {
 
       &__img {
         transform: translate(0, 0);
-        max-width: unset;
+        max-width: 46%;
 
         .outline {
-          height: 109%;
-          width: 110%;
-          transform: translate(-4.5%, -7.5%);
+          width: 128%;
+          transform: translate(-8%, -8%);
           overflow: hidden;
 
           path {
