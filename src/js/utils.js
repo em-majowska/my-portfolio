@@ -171,7 +171,7 @@ export function setupLangNavEvents() {
     langNav.setAttribute('tabindex', '-1');
     langNav.removeAttribute('role');
     langNavBtn.setAttribute('tabindex', '0');
-    langNavBtn.setAttribute('ariahidden', 'true');
+    langNavBtn.setAttribute('aria-hidden', 'true');
   } else {
     langNavBtn.removeEventListener('click', toggleLangNav);
     langNav.addEventListener('click', toggleLangNav);
@@ -181,7 +181,7 @@ export function setupLangNavEvents() {
     langNav.setAttribute('tabindex', '0');
     langNav.setAttribute('role', 'button');
     langNavBtn.setAttribute('tabindex', '-1');
-    langNavBtn.setAttribute('ariahidden', 'false');
+    langNavBtn.setAttribute('aria-hidden', 'false');
   }
 
   function toggleLangNav(e) {
@@ -194,8 +194,10 @@ export function setupLangNavEvents() {
 
     if (isOpen) {
       langMenu.removeAttribute('inert');
+      langNavBtn.ariaLabel = langData.lang_nav_btn.close['aria-label'];
     } else {
       langMenu.setAttribute('inert', '');
+      langNavBtn.ariaLabel = langData.lang_nav_btn.open['aria-label'];
     }
   }
 }
@@ -270,9 +272,9 @@ export async function translationSetup() {
 
       if (!domElements) continue;
 
-      // Special handling for menu button
-      if (key === 'menu_btn') {
-        menuBtn.ariaLabel = langDataValue.open['aria-label'];
+      // Special handling for menu button and langNav button
+      if (typeof langDataValue === 'object' && 'open' in langDataValue) {
+        domElements[0].ariaLabel = langDataValue.open['aria-label'];
         continue;
       }
 

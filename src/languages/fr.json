@@ -24,6 +24,14 @@
   "lang_nav": {
     "aria-label": "Sélecteur de langue"
   },
+  "lang_nav_btn": {
+    "open": {
+      "aria-label": "Ouvrir le sélecteur de langue"
+    },
+    "close": {
+      "aria-label": "Fermer le sélecteur de langue"
+    }
+  },
   "lang_link": [
     {
       "innerHTML": "fr",
@@ -44,7 +52,7 @@
       "lang": "en"
     }
   ],
-  "welcome_message": "<span class=\"small\">Salut, je suis Ewa et</span>Je vais créer <br>le site web<br><span class=\"accent\">de vos rêves</span>",
+  "welcome_message": "<span class=\"small\">Salut, je suis Ewa et</span>Je vais créer<br>le site web<br><span class=\"accent\">de vos rêves</span>",
   "headers": [
     "À propos",
     "Compétences",
