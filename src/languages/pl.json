@@ -86,10 +86,58 @@
     {
       "aria-label": "Zadzwoń lub napisz na WhatsApp",
       "href": "tel:+48538137303",
-      "innerHTML": "+48 538 137 303"
+      "innerHTML": "<svg class=\"icon\"><title>Phone</title><use href=\"./assets/svg/icons.svg#phone\"></use></svg>+48 538 137 303<svg class=\"icon whatsapp\"><title>Whatsapp</title><use href=\"./assets/svg/icons.svg#whatsapp\"></use></svg>"
     }
   ],
   "challenge_gallery": {
-    "aria-label": "100 dni... Ups, 42 dn projektów CSS (100 Days CSS Challenge)"
-  }
+    "aria-label": "100 dni... Ups, 42 dni projektów CSS (100 Days CSS Challenge)"
+  },
+  "gallery_header": {
+    "aria-label": "100 dni projektów CSS",
+    "innerHTML": "<span class=\"days\"><span class=\"num\">100<svg class=\"scribble\"><use href=\"./assets/svg/gallery/gallery-mozaic.svg#scribble\"></use></svg></span> Dni</span><span class=\"accent\">Projektów CSS</span>"
+  },
+  "gallery_card_title": [
+    "100 dni css",
+    "ikony menu",
+    "piramida",
+    "ładowanie",
+    "statystyka",
+    "profil",
+    "powiadomienia, wyszukiwanie i menu",
+    "metakule",
+    "deszczowa noc",
+    "zegarek",
+    "buty do chodzenia",
+    "dymek",
+    "galeria użytkownika",
+    "byciclopter",
+    "przesyłanie",
+    "blobby",
+    "trójkąt Penrose'a",
+    "guma",
+    "suwak z przyciskami",
+    "wyślij wiadomość",
+    "pac-man",
+    "pomiar aktywności",
+    "animowany tekst",
+    "przycisk",
+    "pinezka mapy",
+    "karty motywacyjne",
+    "lista",
+    "dzwonek",
+    "pole wyszukiwania",
+    "rysunek",
+    "fala wahadłowa",
+    "licznik",
+    "słoneczny dzień",
+    "hello",
+    "ładowanie",
+    "zakładki",
+    "karuzela",
+    "animacja logo",
+    "menu hamburger",
+    "galeria",
+    "wyskakujący błąd",
+    "gwiazdy"
+  ]
 }

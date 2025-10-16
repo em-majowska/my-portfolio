@@ -249,12 +249,6 @@ export async function translationSetup() {
   function updateContent(langData) {
     const collection = document.querySelectorAll('[data-i18l]');
     const catalogue = new Map();
-    let whatsappLogo = document.querySelector('.icon.whatsapp') ?? null;
-
-    // Remove WhatsApp logo if language is not Polish
-    if (langData.html_lang.lang !== 'pl' && whatsappLogo) {
-      whatsappLogo.remove();
-    }
 
     // Create catalogue with arrays of elements for each key
     collection.forEach((el) => {
@@ -303,7 +297,7 @@ export async function translationSetup() {
         if (typeof langDataValue === 'object') {
           handleObjectTranslation(domElement, langDataValue);
         } else if (typeof langDataValue === 'string') {
-          updateTextNode(domElement, langDataValue);
+          domElement.innerHTML = langDataValue;
         }
       }
     }
@@ -313,22 +307,11 @@ export async function translationSetup() {
         const value = object[attr];
 
         if (attr === 'innerHTML') {
-          updateTextNode(element, value);
+          element.innerHTML = value;
         } else {
           element.setAttribute(attr, value);
         }
       }
-    }
-
-    function updateTextNode(element, value) {
-      for (let i = 1; i < element.childNodes.length; i++) {
-        const node = element.childNodes[i];
-        if (node.nodeType === Node.TEXT_NODE) {
-          node.nodeValue = value;
-          return;
-        }
-      }
-      element.innerHTML = value;
     }
   }
 
