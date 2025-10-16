@@ -58,32 +58,43 @@
 		<!-- NAVIGATION -->
 		<nav id="nav" class="nav wrapper" data-i18l="nav" aria-label="Primary">
 			<div class="navbar">
-				<a aria-current="page" href="/" class="logo">
+				<a href="/" class="logo">
 					<img src="./assets/svg/logo.svg" width="45" height="45" data-i18l="logo" alt="Ewa Majowska homepage">
 				</a>
 				<button type="button" class="menu-btn" id="menu-btn" data-i18l="menu_btn" aria-label="Open menu">
 					<span class="menu-btn__burger"></span>
 				</button>
 			</div>
-			<ul class="menu" aria-expanded="false">
-				<li class="menu__item"><a href="./index.html#about-me" class="menu__link" data-i18l="menu_link">about</a></li>
-				<li class="menu__item"><a href="./index.html#skills" class="menu__link" data-i18l="menu_link">skills</a></li>
-				<li class="menu__item"><a href="./index.html#portfolio" class="menu__link" data-i18l="menu_link">portfolio</a>
-				</li>
-				<li class="menu__item"><a href="./index.html#contact" class="menu__link" data-i18l="menu_link">contact</a>
-				</li>
-			</ul>
-			<nav class="lang-nav" id="langNav" data-i18l="lang_nav" aria-label="Language selector" aria-expanded="false">
-				<ul>
-					<li class="lang-nav__item" aria-selected="true"><a class="lang-nav__link" data-i18l="lang_link" href=""
-							lang="en" aria-label="English">en</a>
+			<div class="menu">
+				<ul class="menu-list">
+					<li class="menu__item"><a href="./index.html#about-me" class="menu__link" data-i18l="menu_link">about</a></li>
+					<li class="menu__item"><a href="./index.html#skills" class="menu__link" data-i18l="menu_link">skills</a></li>
+					<li class="menu__item"><a href="./index.html#portfolio" class="menu__link" data-i18l="menu_link">portfolio</a>
 					</li>
-					<li class="lang-nav__item"><a class="lang-nav__link" data-i18l="lang_link" href="" lang="pl"
-							aria-label="Polski">pl</a></li>
-					<li class="lang-nav__item"><a class="lang-nav__link" data-i18l="lang_link" href="" lang="fr"
-							aria-label="Français">fr</a></li>
+					<li class="menu__item"><a href="./index.html#contact" class="menu__link" data-i18l="menu_link">contact</a>
+					</li>
 				</ul>
-			</nav>
+				<nav class="lang-nav" id="langNav" role="" data-i18l="lang_nav" aria-label="Language selector"
+					aria-expanded="false" tabindex="0">
+					<div class="lang-nav__container">
+						<button type="button" class="lang-nav__btn" id="langNavBtn" aria-label="Open language selector"
+							aria-hidden="true" tabindex="-1">
+							<svg role="presentation">
+								<use xlink:href="./assets/svg/icons.svg#languages"></use>
+							</svg>
+						</button>
+						<ul id="langMenu" inert>
+							<li class="lang-nav__item" aria-selected="true"><a class="lang-nav__link" data-i18l="lang_link" href="#"
+									lang="en" aria-label="English" tabindex="-1">en</a>
+							</li>
+							<li class="lang-nav__item"><a class="lang-nav__link" data-i18l="lang_link" href="#" lang="pl"
+									aria-label="Polski">pl</a></li>
+							<li class="lang-nav__item"><a class="lang-nav__link" data-i18l="lang_link" href="#" lang="fr"
+									aria-label="Français">fr</a></li>
+						</ul>
+					</div> <!-- end .lang-nav__container div -->
+				</nav> <!-- end .lang-nav nav -->
+			</div> <!-- end .menu div -->
 		</nav>
 		<div class="nav-overlay"></div>
 
@@ -142,7 +153,8 @@
 
 	<!-- MAIN -->
 	<main class="main wrapper" id="main-content">
-		<section class="gallery" id="css-challenge-gallery" aria-label="Gallery of 100... Sorry, 42 days CSS challenge" data-i18l="challenge_gallery">
+		<section class="gallery" id="css-challenge-gallery" aria-label="Gallery of 100... Sorry, 42 days CSS challenge"
+			data-i18l="challenge_gallery">
 
 			<div class="loader" id="loader">
 				<span class="loader__letter">

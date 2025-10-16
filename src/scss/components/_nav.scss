@@ -176,7 +176,7 @@
 }
 
 .menu__link:is(:focus-visible, :hover),
-.lang-nav:is(:focus-visible, :hover, :focus-within) {
+.lang-nav:is(:focus-visible, :hover) {
   background-color: hsl(from var(--accent) h s l / 0.5);
 
   & .lang-nav__btn {
