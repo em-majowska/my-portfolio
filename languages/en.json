@@ -1,0 +1,146 @@
+{
+  "html_lang": {
+    "lang": "en"
+  },
+  "title": "Ewa Majowska | Front-End Developer",
+  "meta_title": { "content": "Ewa Majowska | Front-End Developer" },
+  "meta_description": {
+    "content": "Ewa Majowska | Front-End Developer based in Saint Leu. Passionate about web development, design and digital art."
+  },
+  "skip_nav_btn": "Skip to main content",
+  "nav": {
+    "aria-label": "Primary"
+  },
+  "menu_link": ["about", "skills", "portfolio", "contact"],
+  "menu_btn": {
+    "open": {
+      "aria-label": "Open menu"
+    },
+    "close": {
+      "aria-label": "Close menu"
+    }
+  },
+  "lang_nav": {
+    "aria-label": "Language selector"
+  },
+  "lang_nav_btn": {
+    "open": {
+      "aria-label": "Open language selector"
+    },
+    "close": {
+      "aria-label": "Close language selector"
+    }
+  },
+  "lang_link": [
+    {
+      "innerHTML": "en",
+      "aria-label": "English",
+      "href": "",
+      "lang": "en"
+    },
+    {
+      "innerHTML": "pl",
+      "aria-label": "Polski",
+      "href": "",
+      "lang": "pl"
+    },
+    {
+      "innerHTML": "fr",
+      "aria-label": "Français",
+      "href": "",
+      "lang": "fr"
+    }
+  ],
+  "welcome_message": "<span class=\"small\">Hello, I'm Ewa and </span>I'll help you<br>build your<br><span class=\"accent\">website</span>",
+  "headers": [
+    "About me",
+    "Skills",
+    "Portfolio",
+    "Let's create something <span>together!</span>",
+    "Contact"
+  ],
+  "buttons": ["Contact Me", "Say Hello 🖐", "See More Projects"],
+  "about": "<p>Hey, I'm Ewa Majowska, a Front-End Developer based in&nbsp;Saint Leu, Réunion Island.</p><p>My passion for languages led me to graduate in&nbsp;English Philology and&nbsp;Japanese at&nbsp;Silesian University in&nbsp;Poland. Relocating to France motivated me to&nbsp;learn the local language and explore a new form of&nbsp;communication: the language of the&nbsp;web.</p><p>In my free time, I enjoy yoga, running, and some good brain puzzles, like board games with friends or escape rooms. My favorite way to relax, though, is digital painting while listening to a podcast!</p>",
+  "skills": "<p>From a young age, I&nbsp;was always drawn to both art and&nbsp;technology. I&nbsp;began with traditional drawing, transitioned to&nbsp;digital painting, and&nbsp;eventually found myself experimenting with&nbsp;design. As&nbsp;I&nbsp;progressed, I&nbsp;grew comfortable using tools such as&nbsp;Photoshop, Krita, and&nbsp;Figma.</p><p> Ultimately, my&nbsp;passion for&nbsp; languages, design, and&nbsp;technology all&nbsp;came together in&nbsp;one place: web development. But&nbsp;it&nbsp;doesn’t stop there — I’m&nbsp;always eager to&nbsp;pick up&nbsp;new skills!</p>",
+  "stt": {
+    "title": "Scroll to top",
+    "aria-label": "Scroll to top"
+  },
+  "my_photo": {
+    "alt": "This is me"
+  },
+  "portfolio_hheader": {
+    "aria-label": "Some of my CSS projects (30 days CSS challenge)"
+  },
+  "portfolio_list": [
+    "Project #1: the pyramide",
+    "Project #2: penrose triangle",
+    "Project #3: the watch face",
+    "Project #4: fitness tracker",
+    "Project #5: loading animation"
+  ],
+  "contact_data": {
+    "github": {
+      "aria-label": "Check out my github repositories"
+    },
+    "mail": {
+      "aria-label": "Send me a mail"
+    },
+    "phone": {
+      "aria-label": "Call me",
+      "href": "tel:+262692639837",
+      "innerHTML": "<svg class=\"icon\"><title>Phone</title><use href=\"./assets/svg/icons.svg#phone\"></use></svg>+262 692 63 98 37"
+    }
+  },
+  "challenge_gallery": {
+    "aria-label": "Gallery of 100... Sorry, 42 days CSS challenge"
+  },
+  "gallery_header": {
+    "aria-label": "100 days CSS challenge",
+    "innerHTML": "<span class=\"days\"><span class=\"num\">100<svg class=\"scribble\"><use href=\"./assets/svg/gallery/gallery-mozaic.svg#scribble\"></use></svg></span> Days</span><span class=\"accent\">CSS Challenge</span>"
+  },
+  "gallery_card_title": [
+    "100 days css",
+    "menu icons",
+    "the pyramide",
+    "loading",
+    "statistic",
+    "profile",
+    "notifications, search and menu",
+    "metaballs",
+    "rainy night",
+    "watch",
+    "walking boots",
+    "tooltip",
+    "user gallery",
+    "byciclopter",
+    "upload",
+    "blobby",
+    "penrose triangle",
+    "elastic",
+    "slider with radio buttons",
+    "send mail",
+    "pac-man",
+    "fitness tracker",
+    "animated typography",
+    "button",
+    "map marker",
+    "motivational modal",
+    "checklist",
+    "ring ring",
+    "search field",
+    "random line",
+    "pendulum wave",
+    "counter",
+    "sunny day",
+    "hello",
+    "loading circle",
+    "tabs",
+    "carousel",
+    "logo transition",
+    "menu toggle",
+    "gallery",
+    "error modal",
+    "stars"
+  ]
+}

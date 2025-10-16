@@ -1,0 +1,147 @@
+{
+  "html_lang": {
+    "lang": "fr"
+  },
+  "title": "Ewa Majowska | Développeuse Web Front-End",
+  "title_gallery": "100 Days CSS Challenge - Ewa Majowska | Développeuse Web Front-End",
+  "meta_title": { "content": "Ewa Majowska | Développeuse Web Front-End" },
+  "meta_description": {
+    "content": "Ewa Majowska | Développeuse Web Front-End à Saint-Leu. Pasionnée de web design et de dessin numerique."
+  },
+  "skip_nav_btn": "Aller au contenu principal",
+  "nav": {
+    "aria-label": "Menu de navigation principal"
+  },
+  "menu_link": ["à propos", "compétences", "portfolio", "contact"],
+  "menu_btn": {
+    "open": {
+      "aria-label": "Ouvrir le menu"
+    },
+    "close": {
+      "aria-label": "Fermer le menu"
+    }
+  },
+  "lang_nav": {
+    "aria-label": "Sélecteur de langue"
+  },
+  "lang_nav_btn": {
+    "open": {
+      "aria-label": "Ouvrir le sélecteur de langue"
+    },
+    "close": {
+      "aria-label": "Fermer le sélecteur de langue"
+    }
+  },
+  "lang_link": [
+    {
+      "innerHTML": "fr",
+      "aria-label": "Français",
+      "href": "",
+      "lang": "fr"
+    },
+    {
+      "innerHTML": "pl",
+      "aria-label": "Polski",
+      "href": "",
+      "lang": "pl"
+    },
+    {
+      "innerHTML": "en",
+      "aria-label": "English",
+      "href": "",
+      "lang": "en"
+    }
+  ],
+  "welcome_message": "<span class=\"small\">Salut, je suis Ewa et</span>Je vais créer<br>le site web<br><span class=\"accent\">de vos rêves</span>",
+  "headers": [
+    "À propos",
+    "Compétences",
+    "Portfolio",
+    "Donnons vie à votre site, <span>ensemble !</span>",
+    "Contact"
+  ],
+  "buttons": ["Contactez-moi", "Contactez-moi 🖐", "Voir plus de projets"],
+  "about": "<p>Je m'appelle Ewa Majowska, je&nbsp;suis Développeuse Front-End et&nbsp;je&nbsp;vis à&nbsp;Saint-Leu.</p><p>Passionnée par les langues, j'ai obtenu mon diplôme de&nbsp;Philologie Anglaise avec le&nbsp;Japonais à l’Université de&nbsp;Silésie en&nbsp;Pologne. En&nbsp;m'installant à&nbsp;la&nbsp;Réunion, j'ai été motivée à&nbsp;apprendre la&nbsp;langue locale et&nbsp;à&nbsp;explorer une&nbsp;nouvelle forme de&nbsp;communication : le&nbsp;langage du&nbsp;web.</p><p>Dans mon temps libre, j'aime faire du&nbsp;yoga, courir et&nbsp;tout ce qui est casse-tête, comme les&nbsp;jeux de&nbsp;société ou&nbsp;les&nbsp;escape games. Mais ce&nbsp;que je&nbsp;préfère pour décompresser, c'est de&nbsp;faire de&nbsp;la&nbsp;peinture digitale en&nbsp;écoutant un&nbsp;bon podcast !</p>",
+  "skills": "<p>Les activités créatives et&nbsp;le&nbsp;contact avec la&nbsp;technologie m'ont toujours apporté beaucoup de&nbsp;satisfaction depuis mon enfance. Tout a&nbsp;commencé avec le&nbsp;dessin, puis l'art digital, et&nbsp;finalement, je&nbsp;me&nbsp;suis lancée dans le&nbsp;web design. En&nbsp;chemin, je&nbsp;me&nbsp;suis familiarisée avec des&nbsp;outils comme Photoshop, Krita et&nbsp;Figma.</p><p>Toutes ces passions — les&nbsp;langues, le&nbsp;processus créatif, et&nbsp;la&nbsp;technologie — se&nbsp;sont retrouvées dans la&nbsp;création de&nbsp;sites web. Je&nbsp;suis toujours curieuse d'apprendre plus sur&nbsp;les&nbsp;nouvelles technologies !</p>",
+  "stt": {
+    "title": "Retour en haut de page",
+    "aria-label": "Retour en haut de page"
+  },
+  "my_photo": {
+    "alt": "C'est moi"
+  },
+  "portfolio_header": {
+    "aria-label": "Examples de mes projets en CSS (30 days CSS challenge)"
+  },
+  "portfolio_list": [
+    { "aria-label": "Projet #1 : la pyramide" },
+    { "aria-label": "Projet #2 : le triangle de Penrose" },
+    { "aria-label": "Projet #3 : le montre numerique" },
+    { "aria-label": "Projet #4 : le tracker d'activité" },
+    { "aria-label": "Projet #5 : l'animation de chargement" }
+  ],
+  "contact_data": [
+    {
+      "aria-label": "Découvrez mon code sur GitHub"
+    },
+    {
+      "aria-label": "Envoyez-moi un mail"
+    },
+    {
+      "aria-label": "Appelez-moi",
+      "href": "tel:+262692639837",
+      "innerHTML": "<svg class=\"icon\"><title>Phone</title><use href=\"./assets/svg/icons.svg#phone\"></use></svg>+262 692 63 98 37"
+    }
+  ],
+  "challenge_gallery": {
+    "aria-label": "Galerie de 100... Désolée, 42 jours de projets CSS (100 Days CSS Challenge)"
+  },
+  "gallery_header": {
+    "aria-label": "Galerie de 100 jours de projets CSS",
+    "innerHTML": "<span class=\"days\"><span class=\"num\">100<svg class=\"scribble\"><use href=\"./assets/svg/gallery/gallery-mozaic.svg#scribble\"></use></svg></span> Jours de</span><span class=\"accent\">Projets CSS</span>"
+  },
+  "gallery_card_title": [
+    "100 jours css",
+    "icônes de menu",
+    "la pyramide",
+    "chargement",
+    "statistique",
+    "profil",
+    "notifications, recherche et menu",
+    "métaballes",
+    "nuit pluvieuse",
+    "montre",
+    "chaussures de marche",
+    "infobulle",
+    "galerie utilisateur",
+    "byciclopter",
+    "télécharger",
+    "blobby",
+    "triangle de penrose",
+    "élastique",
+    "curseur avec boutons radio",
+    "envoyer mail",
+    "pac-man",
+    "traqueur de fitness",
+    "typographie animée",
+    "bouton",
+    "marqueur de carte",
+    "modale de motivation",
+    "liste de contrôle",
+    "ring ring",
+    "champ de recherche",
+    "dessin",
+    "pendule ondulant",
+    "compteur",
+    "jour ensoleillé",
+    "bonjour",
+    "cercle de chargement",
+    "onglets",
+    "carrousel",
+    "transition de logo",
+    "menu",
+    "galerie",
+    "modale d'erreur",
+    "étoiles"
+  ]
+}
