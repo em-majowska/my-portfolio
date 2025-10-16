@@ -26,7 +26,7 @@
   @include m.set-color-palette(
     '.portfolio-gallery__card',
     $color-palette-gallery,
-    true
+    '::after'
   );
 
   .portfolio-gallery {

@@ -17,7 +17,6 @@ $bg: hsl(45, 100%, 96%);
 
 html {
   box-sizing: border-box;
-  // min-height: 100%;
   overflow-y: scroll;
   scroll-behavior: smooth;
 
@@ -115,7 +114,7 @@ h4,
 
 h1 {
   font-weight: 400;
-  line-height: 1.35;
+  line-height: 1.2;
   font-size: clamp(2.5rem, 10vw, 96px);
 }
 
@@ -145,8 +144,7 @@ p,
 .about-me__text,
 .skills__text,
 .contact__metadata {
-  min-width: 25ch;
-  max-width: 70ch;
+  max-width: 55ch;
   overflow-wrap: break-word;
   text-wrap: pretty;
 
