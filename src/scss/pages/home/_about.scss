@@ -27,6 +27,10 @@
     margin: 0;
   }
 
+  div.about-me__container {
+    margin-block-start: 0px;
+  }
+
   &__frame {
     display: none;
   }

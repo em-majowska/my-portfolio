@@ -123,21 +123,21 @@
 					<!-- Mobile -->
 					<source media="(max-width: 769px)" srcset="
 					./assets/img/blob-mobile-342.webp 342w,
-					./assets/img/blob-mobile-390.webp 390w,
-					./assets/img/blob-mobile-420.webp 420w,
-					./assets/img/blob-mobile-450.webp 450w,
+					./assets/img/blob-mobile-380.webp 380w,
+					./assets/img/blob-mobile-410.webp 410w,
+					./assets/img/blob-mobile-440.webp 440w,
 					./assets/img/blob-mobile-470.webp 470w,
-					./assets/img/blob-mobile-500.webp 500w" type="image/webp" sizes="
-						(max-width: 769px) calc(100vw - 32px)">
+					./assets/img/blob-mobile-500.webp 500w" type="image/webp"
+						sizes="(min-width: 420px) calc(85vw - 32px), calc(20vw + 264px)">
 
 					<source media="(max-width: 769px)" srcset="
 					./assets/img/blob-mobile-342.png 342w,
-					./assets/img/blob-mobile-390.png 390w,
-					./assets/img/blob-mobile-420.png 420w,
-					./assets/img/blob-mobile-450.png 450w,
+					./assets/img/blob-mobile-380.png 380w,
+					./assets/img/blob-mobile-410.png 410w,
+					./assets/img/blob-mobile-440.png 440w,
 					./assets/img/blob-mobile-470.png 470w,
-					./assets/img/blob-mobile-500.png 500w" type="image/png" sizes="
-					(max-width: 769px) calc(100vw - 32px)">
+					./assets/img/blob-mobile-500.png 500w" type="image/png"
+						sizes="(min-width: 420px) calc(85vw - 32px), calc(20vw + 264px)">
 
 					<!-- Desktop -->
 					<source media="(min-width: 770px)" srcset="
@@ -146,18 +146,20 @@
 					./assets/img/blob-desktop-470.webp 470w,
 					./assets/img/blob-desktop-525.webp 525w,
 					./assets/img/blob-desktop-580.webp 580w,
-					./assets/img/blob-desktop-620.webp 620w
-					" type="image/webp" sizes="(max-width: 850px) 46vw, 620px">
+					./assets/img/blob-desktop-800.webp 800w
+					" type="image/webp"
+						sizes="(min-width: 1280px) 537px, (min-width: 860px) calc(39vw + 46px), (min-width: 780px) 342px">
 					<source media="(min-width: 770px)" srcset="
 					./assets/img/blob-desktop-342.png 342w,
 					./assets/img/blob-desktop-400.png 400w,
 					./assets/img/blob-desktop-470.png 470w,
 					./assets/img/blob-desktop-525.png 525w,
 					./assets/img/blob-desktop-580.png 580w,
-					./assets/img/blob-desktop-620.png 620w
-					" type="image/png" sizes="(max-width: 850px) 46vw, 620px">
-					<img id="heroImg" src="" data-src="./assets/img/blob-desktop-470.png" alt="" fetchpriority="high"
-						loading="eager" width="300" height="360">
+					./assets/img/blob-desktop-800.png 800w
+					" type="image/png"
+						sizes="(min-width: 1280px) 537px, (min-width: 860px) calc(39vw + 46px), (min-width: 780px) 342px">
+					<img id="heroImg" src="" data-src="./assets/img/blob-desktop-470.png" alt="" fetchpriority="high" loading="eager" width="300"
+						height="360">
 
 				</picture>
 				<svg class="outline" id="outline" viewBox="0 0 368 390" preserveAspectRatio="none" fill="none"
@@ -172,11 +174,9 @@
 						d="M34.05 292.561C41.3765 203.239 255.361 192.919 208.211 95.4746C161.062 -1.96935 313.293 27.9452 330.814 71.2541C348.336 114.563 309.976 110.058 318.893 153.835C328.869 202.807 315.985 290.285 256.274 312.919C196.564 335.553 26.7234 381.883 34.05 292.561Z" />
 				</svg>
 			</div>
-			<div class="lines">
-				<svg class="lines-svg" role="presentation">
-					<use xlink:href="./assets/svg/elements.svg#lines"></use>
-				</svg>
-			</div>
+			<svg class="lines" role="presentation" viewBox="0 0 375 85">
+				<use xlink:href="./assets/svg/elements.svg#lines"></use>
+			</svg>
 		</section>
 	</header>
 
