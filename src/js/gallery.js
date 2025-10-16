@@ -18,9 +18,10 @@ import {
 
 let jsModuleObserver;
 let lastCardObserver;
+let langData;
 
 document.addEventListener('DOMContentLoaded', async () => {
-  let langData = await translationSetup();
+  langData = await translationSetup();
   initNavToggle(isDesktop, langData);
   const animationObserver = initAnimationObserver();
   initCardModuleObserver();
@@ -129,7 +130,7 @@ async function loadCards() {
   lastCardIndex += cardsPerLoad;
   hasMore = lastCardIndex < cards.length;
 
-  window.scrollBy(0, -300);
+  window.scrollBy(0, -250);
 
   if (!hasMore) loader.style.display = 'none';
   loader.classList.toggle('show');
@@ -147,6 +148,11 @@ function createCard(card) {
   if (card.isAnimated) el.dataset.animated = true;
   if (card.isInteractive) el.classList.add('interact');
   if (card.JSModule) el.dataset.module = `card${day}`;
+
+  // Translate title if language is not English
+  if (langData.html_lang.lang !== 'en') {
+    card.title = langData.gallery_card_title[day - 1];
+  }
 
   el.innerHTML = `<div class="card__top">${card.content}</div>
         <div class="card__bar">

@@ -89,10 +89,58 @@
     "phone": {
       "aria-label": "Call me",
       "href": "tel:+262692639837",
-      "innerHTML": "+262 692 63 98 37"
+      "innerHTML": "<svg class=\"icon\"><title>Phone</title><use href=\"./assets/svg/icons.svg#phone\"></use></svg>+262 692 63 98 37"
     }
   },
   "challenge_gallery": {
     "aria-label": "Gallery of 100... Sorry, 42 days CSS challenge"
-  }
+  },
+  "gallery_header": {
+    "aria-label": "100 days CSS challenge",
+    "innerHTML": "<span class=\"days\"><span class=\"num\">100<svg class=\"scribble\"><use href=\"./assets/svg/gallery/gallery-mozaic.svg#scribble\"></use></svg></span> Days</span><span class=\"accent\">CSS Challenge</span>"
+  },
+  "gallery_card_title": [
+    "100 days css",
+    "menu icons",
+    "the pyramide",
+    "loading",
+    "statistic",
+    "profile",
+    "notifications, search and menu",
+    "metaballs",
+    "rainy night",
+    "watch",
+    "walking boots",
+    "tooltip",
+    "user gallery",
+    "byciclopter",
+    "upload",
+    "blobby",
+    "penrose triangle",
+    "elastic",
+    "slider with radio buttons",
+    "send mail",
+    "pac-man",
+    "fitness tracker",
+    "animated typography",
+    "button",
+    "map marker",
+    "motivational modal",
+    "checklist",
+    "ring ring",
+    "search field",
+    "random line",
+    "pendulum wave",
+    "counter",
+    "sunny day",
+    "hello",
+    "loading circle",
+    "tabs",
+    "carousel",
+    "logo transition",
+    "menu toggle",
+    "gallery",
+    "error modal",
+    "stars"
+  ]
 }

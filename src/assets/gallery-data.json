@@ -10,7 +10,7 @@
     },
     {
       "day": "2",
-      "title": "Menu icons",
+      "title": "menu icons",
       "isAnimated": false,
       "isInteractive": true,
       "JSModule": true,
@@ -18,7 +18,7 @@
     },
     {
       "day": "3",
-      "title": "The Pyramide",
+      "title": "the pyramide",
       "isAnimated": true,
       "isInteractive": false,
       "JSModule": false,
@@ -26,7 +26,7 @@
     },
     {
       "day": "4",
-      "title": "Loading",
+      "title": "loading",
       "isAnimated": true,
       "isInteractive": false,
       "JSModule": false,
@@ -34,7 +34,7 @@
     },
     {
       "day": "5",
-      "title": "Statistic",
+      "title": "statistic",
       "isAnimated": false,
       "isInteractive": false,
       "JSModule": false,
@@ -42,7 +42,7 @@
     },
     {
       "day": "6",
-      "title": "Profile",
+      "title": "profile",
       "isAnimated": false,
       "isInteractive": false,
       "JSModule": false,
@@ -50,7 +50,7 @@
     },
     {
       "day": "7",
-      "title": "Notifications, Search and Menu",
+      "title": "notifications, search and menu",
       "isAnimated": true,
       "isInteractive": true,
       "JSModule": true,
@@ -58,7 +58,7 @@
     },
     {
       "day": "8",
-      "title": "Metaballs",
+      "title": "metaballs",
       "isAnimated": true,
       "isInteractive": false,
       "JSModule": false,
@@ -66,7 +66,7 @@
     },
     {
       "day": "9",
-      "title": "Rainy night",
+      "title": "rainy night",
       "isAnimated": true,
       "isInteractive": false,
       "JSModule": true,
@@ -74,7 +74,7 @@
     },
     {
       "day": "10",
-      "title": "Watch",
+      "title": "watch",
       "isAnimated": false,
       "isInteractive": false,
       "JSModule": true,
@@ -82,7 +82,7 @@
     },
     {
       "day": "11",
-      "title": "Walking Boots",
+      "title": "walking boots",
       "isAnimated": true,
       "isInteractive": false,
       "content": "<div class=\"center\"><div class=\"left-shoe\"><div class=\"shoe\"></div></div><div class=\"right-shoe\"><div class=\"shoe\"></div></div></div><div class=\"floor\"></div>"
@@ -147,7 +147,7 @@
     },
     {
       "day": "20",
-      "title": "Send mail",
+      "title": "send mail",
       "isAnimated": false,
       "isInteractive": true,
       "JSModule": true,
@@ -224,7 +224,7 @@
     },
     {
       "day": "30",
-      "title": "elastic",
+      "title": "random line",
       "isAnimated": true,
       "isInteractive": false,
       "JSModule": true,
