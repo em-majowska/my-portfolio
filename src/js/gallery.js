@@ -13,6 +13,7 @@ import {
   spotlight,
   fetchGalleryData,
   translationSetup,
+  loadCatAnimation,
   menuBtn,
 } from './utils.js';
 
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Animate intersecting cards
   observeGalleryCards();
+  loadCatAnimation();
 });
 
 window.addEventListener('resize', () => {
