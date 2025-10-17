@@ -27,16 +27,12 @@ export function initNavToggle(isDesktop, langData) {
     menu.ariaExpanded = isOpen;
 
     if (isOpen) {
-      document.body.addEventListener('wheel', preventScroll, {
-        passive: false,
-      });
+      disableScroll();
       menuBtn.ariaLabel = langData.menu_btn.close['aria-label'];
       menu.style.display = 'block';
       overlay.addEventListener('click', toggleMenu, { once: true });
     } else {
-      document.body.removeEventListener('wheel', preventScroll, {
-        passive: false,
-      });
+      enableScroll();
       menuBtn.ariaLabel = langData.menu_btn.open['aria-label'];
 
       menu.addEventListener(
@@ -49,6 +45,25 @@ export function initNavToggle(isDesktop, langData) {
     }
   };
 
+  function preventBehavior(e) {
+    e.preventDefault();
+  }
+
+  function disableScroll() {
+    nav.addEventListener('touchmove', preventBehavior, false);
+
+    document.body.addEventListener('wheel', preventScroll, {
+      passive: false,
+    });
+  }
+
+  function enableScroll() {
+    nav.removeEventListener('touchmove', preventBehavior, false);
+
+    document.body.removeEventListener('wheel', preventScroll, {
+      passive: false,
+    });
+  }
   showMenu(isDesktop);
   menuBtn.addEventListener('click', toggleMenu);
   menuLinks.forEach((link) =>
