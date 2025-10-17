@@ -21,8 +21,12 @@
     "@babel/core": "^7.28.0",
     "@babel/plugin-transform-runtime": "^7.28.3",
     "@babel/preset-env": "^7.28.0",
-    "@babel/runtime": "^7.28.3",
+    "@babel/runtime": "^7.28.4",
     "@eslint/js": "^9.33.0",
+    "@rollup/plugin-babel": "^6.1.0",
+    "@rollup/plugin-commonjs": "^28.0.8",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^0.4.4",
     "browser-sync": "^3.0.4",
     "cross-env": "^7.0.3",
     "cssnano": "^7.1.0",
@@ -38,6 +42,7 @@
     "gulp-noop": "^1.0.1",
     "gulp-postcss": "^10.0.0",
     "gulp-replace": "^1.1.4",
+    "gulp-rollup": "^2.17.0",
     "gulp-sass": "^6.0.1",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
@@ -46,16 +51,16 @@
     "png-to-ico": "^2.1.8",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
+    "rollup": "^4.52.4",
+    "rollup-plugin-copy": "^3.5.0",
     "sass": "^1.90.0"
   },
   "dependencies": {
     "@lottiefiles/dotlottie-web": "^0.41.0",
     "autoprefixer": "^10.4.21",
     "core-js": "^3.45.0",
-    "core-js-bundle": "^3.45.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^11.0.1",
-    "regenerator-runtime": "^0.14.1",
     "uuid": "^11.1.0"
   },
   "browserslist": [
@@ -66,17 +71,21 @@
       [
         "@babel/preset-env",
         {
-          "corejs": "3.45",
+          "targets": "> 0.25%, not dead",
+          "useBuiltIns": "usage",
+          "corejs": "3",
           "modules": false,
-          "bugfixes": true,
-          "exclude": [
-            "@babel/plugin-transform-function-name"
-          ]
+          "bugfixes": true
         }
       ]
     ],
     "plugins": [
-      "@babel/plugin-transform-runtime"
+      [
+        "@babel/plugin-transform-runtime",
+        {
+          "useESModules": true
+        }
+      ]
     ]
   }
 }

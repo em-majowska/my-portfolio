@@ -1,4 +1,6 @@
 import gulp from 'gulp';
+import { rollup } from 'rollup';
+import rollupConfig from './rollup.config.mjs';
 import { deleteAsync } from 'del';
 import htmlmin from 'gulp-htmlmin';
 import gulpSass from 'gulp-sass';
@@ -8,9 +10,7 @@ import postcss from 'gulp-postcss';
 import cssnano from 'cssnano';
 import sourcemaps from 'gulp-sourcemaps';
 import replace from 'gulp-replace';
-import babel from 'gulp-babel';
 import eslint from 'gulp-eslint-new';
-import uglify from 'gulp-uglify';
 import ghpages from 'gh-pages';
 import { promisify } from 'util';
 import browserSync from 'browser-sync';
@@ -71,29 +71,33 @@ function html() {
 
 /* Styles */
 function styles() {
-  return (
-    gulp
-      .src(paths.styles)
-      // .pipe(isProd ? noop() : sourcemaps.init())
-      .pipe(sassCompiler().on('error', sassCompiler.logError))
-      .pipe(postcss(isProd ? plugins.prod : plugins.dev))
-      .pipe(replace('../../assets', '../assets'))
-      // .pipe(isProd ? noop() : sourcemaps.write('.'))
-      .pipe(gulp.dest('dist/css'))
-  );
+  return gulp
+    .src(paths.styles)
+    .pipe(isProd ? noop() : sourcemaps.init())
+    .pipe(sassCompiler().on('error', sassCompiler.logError))
+    .pipe(postcss(isProd ? plugins.prod : plugins.dev))
+    .pipe(replace('../../assets', '../assets'))
+    .pipe(isProd ? noop() : sourcemaps.write('.'))
+    .pipe(gulp.dest('dist/css'));
 }
 
 /* Scripts */
-function scripts() {
+
+function lintScripts() {
   return gulp
     .src(paths.scripts)
     .pipe(eslint())
     .pipe(eslint.format())
-    .pipe(eslint.failAfterError())
-    .pipe(babel())
-    .pipe(isProd ? uglify() : gulp.dest('dist/js'))
-    .pipe(gulp.dest('dist/js'));
+    .pipe(eslint.failAfterError());
 }
+
+async function bundleScripts() {
+  const bundle = await rollup(rollupConfig);
+  await bundle.write(rollupConfig.output);
+  await bundle.close();
+}
+
+const scripts = gulp.series(lintScripts, bundleScripts);
 
 /* Assets */
 function copy() {
