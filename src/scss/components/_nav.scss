@@ -200,7 +200,6 @@
   --third-icon-closed: translate(calc(-2 * var(--icon-offset)), 0);
 
   @include m.flex-container(null, center, null);
-  // width: 100%;
   height: fit-content;
   padding-block: 1rem;
   cursor: pointer;
@@ -230,6 +229,7 @@
   &__btn {
     position: relative;
     fill: var(--text);
+    transform: translateX(-1px);
     z-index: 4;
 
     &:is(:focus-visible, :hover, :focus-within) {
