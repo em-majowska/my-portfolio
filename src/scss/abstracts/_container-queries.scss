@@ -194,7 +194,7 @@ footer {
         }
       }
 
-      .lines {
+      .lines:not(.gallery__lines) {
         display: none;
       }
     }
@@ -217,7 +217,7 @@ footer {
   body {
     .nav {
       min-width: fit-content;
-      max-height: 94px;
+      // max-height: 94px;
       padding-inline: 1rem;
       align-items: flex-end;
 

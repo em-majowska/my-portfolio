@@ -147,9 +147,9 @@
     overflow-y: clip;
     overflow-x: visible;
 
-    .lines-svg {
+    .lines {
       position: absolute;
-      width: 150%;
+      width: 160%;
       aspect-ratio: 15 / 3;
 
       transform-origin: bottom left;
@@ -402,7 +402,7 @@
   animation: quarter-grow 2s ease-in-out forwards;
 }
 
-.lines-svg {
+.lines {
   animation: lines-animation 5s cubic-bezier(0.61, 1, 0.87, 1) forwards;
 }
 
