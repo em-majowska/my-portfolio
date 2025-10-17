@@ -1,1 +1,29 @@
-function initCard42(t){var a;function o(){return Math.floor(250*Math.random())+"px"}t.classList.contains("initialized")||(t.classList.add("initialized"),a=Array.from(t.querySelectorAll(".star42")),t=Array.from(t.querySelectorAll(".shooting-star")),a.forEach(t=>{t.style.top=o(),t.style.left=o(),t.style.animationDelay=(6*Math.random()).toFixed(1)+"s"}),t.forEach(t=>{t.style.top=Math.floor(200*Math.random())+"px",t.style.animationDelay=Math.floor(25*Math.random())+"s"}))}export{initCard42};
+'use strict';
+
+export function initCard42(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+
+  const stars42 = Array.from(card.querySelectorAll('.star42'));
+  const shootingStars = Array.from(card.querySelectorAll('.shooting-star'));
+
+  stars42.forEach((star) => {
+    star.style.top = randomNum();
+    star.style.left = randomNum();
+    star.style.animationDelay = randomDelay();
+  });
+
+  shootingStars.forEach((star) => {
+    star.style.top = Math.floor(Math.random() * 200) + 'px';
+    star.style.animationDelay = Math.floor(Math.random() * 25) + 's';
+  });
+
+  function randomDelay() {
+    let num = (Math.random() * 6).toFixed(1) + 's';
+    return num;
+  }
+  function randomNum() {
+    let number = Math.floor(Math.random() * 250) + 'px';
+    return number;
+  }
+}

@@ -1,1 +1,70 @@
-function initCard15(l){if(!l.classList.contains("initialized")){l.classList.add("initialized");let n=document.getElementById("drop-zone"),t=document.querySelector(".file-name"),a=document.querySelector(".cloud-icon"),e=document.querySelector(".loading-icon"),r=document.querySelector(".done-icon"),i=document.querySelector(".loading-bar"),o=document.querySelector(".upload-btn");document.querySelector("#upload-file").addEventListener("click",e=>{}),n.addEventListener("drag dragstart dragend dragover dragenter dragleave drop",e=>{e.preventDefault()}),n.addEventListener("dragover",e=>{e.preventDefault(),n.style.backgroundColor="hsl(0, 0.00%, 29.40%)"}),n.addEventListener("dragleave",e=>{n.style.backgroundColor="transparent"});let d=!1;n.addEventListener("change",e=>{n.style.backgroundColor="transparent",a.style.display="none",e.target.files[0]&&[...e.target.files].forEach((e,n)=>{t.innerHTML=""+e.name,d=!0})}),o.addEventListener("click",function(){"Done"!==o.innerHTML&&(d?(n.style.display="none",o.innerHTML="Uploading...",e.style.opacity="0.5",e.classList.add("animation"),i.classList.add("animation"),setTimeout(()=>{e.style.opacity="0",r.style.opacity="0.5",o.innerHTML="Done"},4e3)):(a.style.display="none",t.innerHTML="Drop a file first!"))})}}export{initCard15};
+'use strict';
+
+export function initCard15(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+
+  const dropZone = document.getElementById('drop-zone');
+  const fileName = document.querySelector('.file-name');
+  const cloud = document.querySelector('.cloud-icon');
+  const loading = document.querySelector('.loading-icon');
+  const done = document.querySelector('.done-icon');
+  const loadingBar = document.querySelector('.loading-bar');
+  const uploadBtn = document.querySelector('.upload-btn');
+  const uploadInput = document.querySelector('#upload-file');
+
+  uploadInput.addEventListener('click', (e) => {
+    // e.preventDefault();
+  });
+  dropZone.addEventListener(
+    'drag dragstart dragend dragover dragenter dragleave drop',
+    (e) => {
+      e.preventDefault();
+    }
+  );
+
+  dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropZone.style.backgroundColor = 'hsl(0, 0.00%, 29.40%)';
+  });
+
+  dropZone.addEventListener('dragleave', (e) => {
+    dropZone.style.backgroundColor = 'transparent';
+  });
+
+  let isDropped = false;
+
+  dropZone.addEventListener('change', (e) => {
+    dropZone.style.backgroundColor = 'transparent';
+    cloud.style.display = 'none';
+
+    if (e.target.files[0]) {
+      [...e.target.files].forEach((file, i) => {
+        fileName.innerHTML = `${file.name}`;
+        isDropped = true;
+      });
+    }
+  });
+
+  uploadBtn.addEventListener('click', uploadFiles);
+
+  function uploadFiles() {
+    if (uploadBtn.innerHTML === 'Done') {
+      return;
+    } else if (isDropped) {
+      dropZone.style.display = 'none';
+      uploadBtn.innerHTML = 'Uploading...';
+      loading.style.opacity = '0.5';
+      loading.classList.add('animation');
+      loadingBar.classList.add('animation');
+      setTimeout(() => {
+        loading.style.opacity = '0';
+        done.style.opacity = '0.5';
+        uploadBtn.innerHTML = 'Done';
+      }, 4000);
+    } else {
+      cloud.style.display = 'none';
+      fileName.innerHTML = 'Drop a file first!';
+    }
+  }
+}

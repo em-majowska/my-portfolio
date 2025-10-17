@@ -1,1 +1,29 @@
-function initCard34(s){if(!s.classList.contains("initialized")){s.classList.add("initialized");let t=s.querySelector(".btn--reset"),i=s.querySelector(".overlay");var e=s.querySelector(".a3");t.addEventListener("click",function(e){s.focus(),t.tabIndex="-1",s.classList.add("reset"),s.offsetHeight,s.classList.remove("reset"),t.classList.remove("active"),i.classList.remove("active")}),e.addEventListener("animationend",()=>{t.tabIndex="0",t.classList.add("active"),i.classList.add("active")})}}export{initCard34};
+'use strict';
+
+export function initCard34(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+
+  const resetBtn = card.querySelector('.btn--reset');
+  const overlay = card.querySelector('.overlay');
+  const longestAnimationEl = card.querySelector('.a3');
+
+  resetBtn.addEventListener('click', resetAnimation);
+
+  function resetAnimation(e) {
+    card.focus();
+    resetBtn.tabIndex = '-1';
+    card.classList.add('reset');
+    card.offsetHeight;
+    card.classList.remove('reset');
+
+    resetBtn.classList.remove('active');
+    overlay.classList.remove('active');
+  }
+
+  longestAnimationEl.addEventListener('animationend', () => {
+    resetBtn.tabIndex = '0';
+    resetBtn.classList.add('active');
+    overlay.classList.add('active');
+  });
+}

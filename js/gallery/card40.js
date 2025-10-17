@@ -1,1 +1,42 @@
-function initCard40(t){if(!t.classList.contains("initialized")){t.classList.add("initialized");let i=Array.from(t.querySelectorAll("button")),a=!1;for(let s of i)s.addEventListener("click",t=>{a=a?(s.classList.remove("open"),i.forEach(t=>{s!==t&&(t.classList.remove("off"),t.tabIndex="0")}),setTimeout(()=>{s.classList.remove("ontop")},500),!1):(s.classList.add("open"),s.classList.add("ontop"),i.forEach(t=>{s!==t&&(t.classList.add("off"),t.tabIndex="-1")}),!0)})}}export{initCard40};
+'use strict';
+
+export function initCard40(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+
+  const gallery = Array.from(card.querySelectorAll('button'));
+
+  let isOpen = false;
+
+  for (let img of gallery) {
+    img.addEventListener('click', (e) => {
+      if (!isOpen) {
+        img.classList.add('open');
+        img.classList.add('ontop');
+
+        gallery.forEach((el) => {
+          if (img !== el) {
+            el.classList.add('off');
+            el.tabIndex = '-1';
+          }
+        });
+
+        isOpen = true;
+      } else {
+        img.classList.remove('open');
+        gallery.forEach((el) => {
+          if (img !== el) {
+            el.classList.remove('off');
+            el.tabIndex = '0';
+          }
+        });
+
+        setTimeout(() => {
+          img.classList.remove('ontop');
+        }, 500);
+
+        isOpen = false;
+      }
+    });
+  }
+}

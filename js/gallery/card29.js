@@ -1,1 +1,44 @@
-function initCard29(t){if(!t.classList.contains("initialized")){t.classList.add("initialized");var a=t.querySelector("#search-bar-input");let e=t.querySelectorAll(".active-search"),i=t.querySelector(".accordeon"),n=[];function s(){i.style.display="block",e.forEach(e=>{e.innerHTML=n.join("")})}n||(i.style.display="none"),a.addEventListener("keypress",e=>{let i=e.key;"Enter"===i&&(i=""),n.push(i),s()}),a.addEventListener("keydown",e=>{"Backspace"===e.key&&(n=n.slice(0,-1)),s(),0===n.length&&(i.style.display="none")})}}export{initCard29};
+'use strict';
+
+export function initCard29(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+
+  const searchBar = card.querySelector('#search-bar-input');
+  const activeSearch = card.querySelectorAll('.active-search');
+  const accordeon = card.querySelector('.accordeon');
+
+  let text = [];
+
+  if (!text) {
+    accordeon.style.display = 'none';
+  }
+
+  searchBar.addEventListener('keypress', (event) => {
+    let key = event.key;
+    if (key === 'Enter') key = '';
+    text.push(key);
+
+    changeSuggestions();
+  });
+
+  searchBar.addEventListener('keydown', (event) => {
+    let key = event.key;
+
+    if (key === 'Backspace') {
+      text = text.slice(0, -1);
+    }
+    changeSuggestions();
+
+    if (text.length === 0) {
+      accordeon.style.display = 'none';
+    }
+  });
+
+  function changeSuggestions() {
+    accordeon.style.display = 'block';
+    activeSearch.forEach((span) => {
+      span.innerHTML = text.join('');
+    });
+  }
+}

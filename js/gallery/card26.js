@@ -1,1 +1,41 @@
-function initCard26(i){if(!i.classList.contains("initialized")){i.classList.add("initialized");let t=i.querySelector("#card"),e=i.querySelectorAll(".content");i=i.querySelector("#next-btn");e.forEach((t,e)=>{0===e&&(t.style.opacity="1")}),i.addEventListener("click",function(){t.classList.add("disappear"),setTimeout(()=>{for(let t=0;t<e.length;t++)if("1"===e[t].style.opacity){if(t===e.length-1){e[e.length-1].style.opacity="0",e[0].style.opacity="1";break}e[t].style.opacity="0",e[t+1].style.opacity="1";break}t.classList.remove("disappear")},500)})}}export{initCard26};
+'use strict';
+
+export function initCard26(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+
+  const card26 = card.querySelector('#card');
+  const messages = card.querySelectorAll('.content');
+  const nextBtn = card.querySelector('#next-btn');
+  setDefault();
+
+  nextBtn.addEventListener('click', next);
+
+  function setDefault() {
+    messages.forEach((message, i) => {
+      if (i === 0) {
+        message.style.opacity = '1';
+      }
+    });
+  }
+
+  function next() {
+    card26.classList.add('disappear');
+    setTimeout(() => {
+      for (let i = 0; i < messages.length; i++) {
+        if (messages[i].style.opacity === '1') {
+          if (i === messages.length - 1) {
+            messages[messages.length - 1].style.opacity = '0';
+            messages[0].style.opacity = '1';
+            break;
+          } else {
+            messages[i].style.opacity = '0';
+            messages[i + 1].style.opacity = '1';
+            break;
+          }
+        }
+      }
+      card26.classList.remove('disappear');
+    }, 500);
+  }
+}

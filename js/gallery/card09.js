@@ -1,1 +1,20 @@
-function initCard09(l){var e,i;l.classList.contains("initialized")||(l.classList.add("initialized"),e=l.querySelectorAll(".big"),i=l.querySelectorAll(".mid"),l=l.querySelectorAll(".small"),e.forEach((l,e)=>{l.style.left=30*(e+1)+"px"}),i.forEach((l,e)=>{l.style.left=40.5*(e+1)+"px"}),l.forEach((l,e)=>{l.style.left=75.5*(e+1)+"px"}))}export{initCard09};
+'use strict';
+
+export function initCard09(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+
+  const bigDrop = card.querySelectorAll('.big');
+  const midDrop = card.querySelectorAll('.mid');
+  const smallDrop = card.querySelectorAll('.small');
+
+  bigDrop.forEach((drop, i) => {
+    drop.style.left = (i + 1) * 30 + 'px';
+  });
+  midDrop.forEach((drop, i) => {
+    drop.style.left = (i + 1) * 40.5 + 'px';
+  });
+  smallDrop.forEach((drop, i) => {
+    drop.style.left = (i + 1) * 75.5 + 'px';
+  });
+}

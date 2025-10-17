@@ -1,1 +1,34 @@
-function initCard36(i){if(!i.classList.contains("initialized")){i.classList.add("initialized");let e=i.querySelectorAll(".btn"),s=i.querySelectorAll(".content");for(var t of e)t.addEventListener("click",a);function a(t){if("search"!==t.target.id){var i,a=Array.from(s).find(i=>i.classList.contains(t.target.id));for(i of e)i.classList.remove("active");t.target.classList.add("active"),s.forEach(i=>{i.classList.remove("active")}),a.classList.add("active")}}}}export{initCard36};
+'use strict';
+
+export function initCard36(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+
+  const btns = card.querySelectorAll('.btn');
+  const content = card.querySelectorAll('.content');
+
+  for (let button of btns) {
+    button.addEventListener('click', changeTab);
+  }
+
+  function changeTab(e) {
+    if (e.target.id === 'search') {
+      return;
+    }
+    const section = Array.from(content).find((section) =>
+      section.classList.contains(e.target.id)
+    );
+
+    for (let button of btns) {
+      button.classList.remove('active');
+    }
+
+    e.target.classList.add('active');
+
+    content.forEach((section) => {
+      section.classList.remove('active');
+    });
+
+    section.classList.add('active');
+  }
+}

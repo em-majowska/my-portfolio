@@ -1,1 +1,26 @@
-function initCard02(e){if(!e.classList.contains("initialized")){e.classList.add("initialized");var t=e.querySelector(".center");let i=e.querySelectorAll(".line"),s=!1;t.addEventListener("click",e=>{e.stopPropagation(),s?i.forEach(e=>e.classList.replace("open","closed")):i.forEach(e=>{e.classList.remove("closed"),e.classList.add("open")}),s=!s})}}export{initCard02};
+'use strict';
+
+export function initCard02(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+
+  const burgerBtn = card.querySelector('.center');
+  const line = card.querySelectorAll('.line');
+
+  let isOpen = false;
+
+  burgerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+
+    if (!isOpen) {
+      line.forEach((el) => {
+        el.classList.remove('closed');
+        el.classList.add('open');
+      });
+    } else {
+      line.forEach((el) => el.classList.replace('open', 'closed'));
+    }
+
+    isOpen = !isOpen;
+  });
+}

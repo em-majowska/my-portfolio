@@ -1,1 +1,32 @@
-function initCard13(l){if(!l.classList.contains("initialized")){l.classList.add("initialized");let e=l.querySelector(".cta.close"),t=Array.from(l.querySelectorAll(".gallery__overlay")),r=l.querySelector("#profile"),a=Array.from(l.querySelector(".buttons").querySelectorAll("button")),i=!1;function n(){r.classList.toggle("open"),i?(t.forEach(e=>e.tabIndex="0"),a.forEach(e=>e.tabIndex="-1"),e.tabIndex="-1"):(t.forEach(e=>e.tabIndex="-1"),a.forEach(e=>e.tabIndex="0"),e.tabIndex="0"),i=!i}t.forEach(e=>e.addEventListener("click",n)),e.addEventListener("click",n)}}export{initCard13};
+'use strict';
+
+export function initCard13(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+
+  const closeBtn = card.querySelector('.cta.close');
+  const openBtns = Array.from(card.querySelectorAll('.gallery__overlay'));
+  const profile = card.querySelector('#profile');
+  const ctaBtns = Array.from(
+    card.querySelector('.buttons').querySelectorAll('button')
+  );
+  let isOpen = false;
+
+  openBtns.forEach((btn) => btn.addEventListener('click', toggle));
+  closeBtn.addEventListener('click', toggle);
+
+  function toggle() {
+    profile.classList.toggle('open');
+
+    if (!isOpen) {
+      openBtns.forEach((btn) => (btn.tabIndex = '-1'));
+      ctaBtns.forEach((btn) => (btn.tabIndex = '0'));
+      closeBtn.tabIndex = '0';
+    } else {
+      openBtns.forEach((btn) => (btn.tabIndex = '0'));
+      ctaBtns.forEach((btn) => (btn.tabIndex = '-1'));
+      closeBtn.tabIndex = '-1';
+    }
+    isOpen = !isOpen;
+  }
+}

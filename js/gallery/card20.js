@@ -1,1 +1,32 @@
-function initCard20(n){if(!n.classList.contains("initialized")){n.classList.add("initialized");var a=n.querySelector(".send-btn");let e=n.querySelector(".reset-btn"),i=!1,t;a.addEventListener("click",function(){i?(clearInterval(t),n.classList.remove("animate"),e.innerHTML="SEND MAIL"):(n.classList.add("animate"),t=setInterval(()=>{e.innerHTML="RESET"},3800));i=!i})}}export{initCard20};
+'use strict';
+
+export function initCard20(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+
+  const sendBtn = card.querySelector('.send-btn');
+  const resetBtn = card.querySelector('.reset-btn');
+
+  let isSent = false;
+  let intervalId;
+
+  sendBtn.addEventListener('click', sendMail);
+
+  function sendMail() {
+    if (!isSent) {
+      card.classList.add('animate');
+
+      intervalId = setInterval(() => {
+        resetBtn.innerHTML = 'RESET';
+      }, 3800);
+    } else {
+      clearInterval(intervalId);
+
+      card.classList.remove('animate');
+
+      resetBtn.innerHTML = 'SEND MAIL';
+    }
+
+    isSent = !isSent;
+  }
+}

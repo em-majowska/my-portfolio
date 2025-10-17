@@ -1,1 +1,34 @@
-function initCard38(n){if(!n.classList.contains("initialized")){n.classList.add("initialized");let e=n.querySelector("#logo"),t=n.querySelector("#logo2"),i=!1;n.addEventListener("click",()=>{((i=!i)?(e.tabIndex="-1",t.tabIndex="0",t):(e.tabIndex="0",t.tabIndex="-1",e)).focus(),e.classList.toggle("animate"),t.classList.toggle("animate")}),e.addEventListener("keypress",e=>{"Enter"===e.key&&n.click()}),t.addEventListener("keypress",e=>{"Enter"===e.key&&n.click()})}}export{initCard38};
+'use strict';
+
+export function initCard38(card) {
+  if (card.classList.contains('initialized')) return;
+  card.classList.add('initialized');
+
+  const logo = card.querySelector('#logo');
+  const logo2 = card.querySelector('#logo2');
+  let isSwitched = false;
+
+  card.addEventListener('click', () => {
+    isSwitched = !isSwitched;
+
+    if (isSwitched) {
+      logo.tabIndex = '-1';
+      logo2.tabIndex = '0';
+      logo2.focus();
+    } else {
+      logo.tabIndex = '0';
+      logo2.tabIndex = '-1';
+      logo.focus();
+    }
+
+    logo.classList.toggle('animate');
+    logo2.classList.toggle('animate');
+  });
+
+  logo.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') card.click();
+  });
+  logo2.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') card.click();
+  });
+}
