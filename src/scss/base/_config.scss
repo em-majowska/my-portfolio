@@ -15,6 +15,13 @@ $bg: hsl(45, 100%, 96%);
   box-sizing: inherit;
 }
 
+html,
+body {
+  overflow-x: clip;
+  width: 100%;
+  min-height: 100%;
+}
+
 html {
   box-sizing: border-box;
   overflow-y: scroll;
@@ -31,18 +38,11 @@ html {
 }
 
 body {
-  overflow-x: clip;
   font-family: var(--main-font);
   line-height: 1.5;
   color: var(--text);
 
   @include m.outline-theme($bg);
-}
-
-html,
-body {
-  overflow-x: clip;
-  height: 100%;
 }
 
 img {
@@ -217,9 +217,3 @@ footer ::selection {
     pointer-events: auto;
   }
 }
-
-// PREVENT SCROLLING
-// .stop-scrolling {
-// height: 100%;
-// overflow: hidden;
-// }
