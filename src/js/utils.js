@@ -80,20 +80,7 @@ export function initAnimationObserver() {
             entry.target.classList.contains('contact') &&
             entry.isIntersecting
           ) {
-            const script = document.createElement('script');
-            script.src =
-              'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js';
-            script.onload = () => {
-              bodymovin.loadAnimation({
-                container: document.getElementById('cat-animation'),
-                path: './assets/cat-animation.json',
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                name: 'cat animation',
-              });
-            };
-            document.body.appendChild(script);
+            loadCatAnimation();
           }
           observer.unobserve(entry.target);
 
@@ -106,6 +93,23 @@ export function initAnimationObserver() {
     );
   }
   return animationObserver;
+}
+/* Cat Animation */
+export function loadCatAnimation() {
+  const script = document.createElement('script');
+  script.src =
+    'https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js';
+  script.onload = () => {
+    bodymovin.loadAnimation({
+      container: document.getElementById('cat-animation'),
+      path: './assets/cat-animation.json',
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      name: 'cat animation',
+    });
+  };
+  document.body.appendChild(script);
 }
 
 /* Scroll to top */
