@@ -17,8 +17,10 @@ import {
 } from './utils.js';
 import { initCard10 } from './gallery/card10.js';
 
+let langData;
+
 document.addEventListener('DOMContentLoaded', async () => {
-  let langData = await translationSetup(isDesktop);
+  langData = await translationSetup(isDesktop);
   initNavToggle(isDesktop, langData);
   updateHero();
 
@@ -60,7 +62,8 @@ const paths = {
 window.addEventListener('resize', () => {
   updateHero();
   showMenu(isDesktop);
-  setupLangNavEvents();
+  setupLangNavEvents(langData);
+  cacheImages();
 });
 
 window.onscroll = function () {
@@ -128,10 +131,13 @@ window.onscroll = function () {
 
 /* Cache API for images */
 
+const CACHE_LIFETIME = 259200000; // 3 days
+
 if ('caches' in window) {
   cacheImages();
+
   document.querySelectorAll('img[data-src]').forEach(async (img) => {
-    img.src = await getImageFromCache(img.dataset.src);
+    img.src = await getDataFromCache(img.dataset.src, 'image');
   });
 } else {
   console.log('Cache API not supported in this browser.');
@@ -148,8 +154,15 @@ async function cacheImages() {
     // Fetch and cache each image
     await Promise.all(
       imgSources.map(async (imgSource) => {
-        const response = await fetch(imgSource);
-        await cache.put(imgSource, response);
+        const timestampKey = `cache-timestamp-${imgSource}`;
+        const lastCached = localStorage.getItem(timestampKey);
+        const now = Date.now();
+
+        if (!lastCached || now - lastCached > CACHE_LIFETIME) {
+          const response = await fetch(imgSource);
+          await cache.put(imgSource, response);
+          localStorage.setItem(timestampKey, now);
+        }
       })
     );
     // console.log('Images cached successfully');
@@ -158,21 +171,18 @@ async function cacheImages() {
   }
 }
 
-// Retrieve image from cache or fetch if not present
-async function getImageFromCache(imgSource) {
-  try {
-    const cache = await caches.open('image-cache');
-    const cachedResponse = await cache.match(imgSource);
+// Retrieve data from cache or fetch if not present
 
-    if (cachedResponse) {
-      return cachedResponse;
-    } else {
-      const response = await fetch(imgSource);
-      await cache.put(imgSource, response.clone());
-      return response;
-    }
-  } catch (err) {
-    console.log('Error retrieving image from cache:', err);
-    return fetch(imgSource);
+async function getDataFromCache(data, type) {
+  const cache = await caches.open(`${type}-cache`);
+
+  const cachedResponse = await cache.match(data);
+
+  if (cachedResponse) {
+    return cachedResponse;
+  } else {
+    const response = await fetch(data);
+    await cache.put(data, response.clone());
+    return response;
   }
 }

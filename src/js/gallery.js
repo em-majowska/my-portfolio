@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 window.addEventListener('resize', () => {
   showMenu(isDesktop);
-  setupLangNavEvents();
+  setupLangNavEvents(langData);
 });
 
 window.onscroll = function () {
