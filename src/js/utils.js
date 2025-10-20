@@ -222,8 +222,21 @@ export function setupLangNavEvents(langData) {
 }
 
 export async function translationSetup() {
-  const userPreferredLang = localStorage.getItem('language') || 'en';
+  const userPreferredLang = localStorage.getItem('language') || detectLang();
   let langData = await fetchLangData(userPreferredLang);
+
+  // Detect the navigators language
+  function detectLang() {
+    const avaiableLanguages = ['en', 'fr', 'pl'];
+    const userLang =
+      navigator.language.length > 2
+        ? navigator.language.slice(0, 2)
+        : navigator.language;
+
+    if (avaiableLanguages.includes(userLang)) {
+      return userLang;
+    }
+  }
 
   // Fetch language JSON data
   async function fetchLangData(langCode) {
