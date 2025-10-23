@@ -6,7 +6,7 @@
   "title_gallery": "100 Days CSS Challenge - Ewa Majowska | Développeuse Web Front-End",
   "meta_title": { "content": "Ewa Majowska | Développeuse Web Front-End" },
   "meta_description": {
-    "content": "Ewa Majowska | Développeuse Web Front-End à Saint-Leu. Pasionnée de web design et de dessin numerique."
+    "content": "Ewa Majowska | Développeuse Web Front-End à Saint-Leu. Passionnée de web design et de dessin numérique."
   },
   "skip_nav_btn": "Aller au contenu principal",
   "nav": {
@@ -22,7 +22,7 @@
     }
   },
   "lang_nav": {
-    "aria-label": "Sélecteur de langue"
+    "aria-label": "Sélection de la langue"
   },
   "lang_nav_btn": {
     "open": {
@@ -52,7 +52,7 @@
       "lang": "en"
     }
   ],
-  "welcome_message": "<span class=\"small\">Salut, je suis Ewa et</span>Je vais créer<br>le site web<br><span class=\"accent\">de vos rêves</span>",
+  "welcome_message": "<span class=\"small\">Salut, moi c'est Ewa et</span>Je vais créer<br>le site web<br><span class=\"accent\">de vos rêves</span>",
   "headers": [
     "À propos",
     "Compétences",
@@ -61,8 +61,8 @@
     "Contact"
   ],
   "buttons": ["Contactez-moi", "Contactez-moi 🖐", "Voir plus de projets"],
-  "about": "<p>Je m'appelle Ewa Majowska, je&nbsp;suis Développeuse Front-End et&nbsp;je&nbsp;vis à&nbsp;Saint-Leu.</p><p>Passionnée par les langues, j'ai obtenu mon diplôme de&nbsp;Philologie Anglaise avec le&nbsp;Japonais à l’Université de&nbsp;Silésie en&nbsp;Pologne. En&nbsp;m'installant à&nbsp;la&nbsp;Réunion, j'ai été motivée à&nbsp;apprendre la&nbsp;langue locale et&nbsp;à&nbsp;explorer une&nbsp;nouvelle forme de&nbsp;communication : le&nbsp;langage du&nbsp;web.</p><p>Dans mon temps libre, j'aime faire du&nbsp;yoga, courir et&nbsp;tout ce qui est casse-tête, comme les&nbsp;jeux de&nbsp;société ou&nbsp;les&nbsp;escape games. Mais ce&nbsp;que je&nbsp;préfère pour décompresser, c'est de&nbsp;faire de&nbsp;la&nbsp;peinture digitale en&nbsp;écoutant un&nbsp;bon podcast !</p>",
-  "skills": "<p>Les activités créatives et&nbsp;le&nbsp;contact avec la&nbsp;technologie m'ont toujours apporté beaucoup de&nbsp;satisfaction depuis mon enfance. Tout a&nbsp;commencé avec le&nbsp;dessin, puis l'art digital, et&nbsp;finalement, je&nbsp;me&nbsp;suis lancée dans le&nbsp;web design. En&nbsp;chemin, je&nbsp;me&nbsp;suis familiarisée avec des&nbsp;outils comme Photoshop, Krita et&nbsp;Figma.</p><p>Toutes ces passions — les&nbsp;langues, le&nbsp;processus créatif, et&nbsp;la&nbsp;technologie — se&nbsp;sont retrouvées dans la&nbsp;création de&nbsp;sites web. Je&nbsp;suis toujours curieuse d'apprendre plus sur&nbsp;les&nbsp;nouvelles technologies !</p>",
+  "about": "<p>Je m'appelle Ewa Majowska, je&nbsp;suis Développeuse Front-End et&nbsp;je&nbsp;vis à&nbsp;Saint-Leu.</p><p>Passionnée par les langues, j'ai obtenu une&nbsp;licence d'Anglais et&nbsp;de&nbsp;Japonais à&nbsp;l’Université de&nbsp;Silésie à&nbsp;Katowice en&nbsp;Pologne. En&nbsp;m'installant à&nbsp;la&nbsp;Réunion, j'ai été motivée à&nbsp;apprendre la&nbsp;langue locale et&nbsp;à&nbsp;explorer une&nbsp;nouvelle forme de&nbsp;communication : le&nbsp;langage du&nbsp;web.</p><p>Pendant mon temps libre, j'aime pratiquer du&nbsp;yoga, courir et&nbsp;tout ce qui est casse-tête, comme les&nbsp;jeux de&nbsp;société ou&nbsp;les&nbsp;escape games. Mais ce&nbsp;que je&nbsp;préfère pour décompresser, c'est de&nbsp;faire de&nbsp;la&nbsp;peinture digitale en&nbsp;écoutant un&nbsp;bon podcast !</p>",
+  "skills": "<p>Les activités créatives et&nbsp;le&nbsp;contact avec la&nbsp;technologie m'ont toujours apporté beaucoup de&nbsp;satisfaction depuis mon enfance. Tout a&nbsp;commencé avec le&nbsp;dessin, puis l'art digital, et&nbsp;finalement, je&nbsp;me&nbsp;suis lancée dans le&nbsp;web design. En&nbsp;chemin, je&nbsp;me&nbsp;suis familiarisée avec des&nbsp;outils comme Photoshop, Krita et&nbsp;Figma.</p><p>Toutes ces passions — les&nbsp;langues, le&nbsp;processus créatif, et&nbsp;la&nbsp;technologie — se&nbsp;sont retrouvées dans la&nbsp;création de&nbsp;sites web. Je&nbsp;suis toujours curieuse d'en apprendre plus sur&nbsp;les&nbsp;nouvelles technologies !</p>",
   "stt": {
     "title": "Retour en haut de page",
     "aria-label": "Retour en haut de page"
@@ -71,12 +71,12 @@
     "alt": "C'est moi"
   },
   "portfolio_header": {
-    "aria-label": "Examples de mes projets en CSS (30 days CSS challenge)"
+    "aria-label": "Exemples de mes projets en CSS (30 days CSS challenge)"
   },
   "portfolio_list": [
     { "aria-label": "Projet #1 : la pyramide" },
     { "aria-label": "Projet #2 : le triangle de Penrose" },
-    { "aria-label": "Projet #3 : le montre numerique" },
+    { "aria-label": "Projet #3 : la montre numérique" },
     { "aria-label": "Projet #4 : le tracker d'activité" },
     { "aria-label": "Projet #5 : l'animation de chargement" }
   ],
