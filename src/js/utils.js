@@ -176,27 +176,35 @@ export async function fetchGalleryData() {
 
 /* Toggle Language Selection Menu */
 export function setupLangNavEvents(langData) {
+  const handleLangNavClick = (e) => toggleLangNav(e, langData);
+  const handleLangNavKeypress = (e) => {
+    if (e.key === 'Enter') toggleLangNav(e, langData);
+  };
   let isOpen = false;
 
-  // make langNav element tabbable if on mobile
-  // prevent double langNav opening button
+  // Prevent double langNav opening button
   if (isDesktop()) {
-    langNavBtn.addEventListener('click', (e) => toggleLangNav(e, langData));
-    langNav.removeEventListener('click', toggleLangNav);
-    langNav.removeEventListener('keypress', (e) => {
-      if (e.key === 'Enter') toggleLangNav(e);
-    });
+    // Add button listener
+    langNavBtn.addEventListener('click', handleLangNavClick);
 
+    // Remove nav listeners
+    langNav.removeEventListener('click', handleLangNavClick);
+    langNav.removeEventListener('keypress', handleLangNavKeypress);
+
+    //Update attributes
     langNav.setAttribute('tabindex', '-1');
     langNav.removeAttribute('role');
     langNavBtn.setAttribute('tabindex', '0');
     langNavBtn.setAttribute('aria-hidden', 'true');
   } else {
-    langNavBtn.removeEventListener('click', toggleLangNav);
-    langNav.addEventListener('click', (e) => toggleLangNav(e, langData));
-    langNav.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') toggleLangNav(e);
-    });
+    // Remove button listener
+    langNavBtn.removeEventListener('click', handleLangNavClick);
+
+    // Add nav listeners
+    langNav.addEventListener('click', handleLangNavClick);
+    langNav.addEventListener('keypress', handleLangNavKeypress);
+
+    // Update attributes
     langNav.setAttribute('tabindex', '0');
     langNav.setAttribute('role', 'button');
     langNavBtn.setAttribute('tabindex', '-1');
@@ -211,6 +219,7 @@ export function setupLangNavEvents(langData) {
     isOpen = !isOpen;
     langNav.ariaExpanded = isOpen;
 
+    // make langNav element tabbable if on mobile
     if (isOpen) {
       langMenu.removeAttribute('inert');
       langNavBtn.ariaLabel = langData.lang_nav_btn.close['aria-label'];
