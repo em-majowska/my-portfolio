@@ -73,7 +73,7 @@
     transition: background-color 0.3s ease-in-out;
 
     &:focus-visible {
-      border: 3px dashed var(--text);
+      border: 3px dashed var(--c-black);
       outline: none;
     }
   }
@@ -94,7 +94,7 @@
       opacity: 1;
 
       &:focus-visible {
-        outline-color: var(--background);
+        outline-color: var(--c-white);
       }
     }
   }

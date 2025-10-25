@@ -7,7 +7,7 @@
     font-size: 18px;
     font-weight: 400;
     color: hsl(0, 0%, 100%);
-    background-color: hsl(from var(--saturated) h 30% 60%);
+    background-color: hsl(from var(--c-saturated) h 30% 60%);
   }
 
   .center {
@@ -54,7 +54,7 @@
     position: relative;
     display: inline-block;
     padding: 0 8px 5px 8px;
-    background-color: hsl(from var(--saturated) h 30% 35%);
+    background-color: hsl(from var(--c-saturated) h 30% 35%);
   }
 
   span.tooltip {
@@ -68,7 +68,7 @@
     opacity: 0;
     font-size: 16px;
     z-index: -1;
-    background-color: hsl(from var(--saturated) h 30% 35%);
+    background-color: hsl(from var(--c-saturated) h 30% 35%);
 
     &__text {
       display: block;
@@ -113,7 +113,7 @@
     width: 100%;
     padding: 0.225rem 1rem;
     background-color: #fff;
-    color: hsl(from var(--saturated) h 30% 35%);
+    color: hsl(from var(--c-saturated) h 30% 35%);
   }
 
   .pronunciation i {

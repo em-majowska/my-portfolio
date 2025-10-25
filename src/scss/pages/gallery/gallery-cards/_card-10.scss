@@ -3,7 +3,7 @@
 .card-10 {
   .card__top {
     padding-block: 20px;
-    background-color: var(--primary);
+    background-color: var(--c-green);
   }
 
   .center {
@@ -166,7 +166,7 @@
 
   .second circle {
     position: absolute;
-    stroke: var(--secondary);
+    stroke: var(--c-yellow);
     stroke-dasharray: 30;
     animation: count 120s linear infinite 1s;
     transform-origin: center;

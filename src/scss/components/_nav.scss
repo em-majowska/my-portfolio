@@ -55,7 +55,7 @@
     position: relative;
     @include m.flex-container(row, space-between, null);
     padding: 1rem 1rem 0.5rem 1rem;
-    background-color: var(--background);
+    background-color: var(--c-white);
     z-index: 99;
   }
 
@@ -78,7 +78,7 @@
       height: 2px;
       border-radius: 2px;
       margin-inline: auto;
-      background-color: var(--text);
+      background-color: var(--c-black);
       transition: all 0.4s ease-in-out;
     }
 
@@ -120,7 +120,7 @@
 .nav {
   .menu__link,
   .lang-nav__link {
-    letter-spacing: 0.125rem;
+    letter-spacing: 0.1em;
   }
 
   .menu {
@@ -128,8 +128,8 @@
     width: 100vw;
     padding-block: var(--menu-item-height) var(--padding-outline);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
-    box-shadow: 7px 12px var(--text);
-    background: var(--background);
+    box-shadow: 7px 12px var(--c-black);
+    background: var(--c-white);
     text-align: center;
 
     overflow: hidden;
@@ -177,7 +177,7 @@
 
 .menu__link:is(:focus-visible, :hover),
 .lang-nav:is(:focus-visible, :hover) {
-  background-color: hsl(from var(--accent) h s l / 0.5);
+  background-color: hsl(from var(--c-orange) h s l / 0.5);
 
   & .lang-nav__btn {
     background-color: hsl(22.978724, 75%, 75%);
@@ -228,7 +228,7 @@
 
   &__btn {
     position: relative;
-    fill: var(--text);
+    fill: var(--c-black);
     transform: translateX(-1px);
     z-index: 4;
 
@@ -245,7 +245,7 @@
   &__btn,
   &__item {
     border-radius: var(--icon-border-radius);
-    background-color: var(--background);
+    background-color: var(--c-white);
   }
 
   ul {
@@ -272,8 +272,8 @@
 
       font-weight: 700;
       text-transform: uppercase;
-      color: var(--background);
-      background-color: var(--text);
+      color: var(--c-white);
+      background-color: var(--c-black);
       z-index: 3;
     }
 
@@ -293,8 +293,8 @@
 
     &:hover:not([aria-selected='true']) {
       border: var(--border);
-      color: var(--background);
-      background-color: var(--text);
+      color: var(--c-white);
+      background-color: var(--c-black);
     }
   }
 

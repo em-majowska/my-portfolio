@@ -9,13 +9,13 @@
     transform: rotate(-90deg);
   }
   .light {
-    fill: hsl(from var(--saturated) h s 25%);
+    fill: hsl(from var(--c-saturated) h s 25%);
   }
   .middle {
-    fill: hsl(from var(--saturated) h s 75%);
+    fill: hsl(from var(--c-saturated) h s 75%);
   }
   .dark {
-    fill: var(--saturated);
+    fill: var(--c-saturated);
   }
 }
 
@@ -27,13 +27,13 @@
     transform: rotate(-90deg);
   }
   .light {
-    fill: hsl(from var(--saturated) h s 25%);
+    fill: hsl(from var(--c-saturated) h s 25%);
   }
   .middle {
-    fill: hsl(from var(--saturated) h s 75%);
+    fill: hsl(from var(--c-saturated) h s 75%);
   }
   .dark {
-    fill: var(--saturated);
+    fill: var(--c-saturated);
   }
 }
 
@@ -63,12 +63,12 @@
   }
 
   .light {
-    fill: hsl(from var(--accent) h s 75%);
+    fill: hsl(from var(--c-orange) h s 75%);
   }
   .middle {
-    fill: var(--accent);
+    fill: var(--c-orange);
   }
   .dark {
-    fill: hsl(from var(--accent) h s 25%);
+    fill: hsl(from var(--c-orange) h s 25%);
   }
 }

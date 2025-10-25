@@ -5,12 +5,12 @@ article.card-13 {
   .card__top {
     position: relative;
     display: block;
-    background-color: var(--background);
+    background-color: var(--c-white);
   }
 
   .user-gallery {
     @include m.filling-element;
-    border: 5px solid var(--background);
+    border: 5px solid var(--c-white);
     display: grid;
     grid-gap: 5px;
     grid-template-columns: 1fr 1fr;
@@ -48,7 +48,7 @@ article.card-13 {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background-color: var(--accent);
+    background-color: var(--c-orange);
     transition: all 0.5s ease-in-out;
     cursor: pointer;
   }
@@ -81,7 +81,7 @@ article.card-13 {
   .open-profile::after {
     display: block;
     content: '';
-    background-color: var(--background);
+    background-color: var(--c-white);
     height: 20px;
     width: 3px;
     border-radius: 2px;
@@ -111,7 +111,7 @@ article.card-13 {
     position: absolute;
     height: calc(50% - 20px);
     top: -50%;
-    background-color: var(--background);
+    background-color: var(--c-white);
   }
 
   .open .profile-header {
@@ -143,15 +143,15 @@ article.card-13 {
       font-size: 1.25rem;
       height: 50px;
       width: 50px;
-      border: 1px solid var(--background);
+      border: 1px solid var(--c-white);
       border-radius: 50%;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
-      color: var(--background);
+      color: var(--c-white);
 
       &:is(:hover, :focus-visible) {
-        color: var(--accent);
-        background-color: var(--background);
+        color: var(--c-orange);
+        background-color: var(--c-white);
         box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
       }
     }
@@ -174,7 +174,7 @@ article.card-13 {
     transform: translate(-50%, -50%);
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid var(--background);
+    border: 2px solid var(--c-white);
     box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3);
   }
   .open .profile-pic {
@@ -185,7 +185,7 @@ article.card-13 {
     position: absolute;
     top: -60px;
     right: 10px;
-    color: var(--background);
+    color: var(--c-white);
     font-size: 1.725rem;
     rotate: 45deg;
     transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out,
@@ -193,9 +193,9 @@ article.card-13 {
   }
 
   .cta.close:is(:hover, :focus-visible) {
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    background-color: var(--background);
+    border: 1px solid var(--c-orange);
+    color: var(--c-orange);
+    background-color: var(--c-white);
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
   }
 

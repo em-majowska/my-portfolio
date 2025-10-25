@@ -100,7 +100,7 @@
   }
 
   label:has(input:focus-visible) {
-    outline: 3px dashed var(--text);
+    outline: 3px dashed var(--c-black);
     outline-offset: 3px;
   }
 }

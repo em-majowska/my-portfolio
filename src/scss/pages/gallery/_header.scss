@@ -24,21 +24,25 @@
   // ======================
 
   /* h1 */
+
+  .text,
+  .days,
+  .accent {
+    font-size: clamp(2.188rem, 4vw + 1.25rem, 4.25rem);
+  }
+
   .text {
     grid-area: text;
-
     position: relative;
     display: grid;
     font-weight: normal;
-    background-color: var(--primary);
+    background-color: var(--c-green);
     overflow: hidden;
-    font-size: var(--h1-size);
 
     .days,
     .accent {
       display: block;
       padding-inline: 0.5em;
-      font-size: var(--h1-size);
     }
 
     .days {
@@ -48,12 +52,12 @@
         position: relative;
 
         &::after {
-          --number-width: calc(100% + 0.5em);
+          --number-width: calc(100% + 0.575em);
 
           position: absolute;
           content: '42';
           width: var(--number-width);
-          right: var(--number-width);
+          left: calc(-1 * var(--number-width) - 0.5em);
           bottom: 0;
           padding: 0 0.75rem 0.75rem 0.25rem;
           border-top-right-radius: 25% 50%;
@@ -61,16 +65,16 @@
           text-align: right;
           font-family: var(--accent-font);
           line-height: 1;
-          color: var(--text);
-          background-color: var(--background);
+          color: var(--c-black);
+          background-color: var(--c-white);
         }
       }
 
       .scribble {
         position: absolute;
-        width: 100%;
+        width: 118%;
         height: 120%;
-        stroke: var(--text);
+        stroke: var(--c-black);
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
         stroke-width: 8;
@@ -79,8 +83,8 @@
     }
 
     .accent {
-      color: var(--background);
-      background-color: var(--text);
+      color: var(--c-white);
+      background-color: var(--c-black);
     }
   }
 
@@ -96,14 +100,14 @@
     grid-area: mid1;
 
     position: relative;
-    background-color: var(--accent);
+    background-color: var(--c-orange);
     @include m.center-element;
 
     .oval {
       position: absolute;
       width: 70%;
       aspect-ratio: 2 / 3;
-      border: 2px solid var(--background);
+      border: 2px solid var(--c-white);
       border-radius: 70px;
 
       &.oval-1 {
@@ -120,7 +124,7 @@
   .mid2 {
     grid-area: mid2;
 
-    background-color: var(--text);
+    background-color: var(--c-black);
 
     .semi-circle {
       transform-origin: center;
@@ -133,7 +137,7 @@
 
     margin: 5px;
     border-top-right-radius: 100%;
-    background-color: var(--secondary);
+    background-color: var(--c-yellow);
   }
 
   .gallery-lines {
@@ -175,9 +179,9 @@
       padding: 10%;
       border-bottom-left-radius: 62.5% 25%;
       border-bottom-right-radius: 62.5% 25%;
-      border: 1px solid var(--text);
+      border: 1px solid var(--c-black);
       border-top: 0;
-      background-color: var(--background);
+      background-color: var(--c-white);
     }
 
     .cross {
@@ -200,7 +204,7 @@
         position: absolute;
         left: 100%;
         width: 65%;
-        border: 10px solid var(--secondary);
+        border: 10px solid var(--c-yellow);
         border-radius: 50%;
         aspect-ratio: 1 / 1;
         transform-origin: center;
@@ -238,22 +242,22 @@
   .green {
     grid-area: green;
 
-    background-color: var(--primary);
+    background-color: var(--c-green);
 
     &::after {
       right: -25%;
-      background-color: var(--accent);
+      background-color: var(--c-orange);
     }
   }
 
   /* Orange */
   .orange {
     grid-area: orange;
-    background-color: var(--accent);
+    background-color: var(--c-orange);
 
     &::after {
       left: -25%;
-      background-color: var(--primary);
+      background-color: var(--c-green);
     }
   }
 
@@ -464,7 +468,7 @@
 /* Days el Animation rolls in after scribble */
 @keyframes roll-in {
   to {
-    right: 0;
+    left: -0.5em;
   }
 }
 

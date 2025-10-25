@@ -2,7 +2,7 @@
 
 .card-31 {
   .card__top {
-    background-color: var(--primary);
+    background-color: var(--c-green);
   }
 
   &:is(:hover, .animate, :focus-visible) .ball {
@@ -25,8 +25,8 @@
     background: radial-gradient(
       circle at 60% 45%,
       #fff,
-      var(--saturated) 30%,
-      hsl(from var(--saturated) h s 10%) 55%
+      var(--c-saturated) 30%,
+      hsl(from var(--c-saturated) h s 10%) 55%
     );
     animation: spin31 1s ease-in-out infinite;
     animation-play-state: paused;

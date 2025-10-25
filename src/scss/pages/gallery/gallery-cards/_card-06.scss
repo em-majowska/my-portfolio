@@ -10,7 +10,7 @@
   }
 
   button:is(:hover, :focus-visible) {
-    background-color: var(--accent);
+    background-color: var(--c-orange);
     color: #fff;
   }
 
@@ -31,7 +31,7 @@
   }
 
   .meta:is(:hover, :focus-visible) {
-    background-color: hsl(from var(--accent) h s 85%);
+    background-color: hsl(from var(--c-orange) h s 85%);
   }
 
   .card__top {
@@ -57,7 +57,7 @@
 
   .meta {
     text-decoration: none;
-    color: var(--accent);
+    color: var(--c-orange);
     cursor: pointer;
   }
 
@@ -65,12 +65,12 @@
     display: block;
     padding: 5px;
     width: 130px;
-    border: 1px solid var(--accent);
+    border: 1px solid var(--c-orange);
     border-radius: 20px;
     background: none;
     font-weight: 700;
     font-size: 12px;
-    color: var(--accent);
+    color: var(--c-orange);
     transition: color 0.3s ease-in, background-color 0.3s ease-in;
   }
 
@@ -123,14 +123,14 @@
   .circle-1 {
     width: 100px;
     height: 100px;
-    border-color: var(--accent) transparent var(--accent) var(--accent);
+    border-color: var(--c-orange) transparent var(--c-orange) var(--c-orange);
     transition: border-color 0.5s ease-in-out, transform 0.5s ease-in-out;
   }
 
   .circle-2 {
     width: 90px;
     height: 90px;
-    border-color: var(--accent) var(--accent) var(--accent) transparent;
+    border-color: var(--c-orange) var(--c-orange) var(--c-orange) transparent;
     transition: border-color 0.5s ease-in-out, transform 0.5s ease-in-out;
   }
 
@@ -138,14 +138,14 @@
     width: 70px;
     height: 70px;
     border: none;
-    background: linear-gradient(to left, hsl(332, 58%, 46%), var(--accent));
+    background: linear-gradient(to left, hsl(332, 58%, 46%), var(--c-orange));
     transition: all 0.7s ease-in-out;
   }
 
   .name {
     font-size: 18px;
     font-weight: 600;
-    color: var(--accent);
+    color: var(--c-orange);
   }
 
   .job {
@@ -172,7 +172,7 @@
 
     &:focus-visible {
       outline: none;
-      border: 3px dashed var(--text);
+      border: 3px dashed var(--c-black);
     }
   }
 

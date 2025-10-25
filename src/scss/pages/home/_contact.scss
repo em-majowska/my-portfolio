@@ -3,7 +3,7 @@
 .contact {
   position: relative;
   box-shadow: var(--shadow);
-  background-color: var(--primary);
+  background-color: var(--c-green);
 
   & > .wrapper {
     padding-block-end: 220px;
@@ -15,9 +15,8 @@
 
   h2 {
     max-width: 10ch;
-    font-size: clamp(2.8rem, 7vw, 5.25rem);
-    font-size: clamp(2.8rem, 7vw, 84px);
-    line-height: 1.12;
+    font-size: clamp(2.5rem, 5.333vw + 1.25rem, 5.25rem);
+    line-height: 1.1;
     z-index: 1;
 
     &::after {
@@ -40,13 +39,13 @@
   .window {
     max-width: fit-content;
 
-    @include m.window(var(--text));
+    @include m.window(var(--c-black));
     width: auto;
 
     h3 {
       padding: 0.15em 0.15em 0.15em 1.5rem;
       line-height: 3rem;
-      color: var(--background);
+      color: var(--c-white);
     }
   }
 
@@ -54,10 +53,9 @@
     height: auto;
     padding: 1.5em 2em 1.5em 1.5rem;
     border-radius: 0 0 25px 25px;
-    color: var(--text);
-    background-color: var(--background);
+    color: var(--c-black);
+    background-color: var(--c-white);
     font-style: normal;
-    font-size: clamp(1rem, 3vw, 1.5rem);
 
     & > a:not(a:last-child) {
       margin-block-end: 1.5em;
@@ -77,7 +75,8 @@
       }
 
       &:is(:hover, :focus-visible) {
-        color: var(--accent);
+        color: var(--c-orange);
+        outline-color: var(--c-black);
       }
     }
 
@@ -86,12 +85,12 @@
       height: var(--icon-size);
       padding: 5px;
       border-radius: var(--icon-border-radius);
-      background-color: var(--text);
-      font-size: clamp(1rem, 1vw, 4rem);
+      background-color: var(--c-black);
+      font-size: clamp(1rem, 1vw, var(--icon-size));
 
       &.whatsapp {
         background-color: transparent;
-        fill: var(--text);
+        fill: var(--c-black);
       }
     }
   }
@@ -151,7 +150,7 @@
     position: absolute;
     width: var(--sun-size);
     height: var(--sun-size);
-    fill: var(--secondary);
+    fill: var(--c-yellow);
     transform: translate(55vw, calc(50% - 10vw));
 
     rotate: 80deg;

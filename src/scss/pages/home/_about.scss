@@ -4,8 +4,8 @@
   position: relative;
   background: linear-gradient(
     to bottom,
-    var(--background) 10%,
-    var(--primary) 100%
+    var(--c-white) 10%,
+    var(--c-green) 100%
   );
 
   &.animate {
@@ -93,7 +93,7 @@
     width: clamp(242px, 65%, 400px);
     aspect-ratio: 1 / 1;
     margin-inline: auto;
-    background-color: var(--saturated);
+    background-color: var(--c-saturated);
     transform-origin: center;
     animation: spin 90s linear infinite;
     mask: url('./../assets/svg/widget-star.svg') no-repeat;

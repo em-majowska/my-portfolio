@@ -12,7 +12,7 @@ article.card-07 {
   }
 
   .card__top {
-    background-color: var(--primary);
+    background-color: var(--c-green);
     color: hsl(0, 0%, 100%);
   }
 
@@ -73,7 +73,7 @@ article.card-07 {
 
       &:focus-visible {
         outline: none;
-        border: 3px dashed var(--background);
+        border: 3px dashed var(--c-white);
       }
     }
 

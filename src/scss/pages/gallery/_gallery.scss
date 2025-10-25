@@ -20,10 +20,6 @@
     minmax(var(--grid-min-col-size), 330px)
   );
   grid-auto-rows: minmax(300px, max-content);
-
-  button.btn {
-    font-family: var(--main-font);
-  }
 }
 
 .gallery > article {
@@ -34,7 +30,7 @@
   width: 100%;
   border: var(--border);
   border-radius: var(--border-radius);
-  background-color: var(--text);
+  background-color: var(--c-black);
   overflow: hidden;
 
   &:focus-visible {
@@ -55,13 +51,13 @@
       border-bottom-left-radius: 50% 30%;
       border-bottom-right-radius: 50% 30%;
 
-      border: 1px solid var(--text);
+      border: 1px solid var(--c-black);
       font-size: 1rem;
       font-weight: 900;
       text-align: center;
       line-height: 1.1;
 
-      background: var(--background);
+      background: var(--c-white);
       animation: tagBounce 2s infinite;
       z-index: 5;
       transition: top 1s ease-in-out;
@@ -88,14 +84,14 @@
     bottom: -100%;
     height: auto;
     padding: 0.5em 1.75em;
-    border: 2px solid var(--background);
+    border: 2px solid var(--c-white);
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     font-size: 1.5rem;
     font-weight: 900;
     line-height: 1.1;
     text-align: center;
-    color: var(--background);
-    background-color: var(--text);
+    color: var(--c-white);
+    background-color: var(--c-black);
     box-shadow: none;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
       bottom 0.5s ease-in-out;
@@ -109,9 +105,9 @@
   }
 
   .btn--reset:is(:hover, :focus-visible) {
-    color: var(--text);
-    background-color: var(--background);
-    outline-color: var(--background);
+    color: var(--c-black);
+    background-color: var(--c-white);
+    outline-color: var(--c-white);
   }
 }
 
@@ -165,20 +161,20 @@
     column-gap: 1em;
     width: 100%;
     padding: 1em;
-    color: var(--background);
-    background-color: var(--text);
+    color: var(--c-white);
+    background-color: var(--c-black);
 
     &__header {
       font-size: 2rem;
       text-wrap: nowrap;
       span {
-        color: var(--secondary);
+        color: var(--c-yellow);
       }
     }
 
     &__title {
       min-width: initial;
-      max-width: 13ch;
+      max-width: 11ch;
       overflow-wrap: normal;
       align-self: end;
       font-size: 1.125rem;

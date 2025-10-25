@@ -12,16 +12,22 @@ body {
   position: fixed;
   padding-block-end: 1rem;
   inset: 0 0 auto 0;
-  background-color: var(--background);
+  background-color: var(--c-white);
   z-index: 99;
 }
 
 .main {
   @include m.flex-container(column, null, center);
-  min-height: 30vh;
-  padding-inline: 1rem;
 
   &:target {
     scroll-margin-block-start: 5rem;
+  }
+
+  .description {
+    margin-block-end: 5rem;
+
+    p {
+      max-width: 65ch;
+    }
   }
 }

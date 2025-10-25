@@ -78,7 +78,7 @@ footer {
         inset: auto 0 0;
         height: 0;
         border-radius: 2px;
-        background-color: var(--accent);
+        background-color: var(--c-orange);
         transition: height 0.3s ease-in-out;
       }
 
@@ -89,7 +89,7 @@ footer {
   }
 
   body .lang-nav {
-    $color-palette-nav: var(--saturated), var(--secondary), var(--accent);
+    $color-palette-nav: var(--c-saturated), var(--c-yellow), var(--c-orange);
     --first-icon-open: translate(0, var(--icon-offset));
     --second-icon-closed: translate(0, calc(-1 * var(--icon-offset)));
     --third-icon-closed: translate(0, calc(-2 * var(--icon-offset)));
@@ -105,13 +105,13 @@ footer {
       background-color: transparent;
 
       & .lang-nav__btn {
-        background-color: var(--background);
+        background-color: var(--c-white);
       }
     }
 
     &:is(:focus-visible, :hover) .lang-nav__btn {
-      background-color: var(--text);
-      fill: var(--background);
+      background-color: var(--c-black);
+      fill: var(--c-white);
     }
 
     &__btn {
@@ -120,7 +120,7 @@ footer {
         fill 0.3s ease-in-out;
 
       &:is(:focus-visible, :hover) {
-        outline-color: var(--text);
+        outline-color: var(--c-black);
       }
     }
 
@@ -134,7 +134,7 @@ footer {
       text-align: center;
 
       &[aria-selected='true'] {
-        color: var(--text);
+        color: var(--c-black);
         border: var(--border);
       }
     }
@@ -142,8 +142,8 @@ footer {
     &[aria-expanded='true'] {
       .lang-nav__btn {
         border-color: transparent;
-        background-color: var(--text);
-        fill: var(--background);
+        background-color: var(--c-black);
+        fill: var(--c-white);
       }
 
       .lang-nav__container {
@@ -173,7 +173,6 @@ footer {
           max-width: unset;
           text-wrap: nowrap;
           line-height: 1.2;
-          font-size: clamp(2.5rem, 8vw, 96px);
           align-self: end;
         }
       }
@@ -217,8 +216,6 @@ footer {
   body {
     .nav {
       min-width: fit-content;
-      // max-height: 94px;
-      padding-inline: 1rem;
       align-items: flex-end;
 
       .logo {
@@ -287,10 +284,6 @@ footer {
 
         .window {
           margin-block-start: 0;
-
-          code {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-          }
         }
       }
     }
@@ -372,7 +365,7 @@ footer {
 
         span[lang='pl'] {
           rotate: -10deg;
-          color: hsl(from var(--text) h s l / 0.6);
+          color: hsl(from var(--c-black) h s l / 0.6);
         }
 
         span[lang='fr-FR'] {
@@ -382,10 +375,10 @@ footer {
         span[lang='ja-Hira'] {
           position: absolute;
           height: 0;
-          inset: 11rem -0.5rem auto auto;
+          inset: 9rem -0.5rem auto auto;
           font-family: 'MS Gothic', Arial, sans-serif;
           font-size: 2.25rem;
-          letter-spacing: 10px;
+          letter-spacing: 0.25em;
           word-break: keep-all;
           writing-mode: vertical-rl;
           overflow: hidden;

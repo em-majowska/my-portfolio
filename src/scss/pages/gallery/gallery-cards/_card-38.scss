@@ -1,6 +1,6 @@
 .card-38 {
   .card__top {
-    background: var(--saturated);
+    background: var(--c-saturated);
     cursor: pointer;
   }
 
@@ -28,8 +28,8 @@
   }
 
   .logo2 {
-    stroke: var(--saturated);
-    fill: var(--saturated);
+    stroke: var(--c-saturated);
+    fill: var(--c-saturated);
     transform: translate(-50%, -50%) scale(0);
     transition: transform 0.5s ease-out;
   }

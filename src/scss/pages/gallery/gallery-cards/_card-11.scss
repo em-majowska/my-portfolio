@@ -13,7 +13,7 @@
   .card__top {
     display: grid;
     grid-template-rows: 1fr 30%;
-    background: radial-gradient(var(--background), var(--secondary));
+    background: radial-gradient(var(--c-white), var(--c-yellow));
   }
 
   .floor {

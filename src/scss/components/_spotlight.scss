@@ -9,7 +9,7 @@
     --size: 40px;
     width: var(--size);
     height: var(--size);
-    background-color: hsla(from var(--accent) h s l / 0.4);
+    background-color: hsla(from var(--c-orange) h s l / 0.4);
     mix-blend-mode: multiply;
   }
 }

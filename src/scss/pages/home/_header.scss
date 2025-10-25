@@ -12,10 +12,10 @@
 
     .small {
       display: block;
-      font-size: clamp(1.25rem, 3vw, 2rem);
+      font-size: clamp(1.25rem, 1.455vw + 0.909rem, 2rem);
       font-family: var(--main-font);
-      letter-spacing: 2px;
-      color: var(--text);
+      letter-spacing: 0.1em;
+      color: var(--c-black);
       max-width: max-content;
     }
 
@@ -24,7 +24,7 @@
     }
 
     h1 > span {
-      color: var(--accent);
+      color: var(--c-orange);
     }
 
     .btn {

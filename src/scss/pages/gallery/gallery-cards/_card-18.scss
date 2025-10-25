@@ -23,10 +23,10 @@ article.card-18 {
     width: 100%;
   }
   .top {
-    background-color: var(--saturated);
+    background-color: var(--c-saturated);
   }
   .bottom {
-    background-color: var(--accent);
+    background-color: var(--c-orange);
   }
   .container {
     position: absolute;
@@ -53,11 +53,11 @@ article.card-18 {
   }
 
   .side-1 {
-    background-color: var(--accent);
+    background-color: var(--c-orange);
   }
 
   .side-2 {
-    background-color: var(--saturated);
+    background-color: var(--c-saturated);
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
   }

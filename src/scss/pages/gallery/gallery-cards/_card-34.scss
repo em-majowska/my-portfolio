@@ -20,7 +20,7 @@
   }
 
   .card__top {
-    background: var(--accent);
+    background: var(--c-orange);
   }
 
   .frame {
@@ -34,7 +34,7 @@
     display: grid;
     width: 224px;
     height: 53px;
-    stroke: var(--accent);
+    stroke: var(--c-orange);
     stroke-dasharray: 270;
     stroke-dashoffset: 0;
 

@@ -12,7 +12,7 @@
     width: clamp(600px, 100vw, 850px);
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    background-color: hsl(from var(--secondary) h s l / 0.19);
+    background-color: hsl(from var(--c-yellow) h s l / 0.19);
     transform: translate(-45%, 10%);
     z-index: -1;
   }
@@ -34,11 +34,11 @@
       border-radius: 21px;
       font-weight: 700;
       text-wrap: nowrap;
-      background-color: hsl(from var(--secondary) h s l / 0.58);
+      background-color: hsl(from var(--c-yellow) h s l / 0.58);
       transition: transform 0.3s ease-out, background-color 0.3s ease-out;
 
       &:hover {
-        background-color: hsl(from var(--saturated) h s l / 0.58);
+        background-color: hsl(from var(--c-saturated) h s l / 0.58);
 
         transform: translateX(1.5em);
       }
@@ -56,7 +56,7 @@
   }
 
   .window {
-    @include m.window(var(--background));
+    @include m.window(var(--c-white));
     margin-block-start: 3.125rem;
     aspect-ratio: 4 / 3;
     justify-self: center;
@@ -69,14 +69,14 @@
       padding-inline-start: 1rem;
       border-block-end: var(--border);
       border-radius: 22px 22px 0 0;
-      background-color: var(--primary);
+      background-color: var(--c-green);
 
       span {
         height: 60%;
         aspect-ratio: 1 / 1;
-        border: 1px solid var(--text);
+        border: 1px solid var(--c-black);
         border-radius: 50%;
-        background-color: var(--background);
+        background-color: var(--c-white);
       }
     }
 
@@ -93,7 +93,7 @@
     position: absolute;
     aspect-ratio: 1 / 1;
     margin: 0;
-    fill: var(--accent);
+    fill: var(--c-orange);
     transition: filter 0.5s ease-in-out, scale 0.5s ease-in-out,
       rotate 0.5s ease-in-out;
   }

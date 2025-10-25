@@ -3,6 +3,11 @@
 $bg: hsl(45, 100%, 96%);
 
 /* Reset */
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
 
 * {
   margin: 0;
@@ -15,19 +20,18 @@ $bg: hsl(45, 100%, 96%);
   box-sizing: inherit;
 }
 
-html,
 body {
-  overflow-x: clip;
   width: 100%;
-  min-height: 100%;
-}
-
-html {
-  box-sizing: border-box;
+  min-height: 100vh;
   overflow-y: scroll;
-  scroll-behavior: smooth;
+  overflow-x: clip;
 
-  font-size: 100%;
+  font-size: clamp(1rem, 0.97vw + 0.773rem, 1.5rem);
+  font-family: var(--main-font);
+  line-height: 1.5;
+  color: var(--c-black);
+
+  @include m.outline-theme(var(--c-white));
 }
 
 // Disable animation before loading
@@ -35,14 +39,6 @@ html {
 .preload *::before,
 .preload *::after {
   animation-duration: 0 !important;
-}
-
-body {
-  font-family: var(--main-font);
-  line-height: 1.5;
-  color: var(--text);
-
-  @include m.outline-theme($bg);
 }
 
 img {
@@ -68,12 +64,8 @@ main *:target {
 }
 
 .wrapper {
-  max-width: 1200px;
+  width: min(1200px, calc(100% - 2rem));
   margin-inline: auto;
-
-  &:not(.nav) {
-    padding-inline: 1rem;
-  }
 }
 
 :is(.about-me, .skills, .portfolio) > .wrapper {
@@ -105,7 +97,6 @@ select {
 h1,
 h2,
 h3,
-h4,
 .btn {
   font-family: var(--accent-font);
   font-weight: 700;
@@ -114,8 +105,8 @@ h4,
 
 h1 {
   font-weight: 400;
-  line-height: 1.2;
-  font-size: clamp(2.5rem, 10vw, 96px);
+  line-height: 1.1;
+  font-size: clamp(2.5rem, 6.788vw + 0.909rem, 96px);
 }
 
 .section__header {
@@ -127,8 +118,7 @@ h1 {
     position: relative;
     display: inline-block;
     line-height: 1;
-
-    font-size: clamp(2.325rem, 8vw, 64px);
+    font-size: clamp(2.25rem, 3.394vw + 1.455rem, 4rem);
 
     &::after {
       @include m.highlight;
@@ -136,29 +126,24 @@ h1 {
   }
 }
 
-h3 {
-  font-size: clamp(1.5rem, 5vw, 2rem);
+h3,
+.btn {
+  font-size: clamp(1.5rem, 0.97vw + 1.273rem, 2rem);
 }
 
 p,
+li,
 .about-me__text,
 .skills__text,
 .contact__metadata {
   max-width: 55ch;
   overflow-wrap: break-word;
   text-wrap: pretty;
-
-  font-size: clamp(1rem, 4vw, 1.5rem);
 }
 
-ul,
-ol {
+ul {
   padding-inline-start: 0;
   list-style: none;
-}
-
-li {
-  font-size: clamp(1rem, 3vw, 1.5rem);
 }
 
 a {
@@ -167,12 +152,12 @@ a {
 }
 
 ::selection {
-  background-color: var(--accent);
-  color: var(--background);
+  background-color: var(--c-orange);
+  color: var(--c-white);
 }
 
 footer ::selection {
-  background-color: var(--secondary);
+  background-color: var(--c-yellow);
 }
 
 /* Outline A11Y */
@@ -187,8 +172,8 @@ footer ::selection {
 .screen-reader-text {
   position: absolute;
   padding: 1em;
-  color: var(--background);
-  background-color: var(--text);
+  color: var(--c-white);
+  background-color: var(--c-black);
   font-size: 1.5rem;
   transform: translate(-9999px, 0);
   z-index: 100;

@@ -10,7 +10,6 @@ button {
 .btn {
   display: grid;
   width: fit-content;
-  font-size: clamp(1.5rem, 5vw, 2rem);
 
   & > * {
     grid-row: 1 / 2;
@@ -20,11 +19,11 @@ button {
   }
 
   &__shadow {
-    background-color: var(--text);
+    background-color: var(--c-black);
   }
 
   &__fill {
-    background: var(--primary);
+    background: var(--c-green);
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
   }
 
@@ -54,13 +53,13 @@ button {
 
     svg {
       aspect-ratio: 1 / 1;
-      fill: var(--text);
+      fill: var(--c-black);
     }
   }
 
   &:is(:hover, :focus-visible) {
     .btn__fill {
-      background-color: var(--background);
+      background-color: var(--c-white);
       transform: translate(-5px, -5px); // round stt button
     }
 

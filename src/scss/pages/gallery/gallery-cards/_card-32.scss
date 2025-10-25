@@ -1,7 +1,7 @@
 @use '../../../abstracts/mixins' as m;
 
 .card-32 {
-  background: linear-gradient(to top right, var(--secondary), var(--accent));
+  background: linear-gradient(to top right, var(--c-yellow), var(--c-orange));
 
   .center {
     width: 150px;

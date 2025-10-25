@@ -2,7 +2,7 @@
 
 .card-29 {
   .card__top {
-    background: var(--saturated);
+    background: var(--c-saturated);
   }
   .frame {
     position: absolute;
@@ -13,7 +13,7 @@
   .search-bar {
     width: 250px;
     padding: var(--padding-outline);
-    border-block-end: 1px solid var(--saturated);
+    border-block-end: 1px solid var(--c-saturated);
     background-color: white;
     @include m.flex-container(null, space-between, center);
   }
@@ -26,7 +26,7 @@
     width: 100%;
 
     &::placeholder {
-      color: hsl(from var(--saturated) h s 35%);
+      color: hsl(from var(--c-saturated) h s 35%);
     }
 
     &:focus-visible {
@@ -35,7 +35,7 @@
   }
 
   .search-bar:has(input:focus-visible) {
-    border: 3px solid var(--text);
+    border: 3px solid var(--c-black);
   }
 
   i {
@@ -57,14 +57,14 @@
 
     &:hover,
     &.animate {
-      color: hsl(from var(--saturated) h s 35%);
+      color: hsl(from var(--c-saturated) h s 35%);
     }
   }
 
   input,
   i,
   .accordeon *:hover {
-    color: hsl(from var(--saturated) h s 35%);
+    color: hsl(from var(--c-saturated) h s 35%);
   }
 
   .active-search {

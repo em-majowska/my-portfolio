@@ -14,7 +14,7 @@
 
   .card__top {
     position: relative;
-    background-color: var(--primary);
+    background-color: var(--c-green);
   }
 
   .frame {
@@ -44,7 +44,7 @@
 
   line,
   path {
-    stroke: var(--text);
+    stroke: var(--c-black);
     stroke-width: 3;
     stroke-linecap: round;
   }
@@ -143,7 +143,7 @@
     position: relative;
     @include m.filling-element;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.6);
-    background-color: var(--secondary);
+    background-color: var(--c-yellow);
     transform-style: preserve-3d;
     transition: all 1s ease-in-out;
   }
@@ -164,7 +164,7 @@
   .card__face {
     position: absolute;
     @include m.filling-element;
-    background-color: var(--secondary);
+    background-color: var(--c-yellow);
     backface-visibility: hidden;
   }
 

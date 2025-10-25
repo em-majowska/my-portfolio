@@ -35,14 +35,14 @@
       grid-row: 1 / 2;
       grid-column: 1 / 2;
 
-      fill: var(--background);
+      fill: var(--c-white);
       stroke-width: 0.5;
-      stroke: var(--text);
+      stroke: var(--c-black);
     }
 
     svg.loader__shadow {
       position: relative;
-      fill: var(--text);
+      fill: var(--c-black);
       stroke-width: 0;
       transform: translate(6px, 3px);
       z-index: -1;
