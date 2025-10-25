@@ -80,11 +80,20 @@
       }
     }
 
+    .code-fallback,
     code {
       position: absolute;
-      max-height: 80%;
       padding: 1rem;
-      font-size: clamp(1rem, 4vw, 2rem);
+      font-size: clamp(1rem, 0.97vw + 0.773rem, 1.5rem);
+    }
+
+    .code-fallback {
+      font-family: monospace;
+    }
+
+    code {
+      border-bottom-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
       overflow-y: hidden;
     }
   }
