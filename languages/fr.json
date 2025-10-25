@@ -100,6 +100,7 @@
     "aria-label": "Galerie de 100 jours de projets CSS",
     "innerHTML": "<span class=\"days\"><span class=\"num\">100<svg class=\"scribble\"><use href=\"./assets/svg/gallery/gallery-mozaic.svg#scribble\"></use></svg></span> Jours de</span><span class=\"accent\">Projets CSS</span>"
   },
+  "gallery_description": "<p>Le <b>100 Days CSS Challenge</b> est un&nbsp;défi en&nbsp;ligne créé par&nbsp;Matthias Martin. Il&nbsp;encourage les&nbsp;participants à&nbsp;utiliser leur créativité et&nbsp;leurs compétences en&nbsp;résolution de&nbsp;problèmes pour recréer chaque jour un&nbsp;nouvel extrait de&nbsp;code en&nbsp;HTML et&nbsp;CSS.</p><p>Pour&nbsp;moi, c'était un&nbsp;excellent moyen de&nbsp;progresser grâce à&nbsp;une&nbsp;pratique régulière et&nbsp;concrète. Chaque tâche m’a&nbsp;amené à&nbsp;réfléchir de&nbsp;manière innovante et&nbsp;à&nbsp;choisir la&nbsp;meilleure solution parmi tant&nbsp;d'autres. Après 42&nbsp;jours, je&nbsp;me&nbsp;sentais prêt&nbsp;à&nbsp;passer au&nbsp;chapitre suivant : JavaScript.</p>",
   "gallery_card_title": [
     "100 jours css",
     "icônes de menu",
