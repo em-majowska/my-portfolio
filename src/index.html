@@ -119,25 +119,6 @@
 			</div>
 			<div class="hero__img">
 				<picture>
-					<!-- Mobile -->
-					<source media="(max-width: 769px)" srcset="
-					./assets/img/blob-mobile-342.webp 342w,
-					./assets/img/blob-mobile-380.webp 380w,
-					./assets/img/blob-mobile-410.webp 410w,
-					./assets/img/blob-mobile-440.webp 440w,
-					./assets/img/blob-mobile-470.webp 470w,
-					./assets/img/blob-mobile-500.webp 500w" type="image/webp"
-						sizes="(min-width: 420px) calc(85vw - 32px), calc(20vw + 264px)">
-
-					<source media="(max-width: 769px)" srcset="
-					./assets/img/blob-mobile-342.png 342w,
-					./assets/img/blob-mobile-380.png 380w,
-					./assets/img/blob-mobile-410.png 410w,
-					./assets/img/blob-mobile-440.png 440w,
-					./assets/img/blob-mobile-470.png 470w,
-					./assets/img/blob-mobile-500.png 500w" type="image/png"
-						sizes="(min-width: 420px) calc(85vw - 32px), calc(20vw + 264px)">
-
 					<!-- Desktop -->
 					<source media="(min-width: 770px)" srcset="
 					./assets/img/blob-desktop-342.webp 342w,
@@ -157,9 +138,21 @@
 					./assets/img/blob-desktop-800.png 800w
 					" type="image/png"
 						sizes="(min-width: 1280px) 537px, (min-width: 860px) calc(39vw + 46px), (min-width: 780px) 342px">
-					<img id="heroImg" src="" data-src="./assets/img/blob-desktop-470.png" alt="" fetchpriority="high"
-						loading="eager" width="300" height="360">
 
+					<!-- Mobile -->
+					<source media="(max-width: 769px)" srcset="
+					./assets/img/blob-mobile-342.webp 342w,
+					./assets/img/blob-mobile-380.webp 380w,
+					./assets/img/blob-mobile-410.webp 410w,
+					./assets/img/blob-mobile-440.webp 440w,
+					./assets/img/blob-mobile-470.webp 470w,
+					./assets/img/blob-mobile-500.webp 500w" type="image/webp"
+						sizes="(min-width: 420px) calc(85vw - 32px), calc(20vw + 264px)">
+					<img id="heroImg" src="" srcset="./assets/img/blob-mobile-342.png 342w,
+						./assets/img/blob-mobile-380.png 380w, ./assets/img/blob-mobile-410.png 410w,
+						./assets/img/blob-mobile-440.png 440w, ./assets/img/blob-mobile-470.png 470w,
+						./assets/img/blob-mobile-500.png 500w" sizes="(min-width: 420px) calc(85vw - 32px), calc(20vw + 264px)" data-src="
+						./assets/img/blob-mobile-380.png" alt="" fetchpriority="high" loading="eager" width="380" height="402">
 				</picture>
 				<svg class="outline" id="outline" viewBox="0 0 368 390" preserveAspectRatio="none" fill="none"
 					xmlns="http://www.w3.org/2000/svg" stroke="#181306" role="presentation">
