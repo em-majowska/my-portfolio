@@ -72,7 +72,7 @@
 					<span class="menu-btn__burger"></span>
 				</button>
 			</div>
-			<div class="menu">
+			<div class="menu" aria-expanded="false">
 				<ul class="menu-list">
 					<li class="menu__item"><a href="./index.html#about-me" class="menu__link" data-i18l="menu_link">about</a></li>
 					<li class="menu__item"><a href="./index.html#skills" class="menu__link" data-i18l="menu_link">skills</a></li>
@@ -160,6 +160,15 @@
 
 	<!-- MAIN -->
 	<main class="main wrapper" id="main-content">
+		<div class="description" data-i18l="gallery_description">
+			<p>The <b>100 Days CSS Challenge</b> is an online challenge created by Matthias Martin. It encourages participants
+				to use their creativity and problem-solving skills to recreate a new code snippet every day using HTML and CSS.
+			</p>
+			<p>For me, it was a great way to grow through consistent, hands-on practice. Each task pushed me to think outside
+				the box and choose the best solution among many. After completing 42 days, I felt ready to move on to my next
+				chapter — JavaScript.</p>
+		</div>
+
 		<section class="gallery" id="css-challenge-gallery" aria-label="Gallery of 100... Sorry, 42 days CSS challenge"
 			data-i18l="challenge_gallery">
 
@@ -223,12 +232,12 @@
 			</div> <!-- end of loader element div-->
 		</section>
 
-		<div class="animated-elements wrapper" aria-hidden="true">
-			<div class="cat-wrapper" tabindex="-1">
+		<div class="animated-elements wrapper" aria-hidden="true" inert>
+			<div class="cat-wrapper">
 				<div class="cat" id="cat-animation"></div>
 			</div> <!-- end of cat-wrapper div -->
 
-			<div class="circle-wrapper" tabindex="-1">
+			<div class="circle-wrapper">
 				<div class="circle"></div>
 			</div>
 		</div> <!-- end of animated-elements div -->

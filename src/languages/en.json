@@ -99,6 +99,7 @@
     "aria-label": "100 days CSS challenge",
     "innerHTML": "<span class=\"days\"><span class=\"num\">100<svg class=\"scribble\"><use href=\"./assets/svg/gallery/gallery-mozaic.svg#scribble\"></use></svg></span> Days</span><span class=\"accent\">CSS Challenge</span>"
   },
+  "gallery_description": "<p>The <b>100 Days CSS Challenge</b> is&nbsp;an&nbsp;online challenge created by&nbsp;Matthias Martin. It&nbsp;encourages participants to&nbsp;use their creativity and&nbsp;problem-solving skills to&nbsp;recreate a&nbsp;new code snippet every day using HTML and&nbsp;CSS.</p><p>For&nbsp;me, it&nbsp;was a&nbsp;great way to&nbsp;grow through consistent, hands-on practice. Each task pushed me to&nbsp;think outside the&nbsp;box and&nbsp;choose the&nbsp;best solution among many. After completing 42&nbsp;days, I&nbsp;felt ready to&nbsp;move on to&nbsp;my next chapter — JavaScript.</p>",
   "gallery_card_title": [
     "100 days css",
     "menu icons",

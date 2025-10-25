@@ -96,6 +96,7 @@
     "aria-label": "100 dni projektów CSS",
     "innerHTML": "<span class=\"days\"><span class=\"num\">100<svg class=\"scribble\"><use href=\"./assets/svg/gallery/gallery-mozaic.svg#scribble\"></use></svg></span> Dni</span><span class=\"accent\">Projektów CSS</span>"
   },
+  "gallery_description": "<p><b>100 Days CSS Challenge</b> to&nbsp;wyzwanie stworzone przez Matthiasa Martina, w&nbsp;którym każdego dnia odtworzamy nowy fragment kodu przy użyciu HTML i&nbsp;CSS. Wyzwanie rozwija naszą kreatywność i&nbsp;umiejętność rozwiązywania problemów.</p><p>Dla mnie był to świetny sposób na poznanie możliwości CSS w&nbsp;praktyce. Każde zadanie zmuszało mnie do nieszablonowego myślenia i&nbsp;wyboru najlepszego spośród wielu możliwych rozwiązań. Po&nbsp;ukończeniu 42&nbsp;dni&nbsp;zdecydowałam się&nbsp;przejść do&nbsp;kolejnego etapu — nauki JavaScript.</p>",
   "gallery_card_title": [
     "100 dni css",
     "ikony menu",
