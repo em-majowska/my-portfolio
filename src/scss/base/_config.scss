@@ -64,8 +64,11 @@ main *:target {
 }
 
 .wrapper {
-  width: min(1200px, calc(100% - 2rem));
   margin-inline: auto;
+
+  &:not(.nav) {
+    width: min(1200px, calc(100% - 2rem));
+  }
 }
 
 :is(.about-me, .skills, .portfolio) > .wrapper {

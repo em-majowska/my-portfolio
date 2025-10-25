@@ -40,7 +40,7 @@
 		crossorigin>
 
 	<link rel="stylesheet" href="./css/essentials.css">
-	<link rel="stylesheet" href="./css/home.css" media="print" onload="this.media='all'">
+	<link rel="stylesheet" href="./css/home.css">
 	<link rel="icon" href="./assets/img/favicon.ico" sizes="any">
 	<link rel="icon" href="./assets/svg/favicon.svg" type="image/svg+xml">
 </head>
@@ -71,7 +71,7 @@
 					<span class="menu-btn__burger"></span>
 				</button>
 			</div>
-			<div class="menu">
+			<div class="menu" aria-expanded="false">
 				<ul class="menu-list">
 					<li class="menu__item"><a href="./index.html#about-me" class="menu__link" data-i18l="menu_link">about</a></li>
 					<li class="menu__item"><a href="./index.html#skills" class="menu__link" data-i18l="menu_link">skills</a></li>
@@ -201,7 +201,7 @@
 							<text fill="hsl(44, 58%, 6%)" font-weight="700" lang="fr-FR">
 								<textPath xlink:href="#curve" startOffset="37%">Salut</textPath>
 							</text>
-							<text fill="hsl(44, 58%, 6%)" letter-spacing="4px" lang="ja-Hira">
+							<text fill="hsl(44, 58%, 6%)" lang="ja-Hira" letter-spacing="4px">
 								<textPath xlink:href="#curve" startOffset="57%" font-family="Inter">おはようございます</textPath>
 							</text>
 						</svg>
@@ -382,11 +382,11 @@
 
 			</div> <!-- end .wrapper div (Contact section) -->
 
-			<div class="animated-elements wrapper" aria-hidden="true">
-				<div class="sun-wrapper" aria-hidden="true">
-					<img class="sun" src="./assets/svg/sun.svg" alt="">
+			<div class="animated-elements wrapper" aria-hidden="true" inert>
+				<div class="sun-wrapper">
+					<img class="sun" src="./assets/svg/sun.svg" width="230" height="230" alt="">
 				</div>
-				<div class="cat-wrapper" tabindex="-1">
+				<div class="cat-wrapper">
 					<div class="cat" id="cat-animation"></div>
 				</div>
 			</div>

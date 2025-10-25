@@ -30,10 +30,11 @@ footer {
     .nav {
       @include m.flex-container(null, flex-start, null);
       align-items: flex-end;
+      width: min(1200px, calc(100% - 2rem));
       min-height: 79px;
 
       .navbar {
-        padding: 1rem 2.5rem 0.5rem 1rem;
+        padding: 1rem 2.5rem 0.5rem 0;
         align-self: flex-start;
       }
     }
@@ -47,8 +48,7 @@ footer {
     position: initial;
     width: 100%;
     min-height: 69px;
-    padding: 1rem 1rem var(--padding-outline) var(--padding-outline);
-    // margin-inline-end: 1rem;
+    padding: 1rem 0 var(--padding-outline) var(--padding-outline);
     border-radius: 0;
     box-shadow: none;
     animation: none;
