@@ -8,16 +8,15 @@
 
 .portfolio {
   position: relative;
-  min-height: 550px;
   text-align: center;
   font-size: 16px;
 
   &::after {
     @include m.pseudo;
     inset: 0;
-    height: 100%;
-    background: url('../../assets/svg/dots-background.svg') no-repeat 70% 70%;
-    mask-image: linear-gradient(to bottom, transparent 15%, black 140%);
+    background: url('../../assets/svg/dots-background.svg') no-repeat
+      center/cover;
+    mask-image: linear-gradient(to bottom, transparent 15%, black 160%);
     z-index: -2;
   }
 

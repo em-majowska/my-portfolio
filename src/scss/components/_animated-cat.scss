@@ -7,7 +7,7 @@
     overflow-y: hidden;
     width: var(--cat-size);
     height: calc(var(--cat-size) + 100px);
-    inset: auto auto -77px 0;
+    inset: auto auto -77px -77px;
     z-index: 2;
 
     pointer-events: none;

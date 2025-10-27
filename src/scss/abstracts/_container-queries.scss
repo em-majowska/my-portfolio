@@ -172,7 +172,7 @@ footer {
         h1 {
           max-width: unset;
           text-wrap: nowrap;
-          line-height: 1.2;
+          line-height: 1.1;
           align-self: end;
         }
       }
@@ -200,7 +200,7 @@ footer {
 
     .hero {
       &:where(:has(.btn)) {
-        padding-block-end: 7vmax;
+        padding-block-end: clamp(50px, 5.5vw, 90px);
       }
 
       .btn {
@@ -299,8 +299,12 @@ footer {
 }
 
 @container main (min-width: 850px) {
-  body {
-    .portfolio .portfolio-gallery__card {
+  body .portfolio {
+    .portfolio-gallery {
+      padding-block-end: 76px;
+    }
+
+    .portfolio-gallery__card {
       .data {
         scale: 1;
       }
@@ -493,13 +497,6 @@ footer {
       .wrapper {
         position: relative;
       }
-      .wrapper > * + * {
-        margin-block-start: 70px;
-      }
-
-      .portfolio-gallery {
-        padding-block-end: clamp(52px, 5.5vmax, 70px);
-      }
 
       .wrapper::after {
         @include m.pseudo;
@@ -543,9 +540,6 @@ footer {
       }
     }
   }
-  body section:not(.about-me) > .wrapper {
-    min-height: 820px;
-  }
 }
 
 @container main (min-width: 1300px) {
@@ -563,6 +557,12 @@ footer {
     .contact .sun {
       transform: translate(calc(55vw - 50%), 5%);
     }
+  }
+}
+
+@container footer (min-width: 770px) {
+  footer p {
+    text-align: center;
   }
 }
 

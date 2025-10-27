@@ -4,12 +4,12 @@
   background-color: var(--c-orange);
 
   &__wrapper {
-    padding-inline-end: 1rem;
     line-height: 75px;
     text-align: right;
 
     p {
-      font-size: 1.225rem;
+      max-width: initial;
+      font-size: 1.25rem;
     }
   }
 }

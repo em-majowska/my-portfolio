@@ -1,6 +1,8 @@
 @use '../../abstracts/mixins' as m;
 
 .hero {
+  margin-block-start: 50px;
+
   &.wrapper {
     @include m.flex-container(column, space-between, null);
     overflow: visible;
@@ -14,7 +16,7 @@
       display: block;
       font-size: clamp(1.25rem, 1.455vw + 0.909rem, 2rem);
       font-family: var(--main-font);
-      letter-spacing: 0.1em;
+      letter-spacing: 5%;
       color: var(--c-black);
       max-width: max-content;
     }
@@ -47,7 +49,7 @@
       position: absolute;
       inset: 0;
       width: 124%;
-      transform: translate(-10%, -8.5%);
+      transform: translate(-11%, -8.5%);
       mask-image: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0.4),
