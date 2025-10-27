@@ -23,16 +23,4 @@
 	<symbol id="spark" viewBox="0 0 227 204">
 		<path fill="#E27A46" d="M226.1 101.614c-103.893 4.573-107.963 8.231-113.05 101.612-5.087-93.381-9.157-97.039-113.05-101.612C103.893 97.042 107.963 93.384 113.05.002c5.087 93.382 9.157 97.04 113.05 101.612"/>
 	</symbol>
-
-	<!-- DOTS PATH -->
-
-	<symbol id="dots-path" viewBox="0 0 1146 660" fill="none">
-		<path stroke="#E27A46"
-		stroke-dasharray="1 45"
-		stroke-linecap="round"
-		stroke-linejoin="round"
-		stroke-width="15"
-		d="M230 50H1095s39 0 39 50v97.073s0 50-39 50H51s-39 0-39 50v97.972s0 50 39 50h1044s39 0 39 50v99.77s0 50-39 50H570.5"/>
-	</symbol>
-
 </svg>
