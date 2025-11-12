@@ -1,8 +1,10 @@
 # My Portfolio — Ewa Majowska
 
-A portfolio site showcasing my knowledge and experience with modern Front-End technologies and reflecting my growth throughout my career transition. This is a project I hand-crafted from a scratch - starting from the design on Figma, all the way to the deployment to GitHub Pages.
+A portfolio site showcasing my knowledge and experience with modern Front-End technologies and reflecting my learning journey and growth as a Front-End developer. This is a project I crafted from the ground up - starting from the design on Figma, all the way to the deployment to GitHub Pages.
 
 ## Overview
+
+![Colorful collage of rounded cards showing some of the sections of my website.](/screenshots/mockup.jpg)
 
 This project is a static portfolio website containing a homepage and a gallery page. The site demonstrates advanced CSS techniques (responsive layouts, CSS-only components, card designs with informative tags), lightweight JavaScript, and small interactive elements like an animated cat and a spotlight cursor.
 
@@ -13,17 +15,17 @@ Key ideas:
 - Modular use of JavaScript
 - Translations handled via JSON files
 - Image optimization using multiple sizes and WebP sources with <picture> elements
-- Gallery with infinite scroll and dynamic JSON data loading
-- IntersectionObserver-based sections providing on-demand CSS animations and JS functionalities
+- Gallery with infinite scroll and **dynamic JSON data loading**
+- **IntersectionObserver-based** sections providing on-demand CSS animations and JS functionalities
 - SVG sprites for clean HTML code
 
 ## Design & Inspiration
 
-Inspired by neo-brutalistic style, I created a maquette in Figma for desktop and mobile versions of my website. I used a consistent design and reusable elements to plan out all decorative elements and the Open Graph images.
+Inspired by neo-brutalistic style, I created a maquette in Figma for desktop and mobile versions of my website. I used a consistent design and reusable elements to plan out all decorative elements and the **Open Graph images**.
 
 - [Realtime Colors](https://www.realtimecolors.com) to visualize my color palette and chosen fonts.
 - [SVG Repo](https://www.svgrepo.com) for icons.
-- The cat element was drawn in Krita and animated in Adobe AE. The animation is loaded through Lottie files.
+- The cat element was drawn in **Krita** and animated in **Adobe AE**. The animation is loaded through Lottie files.
 
 ## Features
 
