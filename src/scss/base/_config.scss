@@ -9,6 +9,11 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +29,6 @@ body {
   width: 100%;
   min-height: 100vh;
   overflow-y: scroll;
-  overflow-x: clip;
 
   font-size: clamp(1rem, 0.97vw + 0.773rem, 1.5rem);
   font-family: var(--main-font);
@@ -71,14 +75,24 @@ main *:target {
   }
 }
 
-:is(.about-me, .skills, .portfolio) > .wrapper {
-  padding-block-end: 9vmax;
+:is(.about-me, .skills) > .wrapper {
+  padding-block-end: clamp(50px, 5.5vw, 90px);
 }
 
 .about-me__container,
-:is(.about-me, .skills, .portfolio, .contact) > .wrapper {
+:is(.about-me, .skills, .contact) > .wrapper {
   & > * + * {
-    margin-block-start: clamp(52px, 5.5vmax, 70px);
+    margin-block-start: clamp(50px, 2vw, 70px);
+    margin-inline: auto;
+  }
+}
+
+.portfolio {
+  padding-block-end: clamp(70px, 5.5vw, 80px);
+
+  .wrapper > * + * {
+    margin-block-start: clamp(70px, 5.5vw, 80px);
+
     margin-inline: auto;
   }
 }
@@ -108,7 +122,7 @@ h3,
 
 h1 {
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1.3;
   font-size: clamp(2.5rem, 6.788vw + 0.909rem, 96px);
 }
 
@@ -135,7 +149,6 @@ h3,
 }
 
 p,
-li,
 .about-me__text,
 .skills__text,
 .contact__metadata {
