@@ -6,7 +6,7 @@ A portfolio site showcasing my knowledge and experience with modern Front-End te
 
 ![Colorful collage of rounded cards showing some of the sections of my website.](/screenshots/mockup.jpg)
 
-This project is a static portfolio website containing a homepage and a gallery page. The site demonstrates advanced CSS techniques (responsive layouts, CSS-only components, card designs with informative tags), lightweight JavaScript, and small interactive elements like an animated cat and a spotlight cursor.
+This project is a static portfolio website containing a homepage and a gallery page. The site demonstrates advanced CSS techniques (responsive layouts, CSS-only components, card designs with informative tags), lightweight JavaScript, and small interactive elements like an animated cat and a spotlight cursor. [View the full design on Figma.](https://www.figma.com/design/GS9Q9sfcIDRJeLjhUtWnoQ/Portfolio-EM?node-id=0-1&t=0XNt7EWUXNga1UP4-1)
 
 Key ideas:
 
