@@ -3,6 +3,9 @@
     "lang": "en"
   },
   "title": "Ewa Majowska | Front-End Developer",
+  "gallery_title": "100 Days CSS Challenge - Ewa Majowska | Front-End Developer",
+  "digital_title": "Digital Art - Ewa Majowska | Front-End Developer",
+  "projects_title": "Projects - Ewa Majowska | Front-End Developer",
   "meta_title": { "content": "Ewa Majowska | Front-End Developer" },
   "meta_description": {
     "content": "Ewa Majowska | Front-End Developer based in Saint Leu. Passionate about web development, design and digital art."
@@ -20,6 +23,15 @@
       "aria-label": "Close menu"
     }
   },
+  "submenu_btn": {
+    "open": {
+      "aria-label": "Open portfolio submenu"
+    },
+    "close": {
+      "aria-label": "Close portfolio submenu"
+    }
+  },
+  "submenu_link": ["css projects", "digital art", "other projects"],
   "lang_nav": {
     "aria-label": "Language selector"
   },
@@ -59,7 +71,13 @@
     "Let's create something <span>together!</span>",
     "Contact"
   ],
-  "buttons": ["Contact Me", "Say Hello 🖐", "See More Projects"],
+  "buttons": [
+    "Contact Me",
+    "Say Hello 🖐",
+    "See More Projects",
+    "CSS Challenge",
+    "Digital Art Portfolio"
+  ],
   "about": "<p>Hey, I'm Ewa Majowska, a Front-End Developer based in&nbsp;Saint Leu, Réunion Island.</p><p>My passion for languages led me to graduate in&nbsp;English Philology and&nbsp;Japanese at&nbsp;Silesian University in&nbsp;Poland. Relocating to France motivated me to&nbsp;learn the local language and explore a new form of&nbsp;communication: the language of the&nbsp;web.</p><p>In my free time, I enjoy yoga, running, and some good brain puzzles, like board games with friends or escape rooms. My favorite way to relax, though, is digital painting while listening to a podcast!</p>",
   "skills": "<p>From a young age, I&nbsp;was always drawn to both art and&nbsp;technology. I&nbsp;began with traditional drawing, transitioned to&nbsp;digital painting, and&nbsp;eventually found myself experimenting with&nbsp;design. As&nbsp;I&nbsp;progressed, I&nbsp;grew comfortable using tools such as&nbsp;Photoshop, Krita, and&nbsp;Figma.</p><p> Ultimately, my&nbsp;passion for&nbsp; languages, design, and&nbsp;technology all&nbsp;came together in&nbsp;one place: web development. But&nbsp;it&nbsp;doesn’t stop there — I’m&nbsp;always eager to&nbsp;pick up&nbsp;new skills!</p>",
   "stt": {
@@ -143,5 +161,12 @@
     "gallery",
     "error modal",
     "stars"
-  ]
+  ],
+
+  "projects_header": "Exciting stuff <span class=\"accent\">coming soon!</span>",
+  "digital_header": "My Digital<br><span class=\"accent\">Art Journey</span>",
+  "digital_description": "<p>Besides front-end development, I enjoy drawing portraits digitally — small visual experiments that help me explore techniques, colors, shapes, and mood.</p>",
+  "digital_gallery": {
+    "aria-label": "Gallery of my digital art"
+  }
 }

@@ -3,7 +3,9 @@
     "lang": "pl"
   },
   "title": "Ewa Majowska | Deweloper Front-End",
-  "title_gallery": "100 Days CSS Challenge - Ewa Majowska | Deweloper Front-End",
+  "gallery_title": "100 Days CSS Challenge - Ewa Majowska | Deweloper Front-End",
+  "digital_title": "Digital Art - Ewa Majowska | Deweloper Front-End",
+  "projects_title": "Projekty - Ewa Majowska | Deweloper Front-End",
   "meta_title": { "content": "Ewa Majowska | Deweloper Front-End" },
   "meta_description": {
     "content": "Ewa Majowska | Deweloper Front-End. Łączę pasję do tworzenia stron internetowych, designu i digital artu."
@@ -140,5 +142,11 @@
     "galeria",
     "wyskakujący błąd",
     "gwiazdy"
-  ]
+  ],
+  "projects_header": "Pusto tu...<span class=\"accent\">wpadnij później!</span>",
+  "digital_header": "Moje<br><span class=\"accent\">digital arty</span>",
+  "digital_description": "<p>Poza tworzeniem stron internetowych, lubię rysować portrety — największą inspirację czuję po obejrzeniu serialu.</p>",
+  "digital_gallery": {
+    "aria-label": "Galeria moich digital artów"
+  }
 }
