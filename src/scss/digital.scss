@@ -1,0 +1,13 @@
+// @use './components/animated-cat';
+@use './components/buttons';
+@use './components/spotlight';
+@use './components/footer';
+@use './pages/digital/digital';
+
+header {
+  min-height: 30rem;
+
+  h1 {
+    margin-block-start: 5rem;
+  }
+}
