@@ -1,0 +1,42 @@
+@use './abstracts' as m;
+@use './base';
+@use './components/nav';
+@use './components/buttons';
+@use './components/footer';
+
+body {
+  position: relative;
+  min-width: 375px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  position: fixed;
+  padding-block-end: 1rem;
+  inset: 0 0 auto 0;
+  background-color: var(--c-white);
+  z-index: 99;
+}
+
+header {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  flex: 1;
+
+  .hero__text {
+    margin-inline: auto;
+  }
+}
+
+header div.hero_text h1 {
+  display: inline-block;
+  width: fit-content;
+  text-align: center;
+  text-wrap: wrap;
+}
+
+footer {
+  align-self: flex-end;
+}
