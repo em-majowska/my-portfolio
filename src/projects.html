@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Open Graph -->
+	<meta property="og:title" data-i18l="meta_title" content="Ewa Majowska | Front-End Developer">
+	<meta name="description" data-i18l="meta_description"
+		content="Ewa Majowska | Front-End Developer based in Saint Leu. Passionate about web development, design and digital art.">
+	<meta name="og:description" data-i18l="meta_description"
+		content="Ewa Majowska | Front-End Developer based in Saint Leu. Passionate about web development, design and digital art.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://em-majowska.github.io">
+	<meta property="og:image" content="https://i.postimg.cc/PJh45DkT/facebook-image.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<meta property="og:image" content="https://i.postimg.cc/631x1hS4/twitter-image.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="675">
+
+	<meta property="og:image" content="https://i.postimg.cc/C5qMGt1x/image-square.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="1200">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:image" content="https://i.postimg.cc/631x1hS4/twitter-image.png">
+	<title data-i18l="projects_title">Projects - Ewa Majowska | Front-End Developer</title>
+
+	<!-- Fonts -->
+	<link href="./assets/fonts/Playfair_Display/PlayfairDisplay-Medium.woff2" type="font/woff2" rel="preload" as="font"
+		crossorigin>
+	<link href="./assets/fonts/Playfair_Display/PlayfairDisplay-Bold.woff2" type="font/woff2" rel="preload" as="font"
+		crossorigin>
+	<link href="./assets/fonts/Source_Sans_3/SourceSans3-Medium.woff2" type="font/woff2" rel="preload" as="font"
+		crossorigin>
+	<link href="./assets/fonts/Source_Sans_3/SourceSans3-Bold.woff2" type="font/woff2" rel="preload" as="font"
+		crossorigin>
+
+	<link rel="stylesheet" href="./css/essentials.css">
+	<link rel="stylesheet" href="./css/projects.css">
+	<link rel="icon" href="./assets/assets/favicon.ico" sizes="any">
+	<link rel="icon" href="./assets/svg/favicon.svg" type="image/svg+xml">
+</head>
+
+<body class="projects">
+	<a href="#main-content" class="screen-reader-text" data-i18l="skip_nav_btn">Skip to main content</a>
+	<div class="spotlight spotlight--outer"></div>
+
+	<!-- HEADER -->
+	<header id="header">
+		<a href="#header" id="stt-btn" class="stt btn btn--round " data-i18l="stt" title="Scroll to top"
+			aria-label="Scroll to top">
+			<div class="btn__shadow"></div>
+			<div class="btn__fill">
+				<svg aria-hidden="true">
+					<use href="./assets/svg/icons.svg#arrow-up"></use>
+				</svg>
+			</div>
+		</a>
+
+		<!-- NAVIGATION -->
+		<nav id="nav" class="nav wrapper" data-i18l="nav" aria-label="Primary">
+			<div class="navbar">
+				<a href="./index.html" class="logo">
+					<img src="./assets/svg/logo.svg" width="45" height="45" data-i18l="logo" alt="Ewa Majowska homepage">
+				</a>
+				<button type="button" class="menu-btn" id="menu-btn" data-i18l="menu_btn" aria-label="Open menu">
+					<span class="menu-btn__burger"></span>
+				</button>
+			</div>
+			<div class="menu" aria-expanded="false">
+				<ul class="menu-list">
+					<li class="menu__item"><a href="./index.html#about-me" class="menu__link" data-i18l="menu_link">about</a></li>
+					<li class="menu__item"><a href="./index.html#skills" class="menu__link" data-i18l="menu_link">skills</a></li>
+					<li class="menu__item menu-portfolio">
+						<button type="button" id="portfolioBtn" class="menu__link" aria-label="Open portfolio submenu"
+							data-i18l="menu_link"><span>&gt;
+							</span> portfolio</button>
+						<ul aria-expanded="false" id="portfolioMenu" class="submenu">
+							<li class="menu__item" data-i18l="submenu_link"><a href="./gallery.html" class="menu__link">CSS
+									Projects</a></li>
+							<li class="menu__item" data-i18l="submenu_link"><a href="./digital-art.html" class="menu__link">Digital
+									Art</a></li>
+							<li class="menu__item" data-i18l="submenu_link"><a href="./projects.html" class="menu__link">Other
+									Projects</a></li>
+						</ul>
+					</li>
+					<li class="menu__item"><a href="./index.html#contact" class="menu__link" data-i18l="menu_link">contact</a>
+					</li>
+				</ul>
+				<nav class="lang-nav" id="langNav" role="" data-i18l="lang_nav" aria-label="Language selector"
+					aria-expanded="false" tabindex="0">
+					<div class="lang-nav__container">
+						<button type="button" class="lang-nav__btn" id="langNavBtn" aria-label="Open language selector"
+							aria-hidden="true" tabindex="-1" data-i18l="lang_nav_btn">
+							<svg role="presentation">
+								<use xlink:href="./assets/svg/icons.svg#languages"></use>
+							</svg>
+						</button>
+						<ul id="langMenu" inert>
+							<li class="lang-nav__item" aria-selected="true"><a class="lang-nav__link" data-i18l="lang_link" href="#"
+									lang="en" aria-label="English" tabindex="-1">en</a>
+							</li>
+							<li class="lang-nav__item"><a class="lang-nav__link" data-i18l="lang_link" href="#" lang="pl"
+									aria-label="Polski">pl</a></li>
+							<li class="lang-nav__item"><a class="lang-nav__link" data-i18l="lang_link" href="#" lang="fr"
+									aria-label="Français">fr</a></li>
+						</ul>
+					</div> <!-- end .lang-nav__container div -->
+				</nav> <!-- end .lang-nav nav -->
+			</div> <!-- end .menu div -->
+		</nav>
+		<div class="nav-overlay"></div>
+
+		<!-- HERO -->
+		<section class="hero wrapper" id="hero">
+			<div class="hero__text">
+				<h1 data-i18l="projects_header">
+					Exciting stuff<br><span class="accent">coming soon!</span>
+				</h1>
+			</div>
+		</section>
+	</header>
+
+	<!-- MAIN -->
+	<main class="main wrapper" id="main-content">
+		<div class="animated-elements wrapper" aria-hidden="true" inert>
+			<div class="cat-wrapper">
+				<div class="cat" id="cat-animation"></div>
+			</div> <!-- end of cat-wrapper div -->
+
+			<div class="circle-wrapper">
+				<div class="circle"></div>
+			</div>
+		</div> <!-- end of animated-elements div -->
+	</main>
+
+	<!-- FOOTER -->
+	<footer class="footer">
+		<div class="footer__wrapper wrapper">
+			<p>Copyright &copy; 2025 Ewa Majowska</p>
+		</div>
+	</footer>
+	<script src="./js/projects.js" type="module"></script>
+</body>
+
+</html>

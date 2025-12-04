@@ -371,7 +371,7 @@ export async function translationSetup() {
     }
   }
 
-  // updateContent(langData);
+  updateContent(langData);
   initLanguageSelector();
   return langData;
 }
