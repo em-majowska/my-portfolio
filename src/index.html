@@ -75,7 +75,18 @@
 				<ul class="menu-list">
 					<li class="menu__item"><a href="./index.html#about-me" class="menu__link" data-i18l="menu_link">about</a></li>
 					<li class="menu__item"><a href="./index.html#skills" class="menu__link" data-i18l="menu_link">skills</a></li>
-					<li class="menu__item"><a href="./index.html#portfolio" class="menu__link" data-i18l="menu_link">portfolio</a>
+					<li class="menu__item menu-portfolio">
+						<button type="button" id="portfolioBtn" class="menu__link" aria-label="Open portfolio submenu"
+							data-i18l="menu_link"><span>&gt;
+							</span> portfolio</button>
+						<ul aria-expanded="false" id="portfolioMenu" class="submenu">
+							<li class="menu__item" data-i18l="submenu_link"><a href="./gallery.html" class="menu__link">CSS
+									Projects</a></li>
+							<li class="menu__item" data-i18l="submenu_link"><a href="./digital-art.html" class="menu__link">Digital
+									Art</a></li>
+							<li class="menu__item" data-i18l="submenu_link"><a href="./projects.html" class="menu__link">Other
+									Projects</a></li>
+						</ul>
 					</li>
 					<li class="menu__item"><a href="./index.html#contact" class="menu__link" data-i18l="menu_link">contact</a>
 					</li>
@@ -332,10 +343,22 @@
 					</li>
 				</ul>
 
-				<a href="./gallery.html" class="btn btn--border">
-					<div class="btn__shadow"></div>
-					<div class="btn__fill" data-i18l="buttons">See more projects</div>
-				</a>
+				<div class="buttons-container">
+					<a href="./projects.html" class="btn btn--border">
+						<div class="btn__shadow"></div>
+						<div class="btn__fill" data-i18l="buttons">See More Projects</div>
+					</a>
+					<a href="./gallery.html" class="btn btn--border">
+						<div class="btn__shadow">
+						</div>
+						<div class="btn__fill" data-i18l="buttons">CSS Challenge</div>
+					</a>
+					<a href="./digital-art.html" class="btn btn--border">
+						<div class="btn__shadow">
+						</div>
+						<div class="btn__fill" data-i18l="buttons">Digital Art Portfolio</div>
+					</a>
+				</div>
 			</div> <!-- end .wrapper div (Portfolio section) -->
 		</section>
 

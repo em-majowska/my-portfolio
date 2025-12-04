@@ -19,61 +19,74 @@ const langNavBtn = document.getElementById('langNavBtn');
 
 export function initNavToggle(isDesktop, langData) {
   const menuLinks = Array.from(document.querySelectorAll('.menu__link'));
+  const portfolioBtn = document.getElementById('portfolioBtn');
+  const portfolioMenu = document.getElementById('portfolioMenu');
   const overlay = document.querySelector('.nav-overlay');
   let isOpen = false;
 
-  const toggleMenu = () => {
+  function toggleMenu() {
     isOpen = !isOpen;
-    menu.ariaExpanded = isOpen;
-
-    if (isOpen) {
-      disableScroll();
-      menuBtn.ariaLabel = langData.menu_btn.close['aria-label'];
-      menu.style.display = 'block';
-      overlay.addEventListener('click', toggleMenu, { once: true });
-    } else {
-      enableScroll();
-      menuBtn.ariaLabel = langData.menu_btn.open['aria-label'];
-
-      menu.addEventListener(
-        'animationend',
-        () => {
-          if (!isOpen) menu.style.display = 'none';
-        },
-        { once: true }
-      );
-    }
-  };
+    handleMenu(menu, menuBtn, 'menu_btn', isOpen);
+  }
 
   function preventBehavior(e) {
     e.preventDefault();
   }
 
-  function disableScroll() {
-    nav.addEventListener('touchmove', preventBehavior, false);
+  function toggleScroll() {
+    if (isOpen) {
+      nav.addEventListener('touchmove', preventBehavior, false);
+      document.body.addEventListener('wheel', preventBehavior, {
+        passive: false,
+      });
+    } else {
+      nav.removeEventListener('touchmove', preventBehavior, false);
+      document.body.removeEventListener('wheel', preventBehavior, {
+        passive: false,
+      });
+    }
+  }
+  // submenu toggle
 
-    document.body.addEventListener('wheel', preventScroll, {
-      passive: false,
-    });
+  let isExpanded = false;
+  function toggleSubmenu() {
+    // portfolioMenu.ariaExpanded = isExpanded = !isExpanded;
+    isExpanded = !isExpanded;
+    handleMenu(portfolioMenu, portfolioBtn, 'submenu_btn', isExpanded);
   }
 
-  function enableScroll() {
-    nav.removeEventListener('touchmove', preventBehavior, false);
-
-    document.body.removeEventListener('wheel', preventScroll, {
-      passive: false,
-    });
-  }
   showMenu(isDesktop);
   menuBtn.addEventListener('click', toggleMenu);
-  menuLinks.forEach((link) =>
-    link.addEventListener('click', () => {
-      if (menu.ariaExpanded !== 'undefined') toggleMenu();
-    })
-  );
+  portfolioBtn.addEventListener('click', toggleSubmenu);
 
-  function preventScroll(e) {
-    e.preventDefault();
+  menuLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      if (menu.ariaExpanded !== 'undefined' && link.id !== 'portfolioBtn')
+        toggleMenu();
+    });
+  });
+
+  function handleMenu(el, elBtn, el_btn, expanded) {
+    el.ariaExpanded = expanded;
+
+    if (expanded) {
+      toggleScroll();
+      elBtn.ariaLabel = langData[el_btn].close['aria-label'];
+      el.dataset.menuState = 'open';
+      el.style.display = 'block';
+      overlay.addEventListener('click', toggleMenu, { once: true });
+    } else {
+      toggleScroll();
+      elBtn.ariaLabel = langData[el_btn].open['aria-label'];
+      el.dataset.menuState = 'closed';
+      el.addEventListener(
+        'animationend',
+        () => {
+          if (el.dataset.menuState === 'closed') el.style.display = 'none';
+        },
+        { once: true }
+      );
+    }
   }
 }
 
@@ -358,7 +371,7 @@ export async function translationSetup() {
     }
   }
 
-  updateContent(langData);
+  // updateContent(langData);
   initLanguageSelector();
   return langData;
 }
