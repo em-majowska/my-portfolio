@@ -65,15 +65,19 @@
 
 /* === Neo Brutalist Window === */
 
-@mixin window($color) {
+@mixin window($color, $width: 0) {
   position: relative;
-  width: clamp(305px, 80%, 570px);
+  @if ($width != 0) {
+    width: $width;
+  } @else {
+    width: clamp(305px, 80%, 570px);
+  }
   border: var(--border);
   border-radius: var(--border-radius);
   background-color: $color;
   z-index: 1;
 
-  &::after {
+  &::before {
     @include pseudo;
     @include box-shadow;
   }

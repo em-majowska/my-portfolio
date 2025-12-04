@@ -92,8 +92,10 @@ export function initAnimationObserver() {
 
           // Load bodymovin script dynamically
           if (
-            entry.target.classList.contains('contact') &&
-            entry.isIntersecting
+            (entry.target.classList.contains('contact') &&
+              entry.isIntersecting) ||
+            (entry.target.classList.contains('animated-elements') &&
+              entry.isIntersecting)
           ) {
             loadCatAnimation();
           }

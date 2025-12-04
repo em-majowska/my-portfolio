@@ -27,7 +27,7 @@
 
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:image" content="https://i.postimg.cc/631x1hS4/twitter-image.png">
-	<title data-i18l="title_gallery">100 Days CSS Challenge - Ewa Majowska | Front-End Developer</title>
+	<title data-i18l="gallery_title">100 Days CSS Challenge - Ewa Majowska | Front-End Developer</title>
 
 	<!-- Fonts -->
 	<link href="./assets/fonts/Playfair_Display/PlayfairDisplay-Medium.woff2" type="font/woff2" rel="preload" as="font"
@@ -76,7 +76,18 @@
 				<ul class="menu-list">
 					<li class="menu__item"><a href="./index.html#about-me" class="menu__link" data-i18l="menu_link">about</a></li>
 					<li class="menu__item"><a href="./index.html#skills" class="menu__link" data-i18l="menu_link">skills</a></li>
-					<li class="menu__item"><a href="./index.html#portfolio" class="menu__link" data-i18l="menu_link">portfolio</a>
+					<li class="menu__item menu-portfolio">
+						<button type="button" id="portfolioBtn" class="menu__link" aria-label="Open portfolio submenu"
+							data-i18l="menu_link"><span>&gt;
+							</span> portfolio</button>
+						<ul aria-expanded="false" id="portfolioMenu" class="submenu">
+							<li class="menu__item" data-i18l="submenu_link"><a href="./gallery.html" class="menu__link">CSS
+									Projects</a></li>
+							<li class="menu__item" data-i18l="submenu_link"><a href="./digital-art.html" class="menu__link">Digital
+									Art</a></li>
+							<li class="menu__item" data-i18l="submenu_link"><a href="./projects.html" class="menu__link">Other
+									Projects</a></li>
+						</ul>
 					</li>
 					<li class="menu__item"><a href="./index.html#contact" class="menu__link" data-i18l="menu_link">contact</a>
 					</li>

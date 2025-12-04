@@ -3,9 +3,10 @@
   .wrapper {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-
+    width: 80%;
+    grid-template-columns: repeat(3, 64px);
+    justify-content: space-between;
+    place-items: center;
     gap: 11px;
     padding: 0;
   }
@@ -33,9 +34,9 @@
 
   .ball {
     position: absolute;
-    top: 8px;
-    left: calc((192px / 3) - 32px);
-    transform: translate(-50%, 0);
+    top: 50%;
+    left: 32px;
+    transform: translate(-50%, -50%);
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -51,7 +52,7 @@
     left: -100%;
   }
   .right:checked ~ .ball {
-    left: calc((128px + 22px) + 32px);
+    left: calc(100% - 32px);
   }
   &:has(.right:checked) .bg {
     left: -200%;

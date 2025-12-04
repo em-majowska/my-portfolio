@@ -2,8 +2,6 @@
 
 header,
 main,
-section,
-.animated-elements,
 footer {
   container-type: inline-size;
 }
@@ -30,7 +28,7 @@ footer {
     .nav {
       @include m.flex-container(null, flex-start, null);
       align-items: flex-end;
-      width: min(1200px, calc(100% - 2rem));
+      width: min(1000px, calc(100% - 2rem));
       min-height: 79px;
 
       .navbar {
@@ -288,7 +286,7 @@ footer {
       }
     }
 
-    .animated-elements {
+    .animated-elements:not(.digital) {
       --cat-size: 300px;
 
       .cat {
@@ -527,7 +525,7 @@ footer {
         }
       }
     }
-    .animated-elements {
+    .animated-elements:not(.digital) {
       --cat-size: 400px;
       height: auto;
 
