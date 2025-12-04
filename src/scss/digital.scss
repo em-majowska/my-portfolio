@@ -1,13 +1,49 @@
-// @use './components/animated-cat';
+@use './components/animated-cat';
+@use './abstracts';
+@use './base';
+@use './components/nav';
 @use './components/buttons';
 @use './components/spotlight';
 @use './components/footer';
 @use './pages/digital/digital';
 
 header {
-  min-height: 30rem;
+  .hero {
+    position: relative;
+    margin-block-start: 7rem;
+    min-height: 300px;
+  }
 
   h1 {
-    margin-block-start: 5rem;
+    font-weight: 700;
+    max-width: 700px;
+
+    .accent {
+      color: var(--c-orange);
+    }
+    .subtext {
+      display: block;
+      margin-block-start: 1.5rem;
+      font-size: clamp(1rem, 0.97vw + 0.773rem, 1.5rem);
+      font-weight: 400;
+      font-family: var(--main-font);
+      text-align: right;
+      color: var(--c-black);
+      background-color: var(--c-white);
+    }
   }
+
+  .lines {
+    position: absolute;
+    inset-inline: 0;
+    transform: translate(-75px, 8px) rotate(355deg);
+    width: 125%;
+  }
+}
+main {
+  position: relative;
+}
+.animated-elements {
+  position: absolute;
+  inset: 0;
 }

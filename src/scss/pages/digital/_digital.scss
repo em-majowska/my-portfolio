@@ -2,73 +2,86 @@
 
 .description {
   width: 100%;
+  display: grid;
+  gap: 2rem;
 
   p {
-    text-align: left;
-    max-width: 45ch;
-    margin-inline-start: auto;
+    max-width: 55ch;
+    padding: 1rem;
+    font-size: 1rem;
+
+    &:last-child {
+      color: var(--c-white);
+      background-color: var(--c-black);
+      margin-inline-start: auto;
+    }
   }
 }
 
 .digital-gallery {
   @include m.flex-container(row, space-between, center);
-  margin-block: 5rem;
+  margin-block: 5rem 7rem;
   flex-wrap: wrap;
-  gap: 3rem;
-}
+  gap: 2rem;
 
-.frame {
-  box-sizing: border-box;
-  min-height: 0;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  @include m.window(var(--c-white), 100%);
-  z-index: auto;
-  min-width: 375px;
-  // max-width: 600px;
-  flex: 2 0 0;
-
-  &__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+  &__frame {
+    min-height: 0;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    @include m.window(var(--c-white), 100%);
+    z-index: auto;
+    min-width: 375px;
+    flex: 2 0 0;
+  }
+  &__media {
     width: 100%;
     height: 100%;
-    border-radius: 20px;
-    background-size: cover;
-    background-position: center;
-    background-image: transparent;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1;
+    object-fit: cover;
+    border-radius: 22px;
   }
 
   video {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  &__img {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &.image-enter {
+      animation: imageEnter 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
   }
 }
-
 .digital-list {
   @include m.flex-container(column, center, stretch);
-  // width: 100%;
   position: relative;
   z-index: 2;
   margin-block: 2rem;
   flex: 1 0 auto;
 
+  &__item {
+    border-block-start: var(--border);
+
+    &:last-child {
+      border-block-end: var(--border);
+    }
+  }
+
   &__btn {
     display: block;
     width: 100%;
     padding: 1rem;
-    border-block-start: 2px solid (var(--c-black));
     text-align: center;
     font-family: var(--mono-font);
-    font-size: 1.6rem;
+    font-size: 1.25rem;
     font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: lowercase;
     color: var(--c-black);
     background-size: 200% 200%;
     background-position: 0% 0%;
@@ -83,36 +96,121 @@
     &:hover,
     &:focus-visible {
       color: var(--c-white);
-      background-position: 100% 100%;
+      background-position: 100% 99%;
     }
   }
 }
-.digital-gallery:has(.digital-list__btn:hover) .frame__overlay {
-  opacity: 1;
-  transition: opacity 0.3s ease;
+
+.digital-gallery:has(.digital-list__btn:hover) video {
+  filter: brightness(0);
 }
 
-.digital-gallery:has(.milkshake:hover) .frame__overlay {
-  background-image: url('../assets/img/digital/milkshake.jpg');
+// Lightbox
+.lightbox {
+  @include m.flex-container(column, center, center);
+  gap: 1rem;
+  position: fixed;
+  inset: 0;
+  background: hsla(0, 0%, 0%, 0.85);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease forwards;
+  z-index: 101;
+
+  &[hidden] {
+    display: none;
+  }
+
+  button {
+    width: 45px;
+    height: 45px;
+    border: 2px solid var(--c-white);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--c-white);
+    font-family: var(--mono-font);
+
+    &:hover {
+      color: var(--c-black);
+      background-color: var(--c-white);
+    }
+  }
 }
-.digital-gallery:has(.challengers:hover) .frame__overlay {
-  background-image: url('../assets/img/digital/challengers.jpg');
+
+.lightbox__frame {
+  max-width: 90%;
+  max-height: 80%;
+  aspect-ratio: 1 / 1;
+  border: 2px solid var(--c-black);
+  border-radius: var(--border-radius);
+  animation: lightboxOpen 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  overflow: hidden;
 }
-.digital-gallery:has(.cookie:hover) .frame__overlay {
-  background-image: url('../assets/img/digital/cookie.jpg');
+
+.lightbox__btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  transition: all 0.3s;
 }
-.digital-gallery:has(.criston:hover) .frame__overlay {
-  background-image: url('../assets/img/digital/criston.jpg');
+
+.lightbox__title {
+  min-width: 90%;
+  color: var(--c-white);
+  font-family: var(--mono-font);
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  text-align: center;
 }
-.digital-gallery:has(.daemon:hover) .frame__overlay {
-  background-image: url('../assets/img/digital/daemon.jpg');
+
+.lightbox-nav {
+  position: absolute;
+  bottom: 2rem;
+  width: 90%;
+  @include m.flex-container(row, space-between, center);
+  pointer-events: none;
+
+  button {
+    pointer-events: all;
+    font-size: 3rem;
+    transition: all 0.3s;
+    line-height: 0.5;
+
+    &:hover {
+      color: var(--c-black);
+      background-color: var(--c-white);
+    }
+  }
 }
-.digital-gallery:has(.joe:hover) .frame__overlay {
-  background-image: url('../assets/img/digital/joe.jpg');
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-.digital-gallery:has(.theo:hover) .frame__overlay {
-  background-image: url('../assets/img/digital/theo.jpg');
+
+@keyframes lightboxOpen {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
-.digital-gallery:has(.viserys:hover) .frame__overlay {
-  background-image: url('../assets/img/digital/viserys.jpg');
+
+@keyframes imageEnter {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
 }
