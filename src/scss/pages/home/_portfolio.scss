@@ -135,11 +135,20 @@
       }
     }
   }
-}
 
-// .buttons-gallery {
-//   position: relative;
-//   display: flex;
-//   width: 100%;
-//   justify-content: space-between;
-// }
+  .buttons-container {
+    @include m.flex-container(row, center, stretch);
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: fit-content;
+
+    * {
+      flex: 1;
+      width: auto;
+
+      .btn__fill {
+        place-content: center;
+      }
+    }
+  }
+}
