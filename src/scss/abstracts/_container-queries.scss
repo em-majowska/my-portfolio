@@ -609,18 +609,30 @@ footer {
 /* Projects */
 // ======================
 
-@container header (min-width: 770px) {
-  body.projects .hero__text h1 {
-    text-wrap: wrap;
-  }
-}
-
 // ======================
 /* Digital */
 // ======================
 
-// @container main (min-width: 770px) {
-//   body.digital .gallery {
-//     flex-direction: ;
-//   }
-// }
+@container header (min-width: 770px) {
+  body.digital h1.hero__header {
+    margin-inline-start: 110px;
+    max-width: 700px;
+  }
+}
+@container main (min-width: 770px) {
+  body.digital {
+    .description {
+      grid-template-rows: auto auto;
+
+      p {
+        &:last-child {
+          margin-inline-start: auto;
+        }
+      }
+    }
+
+    .digital-gallery {
+      gap: 4rem;
+    }
+  }
+}
