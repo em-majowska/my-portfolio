@@ -164,9 +164,22 @@
   ],
 
   "projects_header": "Exciting stuff <span class=\"accent\">coming soon!</span>",
-  "digital_header": "My Digital<br><span class=\"accent\">Art Journey</span>",
-  "digital_description": "<p>Besides front-end development, I enjoy drawing portraits digitally — small visual experiments that help me explore techniques, colors, shapes, and mood.</p>",
+  "digital_header": "Digital <span class=\"accent\">Art</span><span class=\"subtext\">Welcome to my gallery</span>",
+  "digital_description": "<p>My fascination with digital art started when I was a teenager and experimented with Photoshop collages, mixing images and textures just to see what I could make. Then, my first Wacom tablet opened up a whole new world: layers, brushes, and tools that let me create in ways traditional media never could.</p><p>What I love most about digital art is its versatility—you’re not limited to just brushstrokes. You can build with shapes, refine with selections, or transform images by masking and cutting. It’s like having a limitless toolbox! It’s a space where I can tune out the world, experiment without pressure, and let my curiosity lead the way.</p>",
   "digital_gallery": {
     "aria-label": "Gallery of my digital art"
-  }
+  },
+  "digital_list": [
+    { "aria-label": "Seth Milchick AKA Milkshake, Severance" },
+    { "aria-label": "Patrick Zweig, Challengers" },
+    { "aria-label": "Cookie the cat" },
+    { "aria-label": "Criston Cole, House of the Dragon" },
+    { "aria-label": "Daemon Targaryen, House of the Dragon" },
+    { "aria-label": "Joe Goldberg, You" },
+    { "aria-label": "Theo, You" },
+    { "aria-label": "Viserys Targaryen, House of the Dragon" }
+  ],
+  "lightbox-prev": { "aria-label": "Previous image" },
+  "lightbox-next": { "aria-label": "Next image" },
+  "lightbox-close": { "aria-label": "Close lightbox" }
 }

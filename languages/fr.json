@@ -163,9 +163,22 @@
     "étoiles"
   ],
   "projects_header": "à venir  <span class=\"accent\">bientôt</span>  !",
-  "digital_header": "Mon Parcours<br><span class=\"accent\">en Art Numérique</span>",
-  "digital_description": "<p>En&nbsp;plus du&nbsp;développement front-end, j'aime dessiner de&nbsp;les portraits numérique — </p>",
+  "digital_header": "Art <span class=\"accent\">Numérique</span><span class=\"subtext\">Bienvenue dans ma galerie</span>",
+  "digital_description": "<p>Ma fascination pour l’art numérique a commencé à l’adolescence, lorsque j’ai expérimenté mes premiers collages sous Photoshop, en mélangeant images et textures juste pour voir ce que je pouvais créer. Puis, ma première tablette Wacom m’a ouvert un tout nouveau monde : les calques, les pinceaux et les outils qui m’ont permis de créer d’une manière impossible avec les médias traditionnels.</p><p>Ce que j’aime le plus dans l’art numérique, c’est sa polyvalence : on n’est pas limité aux simples coups de pinceau. On peut construire avec des formes, affiner avec des sélections, ou transformer des images grâce aux masques et aux découpes. C’est comme avoir une boîte à outils sans limites ! C’est un espace où je peux déconnecter du monde, expérimenter sans pression et laisser ma curiosité me guider.</p>",
   "digital_gallery": {
-    "aria-label": "Galerie de portraits numériques"
-  }
+    "aria-label": "Galerie d'art numérique"
+  },
+  "digital_list": [
+    { "aria-label": "Seth Milchick AKA Milkshake, Severance" },
+    { "aria-label": "Patrick Zweig, Challengers" },
+    { "innerHTML": "Le chat Cookie", "aria-label": "Le chat Cookie" },
+    { "aria-label": "Criston Cole, House of the Dragon" },
+    { "aria-label": "Daemon Targaryen, House of the Dragon" },
+    { "aria-label": "Joe Goldberg, You" },
+    { "aria-label": "Theo, You" },
+    { "aria-label": "Viserys Targaryen, House of the Dragon" }
+  ],
+  "lightbox-prev": { "aria-label": "Image précédente" },
+  "lightbox-next": { "aria-label": "Image suivante" },
+  "lightbox-close": { "aria-label": "Fermer la visionneuse" }
 }
