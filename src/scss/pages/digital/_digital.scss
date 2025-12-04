@@ -5,15 +5,22 @@
   display: grid;
   gap: 2rem;
 
+  &.animate p {
+    animation: fadeIn 0.5s ease-in forwards;
+  }
+
   p {
     max-width: 55ch;
     padding: 1rem;
     font-size: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
 
     &:last-child {
       color: var(--c-white);
       background-color: var(--c-black);
       margin-inline-start: auto;
+      animation-delay: 1s;
     }
   }
 }
@@ -212,5 +219,16 @@
     opacity: 1;
     transform: scale(1);
     filter: blur(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: transformY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
