@@ -3,7 +3,9 @@
     "lang": "pl"
   },
   "title": "Ewa Majowska | Deweloper Front-End",
-  "title_gallery": "100 Days CSS Challenge - Ewa Majowska | Deweloper Front-End",
+  "gallery_title": "100 Days CSS Challenge - Ewa Majowska | Deweloper Front-End",
+  "digital_title": "Digital Art - Ewa Majowska | Deweloper Front-End",
+  "projects_title": "Projekty - Ewa Majowska | Deweloper Front-End",
   "meta_title": { "content": "Ewa Majowska | Deweloper Front-End" },
   "meta_description": {
     "content": "Ewa Majowska | Deweloper Front-End. Łączę pasję do tworzenia stron internetowych, designu i digital artu."
@@ -140,5 +142,24 @@
     "galeria",
     "wyskakujący błąd",
     "gwiazdy"
-  ]
+  ],
+  "projects_header": "Pusto tu...<span class=\"accent\">wpadnij później!</span>",
+  "digital_header": "Digital <span class=\"accent\">Art</span><span class=\"subtext\">Witaj w mojej galerii</span>",
+  "digital_description": "<p>Moje zafascynowanie sztuką cyfrową zaczęło się, kiedy jako młoda dziewczyna eksperymentowałam z kolażami w Photoshopie — mieszałam obrazy i tekstury, żeby zobaczyć, co z tego wyjdzie. Potem mój pierwszy tablet Wacom otworzył przede mną zupełnie nowy świat: warstwy, pędzle i narzędzia, które pozwoliły mi tworzyć w sposób niemożliwy do osiągnięcia tradycyjnymi metodami.</p><p>To, co uwielbiam w sztuce cyfrowej, to jej wszechstronność — nie ograniczasz się tylko do pociągnięć pędzla. Można budować kształty, bawić się obszarami poprzez selekcję, przekształcać obrazy przez maskowanie i wycinanie. Tu nie ma limitów! To przestrzeń, w której mogę oderwać się od świata, eksperymentować bez presji i ponieść się kreatywności.</p>",
+  "digital_gallery": {
+    "aria-label": { "aria-label": "Galeria moich digital artów" }
+  },
+  "digital_list": [
+    { "aria-label": "Seth Milchick AKA Milkshake, Severance" },
+    { "aria-label": "Patrick Zweig, Challengers" },
+    { "innerHTML": "Kot Cookie", "aria-label": "Kot Cookie" },
+    { "aria-label": "Criston Cole, House of the Dragon" },
+    { "aria-label": "Daemon Targaryen, House of the Dragon" },
+    { "aria-label": "Joe Goldberg, You" },
+    { "aria-label": "Theo, You" },
+    { "aria-label": "Viserys Targaryen, House of the Dragon" }
+  ],
+  "lightbox-prev": { "aria-label": "Poprzedni obraz" },
+  "lightbox-next": { "aria-label": "Następny obraz" },
+  "lightbox-close": { "aria-label": "Zamknij galerię" }
 }
