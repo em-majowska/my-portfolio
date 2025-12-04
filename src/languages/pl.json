@@ -3,7 +3,9 @@
     "lang": "pl"
   },
   "title": "Ewa Majowska | Deweloper Front-End",
-  "title_gallery": "100 Days CSS Challenge - Ewa Majowska | Deweloper Front-End",
+  "gallery_title": "100 Days CSS Challenge - Ewa Majowska | Deweloper Front-End",
+  "digital_title": "Digital Art - Ewa Majowska | Deweloper Front-End",
+  "projects_title": "Projekty - Ewa Majowska | Deweloper Front-End",
   "meta_title": { "content": "Ewa Majowska | Deweloper Front-End" },
   "meta_description": {
     "content": "Ewa Majowska | Deweloper Front-End. Łączę pasję do tworzenia stron internetowych, designu i digital artu."
@@ -12,7 +14,12 @@
   "nav": {
     "aria-label": "Menu główne"
   },
-  "menu_link": ["o mnie", "technologie", "portfolio", "kontakt"],
+  "menu_item": [
+    "<a href=\"./index.html#about-me\" class=\"menu__link\">o mnie</a>",
+    "<a href=\"./index.html#skills\" class=\"menu__link\">technologie</a>",
+    "<button type=\"button\" id=\"portfolioBtn\" class=\"menu__link\" aria-label=\"Open portfolio submenu\" data-i18l=\"menu_link\"><span>&gt; </span> portfolio</button> <ul aria-expanded=\"false\" id=\"portfolioMenu\" class=\"submenu\"><li class=\"menu__item\" ><a href=\"./gallery.html\" class=\"menu__link\">Projekty CSS</a></li><li class=\"menu__item\" ><a href=\"./digital-art.html\" class=\"menu__link\">Digital Art</a></li><li class=\"menu__item\"><a href=\"./projects.html\" class=\"menu__link\">Więcej projektów</a></li></ul>",
+    "<a href=\"./index.html#contact\" class=\"menu__link\">kontakt</a>"
+  ],
   "menu_btn": {
     "open": {
       "aria-label": "Otwórz menu"
@@ -60,7 +67,14 @@
     "Stwórzmy Twoją stronę<br><span>razem!</span>",
     "Kontakt"
   ],
-  "buttons": ["Napisz do mnie", "Pogadajmy! 🖐", "Zobacz więcej projektów"],
+  "buttons": [
+    "Napisz do mnie",
+    "Pogadajmy! 🖐",
+    "Zobacz więcej projektów",
+    "Projekty CSS",
+    "Digital Art"
+  ],
+
   "about": "<p>Hej, z&nbsp;tej strony Ewa Majowska. Projektuję i&nbsp;tworzę strony internetowe z&nbsp;francuskiej wyspy Réunion. Moją pasją są&nbsp;języki: ukończyłam filologię angielską z&nbsp;językiem japońskim na&nbsp;Uniwersytecie Śląskim. Przeprowadzka stała się zaś dobrym pretekstem do&nbsp;opanowania francuskiego i&nbsp;odkrycia nowej formy komunikacji: języka sieci.</p><p>W&nbsp;wolnym czasie stawiam na&nbsp;bieganie i&nbsp;jogę. Oprócz tego uwielbiam gry logiczne. Często spotykam się ze&nbsp;znajomymi na&nbsp;granie w&nbsp;planszówki, czy escape roomy. Wieczorami zaś relaksuję się, rysując postacie z&nbsp;seriali z&nbsp;dobrym podcastem w&nbsp;tle.</p>",
   "skills": "<p>Zajęcia kreatywne i&nbsp;kontakt z&nbsp;technologią od&nbsp;dziecka sprawiały mi&nbsp;dużo satysfakcji. Zaczęło się od&nbsp;rysowania, a&nbsp;pierwszy tablet otworzył mi&nbsp;drzwi do&nbsp;poznania rożnych narzędzi graficznych (Photoshop, Krita, Figma). Moje zainteresowania naturalnie skierowały się w&nbsp;stronę designu.</p><p>Wszystkie te&nbsp;pasje —&nbsp;języki, proces twórczy, technologie —&nbsp;odnalazłam w&nbsp;tworzeniu stron WWW.</p>",
   "stt": {
@@ -140,5 +154,24 @@
     "galeria",
     "wyskakujący błąd",
     "gwiazdy"
-  ]
+  ],
+  "projects_header": "Pusto tu...<span class=\"accent\">wpadnij później!</span>",
+  "digital_header": "Digital <span class=\"accent\">Art</span><span class=\"subtext\">Witaj w mojej galerii</span>",
+  "digital_description": "<p>Moje zafascynowanie sztuką cyfrową zaczęło się, kiedy jako młoda dziewczyna eksperymentowałam z kolażami w Photoshopie — mieszałam obrazy i tekstury, żeby zobaczyć, co z tego wyjdzie. Potem mój pierwszy tablet Wacom otworzył przede mną zupełnie nowy świat: warstwy, pędzle i narzędzia, które pozwoliły mi tworzyć w sposób niemożliwy do osiągnięcia tradycyjnymi metodami.</p><p>To, co uwielbiam w sztuce cyfrowej, to jej wszechstronność — nie ograniczasz się tylko do pociągnięć pędzla. Można budować kształty, bawić się obszarami poprzez selekcję, przekształcać obrazy przez maskowanie i wycinanie. Tu nie ma limitów! To przestrzeń, w której mogę oderwać się od świata, eksperymentować bez presji i ponieść się kreatywności.</p>",
+  "digital_gallery": {
+    "aria-label": { "aria-label": "Galeria moich digital artów" }
+  },
+  "digital_list": [
+    { "aria-label": "Seth Milchick AKA Milkshake, Severance" },
+    { "aria-label": "Patrick Zweig, Challengers" },
+    { "innerHTML": "Kot Cookie", "aria-label": "Kot Cookie" },
+    { "aria-label": "Criston Cole, House of the Dragon" },
+    { "aria-label": "Daemon Targaryen, House of the Dragon" },
+    { "aria-label": "Joe Goldberg, You" },
+    { "aria-label": "Theo, You" },
+    { "aria-label": "Viserys Targaryen, House of the Dragon" }
+  ],
+  "lightbox-prev": { "aria-label": "Poprzedni obraz" },
+  "lightbox-next": { "aria-label": "Następny obraz" },
+  "lightbox-close": { "aria-label": "Zamknij galerię" }
 }

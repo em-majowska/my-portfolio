@@ -64,6 +64,7 @@ footer {
 
     & .menu__item {
       display: flex;
+      justify-content: center;
     }
 
     & .menu__link {
@@ -91,14 +92,21 @@ footer {
 
       .submenu {
         position: absolute;
-        top: 100%;
+        top: 70%;
+        padding-block: 1rem var(--padding-outline);
+        box-shadow: 8px 8px var(--c-black);
         background-color: var(--c-white);
         border: 2px solid var(--c-black);
         border-top-color: transparent;
         border-radius: 0 0 8px 8px;
+        z-index: -1;
 
-        * {
+        & > * {
           padding: 0.5rem;
+        }
+
+        a {
+          padding: 0;
         }
       }
     }

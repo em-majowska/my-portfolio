@@ -2,11 +2,14 @@
 
 /* Gallery Grid Layout */
 
+main#main-content {
+  width: min(1200px, 100% - 2rem);
+}
+
 .gallery {
   position: relative;
   padding-block: var(--padding-outline);
   margin-block-end: 5em;
-
   --grid-min-col-size: 300px;
   --grid-gap: 40px;
 
@@ -86,7 +89,7 @@
     padding: 0.5em 1.75em;
     border: 2px solid var(--c-white);
     border-radius: var(--border-radius) var(--border-radius) 0 0;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 900;
     line-height: 1.1;
     text-align: center;

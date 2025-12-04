@@ -3,7 +3,9 @@
     "lang": "fr"
   },
   "title": "Ewa Majowska | Développeuse Web Front-End",
-  "title_gallery": "100 Days CSS Challenge - Ewa Majowska | Développeuse Web Front-End",
+  "gallery_title": "100 Days CSS Challenge - Ewa Majowska | Développeuse Web Front-End",
+  "digital_title": "Art Numérique - Ewa Majowska | Développeuse Web Front-End",
+  "projects_title": "Projets - Ewa Majowska | Développeuse Web Front-End",
   "meta_title": { "content": "Ewa Majowska | Développeuse Web Front-End" },
   "meta_description": {
     "content": "Ewa Majowska | Développeuse Web Front-End à Saint-Leu. Passionnée de web design et de dessin numérique."
@@ -12,13 +14,26 @@
   "nav": {
     "aria-label": "Menu de navigation principal"
   },
-  "menu_link": ["à propos", "compétences", "portfolio", "contact"],
+  "menu_item": [
+    "<a href=\"./index.html#about-me\" class=\"menu__link\">à propos</a>",
+    "<a href=\"./index.html#skills\" class=\"menu__link\">compétences</a>",
+    "<button type=\"button\" id=\"portfolioBtn\" class=\"menu__link\" aria-label=\"Open portfolio submenu\" data-i18l=\"menu_link\"><span>&gt; </span> portfolio</button> <ul aria-expanded=\"false\" id=\"portfolioMenu\" class=\"submenu\"><li class=\"menu__item\" ><a href=\"./gallery.html\" class=\"menu__link\">projets css</a></li><li class=\"menu__item\" ><a href=\"./digital-art.html\" class=\"menu__link\">art numérique</a></li><li class=\"menu__item\"><a href=\"./projects.html\" class=\"menu__link\">autres projets</a></li></ul>",
+    "<a href=\"./index.html#contact\" class=\"menu__link\">contact</a>"
+  ],
   "menu_btn": {
     "open": {
       "aria-label": "Ouvrir le menu"
     },
     "close": {
       "aria-label": "Fermer le menu"
+    }
+  },
+  "submenu_btn": {
+    "open": {
+      "aria-label": "Ouvrir le sous-menu portfolio"
+    },
+    "close": {
+      "aria-label": "Fermer le sous-menu portfolio"
     }
   },
   "lang_nav": {
@@ -60,7 +75,13 @@
     "Donnons vie à votre site, <span>ensemble !</span>",
     "Contact"
   ],
-  "buttons": ["Contactez-moi", "Contactez-moi 🖐", "Voir plus de projets"],
+  "buttons": [
+    "Contactez-moi",
+    "Contactez-moi 🖐",
+    "Voir plus de projets",
+    "Projets CSS",
+    "Art Numérique"
+  ],
   "about": "<p>Je m'appelle Ewa Majowska, je&nbsp;suis Développeuse Front-End et&nbsp;je&nbsp;vis à&nbsp;Saint-Leu.</p><p>Passionnée par les langues, j'ai obtenu une&nbsp;licence d'Anglais et&nbsp;de&nbsp;Japonais à&nbsp;l’Université de&nbsp;Silésie à&nbsp;Katowice en&nbsp;Pologne. En&nbsp;m'installant à&nbsp;la&nbsp;Réunion, j'ai été motivée à&nbsp;apprendre la&nbsp;langue locale et&nbsp;à&nbsp;explorer une&nbsp;nouvelle forme de&nbsp;communication : le&nbsp;langage du&nbsp;web.</p><p>Pendant mon temps libre, j'aime pratiquer du&nbsp;yoga, courir et&nbsp;tout ce qui est casse-tête, comme les&nbsp;jeux de&nbsp;société ou&nbsp;les&nbsp;escape games. Mais ce&nbsp;que je&nbsp;préfère pour décompresser, c'est de&nbsp;faire de&nbsp;la&nbsp;peinture digitale en&nbsp;écoutant un&nbsp;bon podcast !</p>",
   "skills": "<p>Les activités créatives et&nbsp;le&nbsp;contact avec la&nbsp;technologie m'ont toujours apporté beaucoup de&nbsp;satisfaction depuis mon enfance. Tout a&nbsp;commencé avec le&nbsp;dessin, puis l'art digital, et&nbsp;finalement, je&nbsp;me&nbsp;suis lancée dans le&nbsp;web design. En&nbsp;chemin, je&nbsp;me&nbsp;suis familiarisée avec des&nbsp;outils comme Photoshop, Krita et&nbsp;Figma.</p><p>Toutes ces passions — les&nbsp;langues, le&nbsp;processus créatif, et&nbsp;la&nbsp;technologie — se&nbsp;sont retrouvées dans la&nbsp;création de&nbsp;sites web. Je&nbsp;suis toujours curieuse d'en apprendre plus sur&nbsp;les&nbsp;nouvelles technologies !</p>",
   "stt": {
@@ -144,5 +165,24 @@
     "galerie",
     "modale d'erreur",
     "étoiles"
-  ]
+  ],
+  "projects_header": "à venir  <span class=\"accent\">bientôt</span>  !",
+  "digital_header": "Art <span class=\"accent\">Numérique</span><span class=\"subtext\">Bienvenue dans ma galerie</span>",
+  "digital_description": "<p>Ma fascination pour l’art numérique a commencé à l’adolescence, lorsque j’ai expérimenté mes premiers collages sous Photoshop, en mélangeant images et textures juste pour voir ce que je pouvais créer. Puis, ma première tablette Wacom m’a ouvert un tout nouveau monde : les calques, les pinceaux et les outils qui m’ont permis de créer d’une manière impossible avec les médias traditionnels.</p><p>Ce que j’aime le plus dans l’art numérique, c’est sa polyvalence : on n’est pas limité aux simples coups de pinceau. On peut construire avec des formes, affiner avec des sélections, ou transformer des images grâce aux masques et aux découpes. C’est comme avoir une boîte à outils sans limites ! C’est un espace où je peux déconnecter du monde, expérimenter sans pression et laisser ma curiosité me guider.</p>",
+  "digital_gallery": {
+    "aria-label": "Galerie d'art numérique"
+  },
+  "digital_list": [
+    { "aria-label": "Seth Milchick AKA Milkshake, Severance" },
+    { "aria-label": "Patrick Zweig, Challengers" },
+    { "innerHTML": "Le chat Cookie", "aria-label": "Le chat Cookie" },
+    { "aria-label": "Criston Cole, House of the Dragon" },
+    { "aria-label": "Daemon Targaryen, House of the Dragon" },
+    { "aria-label": "Joe Goldberg, You" },
+    { "aria-label": "Theo, You" },
+    { "aria-label": "Viserys Targaryen, House of the Dragon" }
+  ],
+  "lightbox-prev": { "aria-label": "Image précédente" },
+  "lightbox-next": { "aria-label": "Image suivante" },
+  "lightbox-close": { "aria-label": "Fermer la visionneuse" }
 }

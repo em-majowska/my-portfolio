@@ -129,16 +129,21 @@
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     box-shadow: 7px 12px var(--c-black);
     background: var(--c-white);
+    text-transform: lowercase;
     text-align: center;
 
     overflow: hidden;
     z-index: 98;
 
+    .menu-list {
+      background-color: var(--c-white);
+    }
+
     &__link {
       display: block;
       padding: 1rem;
       line-height: 2;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
 
     &[aria-expanded='false'] {
@@ -199,6 +204,7 @@ button.menu__link {
 
 .submenu {
   max-height: 0px;
+  padding-block: var(--padding-outline);
   transition: max-height 0.3s ease-in-out;
   overflow-y: clip;
 
@@ -213,8 +219,6 @@ button.menu__link {
   }
 
   .menu__link {
-    font-size: 1.25rem;
-    letter-spacing: 0;
     padding: 0.75rem 0.75rem 0.75rem 40%;
     text-align: left;
   }
@@ -401,6 +405,7 @@ button.menu__link {
 
 @keyframes open-submenu {
   from {
+    padding: 0;
     max-height: 0px;
   }
   to {
@@ -414,5 +419,6 @@ button.menu__link {
   }
   to {
     max-height: 0px;
+    padding: 0;
   }
 }
