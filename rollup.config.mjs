@@ -10,6 +10,8 @@ export default {
   input: {
     script: 'src/js/script.js',
     gallery: 'src/js/gallery.js',
+    projects: 'src/js/projects.js',
+    // digital: 'src/js/digital.js',
   },
   output: {
     dir: 'dist/js',
