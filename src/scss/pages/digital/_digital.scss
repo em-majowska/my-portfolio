@@ -1,0 +1,118 @@
+@use '../../abstracts/mixins' as m;
+
+.description {
+  width: 100%;
+
+  p {
+    text-align: left;
+    max-width: 45ch;
+    margin-inline-start: auto;
+  }
+}
+
+.digital-gallery {
+  @include m.flex-container(row, space-between, center);
+  margin-block: 5rem;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.frame {
+  box-sizing: border-box;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  @include m.window(var(--c-white), 100%);
+  z-index: auto;
+  min-width: 375px;
+  // max-width: 600px;
+  flex: 2 0 0;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-image: transparent;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+}
+
+.digital-list {
+  @include m.flex-container(column, center, stretch);
+  // width: 100%;
+  position: relative;
+  z-index: 2;
+  margin-block: 2rem;
+  flex: 1 0 auto;
+
+  &__btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border-block-start: 2px solid (var(--c-black));
+    text-align: center;
+    font-family: var(--mono-font);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--c-black);
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+    background-image: linear-gradient(
+      to left top,
+      var(--c-black) 50%,
+      var(--c-white) 50%
+    );
+    transition: background-position 0.5s ease, color 0.3s ease;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--c-white);
+      background-position: 100% 100%;
+    }
+  }
+}
+.digital-gallery:has(.digital-list__btn:hover) .frame__overlay {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.digital-gallery:has(.milkshake:hover) .frame__overlay {
+  background-image: url('../assets/img/digital/milkshake.jpg');
+}
+.digital-gallery:has(.challengers:hover) .frame__overlay {
+  background-image: url('../assets/img/digital/challengers.jpg');
+}
+.digital-gallery:has(.cookie:hover) .frame__overlay {
+  background-image: url('../assets/img/digital/cookie.jpg');
+}
+.digital-gallery:has(.criston:hover) .frame__overlay {
+  background-image: url('../assets/img/digital/criston.jpg');
+}
+.digital-gallery:has(.daemon:hover) .frame__overlay {
+  background-image: url('../assets/img/digital/daemon.jpg');
+}
+.digital-gallery:has(.joe:hover) .frame__overlay {
+  background-image: url('../assets/img/digital/joe.jpg');
+}
+.digital-gallery:has(.theo:hover) .frame__overlay {
+  background-image: url('../assets/img/digital/theo.jpg');
+}
+.digital-gallery:has(.viserys:hover) .frame__overlay {
+  background-image: url('../assets/img/digital/viserys.jpg');
+}
