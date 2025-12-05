@@ -14,7 +14,12 @@
   "nav": {
     "aria-label": "Primary"
   },
-  "menu_link": ["about", "skills", "portfolio", "contact"],
+  "menu_item": [
+    "<a href=\"./index.html#about-me\" class=\"menu__link\">about</a>",
+    "<a href=\"./index.html#skills\" class=\"menu__link\">skills</a>",
+    "<button type=\"button\" id=\"portfolioBtn\" class=\"menu__link\" aria-label=\"Open portfolio submenu\" data-i18l=\"menu_link\"><span>&gt; </span> portfolio</button> <ul aria-expanded=\"false\" id=\"portfolioMenu\" class=\"submenu\"><li class=\"menu__item\" ><a href=\"./gallery.html\" class=\"menu__link\">CSS Projects</a></li><li class=\"menu__item\" ><a href=\"./digital-art.html\" class=\"menu__link\">Digital Art</a></li><li class=\"menu__item\"><a href=\"./projects.html\" class=\"menu__link\">Other Projects</a></li></ul>",
+    "<a href=\"./index.html#contact\" class=\"menu__link\">contact</a>"
+  ],
   "menu_btn": {
     "open": {
       "aria-label": "Open menu"
@@ -31,7 +36,6 @@
       "aria-label": "Close portfolio submenu"
     }
   },
-  "submenu_link": ["css projects", "digital art", "other projects"],
   "lang_nav": {
     "aria-label": "Language selector"
   },
